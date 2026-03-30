@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POP_amount_should_more_than_20000</fullName>
+    <active>false</active>
+    <errorConditionFormula>POP_Amount__c &gt;= 200000</errorConditionFormula>
+    <errorDisplayField>POP_Amount__c</errorDisplayField>
+    <errorMessage>POP Amount will always more than 20000</errorMessage>
+</ValidationRule>

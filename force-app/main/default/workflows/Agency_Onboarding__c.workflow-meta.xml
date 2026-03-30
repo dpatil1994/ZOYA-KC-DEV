@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Email_Alert_on_Approved_Agency_Onboarding</fullName>
+        <ccEmails>Naz@zoyadevelopments.ae</ccEmails>
+        <description>Email Alert on Approved Agency Onboarding</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Company_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>agency@zoyadevelopments.ae</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Email_Alert_on_Approved_Agency_Onboarding</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_on_Cancelled_Agency_Onboarding</fullName>
+        <description>Email Alert on Cancelled Agency Onboarding</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Company_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>agency@zoyadevelopments.ae</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Reason_for_Cancellation_in_Agency_Onboarding</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_on_New_Agency_Onboarding</fullName>
+        <ccEmails>Naz@zoyadevelopments.ae</ccEmails>
+        <description>Email Alert on New Agency Onboarding</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Company_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>agency@zoyadevelopments.ae</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Email_Alert_on_New_Agency_Onboarding</template>
+    </alerts>
+    <alerts>
+        <fullName>Email_Alert_on_Pending_Documents</fullName>
+        <ccEmails>Naz@zoyadevelopments.ae</ccEmails>
+        <description>Email Alert on Pending Documents</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Company_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>agency@zoyadevelopments.ae</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Email_Alert_on_Pending_Documents</template>
+    </alerts>
+</Workflow>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Review_Status__c</fullName>
+    <label>Review Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft</fullName>
+                <default>false</default>
+                <label>Draft</label>
+            </value>
+            <value>
+                <fullName>Self Assessment Submitted</fullName>
+                <default>false</default>
+                <label>Self Assessment Submitted</label>
+            </value>
+            <value>
+                <fullName>Manager Review In Progress</fullName>
+                <default>false</default>
+                <label>Manager Review In Progress</label>
+            </value>
+            <value>
+                <fullName>Manager Review Completed</fullName>
+                <default>false</default>
+                <label>Manager Review Completed</label>
+            </value>
+            <value>
+                <fullName>HR Calibration In Progress</fullName>
+                <default>false</default>
+                <label>HR Calibration In Progress</label>
+            </value>
+            <value>
+                <fullName>HR Calibration Completed</fullName>
+                <default>false</default>
+                <label>HR Calibration Completed</label>
+            </value>
+            <value>
+                <fullName>Finalized</fullName>
+                <default>false</default>
+                <label>Finalized</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

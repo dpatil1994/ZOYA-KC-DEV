@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_stage_according_to_User</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(StageName),
+    ISPICKVAL(StageName, &quot;Terminated&quot;),
+    NOT(
+        OR(
+            $User.Alias = &quot;Snaz&quot;,
+            $User.Alias = &quot;nsing&quot;
+        )
+    )
+)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Only CSO can Terminated this Sales Booking</errorMessage>
+</ValidationRule>

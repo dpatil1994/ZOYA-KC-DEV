@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Request_Type__c</fullName>
+    <label>Service Request Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>POP Verification</fullName>
+                <default>false</default>
+                <label>POP Verification</label>
+            </value>
+            <value>
+                <fullName>Receipt Creation</fullName>
+                <default>false</default>
+                <label>Receipt Creation</label>
+            </value>
+            <value>
+                <fullName>Fund Transfer</fullName>
+                <default>false</default>
+                <label>Fund Transfer</label>
+            </value>
+            <value>
+                <fullName>Refund</fullName>
+                <default>false</default>
+                <label>Refund</label>
+            </value>
+            <value>
+                <fullName>Early Settlement</fullName>
+                <default>false</default>
+                <label>Early Settlement</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

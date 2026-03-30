@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manager_Rating__c</fullName>
+    <label>Manager Rating</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Outstanding</fullName>
+                <default>false</default>
+                <label>Outstanding</label>
+            </value>
+            <value>
+                <fullName>Exceeds Expectations</fullName>
+                <default>false</default>
+                <label>Exceeds Expectations</label>
+            </value>
+            <value>
+                <fullName>Meets Expectations</fullName>
+                <default>false</default>
+                <label>Meets Expectations</label>
+            </value>
+            <value>
+                <fullName>Needs Improvement</fullName>
+                <default>false</default>
+                <label>Needs Improvement</label>
+            </value>
+            <value>
+                <fullName>Unsatisfactory</fullName>
+                <default>false</default>
+                <label>Unsatisfactory</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

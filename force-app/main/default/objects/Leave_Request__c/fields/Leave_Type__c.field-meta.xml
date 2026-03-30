@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leave_Type__c</fullName>
+    <label>Leave Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+                <label>Annual Leave</label>
+            </value>
+            <value>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+                <label>Sick Leave</label>
+            </value>
+            <value>
+                <fullName>Casual Leave</fullName>
+                <default>false</default>
+                <label>Casual Leave</label>
+            </value>
+            <value>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+                <label>Emergency Leave</label>
+            </value>
+            <value>
+                <fullName>Maternity Leave</fullName>
+                <default>false</default>
+                <label>Maternity Leave</label>
+            </value>
+            <value>
+                <fullName>Paternity Leave</fullName>
+                <default>false</default>
+                <label>Paternity Leave</label>
+            </value>
+            <value>
+                <fullName>Unpaid Leave</fullName>
+                <default>false</default>
+                <label>Unpaid Leave</label>
+            </value>
+            <value>
+                <fullName>Compensatory Off (Comp Off)</fullName>
+                <default>false</default>
+                <label>Compensatory Off (Comp Off)</label>
+            </value>
+            <value>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+                <label>Bereavement Leave</label>
+            </value>
+            <value>
+                <fullName>Study Leave</fullName>
+                <default>false</default>
+                <label>Study Leave</label>
+            </value>
+            <value>
+                <fullName>Work From Home</fullName>
+                <default>false</default>
+                <label>Work From Home</label>
+            </value>
+            <value>
+                <fullName>Half Day Leave</fullName>
+                <default>false</default>
+                <label>Half Day Leave</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

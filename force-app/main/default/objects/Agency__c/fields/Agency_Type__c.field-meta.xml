@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agency_Type__c</fullName>
+    <label>Agency Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>International</fullName>
+                <default>false</default>
+                <label>International</label>
+            </value>
+            <value>
+                <fullName>UAE non real estate company</fullName>
+                <default>false</default>
+                <label>UAE non real estate company</label>
+            </value>
+            <value>
+                <fullName>International Company</fullName>
+                <default>false</default>
+                <label>International Company</label>
+            </value>
+            <value>
+                <fullName>UAE Residents</fullName>
+                <default>false</default>
+                <label>UAE Residents</label>
+            </value>
+            <value>
+                <fullName>Dubai Real Estate Company (RERA Registered)</fullName>
+                <default>false</default>
+                <label>Dubai Real Estate Company (RERA Registered)</label>
+            </value>
+            <value>
+                <fullName>Real Estate Company - other emirate</fullName>
+                <default>false</default>
+                <label>Real Estate Company - other emirate</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

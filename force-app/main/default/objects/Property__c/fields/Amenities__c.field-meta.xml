@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amenities__c</fullName>
+    <label>Amenities</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>🚐 Shuttle Service (to and from the metro station)</fullName>
+                <default>false</default>
+                <label>🚐 Shuttle Service (to and from the metro station)</label>
+            </value>
+            <value>
+                <fullName>🌐 Wi-Fi Enabled Common Areas</fullName>
+                <default>false</default>
+                <label>🌐 Wi-Fi Enabled Common Areas</label>
+            </value>
+            <value>
+                <fullName>🛍️ Retail Outlets</fullName>
+                <default>false</default>
+                <label>🛍️ Retail Outlets</label>
+            </value>
+            <value>
+                <fullName>🛡️ 24/7 Security</fullName>
+                <default>false</default>
+                <label>🛡️ 24/7 Security</label>
+            </value>
+            <value>
+                <fullName>🐾 Pet-Friendly Environment</fullName>
+                <default>false</default>
+                <label>🐾 Pet-Friendly Environment</label>
+            </value>
+            <value>
+                <fullName>🏛️ Grand Entrance Lobby</fullName>
+                <default>false</default>
+                <label>🏛️ Grand Entrance Lobby</label>
+            </value>
+            <value>
+                <fullName>🛋️ Residents’ Lounge</fullName>
+                <default>false</default>
+                <label>🛋️ Residents’ Lounge</label>
+            </value>
+            <value>
+                <fullName>🛗 3 High-Speed Elevators</fullName>
+                <default>false</default>
+                <label>🛗 3 High-Speed Elevators</label>
+            </value>
+            <value>
+                <fullName>🏢 3.3m Ceiling Heights</fullName>
+                <default>false</default>
+                <label>🏢 3.3m Ceiling Heights</label>
+            </value>
+            <value>
+                <fullName>🧱 Efficient Floor Plans</fullName>
+                <default>false</default>
+                <label>🧱 Efficient Floor Plans</label>
+            </value>
+            <value>
+                <fullName>🛁 All Bedrooms Ensuite + Powder Room</fullName>
+                <default>false</default>
+                <label>🛁 All Bedrooms Ensuite + Powder Room</label>
+            </value>
+            <value>
+                <fullName>🧺 Dedicated Laundry Room</fullName>
+                <default>false</default>
+                <label>🧺 Dedicated Laundry Room</label>
+            </value>
+            <value>
+                <fullName>🏙️ Low-Density Development</fullName>
+                <default>false</default>
+                <label>🏙️ Low-Density Development</label>
+            </value>
+            <value>
+                <fullName>🏊 Private Swimming Pool</fullName>
+                <default>false</default>
+                <label>🏊 Private Swimming Pool</label>
+            </value>
+            <value>
+                <fullName>📍 Corner Plot Location</fullName>
+                <default>false</default>
+                <label>📍 Corner Plot Location</label>
+            </value>
+            <value>
+                <fullName>☀️ Solar Powered Building</fullName>
+                <default>false</default>
+                <label>☀️ Solar Powered Building</label>
+            </value>
+            <value>
+                <fullName>🏋️ Panoramic View Gym</fullName>
+                <default>false</default>
+                <label>🏋️ Panoramic View Gym</label>
+            </value>
+            <value>
+                <fullName>🧖 Separate Sauna for Him &amp; Her</fullName>
+                <default>false</default>
+                <label>🧖 Separate Sauna for Him &amp; Her</label>
+            </value>
+            <value>
+                <fullName>🏊 Adult Swimming Pool</fullName>
+                <default>false</default>
+                <label>🏊 Adult Swimming Pool</label>
+            </value>
+            <value>
+                <fullName>🧒 Kids Swimming Pool</fullName>
+                <default>false</default>
+                <label>🧒 Kids Swimming Pool</label>
+            </value>
+            <value>
+                <fullName>🧘 Outdoor Yoga Space</fullName>
+                <default>false</default>
+                <label>🧘 Outdoor Yoga Space</label>
+            </value>
+            <value>
+                <fullName>🎠 Kids Play Area</fullName>
+                <default>false</default>
+                <label>🎠 Kids Play Area</label>
+            </value>
+            <value>
+                <fullName>🔥 Barbecue Area</fullName>
+                <default>false</default>
+                <label>🔥 Barbecue Area</label>
+            </value>
+            <value>
+                <fullName>🏓 Indoor Sports Room</fullName>
+                <default>false</default>
+                <label>🏓 Indoor Sports Room</label>
+            </value>
+            <value>
+                <fullName>⛳ Mini Golf Course</fullName>
+                <default>false</default>
+                <label>⛳ Mini Golf Course</label>
+            </value>
+            <value>
+                <fullName>🎬 Outdoor Poolside Cinema</fullName>
+                <default>false</default>
+                <label>🎬 Outdoor Poolside Cinema</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

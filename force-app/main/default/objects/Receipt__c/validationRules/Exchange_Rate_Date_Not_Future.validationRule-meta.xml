@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exchange_Rate_Date_Not_Future</fullName>
+    <active>true</active>
+    <description>Stops users from entering a future date in the Exchange Rate Date field.</description>
+    <errorConditionFormula>Exchange_Rate_Date__c &gt; TODAY()</errorConditionFormula>
+    <errorDisplayField>Exchange_Rate_Date__c</errorDisplayField>
+    <errorMessage>Exchange Rate Date cannot be a future date.</errorMessage>
+</ValidationRule>

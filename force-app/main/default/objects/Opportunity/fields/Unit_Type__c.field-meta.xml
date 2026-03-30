@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unit_Type__c</fullName>
+    <label>Unit Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1BED</fullName>
+                <default>false</default>
+                <label>1BED</label>
+            </value>
+            <value>
+                <fullName>1BED-L</fullName>
+                <default>false</default>
+                <label>1BED-L</label>
+            </value>
+            <value>
+                <fullName>2BED</fullName>
+                <default>false</default>
+                <label>2BED</label>
+            </value>
+            <value>
+                <fullName>Exe Studio</fullName>
+                <default>false</default>
+                <label>Exe Studio</label>
+            </value>
+            <value>
+                <fullName>Studio</fullName>
+                <default>false</default>
+                <label>Studio</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Passport_Issue_date_cant_be_future</fullName>
+    <active>true</active>
+    <errorConditionFormula>Passport_Issue_Date__pc &gt; TODAY()</errorConditionFormula>
+    <errorDisplayField>Passport_Issue_Date__pc</errorDisplayField>
+    <errorMessage>Passport Issue Date cannot be future date</errorMessage>
+</ValidationRule>

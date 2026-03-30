@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Country_code__c</fullName>
+    <label>Country code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>United States : 1</fullName>
+                <default>false</default>
+                <label>United States : 1</label>
+            </value>
+            <value>
+                <fullName>Canada : 1</fullName>
+                <default>false</default>
+                <label>Canada : 1</label>
+            </value>
+            <value>
+                <fullName>Mexico : 52</fullName>
+                <default>false</default>
+                <label>Mexico : 52</label>
+            </value>
+            <value>
+                <fullName>United Kingdom : 44</fullName>
+                <default>false</default>
+                <label>United Kingdom : 44</label>
+            </value>
+            <value>
+                <fullName>Ireland : 353</fullName>
+                <default>false</default>
+                <label>Ireland : 353</label>
+            </value>
+            <value>
+                <fullName>India : 91</fullName>
+                <default>false</default>
+                <label>India : 91</label>
+            </value>
+            <value>
+                <fullName>Pakistan : 92</fullName>
+                <default>false</default>
+                <label>Pakistan : 92</label>
+            </value>
+            <value>
+                <fullName>Bangladesh : 880</fullName>
+                <default>false</default>
+                <label>Bangladesh : 880</label>
+            </value>
+            <value>
+                <fullName>Sri Lanka : 94</fullName>
+                <default>false</default>
+                <label>Sri Lanka : 94</label>
+            </value>
+            <value>
+                <fullName>Nepal : 977</fullName>
+                <default>false</default>
+                <label>Nepal : 977</label>
+            </value>
+            <value>
+                <fullName>Bhutan : 975</fullName>
+                <default>false</default>
+                <label>Bhutan : 975</label>
+            </value>
+            <value>
+                <fullName>Myanmar : 95</fullName>
+                <default>false</default>
+                <label>Myanmar : 95</label>
+            </value>
+            <value>
+                <fullName>United Arab Emirates : 971</fullName>
+                <default>false</default>
+                <label>United Arab Emirates : 971</label>
+            </value>
+            <value>
+                <fullName>Saudi Arabia : 966</fullName>
+                <default>false</default>
+                <label>Saudi Arabia : 966</label>
+            </value>
+            <value>
+                <fullName>Qatar : 974</fullName>
+                <default>false</default>
+                <label>Qatar : 974</label>
+            </value>
+            <value>
+                <fullName>Oman : 968</fullName>
+                <default>false</default>
+                <label>Oman : 968</label>
+            </value>
+            <value>
+                <fullName>Kuwait : 965</fullName>
+                <default>false</default>
+                <label>Kuwait : 965</label>
+            </value>
+            <value>
+                <fullName>Bahrain : 973</fullName>
+                <default>false</default>
+                <label>Bahrain : 973</label>
+            </value>
+            <value>
+                <fullName>Jordan : 962</fullName>
+                <default>false</default>
+                <label>Jordan : 962</label>
+            </value>
+            <value>
+                <fullName>Lebanon : 961</fullName>
+                <default>false</default>
+                <label>Lebanon : 961</label>
+            </value>
+            <value>
+                <fullName>Israel : 972</fullName>
+                <default>false</default>
+                <label>Israel : 972</label>
+            </value>
+            <value>
+                <fullName>Iraq : 964</fullName>
+                <default>false</default>
+                <label>Iraq : 964</label>
+            </value>
+            <value>
+                <fullName>Iran : 98</fullName>
+                <default>false</default>
+                <label>Iran : 98</label>
+            </value>
+            <value>
+                <fullName>Yemen : 967</fullName>
+                <default>false</default>
+                <label>Yemen : 967</label>
+            </value>
+            <value>
+                <fullName>Australia : 61</fullName>
+                <default>false</default>
+                <label>Australia : 61</label>
+            </value>
+            <value>
+                <fullName>New Zealand : 64</fullName>
+                <default>false</default>
+                <label>New Zealand : 64</label>
+            </value>
+            <value>
+                <fullName>China : 86</fullName>
+                <default>false</default>
+                <label>China : 86</label>
+            </value>
+            <value>
+                <fullName>Japan : 81</fullName>
+                <default>false</default>
+                <label>Japan : 81</label>
+            </value>
+            <value>
+                <fullName>South Korea : 82</fullName>
+                <default>false</default>
+                <label>South Korea : 82</label>
+            </value>
+            <value>
+                <fullName>North Korea : 850</fullName>
+                <default>false</default>
+                <label>North Korea : 850</label>
+            </value>
+            <value>
+                <fullName>Singapore : 65</fullName>
+                <default>false</default>
+                <label>Singapore : 65</label>
+            </value>
+            <value>
+                <fullName>Malaysia : 60</fullName>
+                <default>false</default>
+                <label>Malaysia : 60</label>
+            </value>
+            <value>
+                <fullName>Philippines : 63</fullName>
+                <default>false</default>
+                <label>Philippines : 63</label>
+            </value>
+            <value>
+                <fullName>Indonesia : 62</fullName>
+                <default>false</default>
+                <label>Indonesia : 62</label>
+            </value>
+            <value>
+                <fullName>Thailand : 66</fullName>
+                <default>false</default>
+                <label>Thailand : 66</label>
+            </value>
+            <value>
+                <fullName>Vietnam : 84</fullName>
+                <default>false</default>
+                <label>Vietnam : 84</label>
+            </value>
+            <value>
+                <fullName>Cambodia : 855</fullName>
+                <default>false</default>
+                <label>Cambodia : 855</label>
+            </value>
+            <value>
+                <fullName>Laos : 856</fullName>
+                <default>false</default>
+                <label>Laos : 856</label>
+            </value>
+            <value>
+                <fullName>Hong Kong : 852</fullName>
+                <default>false</default>
+                <label>Hong Kong : 852</label>
+            </value>
+            <value>
+                <fullName>Taiwan : 886</fullName>
+                <default>false</default>
+                <label>Taiwan : 886</label>
+            </value>
+            <value>
+                <fullName>Germany : 49</fullName>
+                <default>false</default>
+                <label>Germany : 49</label>
+            </value>
+            <value>
+                <fullName>France : 33</fullName>
+                <default>false</default>
+                <label>France : 33</label>
+            </value>
+            <value>
+                <fullName>Italy : 39</fullName>
+                <default>false</default>
+                <label>Italy : 39</label>
+            </value>
+            <value>
+                <fullName>Spain : 34</fullName>
+                <default>false</default>
+                <label>Spain : 34</label>
+            </value>
+            <value>
+                <fullName>Portugal : 351</fullName>
+                <default>false</default>
+                <label>Portugal : 351</label>
+            </value>
+            <value>
+                <fullName>Netherlands : 31</fullName>
+                <default>false</default>
+                <label>Netherlands : 31</label>
+            </value>
+            <value>
+                <fullName>Belgium : 32</fullName>
+                <default>false</default>
+                <label>Belgium : 32</label>
+            </value>
+            <value>
+                <fullName>Switzerland : 41</fullName>
+                <default>false</default>
+                <label>Switzerland : 41</label>
+            </value>
+            <value>
+                <fullName>Austria : 43</fullName>
+                <default>false</default>
+                <label>Austria : 43</label>
+            </value>
+            <value>
+                <fullName>Sweden : 46</fullName>
+                <default>false</default>
+                <label>Sweden : 46</label>
+            </value>
+            <value>
+                <fullName>Norway : 47</fullName>
+                <default>false</default>
+                <label>Norway : 47</label>
+            </value>
+            <value>
+                <fullName>Denmark : 45</fullName>
+                <default>false</default>
+                <label>Denmark : 45</label>
+            </value>
+            <value>
+                <fullName>Finland : 358</fullName>
+                <default>false</default>
+                <label>Finland : 358</label>
+            </value>
+            <value>
+                <fullName>Iceland : 354</fullName>
+                <default>false</default>
+                <label>Iceland : 354</label>
+            </value>
+            <value>
+                <fullName>Poland : 48</fullName>
+                <default>false</default>
+                <label>Poland : 48</label>
+            </value>
+            <value>
+                <fullName>Czech Republic : 420</fullName>
+                <default>false</default>
+                <label>Czech Republic : 420</label>
+            </value>
+            <value>
+                <fullName>Slovakia : 421</fullName>
+                <default>false</default>
+                <label>Slovakia : 421</label>
+            </value>
+            <value>
+                <fullName>Hungary : 36</fullName>
+                <default>false</default>
+                <label>Hungary : 36</label>
+            </value>
+            <value>
+                <fullName>Romania : 40</fullName>
+                <default>false</default>
+                <label>Romania : 40</label>
+            </value>
+            <value>
+                <fullName>Bulgaria : 359</fullName>
+                <default>false</default>
+                <label>Bulgaria : 359</label>
+            </value>
+            <value>
+                <fullName>Greece : 30</fullName>
+                <default>false</default>
+                <label>Greece : 30</label>
+            </value>
+            <value>
+                <fullName>Croatia : 385</fullName>
+                <default>false</default>
+                <label>Croatia : 385</label>
+            </value>
+            <value>
+                <fullName>Slovenia : 386</fullName>
+                <default>false</default>
+                <label>Slovenia : 386</label>
+            </value>
+            <value>
+                <fullName>Serbia : 381</fullName>
+                <default>false</default>
+                <label>Serbia : 381</label>
+            </value>
+            <value>
+                <fullName>Ukraine : 380</fullName>
+                <default>false</default>
+                <label>Ukraine : 380</label>
+            </value>
+            <value>
+                <fullName>Russia : 7</fullName>
+                <default>false</default>
+                <label>Russia : 7</label>
+            </value>
+            <value>
+                <fullName>Turkey : 90</fullName>
+                <default>false</default>
+                <label>Turkey : 90</label>
+            </value>
+            <value>
+                <fullName>Brazil : 55</fullName>
+                <default>false</default>
+                <label>Brazil : 55</label>
+            </value>
+            <value>
+                <fullName>Argentina : 54</fullName>
+                <default>false</default>
+                <label>Argentina : 54</label>
+            </value>
+            <value>
+                <fullName>Chile : 56</fullName>
+                <default>false</default>
+                <label>Chile : 56</label>
+            </value>
+            <value>
+                <fullName>Colombia : 57</fullName>
+                <default>false</default>
+                <label>Colombia : 57</label>
+            </value>
+            <value>
+                <fullName>Peru : 51</fullName>
+                <default>false</default>
+                <label>Peru : 51</label>
+            </value>
+            <value>
+                <fullName>Venezuela : 58</fullName>
+                <default>false</default>
+                <label>Venezuela : 58</label>
+            </value>
+            <value>
+                <fullName>Ecuador : 593</fullName>
+                <default>false</default>
+                <label>Ecuador : 593</label>
+            </value>
+            <value>
+                <fullName>Bolivia : 591</fullName>
+                <default>false</default>
+                <label>Bolivia : 591</label>
+            </value>
+            <value>
+                <fullName>Paraguay : 595</fullName>
+                <default>false</default>
+                <label>Paraguay : 595</label>
+            </value>
+            <value>
+                <fullName>Uruguay : 598</fullName>
+                <default>false</default>
+                <label>Uruguay : 598</label>
+            </value>
+            <value>
+                <fullName>South Africa : 27</fullName>
+                <default>false</default>
+                <label>South Africa : 27</label>
+            </value>
+            <value>
+                <fullName>Nigeria : 234</fullName>
+                <default>false</default>
+                <label>Nigeria : 234</label>
+            </value>
+            <value>
+                <fullName>Kenya : 254</fullName>
+                <default>false</default>
+                <label>Kenya : 254</label>
+            </value>
+            <value>
+                <fullName>Ethiopia : 251</fullName>
+                <default>false</default>
+                <label>Ethiopia : 251</label>
+            </value>
+            <value>
+                <fullName>Ghana : 233</fullName>
+                <default>false</default>
+                <label>Ghana : 233</label>
+            </value>
+            <value>
+                <fullName>Uganda : 256</fullName>
+                <default>false</default>
+                <label>Uganda : 256</label>
+            </value>
+            <value>
+                <fullName>Tanzania : 255</fullName>
+                <default>false</default>
+                <label>Tanzania : 255</label>
+            </value>
+            <value>
+                <fullName>Zimbabwe : 263</fullName>
+                <default>false</default>
+                <label>Zimbabwe : 263</label>
+            </value>
+            <value>
+                <fullName>Zambia : 260</fullName>
+                <default>false</default>
+                <label>Zambia : 260</label>
+            </value>
+            <value>
+                <fullName>Egypt : 20</fullName>
+                <default>false</default>
+                <label>Egypt : 20</label>
+            </value>
+            <value>
+                <fullName>Morocco : 212</fullName>
+                <default>false</default>
+                <label>Morocco : 212</label>
+            </value>
+            <value>
+                <fullName>Algeria : 213</fullName>
+                <default>false</default>
+                <label>Algeria : 213</label>
+            </value>
+            <value>
+                <fullName>Tunisia : 216</fullName>
+                <default>false</default>
+                <label>Tunisia : 216</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

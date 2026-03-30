@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stop_Updating_Task_once_it_completes</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISNEW()),
+    ISCHANGED(Status),
+    ISPICKVAL(Status, &quot;Completed / Verified&quot;),
+
+    OR(
+
+        AND(
+            CONTAINS(Subject, &quot;EOI Document Review&quot;),
+            NOT( OR($User.Alias = &quot;iahme&quot;, $User.Alias = &quot;pbang&quot;) )
+        ),
+
+        AND(
+    CONTAINS(Subject, &quot;Booking Creation&quot;),
+    NOT( OR($User.Alias = &quot;iahme&quot;, $User.Alias = &quot;pbang&quot;) )
+    
+),
+
+        AND(
+            CONTAINS(Subject, &quot;Booking Verification&quot;),
+            NOT( OR($User.Alias = &quot;iahme&quot;, $User.Alias = &quot;pbang&quot;, $User.Alias = &quot;relma&quot;) )
+        ),
+
+        AND(
+            CONTAINS(Subject, &quot;Receipt Verification&quot;),
+            $User.Alias &lt;&gt; &quot;nahme&quot;
+        ),
+
+        AND(
+            CONTAINS(Subject, &quot;Submitted to Sales Admin Manager&quot;),
+            NOT( OR($User.Alias = &quot;iahme&quot;, $User.Alias = &quot;pbang&quot;) )
+        ),
+
+        AND(
+            CONTAINS(Subject, &quot;Generate RF&quot;),
+            NOT( OR($User.Alias = &quot;iahme&quot;, $User.Alias = &quot;pbang&quot;, $User.Alias = &quot;relma&quot;) )
+        ),
+
+        AND(
+            CONTAINS(Subject, &quot;RF Signed&quot;),
+            NOT( OR($User.Alias = &quot;iahme&quot;, $User.Alias = &quot;pbang&quot;, $User.Alias = &quot;relma&quot;) )
+        ),
+
+        AND(
+            CONTAINS(Subject, &quot;Downpayment Verification&quot;),
+            $User.Alias &lt;&gt; &quot;nahme&quot;
+        ),
+
+        AND(
+            CONTAINS(Subject, &quot;Approved by CSO&quot;),
+            NOT( OR($User.Alias = &quot;nsing&quot;, $User.Alias = &quot;Snaz&quot;) )
+        ),
+
+        AND(
+            CONTAINS(Subject, &quot;SPA Preparation&quot;),
+            NOT( OR($User.Alias = &quot;iahme&quot;, $User.Alias = &quot;pbang&quot;, $User.Alias = &quot;relma&quot;) )
+        ),
+
+        AND(
+            CONTAINS(Subject, &quot;Send SPA for Signature&quot;),
+            NOT( OR($User.Alias = &quot;iahme&quot;, $User.Alias = &quot;pbang&quot;, $User.Alias = &quot;relma&quot;) )
+        ),
+
+        AND(
+            CONTAINS(Subject, &quot;SPA Signed&quot;),
+            NOT( OR($User.Alias = &quot;iahme&quot;, $User.Alias = &quot;pbang&quot;, $User.Alias = &quot;relma&quot;) )
+        ),
+
+        AND(
+            CONTAINS(Subject, &quot;SPA Review&quot;),
+            NOT( OR($User.Alias = &quot;iahme&quot;, $User.Alias = &quot;pbang&quot;, $User.Alias = &quot;relma&quot;) )
+        ),
+
+        AND(
+            CONTAINS(Subject, &quot;Oqood Submission&quot;),
+            NOT( OR($User.Alias = &quot;iahme&quot;, $User.Alias = &quot;pbang&quot;, $User.Alias = &quot;relma&quot;) )
+        ),
+
+           AND(
+            CONTAINS(Subject, &quot;EOI Verification&quot;),
+            NOT( OR($User.Alias = &quot;iahme&quot;, $User.Alias = &quot;pbang&quot;, $User.Alias = &quot;relma&quot;) )
+        ),
+
+        AND(
+            CONTAINS(Subject, &quot;Oqood Approved&quot;),
+            NOT( OR($User.Alias = &quot;iahme&quot;, $User.Alias = &quot;pbang&quot;, $User.Alias = &quot;relma&quot;) )
+        )
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Status</errorDisplayField>
+    <errorMessage>You are not authorised to update this task for the selected subject</errorMessage>
+</ValidationRule>

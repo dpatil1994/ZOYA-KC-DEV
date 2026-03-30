@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Receivable and Overdue Management</name>
+    <pageDevName>Receivable_and_Overdue_Management</pageDevName>
+    <relatedEntityType>Opportunity</relatedEntityType>
+    <style>none</style>
+    <subject>NOTIFICATION FOR PAYMENT OF OVERDUE AMOUNT                              إشعار بدفع المبلغ المتأخر</subject>
+    <textOnly>Dear Client,
+
+Unit -{{{Opportunity.Customer_Unit_Name__c}}}
+
+{{{Recipient.Broker_Address__c}}}
+
+Sale and Purchase Agreement (“SPA”) اتفاقية البيع والشراء
+
+This notification is served to you in furtherance of the Sale and Purchase Agreement signed between you and Zoya One Real Estate Developments LLC for Off-Plan/Completed unit in our project Pristine by Zoya.
+
+يتم تقديم هذه الإشعارات إليكم تنفيذاً لاتفاقية البيع والشراء الموقعة بين الشركة Zoya One Real Estate Developments LLC للوحدات قيد الإنشاء/المكتملة في مشروعنا Pristine by Zoya.
+
+Please note that you are at default in payment as per the payment schedule in the Sale and Purchase Agreement. According to the Schedule, payment of amount is overdue since . We request you to proceed with the payment of overdue amount within 15 days of service of this notice. We would like to bring to your attention that a penalty of AED 3,000 will be charged for the overdue installment(s) as per SPA clause.
+
+NOTE: The non-compliance to the payment may lead to attraction of penalties and/or termination procedure.
+
+يرجى العلم بأنك متخلف عن السداد وفقًا لجدول الدفعات الوارد في اتفاقية البيع والشراء.وبحسب الجدول، فإن مبلغ xxxx.xx مستحق الدفع منذ تاريخ .
+
+نرجو منكم
+
+المضي قدماً في سداد المبلغ المتأخر خلال 15 يوماً من تاريخ استلام هذا الإشعار.
+
+نود أن نلفت انتباهكم إلى أنه سيتم فرض غرامة قدرها 3000 درهم إماراتي على الأقساط المتأخرة وفقًا لبند اتفاقية البيع والشراء.
+
+ملاحظة: قد يؤدي عدم الالتزام بالدفع إلى فرض غرامات و/أو إجراءات إنهاء الخدمة.
+
+You are, hereby, requested to comply with the terms of the notification at the earliest.
+
+If the payment has already been made, please disregard this email
+
+Yours sincerely,
+
+Authorized Signatory
+
+يرجى منكم، بموجب هذا، الامتثال لشروط الإخطار في أقرب وقت ممكن. 
+
+مع خالص التحيات، 
+
+المفوض بالتوقيع 
+
+**If the payment has been made already, please send the evidence at the following email address and apologies for the inconvenience</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>POP_Transaction_date_cant_be_future</fullName>
+    <active>true</active>
+    <description>POP Transaction date should not accept future date</description>
+    <errorConditionFormula>POP_Transaction_Date__c &gt; TODAY()</errorConditionFormula>
+    <errorDisplayField>POP_Transaction_Date__c</errorDisplayField>
+    <errorMessage>POP Transaction date Can&apos;t be a Future Date.</errorMessage>
+</ValidationRule>

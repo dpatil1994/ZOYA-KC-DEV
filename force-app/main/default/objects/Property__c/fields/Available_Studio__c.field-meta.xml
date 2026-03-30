@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_Studio__c</fullName>
+    <label>Available-Studio</label>
+    <summaryFilterItems>
+        <field>Property_Unit__c.Inventory_Status__c</field>
+        <operation>equals</operation>
+        <value>Available</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Property_Unit__c.Unit_Type__c</field>
+        <operation>equals</operation>
+        <value>Studio</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Property_Unit__c.Property__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

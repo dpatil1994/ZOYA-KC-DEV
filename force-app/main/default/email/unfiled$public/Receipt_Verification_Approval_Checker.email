@@ -1,0 +1,16 @@
+Hello {{!Recipient.Name}},
+
+A new Receipt record has been submitted and is awaiting your review and approval.
+
+Please review the details below and take the necessary action:
+
+Receipt Details:
+• Receipt Number: {{!Receipt__c.Name}}
+• Customer Name: {{!Receipt__c.Customer_Name__c}}
+• Amount: {{!Receipt__c.Amount__c}}
+• Payment Mode: {{!Receipt__c.Payment_Mode__c}}
+• Created By (Maker): {{!Receipt__c.CreatedBy.Name}}
+• Created Date: {{!Receipt__c.CreatedDate}}
+
+Thank you,
+Salesforce System

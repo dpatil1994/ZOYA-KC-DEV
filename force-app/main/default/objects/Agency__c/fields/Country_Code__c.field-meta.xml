@@ -1,0 +1,1249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Country_Code__c</fullName>
+    <label>Country Code</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Afghanistan :+93</fullName>
+                <default>false</default>
+                <label>Afghanistan :+93</label>
+            </value>
+            <value>
+                <fullName>Aland Islands :+358</fullName>
+                <default>false</default>
+                <label>Aland Islands :+358</label>
+            </value>
+            <value>
+                <fullName>Albania :+355</fullName>
+                <default>false</default>
+                <label>Albania :+355</label>
+            </value>
+            <value>
+                <fullName>Algeria :+213</fullName>
+                <default>false</default>
+                <label>Algeria :+213</label>
+            </value>
+            <value>
+                <fullName>American Samoa :+1684</fullName>
+                <default>false</default>
+                <label>American Samoa :+1684</label>
+            </value>
+            <value>
+                <fullName>Andorra :+376</fullName>
+                <default>false</default>
+                <label>Andorra :+376</label>
+            </value>
+            <value>
+                <fullName>Angola :+244</fullName>
+                <default>false</default>
+                <label>Angola :+244</label>
+            </value>
+            <value>
+                <fullName>Anguilla :+1264</fullName>
+                <default>false</default>
+                <label>Anguilla :+1264</label>
+            </value>
+            <value>
+                <fullName>Antarctica :+672</fullName>
+                <default>false</default>
+                <label>Antarctica :+672</label>
+            </value>
+            <value>
+                <fullName>Antigua and Barbuda :+1268</fullName>
+                <default>false</default>
+                <label>Antigua and Barbuda :+1268</label>
+            </value>
+            <value>
+                <fullName>Argentina :+54</fullName>
+                <default>false</default>
+                <label>Argentina :+54</label>
+            </value>
+            <value>
+                <fullName>Armenia :+374</fullName>
+                <default>false</default>
+                <label>Armenia :+374</label>
+            </value>
+            <value>
+                <fullName>Aruba :+297</fullName>
+                <default>false</default>
+                <label>Aruba :+297</label>
+            </value>
+            <value>
+                <fullName>Australia :+61</fullName>
+                <default>false</default>
+                <label>Australia :+61</label>
+            </value>
+            <value>
+                <fullName>Austria :+43</fullName>
+                <default>false</default>
+                <label>Austria :+43</label>
+            </value>
+            <value>
+                <fullName>Azerbaijan :+994</fullName>
+                <default>false</default>
+                <label>Azerbaijan :+994</label>
+            </value>
+            <value>
+                <fullName>Bahamas :+1242</fullName>
+                <default>false</default>
+                <label>Bahamas :+1242</label>
+            </value>
+            <value>
+                <fullName>Bahrain :+973</fullName>
+                <default>false</default>
+                <label>Bahrain :+973</label>
+            </value>
+            <value>
+                <fullName>Bangladesh :+880</fullName>
+                <default>false</default>
+                <label>Bangladesh :+880</label>
+            </value>
+            <value>
+                <fullName>Barbados :+1246</fullName>
+                <default>false</default>
+                <label>Barbados :+1246</label>
+            </value>
+            <value>
+                <fullName>Belarus :+375</fullName>
+                <default>false</default>
+                <label>Belarus :+375</label>
+            </value>
+            <value>
+                <fullName>Belgium :+32</fullName>
+                <default>false</default>
+                <label>Belgium :+32</label>
+            </value>
+            <value>
+                <fullName>Belize :+501</fullName>
+                <default>false</default>
+                <label>Belize :+501</label>
+            </value>
+            <value>
+                <fullName>Benin :+229</fullName>
+                <default>false</default>
+                <label>Benin :+229</label>
+            </value>
+            <value>
+                <fullName>Bermuda :+1441</fullName>
+                <default>false</default>
+                <label>Bermuda :+1441</label>
+            </value>
+            <value>
+                <fullName>Bhutan :+975</fullName>
+                <default>false</default>
+                <label>Bhutan :+975</label>
+            </value>
+            <value>
+                <fullName>Bolivia :+591</fullName>
+                <default>false</default>
+                <label>Bolivia :+591</label>
+            </value>
+            <value>
+                <fullName>Bonaire :+599</fullName>
+                <default>false</default>
+                <label>Bonaire :+599</label>
+            </value>
+            <value>
+                <fullName>Bosnia and Herzegovina :+387</fullName>
+                <default>false</default>
+                <label>Bosnia and Herzegovina :+387</label>
+            </value>
+            <value>
+                <fullName>Botswana :+267</fullName>
+                <default>false</default>
+                <label>Botswana :+267</label>
+            </value>
+            <value>
+                <fullName>Brazil :+55</fullName>
+                <default>false</default>
+                <label>Brazil :+55</label>
+            </value>
+            <value>
+                <fullName>British Indian Ocean Territory :+246</fullName>
+                <default>false</default>
+                <label>British Indian Ocean Territory :+246</label>
+            </value>
+            <value>
+                <fullName>British Virgin Islands :+1284</fullName>
+                <default>false</default>
+                <label>British Virgin Islands :+1284</label>
+            </value>
+            <value>
+                <fullName>Brunei :+673</fullName>
+                <default>false</default>
+                <label>Brunei :+673</label>
+            </value>
+            <value>
+                <fullName>Bulgaria :+359</fullName>
+                <default>false</default>
+                <label>Bulgaria :+359</label>
+            </value>
+            <value>
+                <fullName>Burkina Faso :+226</fullName>
+                <default>false</default>
+                <label>Burkina Faso :+226</label>
+            </value>
+            <value>
+                <fullName>Burundi :+257</fullName>
+                <default>false</default>
+                <label>Burundi :+257</label>
+            </value>
+            <value>
+                <fullName>Cabo Verde :+238</fullName>
+                <default>false</default>
+                <label>Cabo Verde :+238</label>
+            </value>
+            <value>
+                <fullName>Cambodia :+855</fullName>
+                <default>false</default>
+                <label>Cambodia :+855</label>
+            </value>
+            <value>
+                <fullName>Cameroon :+237</fullName>
+                <default>false</default>
+                <label>Cameroon :+237</label>
+            </value>
+            <value>
+                <fullName>Canada :+1</fullName>
+                <default>false</default>
+                <label>Canada :+1</label>
+            </value>
+            <value>
+                <fullName>Cayman Islands :+1345</fullName>
+                <default>false</default>
+                <label>Cayman Islands :+1345</label>
+            </value>
+            <value>
+                <fullName>Central African Republic :+236</fullName>
+                <default>false</default>
+                <label>Central African Republic :+236</label>
+            </value>
+            <value>
+                <fullName>Chad :+235</fullName>
+                <default>false</default>
+                <label>Chad :+235</label>
+            </value>
+            <value>
+                <fullName>Chile :+56</fullName>
+                <default>false</default>
+                <label>Chile :+56</label>
+            </value>
+            <value>
+                <fullName>China :+86</fullName>
+                <default>false</default>
+                <label>China :+86</label>
+            </value>
+            <value>
+                <fullName>Christmas Island :+61</fullName>
+                <default>false</default>
+                <label>Christmas Island :+61</label>
+            </value>
+            <value>
+                <fullName>Cocos :+61</fullName>
+                <default>false</default>
+                <label>Cocos :+61</label>
+            </value>
+            <value>
+                <fullName>Colombia :+57</fullName>
+                <default>false</default>
+                <label>Colombia :+57</label>
+            </value>
+            <value>
+                <fullName>Comoros :+269</fullName>
+                <default>false</default>
+                <label>Comoros :+269</label>
+            </value>
+            <value>
+                <fullName>Congo :+242</fullName>
+                <default>false</default>
+                <label>Congo :+242</label>
+            </value>
+            <value>
+                <fullName>Congo :+243</fullName>
+                <default>false</default>
+                <label>Congo :+243</label>
+            </value>
+            <value>
+                <fullName>Cook Islands :+682</fullName>
+                <default>false</default>
+                <label>Cook Islands :+682</label>
+            </value>
+            <value>
+                <fullName>Costa Rica :+506</fullName>
+                <default>false</default>
+                <label>Costa Rica :+506</label>
+            </value>
+            <value>
+                <fullName>Cote dIvoire :+225</fullName>
+                <default>false</default>
+                <label>Cote dIvoire :+225</label>
+            </value>
+            <value>
+                <fullName>Croatia :+385</fullName>
+                <default>false</default>
+                <label>Croatia :+385</label>
+            </value>
+            <value>
+                <fullName>Cuba :+53</fullName>
+                <default>false</default>
+                <label>Cuba :+53</label>
+            </value>
+            <value>
+                <fullName>Curacao :+599</fullName>
+                <default>false</default>
+                <label>Curacao :+599</label>
+            </value>
+            <value>
+                <fullName>Cyprus :+357</fullName>
+                <default>false</default>
+                <label>Cyprus :+357</label>
+            </value>
+            <value>
+                <fullName>Czech Republic :+420</fullName>
+                <default>false</default>
+                <label>Czech Republic :+420</label>
+            </value>
+            <value>
+                <fullName>Denmark :+45</fullName>
+                <default>false</default>
+                <label>Denmark :+45</label>
+            </value>
+            <value>
+                <fullName>Djibouti :+253</fullName>
+                <default>false</default>
+                <label>Djibouti :+253</label>
+            </value>
+            <value>
+                <fullName>Dominica :+1767</fullName>
+                <default>false</default>
+                <label>Dominica :+1767</label>
+            </value>
+            <value>
+                <fullName>Dominican Republic :+849</fullName>
+                <default>false</default>
+                <label>Dominican Republic :+849</label>
+            </value>
+            <value>
+                <fullName>Ecuador :+593</fullName>
+                <default>false</default>
+                <label>Ecuador :+593</label>
+            </value>
+            <value>
+                <fullName>Egypt :+20</fullName>
+                <default>false</default>
+                <label>Egypt :+20</label>
+            </value>
+            <value>
+                <fullName>El Salvador :+503</fullName>
+                <default>false</default>
+                <label>El Salvador :+503</label>
+            </value>
+            <value>
+                <fullName>Equatorial Guinea :+240</fullName>
+                <default>false</default>
+                <label>Equatorial Guinea :+240</label>
+            </value>
+            <value>
+                <fullName>Eritrea :+291</fullName>
+                <default>false</default>
+                <label>Eritrea :+291</label>
+            </value>
+            <value>
+                <fullName>Estonia :+372</fullName>
+                <default>false</default>
+                <label>Estonia :+372</label>
+            </value>
+            <value>
+                <fullName>Eswatini :+268</fullName>
+                <default>false</default>
+                <label>Eswatini :+268</label>
+            </value>
+            <value>
+                <fullName>Ethiopia :+251</fullName>
+                <default>false</default>
+                <label>Ethiopia :+251</label>
+            </value>
+            <value>
+                <fullName>Falkland Islands :+500</fullName>
+                <default>false</default>
+                <label>Falkland Islands :+500</label>
+            </value>
+            <value>
+                <fullName>Faroe Islands :+298</fullName>
+                <default>false</default>
+                <label>Faroe Islands :+298</label>
+            </value>
+            <value>
+                <fullName>Fiji :+679</fullName>
+                <default>false</default>
+                <label>Fiji :+679</label>
+            </value>
+            <value>
+                <fullName>Finland :+358</fullName>
+                <default>false</default>
+                <label>Finland :+358</label>
+            </value>
+            <value>
+                <fullName>France :+33</fullName>
+                <default>false</default>
+                <label>France :+33</label>
+            </value>
+            <value>
+                <fullName>French Guiana :+594</fullName>
+                <default>false</default>
+                <label>French Guiana :+594</label>
+            </value>
+            <value>
+                <fullName>French Polynesia :+689</fullName>
+                <default>false</default>
+                <label>French Polynesia :+689</label>
+            </value>
+            <value>
+                <fullName>Gabon :+241</fullName>
+                <default>false</default>
+                <label>Gabon :+241</label>
+            </value>
+            <value>
+                <fullName>Gambia :+220</fullName>
+                <default>false</default>
+                <label>Gambia :+220</label>
+            </value>
+            <value>
+                <fullName>Georgia :+995</fullName>
+                <default>false</default>
+                <label>Georgia :+995</label>
+            </value>
+            <value>
+                <fullName>Germany :+49</fullName>
+                <default>false</default>
+                <label>Germany :+49</label>
+            </value>
+            <value>
+                <fullName>Ghana :+233</fullName>
+                <default>false</default>
+                <label>Ghana :+233</label>
+            </value>
+            <value>
+                <fullName>Gibraltar :+350</fullName>
+                <default>false</default>
+                <label>Gibraltar :+350</label>
+            </value>
+            <value>
+                <fullName>Greece :+30</fullName>
+                <default>false</default>
+                <label>Greece :+30</label>
+            </value>
+            <value>
+                <fullName>Greenland :+299</fullName>
+                <default>false</default>
+                <label>Greenland :+299</label>
+            </value>
+            <value>
+                <fullName>Grenada :+1473</fullName>
+                <default>false</default>
+                <label>Grenada :+1473</label>
+            </value>
+            <value>
+                <fullName>Guadeloupe :+590</fullName>
+                <default>false</default>
+                <label>Guadeloupe :+590</label>
+            </value>
+            <value>
+                <fullName>Guam :+1671</fullName>
+                <default>false</default>
+                <label>Guam :+1671</label>
+            </value>
+            <value>
+                <fullName>Guatemala :+502</fullName>
+                <default>false</default>
+                <label>Guatemala :+502</label>
+            </value>
+            <value>
+                <fullName>Guernsey :+44</fullName>
+                <default>false</default>
+                <label>Guernsey :+44</label>
+            </value>
+            <value>
+                <fullName>Guinea :+224</fullName>
+                <default>false</default>
+                <label>Guinea :+224</label>
+            </value>
+            <value>
+                <fullName>Guinea-Bissau :+245</fullName>
+                <default>false</default>
+                <label>Guinea-Bissau :+245</label>
+            </value>
+            <value>
+                <fullName>Guyana :+592</fullName>
+                <default>false</default>
+                <label>Guyana :+592</label>
+            </value>
+            <value>
+                <fullName>Haiti :+509</fullName>
+                <default>false</default>
+                <label>Haiti :+509</label>
+            </value>
+            <value>
+                <fullName>Honduras :+504</fullName>
+                <default>false</default>
+                <label>Honduras :+504</label>
+            </value>
+            <value>
+                <fullName>Hong Kong :+852</fullName>
+                <default>false</default>
+                <label>Hong Kong :+852</label>
+            </value>
+            <value>
+                <fullName>Hungary :+36</fullName>
+                <default>false</default>
+                <label>Hungary :+36</label>
+            </value>
+            <value>
+                <fullName>Iceland :+354</fullName>
+                <default>false</default>
+                <label>Iceland :+354</label>
+            </value>
+            <value>
+                <fullName>India :+91</fullName>
+                <default>false</default>
+                <label>India :+91</label>
+            </value>
+            <value>
+                <fullName>Indonesia :+62</fullName>
+                <default>false</default>
+                <label>Indonesia :+62</label>
+            </value>
+            <value>
+                <fullName>Iran :+98</fullName>
+                <default>false</default>
+                <label>Iran :+98</label>
+            </value>
+            <value>
+                <fullName>Iraq :+964</fullName>
+                <default>false</default>
+                <label>Iraq :+964</label>
+            </value>
+            <value>
+                <fullName>Ireland :+353</fullName>
+                <default>false</default>
+                <label>Ireland :+353</label>
+            </value>
+            <value>
+                <fullName>Isle of Man :+44</fullName>
+                <default>false</default>
+                <label>Isle of Man :+44</label>
+            </value>
+            <value>
+                <fullName>Israel :+972</fullName>
+                <default>false</default>
+                <label>Israel :+972</label>
+            </value>
+            <value>
+                <fullName>Italy :+39</fullName>
+                <default>false</default>
+                <label>Italy :+39</label>
+            </value>
+            <value>
+                <fullName>Jamaica :+1876</fullName>
+                <default>false</default>
+                <label>Jamaica :+1876</label>
+            </value>
+            <value>
+                <fullName>Japan :+81</fullName>
+                <default>false</default>
+                <label>Japan :+81</label>
+            </value>
+            <value>
+                <fullName>Jersey :+44</fullName>
+                <default>false</default>
+                <label>Jersey :+44</label>
+            </value>
+            <value>
+                <fullName>Jordan :+962</fullName>
+                <default>false</default>
+                <label>Jordan :+962</label>
+            </value>
+            <value>
+                <fullName>Kazakhstan :+7</fullName>
+                <default>false</default>
+                <label>Kazakhstan :+7</label>
+            </value>
+            <value>
+                <fullName>Kenya :+254</fullName>
+                <default>false</default>
+                <label>Kenya :+254</label>
+            </value>
+            <value>
+                <fullName>Kiribati :+686</fullName>
+                <default>false</default>
+                <label>Kiribati :+686</label>
+            </value>
+            <value>
+                <fullName>Kosovo :+383</fullName>
+                <default>false</default>
+                <label>Kosovo :+383</label>
+            </value>
+            <value>
+                <fullName>Kuwait :+965</fullName>
+                <default>false</default>
+                <label>Kuwait :+965</label>
+            </value>
+            <value>
+                <fullName>Kyrgyzstan :+996</fullName>
+                <default>false</default>
+                <label>Kyrgyzstan :+996</label>
+            </value>
+            <value>
+                <fullName>Laos :+856</fullName>
+                <default>false</default>
+                <label>Laos :+856</label>
+            </value>
+            <value>
+                <fullName>Latvia :+371</fullName>
+                <default>false</default>
+                <label>Latvia :+371</label>
+            </value>
+            <value>
+                <fullName>Lebanon :+961</fullName>
+                <default>false</default>
+                <label>Lebanon :+961</label>
+            </value>
+            <value>
+                <fullName>Lesotho :+266</fullName>
+                <default>false</default>
+                <label>Lesotho :+266</label>
+            </value>
+            <value>
+                <fullName>Liberia :+231</fullName>
+                <default>false</default>
+                <label>Liberia :+231</label>
+            </value>
+            <value>
+                <fullName>Libya :+218</fullName>
+                <default>false</default>
+                <label>Libya :+218</label>
+            </value>
+            <value>
+                <fullName>Liechtenstein :+423</fullName>
+                <default>false</default>
+                <label>Liechtenstein :+423</label>
+            </value>
+            <value>
+                <fullName>Lithuania :+370</fullName>
+                <default>false</default>
+                <label>Lithuania :+370</label>
+            </value>
+            <value>
+                <fullName>Luxembourg :+352</fullName>
+                <default>false</default>
+                <label>Luxembourg :+352</label>
+            </value>
+            <value>
+                <fullName>Macau :+853</fullName>
+                <default>false</default>
+                <label>Macau :+853</label>
+            </value>
+            <value>
+                <fullName>Madagascar :+261</fullName>
+                <default>false</default>
+                <label>Madagascar :+261</label>
+            </value>
+            <value>
+                <fullName>Malawi :+265</fullName>
+                <default>false</default>
+                <label>Malawi :+265</label>
+            </value>
+            <value>
+                <fullName>Malaysia :+60</fullName>
+                <default>false</default>
+                <label>Malaysia :+60</label>
+            </value>
+            <value>
+                <fullName>Maldives :+960</fullName>
+                <default>false</default>
+                <label>Maldives :+960</label>
+            </value>
+            <value>
+                <fullName>Mali :+223</fullName>
+                <default>false</default>
+                <label>Mali :+223</label>
+            </value>
+            <value>
+                <fullName>Malta :+356</fullName>
+                <default>false</default>
+                <label>Malta :+356</label>
+            </value>
+            <value>
+                <fullName>Marshall Islands :+692</fullName>
+                <default>false</default>
+                <label>Marshall Islands :+692</label>
+            </value>
+            <value>
+                <fullName>Martinique :+596</fullName>
+                <default>false</default>
+                <label>Martinique :+596</label>
+            </value>
+            <value>
+                <fullName>Mauritania :+222</fullName>
+                <default>false</default>
+                <label>Mauritania :+222</label>
+            </value>
+            <value>
+                <fullName>Mauritius :+230</fullName>
+                <default>false</default>
+                <label>Mauritius :+230</label>
+            </value>
+            <value>
+                <fullName>Mayotte :+262</fullName>
+                <default>false</default>
+                <label>Mayotte :+262</label>
+            </value>
+            <value>
+                <fullName>Mexico :+52</fullName>
+                <default>false</default>
+                <label>Mexico :+52</label>
+            </value>
+            <value>
+                <fullName>Micronesia :+691</fullName>
+                <default>false</default>
+                <label>Micronesia :+691</label>
+            </value>
+            <value>
+                <fullName>Moldova :+373</fullName>
+                <default>false</default>
+                <label>Moldova :+373</label>
+            </value>
+            <value>
+                <fullName>Monaco :+377</fullName>
+                <default>false</default>
+                <label>Monaco :+377</label>
+            </value>
+            <value>
+                <fullName>Mongolia :+976</fullName>
+                <default>false</default>
+                <label>Mongolia :+976</label>
+            </value>
+            <value>
+                <fullName>Montenegro :+382</fullName>
+                <default>false</default>
+                <label>Montenegro :+382</label>
+            </value>
+            <value>
+                <fullName>Montserrat :+1664</fullName>
+                <default>false</default>
+                <label>Montserrat :+1664</label>
+            </value>
+            <value>
+                <fullName>Morocco :+212</fullName>
+                <default>false</default>
+                <label>Morocco :+212</label>
+            </value>
+            <value>
+                <fullName>Mozambique :+258</fullName>
+                <default>false</default>
+                <label>Mozambique :+258</label>
+            </value>
+            <value>
+                <fullName>Myanmar :+95</fullName>
+                <default>false</default>
+                <label>Myanmar :+95</label>
+            </value>
+            <value>
+                <fullName>Namibia :+264</fullName>
+                <default>false</default>
+                <label>Namibia :+264</label>
+            </value>
+            <value>
+                <fullName>Nauru :+674</fullName>
+                <default>false</default>
+                <label>Nauru :+674</label>
+            </value>
+            <value>
+                <fullName>Nepal :+977</fullName>
+                <default>false</default>
+                <label>Nepal :+977</label>
+            </value>
+            <value>
+                <fullName>Netherlands :+31</fullName>
+                <default>false</default>
+                <label>Netherlands :+31</label>
+            </value>
+            <value>
+                <fullName>New Caledonia :+687</fullName>
+                <default>false</default>
+                <label>New Caledonia :+687</label>
+            </value>
+            <value>
+                <fullName>New Zealand :+64</fullName>
+                <default>false</default>
+                <label>New Zealand :+64</label>
+            </value>
+            <value>
+                <fullName>Nicaragua :+505</fullName>
+                <default>false</default>
+                <label>Nicaragua :+505</label>
+            </value>
+            <value>
+                <fullName>Niger :+227</fullName>
+                <default>false</default>
+                <label>Niger :+227</label>
+            </value>
+            <value>
+                <fullName>Nigeria :+234</fullName>
+                <default>false</default>
+                <label>Nigeria :+234</label>
+            </value>
+            <value>
+                <fullName>Niue :+683</fullName>
+                <default>false</default>
+                <label>Niue :+683</label>
+            </value>
+            <value>
+                <fullName>Norfolk Island :+672</fullName>
+                <default>false</default>
+                <label>Norfolk Island :+672</label>
+            </value>
+            <value>
+                <fullName>North Korea :+850</fullName>
+                <default>false</default>
+                <label>North Korea :+850</label>
+            </value>
+            <value>
+                <fullName>North Macedonia :+389</fullName>
+                <default>false</default>
+                <label>North Macedonia :+389</label>
+            </value>
+            <value>
+                <fullName>Northern Mariana Islands :+1670</fullName>
+                <default>false</default>
+                <label>Northern Mariana Islands :+1670</label>
+            </value>
+            <value>
+                <fullName>Norway :+47</fullName>
+                <default>false</default>
+                <label>Norway :+47</label>
+            </value>
+            <value>
+                <fullName>Oman :+968</fullName>
+                <default>false</default>
+                <label>Oman :+968</label>
+            </value>
+            <value>
+                <fullName>Pakistan :+92</fullName>
+                <default>false</default>
+                <label>Pakistan :+92</label>
+            </value>
+            <value>
+                <fullName>Palau :+680</fullName>
+                <default>false</default>
+                <label>Palau :+680</label>
+            </value>
+            <value>
+                <fullName>Palestine :+970</fullName>
+                <default>false</default>
+                <label>Palestine :+970</label>
+            </value>
+            <value>
+                <fullName>Panama :+507</fullName>
+                <default>false</default>
+                <label>Panama :+507</label>
+            </value>
+            <value>
+                <fullName>Papua New Guinea :+675</fullName>
+                <default>false</default>
+                <label>Papua New Guinea :+675</label>
+            </value>
+            <value>
+                <fullName>Paraguay :+595</fullName>
+                <default>false</default>
+                <label>Paraguay :+595</label>
+            </value>
+            <value>
+                <fullName>Peru :+51</fullName>
+                <default>false</default>
+                <label>Peru :+51</label>
+            </value>
+            <value>
+                <fullName>Philippines :+63</fullName>
+                <default>false</default>
+                <label>Philippines :+63</label>
+            </value>
+            <value>
+                <fullName>Pitcairn :+64</fullName>
+                <default>false</default>
+                <label>Pitcairn :+64</label>
+            </value>
+            <value>
+                <fullName>Poland :+48</fullName>
+                <default>false</default>
+                <label>Poland :+48</label>
+            </value>
+            <value>
+                <fullName>Portugal :+351</fullName>
+                <default>false</default>
+                <label>Portugal :+351</label>
+            </value>
+            <value>
+                <fullName>Puerto Rico :+1</fullName>
+                <default>false</default>
+                <label>Puerto Rico :+1</label>
+            </value>
+            <value>
+                <fullName>Qatar :+974</fullName>
+                <default>false</default>
+                <label>Qatar :+974</label>
+            </value>
+            <value>
+                <fullName>Reunion :+262</fullName>
+                <default>false</default>
+                <label>Reunion :+262</label>
+            </value>
+            <value>
+                <fullName>Romania :+40</fullName>
+                <default>false</default>
+                <label>Romania :+40</label>
+            </value>
+            <value>
+                <fullName>Russia :+7</fullName>
+                <default>false</default>
+                <label>Russia :+7</label>
+            </value>
+            <value>
+                <fullName>Rwanda :+250</fullName>
+                <default>false</default>
+                <label>Rwanda :+250</label>
+            </value>
+            <value>
+                <fullName>Saint Barthelemy :+590</fullName>
+                <default>false</default>
+                <label>Saint Barthelemy :+590</label>
+            </value>
+            <value>
+                <fullName>Saint Helena :+290</fullName>
+                <default>false</default>
+                <label>Saint Helena :+290</label>
+            </value>
+            <value>
+                <fullName>Saint Kitts and Nevis :+1869</fullName>
+                <default>false</default>
+                <label>Saint Kitts and Nevis :+1869</label>
+            </value>
+            <value>
+                <fullName>Saint Lucia :+1758</fullName>
+                <default>false</default>
+                <label>Saint Lucia :+1758</label>
+            </value>
+            <value>
+                <fullName>Saint Martin :+590</fullName>
+                <default>false</default>
+                <label>Saint Martin :+590</label>
+            </value>
+            <value>
+                <fullName>Saint Pierre and Miquelon :+508</fullName>
+                <default>false</default>
+                <label>Saint Pierre and Miquelon :+508</label>
+            </value>
+            <value>
+                <fullName>Saint Vincent and the Grenadines :+1784</fullName>
+                <default>false</default>
+                <label>Saint Vincent and the Grenadines :+1784</label>
+            </value>
+            <value>
+                <fullName>Samoa :+685</fullName>
+                <default>false</default>
+                <label>Samoa :+685</label>
+            </value>
+            <value>
+                <fullName>San Marino :+378</fullName>
+                <default>false</default>
+                <label>San Marino :+378</label>
+            </value>
+            <value>
+                <fullName>Sao Tome and Principe :+239</fullName>
+                <default>false</default>
+                <label>Sao Tome and Principe :+239</label>
+            </value>
+            <value>
+                <fullName>Saudi Arabia :+966</fullName>
+                <default>false</default>
+                <label>Saudi Arabia :+966</label>
+            </value>
+            <value>
+                <fullName>Scotland :+44</fullName>
+                <default>false</default>
+                <label>Scotland :+44</label>
+            </value>
+            <value>
+                <fullName>Senegal :+221</fullName>
+                <default>false</default>
+                <label>Senegal :+221</label>
+            </value>
+            <value>
+                <fullName>Serbia :+381</fullName>
+                <default>false</default>
+                <label>Serbia :+381</label>
+            </value>
+            <value>
+                <fullName>Seychelles :+248</fullName>
+                <default>false</default>
+                <label>Seychelles :+248</label>
+            </value>
+            <value>
+                <fullName>Sierra Leone :+232</fullName>
+                <default>false</default>
+                <label>Sierra Leone :+232</label>
+            </value>
+            <value>
+                <fullName>Singapore :+65</fullName>
+                <default>false</default>
+                <label>Singapore :+65</label>
+            </value>
+            <value>
+                <fullName>Sint Maarten :+1721</fullName>
+                <default>false</default>
+                <label>Sint Maarten :+1721</label>
+            </value>
+            <value>
+                <fullName>Slovakia :+421</fullName>
+                <default>false</default>
+                <label>Slovakia :+421</label>
+            </value>
+            <value>
+                <fullName>Slovenia :+386</fullName>
+                <default>false</default>
+                <label>Slovenia :+386</label>
+            </value>
+            <value>
+                <fullName>Solomon Islands :+677</fullName>
+                <default>false</default>
+                <label>Solomon Islands :+677</label>
+            </value>
+            <value>
+                <fullName>Somalia :+252</fullName>
+                <default>false</default>
+                <label>Somalia :+252</label>
+            </value>
+            <value>
+                <fullName>South Africa :+27</fullName>
+                <default>false</default>
+                <label>South Africa :+27</label>
+            </value>
+            <value>
+                <fullName>South Korea :+82</fullName>
+                <default>false</default>
+                <label>South Korea :+82</label>
+            </value>
+            <value>
+                <fullName>South Sudan :+211</fullName>
+                <default>false</default>
+                <label>South Sudan :+211</label>
+            </value>
+            <value>
+                <fullName>Spain :+34</fullName>
+                <default>false</default>
+                <label>Spain :+34</label>
+            </value>
+            <value>
+                <fullName>Sri Lanka :+94</fullName>
+                <default>false</default>
+                <label>Sri Lanka :+94</label>
+            </value>
+            <value>
+                <fullName>State of Palestine :+970</fullName>
+                <default>false</default>
+                <label>State of Palestine :+970</label>
+            </value>
+            <value>
+                <fullName>Sudan :+249</fullName>
+                <default>false</default>
+                <label>Sudan :+249</label>
+            </value>
+            <value>
+                <fullName>Suriname :+597</fullName>
+                <default>false</default>
+                <label>Suriname :+597</label>
+            </value>
+            <value>
+                <fullName>Sweden :+46</fullName>
+                <default>false</default>
+                <label>Sweden :+46</label>
+            </value>
+            <value>
+                <fullName>Switzerland :+41</fullName>
+                <default>false</default>
+                <label>Switzerland :+41</label>
+            </value>
+            <value>
+                <fullName>Syria :+963</fullName>
+                <default>false</default>
+                <label>Syria :+963</label>
+            </value>
+            <value>
+                <fullName>Taiwan :+886</fullName>
+                <default>false</default>
+                <label>Taiwan :+886</label>
+            </value>
+            <value>
+                <fullName>Tajikistan :+992</fullName>
+                <default>false</default>
+                <label>Tajikistan :+992</label>
+            </value>
+            <value>
+                <fullName>Tanzania :+255</fullName>
+                <default>false</default>
+                <label>Tanzania :+255</label>
+            </value>
+            <value>
+                <fullName>Thailand :+66</fullName>
+                <default>false</default>
+                <label>Thailand :+66</label>
+            </value>
+            <value>
+                <fullName>Timor-Leste :+670</fullName>
+                <default>false</default>
+                <label>Timor-Leste :+670</label>
+            </value>
+            <value>
+                <fullName>Togo :+228</fullName>
+                <default>false</default>
+                <label>Togo :+228</label>
+            </value>
+            <value>
+                <fullName>Tokelau :+690</fullName>
+                <default>false</default>
+                <label>Tokelau :+690</label>
+            </value>
+            <value>
+                <fullName>Tonga :+676</fullName>
+                <default>false</default>
+                <label>Tonga :+676</label>
+            </value>
+            <value>
+                <fullName>Trinidad and Tobago :+1868</fullName>
+                <default>false</default>
+                <label>Trinidad and Tobago :+1868</label>
+            </value>
+            <value>
+                <fullName>Tunisia :+216</fullName>
+                <default>false</default>
+                <label>Tunisia :+216</label>
+            </value>
+            <value>
+                <fullName>Turkey :+90</fullName>
+                <default>false</default>
+                <label>Turkey :+90</label>
+            </value>
+            <value>
+                <fullName>Turkmenistan :+993</fullName>
+                <default>false</default>
+                <label>Turkmenistan :+993</label>
+            </value>
+            <value>
+                <fullName>Turks and Caicos Islands :+1649</fullName>
+                <default>false</default>
+                <label>Turks and Caicos Islands :+1649</label>
+            </value>
+            <value>
+                <fullName>Tuvalu :+688</fullName>
+                <default>false</default>
+                <label>Tuvalu :+688</label>
+            </value>
+            <value>
+                <fullName>U.S. Virgin Islands :+1340</fullName>
+                <default>false</default>
+                <label>U.S. Virgin Islands :+1340</label>
+            </value>
+            <value>
+                <fullName>Uganda :+256</fullName>
+                <default>false</default>
+                <label>Uganda :+256</label>
+            </value>
+            <value>
+                <fullName>Ukraine :+380</fullName>
+                <default>false</default>
+                <label>Ukraine :+380</label>
+            </value>
+            <value>
+                <fullName>United Arab Emirates :+971</fullName>
+                <default>false</default>
+                <label>United Arab Emirates :+971</label>
+            </value>
+            <value>
+                <fullName>United Kingdom :+44</fullName>
+                <default>false</default>
+                <label>United Kingdom :+44</label>
+            </value>
+            <value>
+                <fullName>United States :+1</fullName>
+                <default>false</default>
+                <label>United States :+1</label>
+            </value>
+            <value>
+                <fullName>Uruguay :+598</fullName>
+                <default>false</default>
+                <label>Uruguay :+598</label>
+            </value>
+            <value>
+                <fullName>Uzbekistan :+998</fullName>
+                <default>false</default>
+                <label>Uzbekistan :+998</label>
+            </value>
+            <value>
+                <fullName>Vanuatu :+678</fullName>
+                <default>false</default>
+                <label>Vanuatu :+678</label>
+            </value>
+            <value>
+                <fullName>Vatican City :+379</fullName>
+                <default>false</default>
+                <label>Vatican City :+379</label>
+            </value>
+            <value>
+                <fullName>Venezuela :+58</fullName>
+                <default>false</default>
+                <label>Venezuela :+58</label>
+            </value>
+            <value>
+                <fullName>Vietnam :+84</fullName>
+                <default>false</default>
+                <label>Vietnam :+84</label>
+            </value>
+            <value>
+                <fullName>Wales :+44</fullName>
+                <default>false</default>
+                <label>Wales :+44</label>
+            </value>
+            <value>
+                <fullName>Wallis and Futuna :+681</fullName>
+                <default>false</default>
+                <label>Wallis and Futuna :+681</label>
+            </value>
+            <value>
+                <fullName>Western Sahara :+212</fullName>
+                <default>false</default>
+                <label>Western Sahara :+212</label>
+            </value>
+            <value>
+                <fullName>Yemen :+967</fullName>
+                <default>false</default>
+                <label>Yemen :+967</label>
+            </value>
+            <value>
+                <fullName>Zambia :+260</fullName>
+                <default>false</default>
+                <label>Zambia :+260</label>
+            </value>
+            <value>
+                <fullName>Zimbabwe :+263</fullName>
+                <default>false</default>
+                <label>Zimbabwe :+263</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

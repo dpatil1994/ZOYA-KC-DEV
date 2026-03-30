@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blocked_Start_Date_Cant_be_Future_Date</fullName>
+    <active>true</active>
+    <errorConditionFormula>Blocked_Start_Date__c &lt;&gt;  TODAY()</errorConditionFormula>
+    <errorDisplayField>Blocked_Start_Date__c</errorDisplayField>
+    <errorMessage>Blocked Start Date must be today</errorMessage>
+</ValidationRule>

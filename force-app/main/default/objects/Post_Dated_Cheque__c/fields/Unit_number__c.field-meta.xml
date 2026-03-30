@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Unit_number__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Unit number</label>
+    <referenceTo>Property_Unit__c</referenceTo>
+    <relationshipLabel>Post Dated Cheques</relationshipLabel>
+    <relationshipName>Post_Dated_Cheques</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Performance_Review</fullName>
+    <fields>Name</fields>
+    <fields>Employee__c</fields>
+    <fields>Review_Status__c</fields>
+    <fields>Final_Rating__c</fields>
+    <fields>HR_Calibration__c</fields>
+    <fields>Manager_Rating__c</fields>
+    <label>Performance Review</label>
+</CompactLayout>

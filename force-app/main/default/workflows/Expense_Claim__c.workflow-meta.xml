@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Final_Rejection_Status</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Final Rejection Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Status_update</fullName>
+        <field>Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>Final Status update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finance_Approval_Field_Update</fullName>
+        <description>Finance Approval Field Update</description>
+        <field>Status__c</field>
+        <literalValue>Finance Approved</literalValue>
+        <name>Finance Approval Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Finance_Checkbox_checked</fullName>
+        <field>Finance_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>Finance Checkbox checked</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>HR_Approved_Checkbox_Checked</fullName>
+        <field>HR_Approved__c</field>
+        <literalValue>1</literalValue>
+        <name>HR Approved Checkbox Checked</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Hr_Manager_approval_Status_update</fullName>
+        <description>Hr Manager approval Status update</description>
+        <field>Status__c</field>
+        <literalValue>HR Approved</literalValue>
+        <name>Hr Manager approval Status update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>If_Rejected_then_update_checkbox</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>If Rejected then update checkbox</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>If_rejected_status_update_to_rejected</fullName>
+        <description>If rejected status update to rejected</description>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>If rejected status update to rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Manager_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Manager Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Update</fullName>
+        <field>Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Status Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_update_to_Manager_approve</fullName>
+        <field>Status__c</field>
+        <literalValue>Manager Approved</literalValue>
+        <name>Status update to Manager approve</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Final_Approval_Field_Update</fullName>
+        <field>Status__c</field>
+        <literalValue>Locked</literalValue>
+        <name>Final Approval Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Rejection_Field_Update</fullName>
+        <field>Status__c</field>
+        <literalValue>Cancelled</literalValue>
+        <name>Final Rejection Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>HR_Approval_get_false</fullName>
+        <field>HR_Approval__c</field>
+        <literalValue>0</literalValue>
+        <name>HR Approval get false</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>HR_Manager_Field_Update</fullName>
+        <field>HR_Approval__c</field>
+        <literalValue>1</literalValue>
+        <name>HR Manager Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>HR_Manager_Status_Update</fullName>
+        <field>Status__c</field>
+        <literalValue>HR Approved</literalValue>
+        <name>HR Manager Status Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>HR_Reject_Field_Update</fullName>
+        <field>Status__c</field>
+        <literalValue>HR Rejected</literalValue>
+        <name>HR Reject Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Manager_Approval</fullName>
+        <field>Manager_Approval__c</field>
+        <literalValue>1</literalValue>
+        <name>Manager Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Manager_Rejected</fullName>
+        <field>Status__c</field>
+        <literalValue>Manager Rejected</literalValue>
+        <name>Manager Rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Manager_approval_get_false</fullName>
+        <field>Manager_Approval__c</field>
+        <literalValue>0</literalValue>
+        <name>Manager approval get false</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_is_submitted</fullName>
+        <field>Status__c</field>
+        <literalValue>Manager Approved</literalValue>
+        <name>Status is submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

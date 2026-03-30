@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Currency_on_Approved</fullName>
+    <active>true</active>
+    <description>Currency can&apos;t be change when Approved Status = Approved</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(Currency__c),
+    ISPICKVAL(Approval_Status__c, &quot;Approved&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Currency__c</errorDisplayField>
+    <errorMessage>Currency cannot be changed after the record is Approved.</errorMessage>
+</ValidationRule>

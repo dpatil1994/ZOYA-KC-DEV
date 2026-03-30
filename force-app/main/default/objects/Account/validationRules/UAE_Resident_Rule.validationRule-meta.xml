@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UAE_Resident_Rule</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ISPICKVAL( UAE_Resident__c , &quot;Yes&quot;),
+OR(
+ISBLANK( Emirates_No__pc ),
+ISBLANK(  Passport_Issue_Date__pc ),
+ISBLANK(   Passport_Expiry_Date__pc )
+)
+)</errorConditionFormula>
+    <errorMessage>For UAE Residents, Emirates ID, Passport Issue Date, and Passport Expiry Date are mandatory.</errorMessage>
+</ValidationRule>

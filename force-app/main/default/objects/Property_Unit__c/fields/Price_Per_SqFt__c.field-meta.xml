@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Price_Per_SqFt__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;AED &quot; &amp; TEXT(ROUND(Original_Price__c / Total_Area_Sq_ft__c, 2))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Unit Price divided by Total Area (IA + BA) Sq.ft</inlineHelpText>
+    <label>Price Per SqFt</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

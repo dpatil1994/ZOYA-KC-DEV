@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Re: Notification for paying of Overdue Payment</name>
+    <pageDevName>Re_Notification_for_paying_of_Overdue_Payment</pageDevName>
+    <relatedEntityType>Opportunity</relatedEntityType>
+    <style>none</style>
+    <subject>Re: Notification for paying of Overdue Payment الموضوع: إشعار بدفع مبلغ متأخر</subject>
+    <textOnly>Customer : 
+
+P.O. Box :
+
+Email ID :
+
+Mobile :
+
+Telephone No :
+
+Insert Text Here 
+
+: عميل 
+
+: صندوق بريد 
+
+: معرف البريد الإلكتروني 
+
+: متحرك 
+
+: رقم الهاتف 
+
+Dear Customer,
+
+Referenceto[SaleandPurchaseAgreement/UnitReservation Contract] Dated between us,
+
+concerning Unit No. 
+
+Project {{{Opportunity.Project_Name__c}}}
+
+in Dubai(“theContract”)Thecurrentpercentageofthis
+
+projectis 15.05
+
+عزيزي العميل،
+
+إشارة إلى اتفاقية البيع والشراء / عقد حجز الوحدة
+
+ﺑﺎﻟﻮﺣﺪةﻳﺘﻌﻠﻖﻓﻴﻤﺎﺑﺘﺎرﻳﺦﺑﻴﻨﻨﺎاﻟﻤﺒﺮم
+
+ﻣﺸﺮوعﺿﻤﻦرﻗﻢبريستين من زويا
+
+(&quot;اﻟﻌﻘﺪ&quot;)دﺑﻲﻓﻲاﻟﻜﺎﺋﻦ&quot;
+
+تبلغ النسبة المئوية الحالية لهذا المشروع 15.05
+
+Please note that you are in default in payment of purchase price as per the payment schedule in the Contract. As per the Dubai Land Department rules and regulations as well as per the Contract, you shall be liable to pay the 37.05 % having a total amount of AED 611,325.00 from the Unit purchase price, therefore we serve you this legal notice to settle the outstanding amount within (30) daysfrom date of Serving this LegalNotice.
+
+يرجى العلم بأنك متخلف عن سداد ثمن الشراء وفقًا لجدول الدفعات الوارد في العقد. ووفقًا لقواعد وأنظمة دائرة الأراضي والأملاك في دبي، وكذلك وفقًا للعقد، فأنت ملزم بدفع نسبة 37.05%، أي ما مجموعه 611,325.00 درهمًا إماراتيًا، من ثمن شراء الوحدة. لذا، نوجه إليك هذا الإشعار القانوني لتسوية المبلغ المستحق خلال (30) يومًا من تاريخ هذا الإشعار.
+
+Should you fail to pay the full outstanding amount within the timescales set out above otherwise we will proceed to the judicial procedures, we hereby reserve our rights under the Contract,andtocommencelegal
+
+proceedingsasperDubai Laws/ UAE including law No. (13) / 2008 and its amendments and resolution of the Executive Council No. (6) in 2010. 
+
+في حال عدم سدادكم كامل المبلغ المستحق خلال
+
+المدة المحددة أعلاه، وإلا سنلجأ إلى الإجراءات القضائية، فإننا نحتفظ بحقوقنا بموجب هذا العقد، وفي بدء الإجراءات القانونية
+
+وفقاً لقوانين دبي/ دولة الإمارات العربية المتحدة، بما في ذلك القانون رقم (13) لسنة 2008 وتعديلاته وقرار المجلس التنفيذي رقم (6) لسنة 2010.
+
+Ifyouhavealreadymadetheoverduepayment,pleaseignorethisNotification.
+
+إذا كنت قد قمت بالفعل بسداد المبلغ المتأخر، فيرجى
+
+تجاهل هذا الإشعار.
+
+Payment should be made payable to the below account number,pleasealsoincludeyourfullname andapartmentnumber on the bank transfer document.
+
+يجب أن يكون الدفع مستحق الدفع لرقم الحساب أدناه، ويرجى أيضًا تضمين اسمك الكامل ورقم شقتك في مستند التحويل المصرفي.
+
+AccountName: 
+
+AccountNo.:
+
+IBANNo.:
+
+BankName:
+
+Branch:
+
+SwiftCode :
+
+{{{Opportunity.Name}}} 
+
+{{{Opportunity.AccountId}}} 
+
+: إسم الحساب
+
+: رقم الحساب
+
+: رقم الحساب
+
+: اسم البنك
+
+: فرع
+
+: رمز السرعة
+
+Developer Contact Address:
+
+عنوان الاتصال بالمطور:
+
+Building 3 - P02, P03 - Business Bay - Bay Square - Dubai, UAE
+
+P.O.BoxTelNo.+
+
+Email:
+
+This notification is prepared in the Arabic and English languages and if any discrepancy is found between the Arabic and the English the Arabic version of this notification shall prevail.
+
+Yours Sincerely,
+
+تم إعداد هذا الإشعار باللغتين العربية والإنجليزية، وفي حالة وجود أي اختلاف بين النسخة العربية والنسخة الإنجليزية، فإن النسخة العربية من هذا الإشعار هي التي تسود.
+
+مع خالص التحيات،
+
+Forandonbehalf ofZOYA ONE REAL ESTATE DEVELOPMENTS L.L.C
+
+ClientRelationsDepartment
+
+ZOYA ONE REALﻋﻦﺑﺎﻟﻨﻴﺎﺑﺔ
+
+ESTATE DEVELOPMENTSL.L.C
+
+اﻟﻌﻤﻼءﻋﻼﻗﺎتداﺋﺮة</textOnly>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

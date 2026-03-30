@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Attendance_Compact_Layouts</fullName>
+    <fields>Name</fields>
+    <fields>Employee_Name__c</fields>
+    <fields>Attendance_Status__c</fields>
+    <fields>Attendance_Date__c</fields>
+    <fields>Check_in_Time__c</fields>
+    <fields>Check_out_Time__c</fields>
+    <fields>OwnerId</fields>
+    <label>Attendance Compact Layouts</label>
+</CompactLayout>

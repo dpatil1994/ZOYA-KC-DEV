@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Investor_booking_cannot_proceed_to_Oqood</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL( Booking_Type__c , &quot;Investor Booking&quot;),
+    OR(
+        ISPICKVAL( StageName , &quot;Oqood Submission&quot;),
+        ISPICKVAL(StageName , &quot;Oqood Approved&quot;)
+    )
+)</errorConditionFormula>
+    <errorDisplayField>Booking_Type__c</errorDisplayField>
+    <errorMessage>For Investor Booking, the stage cannot be moved to Oqood Submitted or Oqood Approved.</errorMessage>
+</ValidationRule>

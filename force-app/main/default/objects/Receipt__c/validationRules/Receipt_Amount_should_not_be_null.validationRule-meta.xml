@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Receipt_Amount_should_not_be_null</fullName>
+    <active>true</active>
+    <description>Receipt Amount should not be null</description>
+    <errorConditionFormula>OR(
+    ISBLANK(Receipt_Amount__c),
+    Receipt_Amount__c &lt;= 0
+)</errorConditionFormula>
+    <errorMessage>Receipt Amount must be a positive value and cannot be blank.</errorMessage>
+</ValidationRule>

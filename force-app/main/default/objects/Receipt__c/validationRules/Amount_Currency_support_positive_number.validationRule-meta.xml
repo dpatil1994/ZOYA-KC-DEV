@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_Currency_support_positive_number</fullName>
+    <active>true</active>
+    <description>Amount in Currency only support positive number</description>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Amount_in_Currency__c)),
+    CONTAINS(TRIM(Amount_in_Currency__c), &quot;-&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Amount_in_Currency__c</errorDisplayField>
+    <errorMessage>Please enter a positive number. Negative values are not allowed.</errorMessage>
+</ValidationRule>

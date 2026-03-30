@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Performance_Goal_compact_layout</fullName>
+    <fields>Name</fields>
+    <fields>Completion__c</fields>
+    <fields>Performance_Review__c</fields>
+    <fields>Target_Value__c</fields>
+    <fields>CreatedById</fields>
+    <fields>LastModifiedById</fields>
+    <label>Performance Goal compact layout</label>
+</CompactLayout>

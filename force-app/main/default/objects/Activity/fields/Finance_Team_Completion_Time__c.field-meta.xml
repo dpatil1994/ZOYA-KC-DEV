@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Finance_Team_Completion_Time__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    OR(
+        ISBLANK(CompletedDateTime),
+        Owner:Queue.QueueName &lt;&gt; &quot;Finance Team&quot;
+    ),
+    &quot;&quot;,
+    
+    /* Total seconds */
+    IF(
+        (CompletedDateTime - CreatedDate) * 86400 &lt;= 0,
+        &quot;&quot;,
+        
+        /* Days */
+        IF(
+            FLOOR((CompletedDateTime - CreatedDate) * 86400 / 86400) &gt; 0,
+            TEXT(FLOOR((CompletedDateTime - CreatedDate) * 86400 / 86400)) &amp;
+            IF(
+                FLOOR((CompletedDateTime - CreatedDate) * 86400 / 86400) = 1,
+                &quot; Day &quot;,
+                &quot; Days &quot;
+            ),
+            &quot;&quot;
+        ) &amp;
+        
+        /* Hours */
+        IF(
+            FLOOR(
+                MOD((CompletedDateTime - CreatedDate) * 86400, 86400) / 3600
+            ) &gt; 0,
+            TEXT(
+                FLOOR(
+                    MOD((CompletedDateTime - CreatedDate) * 86400, 86400) / 3600
+                )
+            ) &amp;
+            IF(
+                FLOOR(
+                    MOD((CompletedDateTime - CreatedDate) * 86400, 86400) / 3600
+                ) = 1,
+                &quot; Hour &quot;,
+                &quot; Hours &quot;
+            ),
+            &quot;&quot;
+        ) &amp;
+        
+        /* Minutes */
+        IF(
+            FLOOR(
+                MOD((CompletedDateTime - CreatedDate) * 86400, 3600) / 60
+            ) &gt; 0,
+            TEXT(
+                FLOOR(
+                    MOD((CompletedDateTime - CreatedDate) * 86400, 3600) / 60
+                )
+            ) &amp;
+            IF(
+                FLOOR(
+                    MOD((CompletedDateTime - CreatedDate) * 86400, 3600) / 60
+                ) = 1,
+                &quot; Minute &quot;,
+                &quot; Minutes &quot;
+            ),
+            &quot;&quot;
+        ) &amp;
+        
+        /* Seconds */
+        IF(
+            FLOOR(MOD((CompletedDateTime - CreatedDate) * 86400, 60)) &gt; 0,
+            TEXT(FLOOR(MOD((CompletedDateTime - CreatedDate) * 86400, 60))) &amp;
+            IF(
+                FLOOR(MOD((CompletedDateTime - CreatedDate) * 86400, 60)) = 1,
+                &quot; Second&quot;,
+                &quot; Seconds&quot;
+            ),
+            &quot;&quot;
+        )
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Finance Team Completion Time</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expense_Claim_Line_Layout</fullName>
+    <fields>Name</fields>
+    <fields>Amount__c</fields>
+    <fields>Expense_Claim__c</fields>
+    <fields>Expense_Date__c</fields>
+    <fields>Expense_Type__c</fields>
+    <label>Expense Claim Line Layout</label>
+</CompactLayout>

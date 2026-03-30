@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timesheet_Compact_Layouts</fullName>
+    <fields>Employee__c</fields>
+    <fields>Name</fields>
+    <fields>Timesheet_Period__c</fields>
+    <fields>Status__c</fields>
+    <fields>HR_Approval__c</fields>
+    <fields>Manager_Approval__c</fields>
+    <label>Timesheet Compact Layouts</label>
+</CompactLayout>

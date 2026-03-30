@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Final_Approved</fullName>
+        <description>Final Approved</description>
+        <field>Status__c</field>
+        <literalValue>HR Approved</literalValue>
+        <name>Final Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_Rejection_Field_Update</fullName>
+        <description>Final Rejection Field Update</description>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Final Rejection Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Hr_Approval_Field_Update</fullName>
+        <description>Hr Approval Field Update</description>
+        <field>Status__c</field>
+        <literalValue>HR Approved</literalValue>
+        <name>Hr Approval Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Hr_Rejected_Field_Update</fullName>
+        <description>Hr Rejected Field Update</description>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>Hr Rejected Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>If_Rejected_Update_Field</fullName>
+        <description>If Rejected Update Field</description>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>If Rejected Update Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>If_reject_Update_the_Field</fullName>
+        <field>Status__c</field>
+        <literalValue>Rejected</literalValue>
+        <name>If reject Update the Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Initial_Field_Update</fullName>
+        <field>Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Initial Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Manager_Approved_Field_Update</fullName>
+        <field>Status__c</field>
+        <literalValue>Manager Approved</literalValue>
+        <name>Manager Approved Field Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Upadate_Field</fullName>
+        <field>Status__c</field>
+        <literalValue>Dept Head Approved</literalValue>
+        <name>Upadate Field</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

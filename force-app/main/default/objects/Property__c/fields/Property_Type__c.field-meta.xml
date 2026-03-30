@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Property_Type__c</fullName>
+    <label>Property Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Residential</fullName>
+                <default>false</default>
+                <label>Residential</label>
+            </value>
+            <value>
+                <fullName>Commercial</fullName>
+                <default>false</default>
+                <label>Commercial</label>
+            </value>
+            <value>
+                <fullName>Industrial</fullName>
+                <default>false</default>
+                <label>Industrial</label>
+            </value>
+            <value>
+                <fullName>Office Building</fullName>
+                <default>false</default>
+                <label>Office Building</label>
+            </value>
+            <value>
+                <fullName>Retail Space</fullName>
+                <default>false</default>
+                <label>Retail Space</label>
+            </value>
+            <value>
+                <fullName>Hotel</fullName>
+                <default>false</default>
+                <label>Hotel</label>
+            </value>
+            <value>
+                <fullName>Hospitality Properties</fullName>
+                <default>false</default>
+                <label>Hospitality Properties</label>
+            </value>
+            <value>
+                <fullName>Mixed Use</fullName>
+                <default>false</default>
+                <label>Mixed Use</label>
+            </value>
+            <value>
+                <fullName>Apartment</fullName>
+                <default>false</default>
+                <label>Apartment</label>
+            </value>
+            <value>
+                <fullName>Townhouse</fullName>
+                <default>false</default>
+                <label>Townhouse</label>
+            </value>
+            <value>
+                <fullName>Medical Office Building</fullName>
+                <default>false</default>
+                <label>Medical Office Building</label>
+            </value>
+            <value>
+                <fullName>Life Sciences Facility</fullName>
+                <default>false</default>
+                <label>Life Sciences Facility</label>
+            </value>
+            <value>
+                <fullName>Warehouse</fullName>
+                <default>false</default>
+                <label>Warehouse</label>
+            </value>
+            <value>
+                <fullName>Logistics Center</fullName>
+                <default>false</default>
+                <label>Logistics Center</label>
+            </value>
+            <value>
+                <fullName>Shopping Mall</fullName>
+                <default>false</default>
+                <label>Shopping Mall</label>
+            </value>
+            <value>
+                <fullName>Restaurant Space</fullName>
+                <default>false</default>
+                <label>Restaurant Space</label>
+            </value>
+            <value>
+                <fullName>Resort</fullName>
+                <default>false</default>
+                <label>Resort</label>
+            </value>
+            <value>
+                <fullName>Parking Garage</fullName>
+                <default>false</default>
+                <label>Parking Garage</label>
+            </value>
+            <value>
+                <fullName>Sports &amp; Entertainment Venue</fullName>
+                <default>false</default>
+                <label>Sports &amp; Entertainment Venue</label>
+            </value>
+            <value>
+                <fullName>Villa</fullName>
+                <default>false</default>
+                <label>Villa</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

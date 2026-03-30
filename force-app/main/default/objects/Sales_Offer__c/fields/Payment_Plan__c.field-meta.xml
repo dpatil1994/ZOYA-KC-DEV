@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment_Plan__c</fullName>
+    <label>Payment Plan</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Standard Payment Plan – 0% Discount</fullName>
+                <default>false</default>
+                <label>Standard Payment Plan – 0% Discount</label>
+            </value>
+            <value>
+                <fullName>30% Down Payment – 4% Discount</fullName>
+                <default>false</default>
+                <label>30% Down Payment – 4% Discount</label>
+            </value>
+            <value>
+                <fullName>50% Down Payment – 8% Discount</fullName>
+                <default>false</default>
+                <label>50% Down Payment – 8% Discount</label>
+            </value>
+            <value>
+                <fullName>100% Down Payment (No ROI) – 20% Discount</fullName>
+                <default>false</default>
+                <label>100% Down Payment (No ROI) – 20% Discount</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

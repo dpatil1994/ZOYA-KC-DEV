@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Freelancer_Broker</fullName>
+    <active>true</active>
+    <label>Freelancer Broker</label>
+    <picklistValues>
+        <picklist>AccountSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchased List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Agency_Type__c</picklist>
+        <values>
+            <fullName>Dubai Real Estate Company %28RERA Registered%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Company</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Real Estate Company - other emirate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UAE Residents</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UAE non real estate company</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bank_Document_Available__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Company_Trade_License_Registration_Type__c</picklist>
+        <values>
+            <fullName>Dubai Economic Department - Mainland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Free Zone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mainland</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Country_code__pc</picklist>
+        <values>
+            <fullName>Algeria %3A 213</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Argentina %3A 54</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Australia %3A 61</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Austria %3A 43</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bahrain %3A 973</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bangladesh %3A 880</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Belgium %3A 32</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bhutan %3A 975</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bolivia %3A 591</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brazil %3A 55</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bulgaria %3A 359</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cambodia %3A 855</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Canada %3A 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chile %3A 56</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>China %3A 86</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colombia %3A 57</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Croatia %3A 385</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Czech Republic %3A 420</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Denmark %3A 45</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ecuador %3A 593</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Egypt %3A 20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ethiopia %3A 251</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finland %3A 358</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>France %3A 33</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Germany %3A 49</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ghana %3A 233</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greece %3A 30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hong Kong %3A 852</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hungary %3A 36</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iceland %3A 354</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>India %3A 91</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indonesia %3A 62</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iran %3A 98</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iraq %3A 964</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ireland %3A 353</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Israel %3A 972</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Italy %3A 39</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Japan %3A 81</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jordan %3A 962</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kenya %3A 254</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kuwait %3A 965</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Laos %3A 856</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lebanon %3A 961</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Malaysia %3A 60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mexico %3A 52</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Morocco %3A 212</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Myanmar %3A 95</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nepal %3A 977</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Netherlands %3A 31</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Zealand %3A 64</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nigeria %3A 234</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North Korea %3A 850</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Norway %3A 47</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oman %3A 968</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pakistan %3A 92</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paraguay %3A 595</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Peru %3A 51</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Philippines %3A 63</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poland %3A 48</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portugal %3A 351</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qatar %3A 974</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Romania %3A 40</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Russia %3A 7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Saudi Arabia %3A 966</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Serbia %3A 381</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Singapore %3A 65</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slovakia %3A 421</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slovenia %3A 386</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Africa %3A 27</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Korea %3A 82</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spain %3A 34</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sri Lanka %3A 94</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sweden %3A 46</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Switzerland %3A 41</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taiwan %3A 886</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tanzania %3A 255</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thailand %3A 66</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tunisia %3A 216</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turkey %3A 90</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uganda %3A 256</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ukraine %3A 380</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>United Arab Emirates %3A 971</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>United Kingdom %3A 44</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>United States %3A 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Uruguay %3A 598</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venezuela %3A 58</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vietnam %3A 84</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yemen %3A 967</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zambia %3A 260</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Zimbabwe %3A 263</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Currency__c</picklist>
+        <values>
+            <fullName>AED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EUR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GBP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>INR</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>USD</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Have_TRN__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry</picklist>
+        <values>
+            <fullName>Agriculture</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Apparel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Biotechnology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chemicals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consulting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Electronics</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Environmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Food %26 Beverage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospitality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Machinery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not For Profit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recreation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Telecommunications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilities</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>International_Type_Of_Broker__c</picklist>
+        <values>
+            <fullName>Non-UAE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UAE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership</picklist>
+        <values>
+            <fullName>Partnership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sole Proprietary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Ownership__c</picklist>
+        <values>
+            <fullName>Partnership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sole Proprietary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rating</picklist>
+        <values>
+            <fullName>Cold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Risk_Category__c</picklist>
+        <values>
+            <fullName>High Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium Risk</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Analyst</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integrator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Press</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prospect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reseller</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>IBAN Number</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IFSC Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SORT Code</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SWIFT Code</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>UAE_Resident__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>UAE_Resident__pc</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

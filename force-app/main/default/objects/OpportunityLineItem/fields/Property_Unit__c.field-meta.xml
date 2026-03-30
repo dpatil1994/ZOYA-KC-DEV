@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Property_Unit__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    NOT(ISBLANK(PricebookEntry.Product2.Property_Unit__c)),
+    HYPERLINK(
+        &quot;/&quot; &amp; PricebookEntry.Product2.Property_Unit__r.Id,
+         PricebookEntry.Product2.Property_Unit__r.Name,
+        &quot;_blank&quot;
+    ),
+    &quot;&quot;
+)</formula>
+    <label>Property Unit</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

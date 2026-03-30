@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payroll_Input_Compact_Layouts</fullName>
+    <fields>Employee_Name__c</fields>
+    <fields>Name</fields>
+    <fields>Payroll_Month__c</fields>
+    <fields>Status__c</fields>
+    <fields>Allowances__c</fields>
+    <fields>Basic_Salary__c</fields>
+    <label>Payroll Input Compact Layouts</label>
+</CompactLayout>

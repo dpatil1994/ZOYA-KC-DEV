@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trade_Expiry_Date_can_be_Future</fullName>
+    <active>true</active>
+    <errorConditionFormula>Trade_License_Expiry_Date__c &lt; TODAY()</errorConditionFormula>
+    <errorDisplayField>Trade_License_Expiry_Date__c</errorDisplayField>
+    <errorMessage>Trade License Expiry Date always be a Future Date</errorMessage>
+</ValidationRule>

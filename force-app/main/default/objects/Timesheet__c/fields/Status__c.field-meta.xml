@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Draft</fullName>
+                <default>false</default>
+                <label>Draft</label>
+            </value>
+            <value>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+                <label>Submitted</label>
+            </value>
+            <value>
+                <fullName>Manager Review</fullName>
+                <default>false</default>
+                <label>Manager Review</label>
+            </value>
+            <value>
+                <fullName>Manager Approved</fullName>
+                <default>false</default>
+                <label>Manager Approved</label>
+            </value>
+            <value>
+                <fullName>Manager Rejected</fullName>
+                <default>false</default>
+                <label>Manager Rejected</label>
+            </value>
+            <value>
+                <fullName>HR Review</fullName>
+                <default>false</default>
+                <label>HR Review</label>
+            </value>
+            <value>
+                <fullName>HR Approved</fullName>
+                <default>false</default>
+                <label>HR Approved</label>
+            </value>
+            <value>
+                <fullName>HR Rejected</fullName>
+                <default>false</default>
+                <label>HR Rejected</label>
+            </value>
+            <value>
+                <fullName>Locked</fullName>
+                <default>false</default>
+                <label>Locked</label>
+            </value>
+            <value>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+                <label>Cancelled</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

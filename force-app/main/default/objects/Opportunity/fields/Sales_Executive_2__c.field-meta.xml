@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sales_Executive_2__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Sales Executive 2</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Sales_Bookings1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

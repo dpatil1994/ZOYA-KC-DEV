@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Name_should_not_be_numeric</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    $RecordType.Name = &quot;Individual Buyer&quot;,
+    IsPersonAccount,
+    OR(
+        REGEX(FirstName, &quot;.*[0-9].*&quot;),
+        REGEX(LastName, &quot;.*[0-9].*&quot;)
+    )
+)</errorConditionFormula>
+    <errorMessage>Name should not contain numeric values for Buyer accounts</errorMessage>
+</ValidationRule>

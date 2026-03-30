@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commission_layout</fullName>
+    <fields>Name</fields>
+    <fields>Broker__c</fields>
+    <fields>Commission_Amount__c</fields>
+    <fields>Commission_Status__c</fields>
+    <fields>Property_Unit__c</fields>
+    <label>Commission layout</label>
+</CompactLayout>

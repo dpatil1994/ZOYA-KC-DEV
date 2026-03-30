@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_1BED_L</fullName>
+    <columns>NAME</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Unit_Type__c</field>
+        <operation>equals</operation>
+        <value>1BED-L</value>
+    </filters>
+    <label>1BED-L</label>
+</ListView>

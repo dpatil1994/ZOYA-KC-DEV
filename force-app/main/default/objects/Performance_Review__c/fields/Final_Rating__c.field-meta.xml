@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Final_Rating__c</fullName>
+    <label>Final Rating</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Outstanding Performer</fullName>
+                <default>false</default>
+                <label>Outstanding Performer</label>
+            </value>
+            <value>
+                <fullName>High Performer</fullName>
+                <default>false</default>
+                <label>High Performer</label>
+            </value>
+            <value>
+                <fullName>Solid Performer</fullName>
+                <default>false</default>
+                <label>Solid Performer</label>
+            </value>
+            <value>
+                <fullName>Developing Performer</fullName>
+                <default>false</default>
+                <label>Developing Performer</label>
+            </value>
+            <value>
+                <fullName>Low Performer</fullName>
+                <default>false</default>
+                <label>Low Performer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

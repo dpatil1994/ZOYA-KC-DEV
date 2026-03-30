@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Reason_When_Task_Rejected</fullName>
+    <active>true</active>
+    <description>Require Reason When Task Rejected</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Status, &quot;Cancelled&quot;),
+    ISBLANK(Reason_For_Cancellation__c)
+)</errorConditionFormula>
+    <errorDisplayField>Reason_For_Cancellation__c</errorDisplayField>
+    <errorMessage>Reason is required when the Task status is cancelled.</errorMessage>
+</ValidationRule>

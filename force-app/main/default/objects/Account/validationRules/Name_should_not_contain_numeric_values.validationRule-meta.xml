@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_should_not_contain_numeric_values</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    $RecordType.Name = &quot;Company Buyer&quot;,
+    REGEX(Name, &quot;.*[0-9].*&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Name</errorDisplayField>
+    <errorMessage>Name should not contain numeric values for Buyer accounts.</errorMessage>
+</ValidationRule>

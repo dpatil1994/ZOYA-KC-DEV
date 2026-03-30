@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>View_Type__c</fullName>
+    <label>View Type</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aldar Heaven View</fullName>
+                <default>false</default>
+                <label>Aldar Heaven View</label>
+            </value>
+            <value>
+                <fullName>Aldar Heaven View/Beach Pool View</fullName>
+                <default>false</default>
+                <label>Aldar Heaven View/Beach Pool View</label>
+            </value>
+            <value>
+                <fullName>Beach Pool View</fullName>
+                <default>false</default>
+                <label>Beach Pool View</label>
+            </value>
+            <value>
+                <fullName>Beach Pool View WIDER</fullName>
+                <default>false</default>
+                <label>Beach Pool View WIDER</label>
+            </value>
+            <value>
+                <fullName>DLRC Community View</fullName>
+                <default>false</default>
+                <label>DLRC Community View</label>
+            </value>
+            <value>
+                <fullName>DLRC Community View/Beach Pool View</fullName>
+                <default>false</default>
+                <label>DLRC Community View/Beach Pool View</label>
+            </value>
+            <value>
+                <fullName>Villa</fullName>
+                <default>false</default>
+                <label>Villa</label>
+            </value>
+            <value>
+                <fullName>Community</fullName>
+                <default>false</default>
+                <label>Community</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

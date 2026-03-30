@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Subject__c</fullName>
+    <label>Subject</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sales Admin</fullName>
+                <default>false</default>
+                <label>Sales Admin</label>
+            </value>
+            <value>
+                <fullName>Sales Admin Manager Review</fullName>
+                <default>false</default>
+                <label>Sales Admin Manager Review</label>
+            </value>
+            <value>
+                <fullName>Accountant Review</fullName>
+                <default>false</default>
+                <label>Accountant Review</label>
+            </value>
+            <value>
+                <fullName>Finance Manager Approval</fullName>
+                <default>false</default>
+                <label>Finance Manager Approval</label>
+            </value>
+            <value>
+                <fullName>Audit Verification</fullName>
+                <default>false</default>
+                <label>Audit Verification</label>
+            </value>
+            <value>
+                <fullName>CEO Approval</fullName>
+                <default>false</default>
+                <label>CEO Approval</label>
+            </value>
+            <value>
+                <fullName>Request Closed</fullName>
+                <default>false</default>
+                <label>Request Closed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cancellation_Reason_Required</fullName>
+    <active>true</active>
+    <description>Makes Receipt Cancellation Reason mandatory when Receipt Status is set to &quot;Cancellation&quot;.</description>
+    <errorConditionFormula>ISPICKVAL( Approval_Status__c , &quot;Rejected&quot;)
+&amp;&amp; 
+ISBLANK(Receipt_Cancellation_Reason__c)</errorConditionFormula>
+    <errorDisplayField>Receipt_Cancellation_Reason__c</errorDisplayField>
+    <errorMessage>Receipt Cancellation Reason is required when the Receipt Status is Cancellation.</errorMessage>
+</ValidationRule>

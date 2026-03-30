@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>International_Type_Of_Broker__c</fullName>
+    <label>Type Of Broker</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>UAE</fullName>
+                <default>false</default>
+                <label>UAE</label>
+            </value>
+            <value>
+                <fullName>Non-UAE</fullName>
+                <default>false</default>
+                <label>Non-UAE</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

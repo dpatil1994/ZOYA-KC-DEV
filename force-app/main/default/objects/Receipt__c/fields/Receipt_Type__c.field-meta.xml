@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Receipt_Type__c</fullName>
+    <label>Receipt Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Mode_of_Payment__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cheque Receipt</fullName>
+                <default>false</default>
+                <label>Cheque Receipt</label>
+            </value>
+            <value>
+                <fullName>Misc Receipt</fullName>
+                <default>false</default>
+                <label>Misc Receipt</label>
+            </value>
+            <value>
+                <fullName>Bank Transfer Receipt</fullName>
+                <default>false</default>
+                <label>Bank Transfer Receipt</label>
+            </value>
+            <value>
+                <fullName>Online Receipt</fullName>
+                <default>false</default>
+                <label>Online Receipt</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Bank Transfer</controllingFieldValue>
+            <controllingFieldValue>Wire</controllingFieldValue>
+            <valueName>Bank Transfer Receipt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Online Payment</controllingFieldValue>
+            <controllingFieldValue>Credit Card</controllingFieldValue>
+            <controllingFieldValue>Debit Card</controllingFieldValue>
+            <valueName>Online Receipt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cheque</controllingFieldValue>
+            <valueName>Cheque Receipt</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Cash</controllingFieldValue>
+            <controllingFieldValue>Internal Transfer</controllingFieldValue>
+            <controllingFieldValue>Other</controllingFieldValue>
+            <valueName>Misc Receipt</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>
