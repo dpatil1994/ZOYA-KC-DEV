@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Agency_Onboarding__c</entityName>
+    <fieldName>Onboarding_Stage__c</fieldName>
+    <masterLabel>Agency On-boarding Path</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Pending_Documents__c</fieldNames>
+        <picklistValueName>Documents Pending</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>Corporate</recordTypeName>
+</PathAssistant>

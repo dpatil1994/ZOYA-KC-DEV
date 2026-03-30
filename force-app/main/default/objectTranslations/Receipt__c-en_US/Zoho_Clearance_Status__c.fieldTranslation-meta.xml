@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Zoho Clearance Status --></label>
+    <name>Zoho_Clearance_Status__c</name>
+    <picklistValues>
+        <masterLabel>CANCELLED</masterLabel>
+        <translation><!-- CANCELLED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CLEARED</masterLabel>
+        <translation><!-- CLEARED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OPEN</masterLabel>
+        <translation><!-- OPEN --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

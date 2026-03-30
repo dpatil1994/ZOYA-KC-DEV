@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Post Dated Cheque</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Post Dated Cheques</value>
+    </caseValues>
+    <layouts>
+        <layout>Post Dated Cheque Layout</layout>
+        <sections>
+            <label><!-- Bank Deposit &amp; Clearing --></label>
+            <section>Bank Deposit &amp; Clearing</section>
+        </sections>
+        <sections>
+            <label><!-- Bounce &amp; Replacement --></label>
+            <section>Bounce &amp; Replacement</section>
+        </sections>
+        <sections>
+            <label><!-- Cheque Details --></label>
+            <section>Cheque Details</section>
+        </sections>
+        <sections>
+            <label><!-- Client &amp; Sales Details --></label>
+            <section>Client &amp; Sales Details</section>
+        </sections>
+        <sections>
+            <label><!-- Compliance &amp; Audit --></label>
+            <section>Compliance &amp; Audit</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- PDC Status &amp; Control --></label>
+            <section>PDC Status &amp; Control</section>
+        </sections>
+        <sections>
+            <label><!-- Receipt &amp; Accounting --></label>
+            <section>Receipt &amp; Accounting</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

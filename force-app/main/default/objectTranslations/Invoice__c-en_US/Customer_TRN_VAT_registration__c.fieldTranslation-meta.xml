@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Customer TRN – VAT registration # --></label>
+    <name>Customer_TRN_VAT_registration__c</name>
+</CustomFieldTranslation>

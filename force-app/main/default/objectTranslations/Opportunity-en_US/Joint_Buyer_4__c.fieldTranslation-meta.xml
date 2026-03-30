@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Joint Buyer 4 --></label>
+    <name>Joint_Buyer_4__c</name>
+    <relationshipLabel><!-- Sales Bookings (Joint Buyer 4) --></relationshipLabel>
+</CustomFieldTranslation>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Interview Stage --></label>
+    <name>Interview_Stage__c</name>
+    <picklistValues>
+        <masterLabel>F2F</masterLabel>
+        <translation><!-- F2F --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Final</masterLabel>
+        <translation><!-- Final --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Online</masterLabel>
+        <translation><!-- Online --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Screening</masterLabel>
+        <translation><!-- Screening --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

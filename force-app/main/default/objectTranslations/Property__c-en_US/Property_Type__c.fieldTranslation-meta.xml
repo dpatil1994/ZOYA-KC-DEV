@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Property Type --></label>
+    <name>Property_Type__c</name>
+    <picklistValues>
+        <masterLabel>Apartment</masterLabel>
+        <translation><!-- Apartment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Commercial</masterLabel>
+        <translation><!-- Commercial --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hospitality Properties</masterLabel>
+        <translation><!-- Hospitality Properties --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hotel</masterLabel>
+        <translation><!-- Hotel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Industrial</masterLabel>
+        <translation><!-- Industrial --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Life Sciences Facility</masterLabel>
+        <translation><!-- Life Sciences Facility --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Logistics Center</masterLabel>
+        <translation><!-- Logistics Center --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Medical Office Building</masterLabel>
+        <translation><!-- Medical Office Building --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mixed Use</masterLabel>
+        <translation><!-- Mixed Use --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Office Building</masterLabel>
+        <translation><!-- Office Building --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Parking Garage</masterLabel>
+        <translation><!-- Parking Garage --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Residential</masterLabel>
+        <translation><!-- Residential --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Resort</masterLabel>
+        <translation><!-- Resort --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Restaurant Space</masterLabel>
+        <translation><!-- Restaurant Space --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Retail Space</masterLabel>
+        <translation><!-- Retail Space --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Shopping Mall</masterLabel>
+        <translation><!-- Shopping Mall --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sports &amp; Entertainment Venue</masterLabel>
+        <translation><!-- Sports &amp; Entertainment Venue --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Townhouse</masterLabel>
+        <translation><!-- Townhouse --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Villa</masterLabel>
+        <translation><!-- Villa --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Warehouse</masterLabel>
+        <translation><!-- Warehouse --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

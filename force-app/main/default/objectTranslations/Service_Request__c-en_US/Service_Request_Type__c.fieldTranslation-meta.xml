@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Service Request Type --></label>
+    <name>Service_Request_Type__c</name>
+    <picklistValues>
+        <masterLabel>Early Settlement</masterLabel>
+        <translation><!-- Early Settlement --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fund Transfer</masterLabel>
+        <translation><!-- Fund Transfer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>POP Verification</masterLabel>
+        <translation><!-- POP Verification --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Receipt Creation</masterLabel>
+        <translation><!-- Receipt Creation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Refund</masterLabel>
+        <translation><!-- Refund --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

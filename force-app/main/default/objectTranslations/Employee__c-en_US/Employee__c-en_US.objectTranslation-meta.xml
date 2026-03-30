@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Employee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Employees</value>
+    </caseValues>
+    <layouts>
+        <layout>Employee Layout</layout>
+        <sections>
+            <label><!-- Core Identification Details --></label>
+            <section>Core Identification Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Education Details --></label>
+            <section>Education Details</section>
+        </sections>
+        <sections>
+            <label><!-- Emergency Contact Info --></label>
+            <section>Emergency Contact Info</section>
+        </sections>
+        <sections>
+            <label><!-- Employee Personal Details --></label>
+            <section>Employee Personal Details</section>
+        </sections>
+        <sections>
+            <label><!-- Employment Lifecycle --></label>
+            <section>Employment Lifecycle</section>
+        </sections>
+        <sections>
+            <label><!-- Notice Period Details --></label>
+            <section>Notice Period Details</section>
+        </sections>
+        <sections>
+            <label><!-- Organizational &amp; Role Details --></label>
+            <section>Organizational &amp; Role Details</section>
+        </sections>
+        <sections>
+            <label><!-- Payroll &amp; Compensation (Summary Level) --></label>
+            <section>Payroll &amp; Compensation (Summary Level)</section>
+        </sections>
+        <sections>
+            <label><!-- UAE Compliance &amp; Documents --></label>
+            <section>UAE Compliance &amp; Documents</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

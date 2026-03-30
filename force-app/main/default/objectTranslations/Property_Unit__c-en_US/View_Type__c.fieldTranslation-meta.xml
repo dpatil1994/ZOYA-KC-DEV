@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- View Type --></label>
+    <name>View_Type__c</name>
+    <picklistValues>
+        <masterLabel>Aldar Heaven View</masterLabel>
+        <translation><!-- Aldar Heaven View --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aldar Heaven View/Beach Pool View</masterLabel>
+        <translation><!-- Aldar Heaven View/Beach Pool View --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Beach Pool View</masterLabel>
+        <translation><!-- Beach Pool View --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Beach Pool View WIDER</masterLabel>
+        <translation><!-- Beach Pool View WIDER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Community</masterLabel>
+        <translation><!-- Community --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DLRC Community View</masterLabel>
+        <translation><!-- DLRC Community View --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DLRC Community View/Beach Pool View</masterLabel>
+        <translation><!-- DLRC Community View/Beach Pool View --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Villa</masterLabel>
+        <translation><!-- Villa --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

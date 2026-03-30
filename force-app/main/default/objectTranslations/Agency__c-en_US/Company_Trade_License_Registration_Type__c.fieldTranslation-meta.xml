@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Company Trade License Registration Type --></label>
+    <name>Company_Trade_License_Registration_Type__c</name>
+    <picklistValues>
+        <masterLabel>Dubai Economic Department - Mainland</masterLabel>
+        <translation><!-- Dubai Economic Department - Mainland --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Free Zone</masterLabel>
+        <translation><!-- Free Zone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mainland</masterLabel>
+        <translation><!-- Mainland --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

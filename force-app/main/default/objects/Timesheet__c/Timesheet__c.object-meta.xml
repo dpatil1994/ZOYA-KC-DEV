@@ -161,9 +161,10 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Timesheet</label>
     <nameField>
-        <label>Timesheet Name</label>
+        <displayFormat>TN-{00000}</displayFormat>
+        <label>Timesheet Number</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Timesheets</pluralLabel>
     <searchLayouts>

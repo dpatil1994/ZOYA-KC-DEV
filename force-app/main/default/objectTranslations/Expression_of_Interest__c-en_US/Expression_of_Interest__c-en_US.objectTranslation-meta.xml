@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Expression of Interest</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Expression of Interests</value>
+    </caseValues>
+    <layouts>
+        <layout>Expression of Interest Layout</layout>
+        <sections>
+            <label><!-- Booking Details --></label>
+            <section>Booking Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Details --></label>
+            <section>Payment Details</section>
+        </sections>
+        <sections>
+            <label><!-- Proof of Payment Details --></label>
+            <section>Proof of Payment Details</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Generate EOI Form --></label>
+        <name>Generate_EOI_Form</name>
+    </quickActions>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- This record is Verified and cannot be modified. --></errorMessage>
+        <name>EOI_If_Status_is_Approved</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This EOI Record cannot be changed once it is set to Rejected. --></errorMessage>
+        <name>EOI_If_Status_is_Rejected</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- POP Transaction date Can&apos;t be a Future Date. --></errorMessage>
+        <name>POP_Transaction_date_cant_be_future</name>
+    </validationRules>
+</CustomObjectTranslation>

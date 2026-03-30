@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Cheque Type --></label>
+    <name>Cheque_Type__c</name>
+    <picklistValues>
+        <masterLabel>Current</masterLabel>
+        <translation><!-- Current --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PDC</masterLabel>
+        <translation><!-- PDC --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

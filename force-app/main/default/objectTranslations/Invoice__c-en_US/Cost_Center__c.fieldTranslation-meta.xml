@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Cost Center --></label>
+    <name>Cost_Center__c</name>
+    <picklistValues>
+        <masterLabel>Project</masterLabel>
+        <translation><!-- Project --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>unit cost center</masterLabel>
+        <translation><!-- unit cost center --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

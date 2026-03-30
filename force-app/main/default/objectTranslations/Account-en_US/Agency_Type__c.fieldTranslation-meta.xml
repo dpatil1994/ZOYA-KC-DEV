@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Agency Type --></label>
+    <name>Agency_Type__c</name>
+    <picklistValues>
+        <masterLabel>Dubai Real Estate Company (RERA Registered)</masterLabel>
+        <translation><!-- Dubai Real Estate Company (RERA Registered) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>International</masterLabel>
+        <translation><!-- International --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>International Company</masterLabel>
+        <translation><!-- International Company --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Real Estate Company - other emirate</masterLabel>
+        <translation><!-- Real Estate Company - other emirate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UAE Residents</masterLabel>
+        <translation><!-- UAE Residents --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UAE non real estate company</masterLabel>
+        <translation><!-- UAE non real estate company --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

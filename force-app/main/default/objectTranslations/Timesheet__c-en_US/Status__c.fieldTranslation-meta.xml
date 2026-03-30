@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Status --></label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>Cancelled</masterLabel>
+        <translation><!-- Cancelled --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Draft</masterLabel>
+        <translation><!-- Draft --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HR Approved</masterLabel>
+        <translation><!-- HR Approved --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HR Rejected</masterLabel>
+        <translation><!-- HR Rejected --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HR Review</masterLabel>
+        <translation><!-- HR Review --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Locked</masterLabel>
+        <translation><!-- Locked --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manager Approved</masterLabel>
+        <translation><!-- Manager Approved --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manager Rejected</masterLabel>
+        <translation><!-- Manager Rejected --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manager Review</masterLabel>
+        <translation><!-- Manager Review --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Submitted</masterLabel>
+        <translation><!-- Submitted --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

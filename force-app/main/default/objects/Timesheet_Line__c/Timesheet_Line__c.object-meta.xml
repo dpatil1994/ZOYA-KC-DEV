@@ -147,7 +147,7 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>true</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>Timesheet_Line_Compact_Layouts</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
@@ -161,9 +161,10 @@
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <label>Timesheet Line</label>
     <nameField>
-        <label>Timesheet Line Name</label>
+        <displayFormat>TLN-{00000}</displayFormat>
+        <label>Timesheet Line Number</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Timesheet Lines</pluralLabel>
     <searchLayouts>

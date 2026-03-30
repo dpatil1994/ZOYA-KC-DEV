@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Agency Name --></label>
+    <lookupFilter>
+        <errorMessage><!-- Select Broker type record only. --></errorMessage>
+    </lookupFilter>
+    <name>Agency_Name__c</name>
+    <relationshipLabel><!-- Expression of Interests (Agency Name) --></relationshipLabel>
+</CustomFieldTranslation>

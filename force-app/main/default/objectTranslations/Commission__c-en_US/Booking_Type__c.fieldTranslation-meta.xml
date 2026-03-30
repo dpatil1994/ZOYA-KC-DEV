@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Booking Type --></label>
+    <name>Booking_Type__c</name>
+    <picklistValues>
+        <masterLabel>Bulk Booking</masterLabel>
+        <translation><!-- Bulk Booking --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corporate Booking</masterLabel>
+        <translation><!-- Corporate Booking --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Investor Booking</masterLabel>
+        <translation><!-- Investor Booking --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Resale Booking</masterLabel>
+        <translation><!-- Resale Booking --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard Booking</masterLabel>
+        <translation><!-- Standard Booking --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Underwriting Booking</masterLabel>
+        <translation><!-- Underwriting Booking --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

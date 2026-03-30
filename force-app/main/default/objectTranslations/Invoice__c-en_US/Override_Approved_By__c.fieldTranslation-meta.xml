@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Override Approved By --></label>
+    <name>Override_Approved_By__c</name>
+    <relationshipLabel><!-- Invoices (Override Approved By) --></relationshipLabel>
+</CustomFieldTranslation>

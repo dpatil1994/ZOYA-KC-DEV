@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Sync Receipt to Zoho --></label>
+    <name>Sync_Receipt_to_Zoho__c</name>
+</CustomFieldTranslation>

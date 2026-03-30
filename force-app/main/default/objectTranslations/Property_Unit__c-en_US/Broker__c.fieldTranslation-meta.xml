@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Broker --></label>
+    <lookupFilter>
+        <errorMessage><!-- Account Record Type must be Broker --></errorMessage>
+    </lookupFilter>
+    <name>Broker__c</name>
+    <relationshipLabel><!-- Property Units (Broker) --></relationshipLabel>
+</CustomFieldTranslation>

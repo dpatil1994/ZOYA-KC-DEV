@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Country code --></label>
+    <name>Country_code__c</name>
+    <picklistValues>
+        <masterLabel>Algeria : 213</masterLabel>
+        <translation><!-- Algeria : 213 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Argentina : 54</masterLabel>
+        <translation><!-- Argentina : 54 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Australia : 61</masterLabel>
+        <translation><!-- Australia : 61 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Austria : 43</masterLabel>
+        <translation><!-- Austria : 43 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bahrain : 973</masterLabel>
+        <translation><!-- Bahrain : 973 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bangladesh : 880</masterLabel>
+        <translation><!-- Bangladesh : 880 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Belgium : 32</masterLabel>
+        <translation><!-- Belgium : 32 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bhutan : 975</masterLabel>
+        <translation><!-- Bhutan : 975 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bolivia : 591</masterLabel>
+        <translation><!-- Bolivia : 591 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brazil : 55</masterLabel>
+        <translation><!-- Brazil : 55 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bulgaria : 359</masterLabel>
+        <translation><!-- Bulgaria : 359 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cambodia : 855</masterLabel>
+        <translation><!-- Cambodia : 855 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Canada : 1</masterLabel>
+        <translation><!-- Canada : 1 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chile : 56</masterLabel>
+        <translation><!-- Chile : 56 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>China : 86</masterLabel>
+        <translation><!-- China : 86 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Colombia : 57</masterLabel>
+        <translation><!-- Colombia : 57 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Croatia : 385</masterLabel>
+        <translation><!-- Croatia : 385 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Czech Republic : 420</masterLabel>
+        <translation><!-- Czech Republic : 420 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Denmark : 45</masterLabel>
+        <translation><!-- Denmark : 45 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ecuador : 593</masterLabel>
+        <translation><!-- Ecuador : 593 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Egypt : 20</masterLabel>
+        <translation><!-- Egypt : 20 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ethiopia : 251</masterLabel>
+        <translation><!-- Ethiopia : 251 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Finland : 358</masterLabel>
+        <translation><!-- Finland : 358 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>France : 33</masterLabel>
+        <translation><!-- France : 33 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Germany : 49</masterLabel>
+        <translation><!-- Germany : 49 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ghana : 233</masterLabel>
+        <translation><!-- Ghana : 233 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greece : 30</masterLabel>
+        <translation><!-- Greece : 30 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hong Kong : 852</masterLabel>
+        <translation><!-- Hong Kong : 852 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hungary : 36</masterLabel>
+        <translation><!-- Hungary : 36 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Iceland : 354</masterLabel>
+        <translation><!-- Iceland : 354 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>India : 91</masterLabel>
+        <translation><!-- India : 91 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Indonesia : 62</masterLabel>
+        <translation><!-- Indonesia : 62 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Iran : 98</masterLabel>
+        <translation><!-- Iran : 98 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Iraq : 964</masterLabel>
+        <translation><!-- Iraq : 964 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ireland : 353</masterLabel>
+        <translation><!-- Ireland : 353 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Israel : 972</masterLabel>
+        <translation><!-- Israel : 972 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Italy : 39</masterLabel>
+        <translation><!-- Italy : 39 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Japan : 81</masterLabel>
+        <translation><!-- Japan : 81 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jordan : 962</masterLabel>
+        <translation><!-- Jordan : 962 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kenya : 254</masterLabel>
+        <translation><!-- Kenya : 254 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kuwait : 965</masterLabel>
+        <translation><!-- Kuwait : 965 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Laos : 856</masterLabel>
+        <translation><!-- Laos : 856 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lebanon : 961</masterLabel>
+        <translation><!-- Lebanon : 961 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Malaysia : 60</masterLabel>
+        <translation><!-- Malaysia : 60 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mexico : 52</masterLabel>
+        <translation><!-- Mexico : 52 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Morocco : 212</masterLabel>
+        <translation><!-- Morocco : 212 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Myanmar : 95</masterLabel>
+        <translation><!-- Myanmar : 95 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nepal : 977</masterLabel>
+        <translation><!-- Nepal : 977 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Netherlands : 31</masterLabel>
+        <translation><!-- Netherlands : 31 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Zealand : 64</masterLabel>
+        <translation><!-- New Zealand : 64 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nigeria : 234</masterLabel>
+        <translation><!-- Nigeria : 234 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Korea : 850</masterLabel>
+        <translation><!-- North Korea : 850 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Norway : 47</masterLabel>
+        <translation><!-- Norway : 47 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oman : 968</masterLabel>
+        <translation><!-- Oman : 968 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pakistan : 92</masterLabel>
+        <translation><!-- Pakistan : 92 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Paraguay : 595</masterLabel>
+        <translation><!-- Paraguay : 595 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Peru : 51</masterLabel>
+        <translation><!-- Peru : 51 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Philippines : 63</masterLabel>
+        <translation><!-- Philippines : 63 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poland : 48</masterLabel>
+        <translation><!-- Poland : 48 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Portugal : 351</masterLabel>
+        <translation><!-- Portugal : 351 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Qatar : 974</masterLabel>
+        <translation><!-- Qatar : 974 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Romania : 40</masterLabel>
+        <translation><!-- Romania : 40 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Russia : 7</masterLabel>
+        <translation><!-- Russia : 7 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saudi Arabia : 966</masterLabel>
+        <translation><!-- Saudi Arabia : 966 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Serbia : 381</masterLabel>
+        <translation><!-- Serbia : 381 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Singapore : 65</masterLabel>
+        <translation><!-- Singapore : 65 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Slovakia : 421</masterLabel>
+        <translation><!-- Slovakia : 421 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Slovenia : 386</masterLabel>
+        <translation><!-- Slovenia : 386 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Africa : 27</masterLabel>
+        <translation><!-- South Africa : 27 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Korea : 82</masterLabel>
+        <translation><!-- South Korea : 82 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spain : 34</masterLabel>
+        <translation><!-- Spain : 34 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sri Lanka : 94</masterLabel>
+        <translation><!-- Sri Lanka : 94 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sweden : 46</masterLabel>
+        <translation><!-- Sweden : 46 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Switzerland : 41</masterLabel>
+        <translation><!-- Switzerland : 41 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Taiwan : 886</masterLabel>
+        <translation><!-- Taiwan : 886 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tanzania : 255</masterLabel>
+        <translation><!-- Tanzania : 255 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Thailand : 66</masterLabel>
+        <translation><!-- Thailand : 66 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tunisia : 216</masterLabel>
+        <translation><!-- Tunisia : 216 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Turkey : 90</masterLabel>
+        <translation><!-- Turkey : 90 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Uganda : 256</masterLabel>
+        <translation><!-- Uganda : 256 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ukraine : 380</masterLabel>
+        <translation><!-- Ukraine : 380 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>United Arab Emirates : 971</masterLabel>
+        <translation><!-- United Arab Emirates : 971 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>United Kingdom : 44</masterLabel>
+        <translation><!-- United Kingdom : 44 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>United States : 1</masterLabel>
+        <translation><!-- United States : 1 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Uruguay : 598</masterLabel>
+        <translation><!-- Uruguay : 598 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Venezuela : 58</masterLabel>
+        <translation><!-- Venezuela : 58 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vietnam : 84</masterLabel>
+        <translation><!-- Vietnam : 84 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Yemen : 967</masterLabel>
+        <translation><!-- Yemen : 967 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zambia : 260</masterLabel>
+        <translation><!-- Zambia : 260 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zimbabwe : 263</masterLabel>
+        <translation><!-- Zimbabwe : 263 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

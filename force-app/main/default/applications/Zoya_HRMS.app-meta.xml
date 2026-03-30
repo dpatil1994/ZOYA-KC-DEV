@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>HRMS_Home</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Zoya - HRMS</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>HRMS_Home</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>HR Admin</profile>
+    </profileActionOverrides>
+    <tabs>standard-home</tabs>
+    <tabs>Recruitment__c</tabs>
+    <tabs>Employee__c</tabs>
+    <tabs>Attendance__c</tabs>
+    <tabs>Payroll_Input__c</tabs>
+    <tabs>Timesheet__c</tabs>
+    <tabs>Expense_Claim__c</tabs>
+    <tabs>Timesheet_Line__c</tabs>
+    <tabs>Expense_Claim_Line__c</tabs>
+    <tabs>Performance_Review__c</tabs>
+    <tabs>standard-Event</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>Performance_Goal__c</tabs>
+    <tabs>Leave_Request__c</tabs>
+    <tabs>Employee_History__c</tabs>
+    <tabs>Bank_Detail__c</tabs>
+    <tabs>Education_Detail__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Zoya_HR_Management_UtilityBar</utilityBar>
+</CustomApplication>

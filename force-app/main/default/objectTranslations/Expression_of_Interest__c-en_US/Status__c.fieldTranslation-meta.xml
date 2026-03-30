@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Status --></label>
+    <name>Status__c</name>
+    <picklistValues>
+        <masterLabel>EOI Creation</masterLabel>
+        <translation><!-- EOI Creation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Finance Review</masterLabel>
+        <translation><!-- Finance Review --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Need More Information</masterLabel>
+        <translation><!-- Need More Information --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected</masterLabel>
+        <translation><!-- Rejected --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Verified</masterLabel>
+        <translation><!-- Verified --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

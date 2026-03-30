@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Property Unit</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Property Units</value>
+    </caseValues>
+    <layouts>
+        <layout>Property Unit Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Details --></label>
+            <section>Financial Details</section>
+        </sections>
+        <sections>
+            <label><!-- Property Features --></label>
+            <section>Property Features</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Blocked End Date always be a Future Date --></errorMessage>
+        <name>Blocked_End_Date_can_be_future_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Blocked Start Date must be today --></errorMessage>
+        <name>Blocked_Start_Date_Cant_be_Future_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Hold End Date always be a Future Date --></errorMessage>
+        <name>Hold_End_Date_Can_be_Future_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Hold Start Date must be today --></errorMessage>
+        <name>Hold_Start_Date_cant_be_future_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Reserved End Date always be a Future Date --></errorMessage>
+        <name>Reserved_End_Date_can_be_Future_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Reserved Start Date must be today --></errorMessage>
+        <name>Reserved_Start_Date_Cant_be_future_Date</name>
+    </validationRules>
+</CustomObjectTranslation>

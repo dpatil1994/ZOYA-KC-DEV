@@ -161,9 +161,10 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Expense Claim</label>
     <nameField>
-        <label>Expense Claim Name</label>
+        <displayFormat>ECN-{000000}</displayFormat>
+        <label>Expense Claim Number</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Expense Claims</pluralLabel>
     <searchLayouts>

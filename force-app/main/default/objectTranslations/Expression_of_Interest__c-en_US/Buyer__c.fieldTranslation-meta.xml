@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Buyer --></label>
+    <lookupFilter>
+        <errorMessage><!-- Only Buyer type accounts are visible. --></errorMessage>
+    </lookupFilter>
+    <name>Buyer__c</name>
+    <relationshipLabel><!-- Expression of Interests (Buyer) --></relationshipLabel>
+</CustomFieldTranslation>

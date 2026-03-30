@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Recovery Status --></label>
+    <name>Recovery_Status__c</name>
+    <picklistValues>
+        <masterLabel>Bounced</masterLabel>
+        <translation><!-- Bounced --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cleared</masterLabel>
+        <translation><!-- Cleared --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Deposited</masterLabel>
+        <translation><!-- Deposited --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PDC Received</masterLabel>
+        <translation><!-- PDC Received --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Re-deposit Scheduled</masterLabel>
+        <translation><!-- Re-deposit Scheduled --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recovered</masterLabel>
+        <translation><!-- Recovered --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

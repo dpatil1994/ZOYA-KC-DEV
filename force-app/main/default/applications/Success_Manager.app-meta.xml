@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Build stronger customer relationships, manage renewals, and stay organized.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Success Manager</label>
+    <navType>Standard</navType>
+    <setupExperience>all</setupExperience>
+    <tabs>standard-home</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Contract</tabs>
+    <tabs>standard-Event</tabs>
+    <tabs>Property__c</tabs>
+    <tabs>Property_Unit__c</tabs>
+    <tabs>Commission__c</tabs>
+    <tabs>Sales_Offer__c</tabs>
+    <tabs>Installment__c</tabs>
+    <tabs>Expression_of_Interest__c</tabs>
+    <tabs>Service_Request__c</tabs>
+    <tabs>Payment_Plan__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Relationship_Management_UtilityBar</utilityBar>
+</CustomApplication>

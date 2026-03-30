@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sales Booking</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sales Bookings</value>
+    </caseValues>
+    <layouts>
+        <layout>Opportunity Layout</layout>
+        <sections>
+            <label><!-- Additional Classification --></label>
+            <section>Additional Classification</section>
+        </sections>
+        <sections>
+            <label><!-- Customer &amp; Agency Details --></label>
+            <section>Customer &amp; Agency Details</section>
+        </sections>
+        <sections>
+            <label><!-- Legal &amp; Registration Status --></label>
+            <section>Legal &amp; Registration Status</section>
+        </sections>
+        <sections>
+            <label><!-- Payment &amp; Collection Details --></label>
+            <section>Payment &amp; Collection Details</section>
+        </sections>
+        <sections>
+            <label><!-- Pricing &amp; Discount Details --></label>
+            <section>Pricing &amp; Discount Details</section>
+        </sections>
+        <sections>
+            <label><!-- Sales &amp; Booking Details --></label>
+            <section>Sales &amp; Booking Details</section>
+        </sections>
+        <sections>
+            <label><!-- Sales Team Details --></label>
+            <section>Sales Team Details</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Assign Label --></label>
+        <name>Assign_Label</name>
+    </quickActions>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Agency Name and Commission % are required --></errorMessage>
+        <name>Agency_and_Commission_are_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only CSO can Terminated this Sales Booking --></errorMessage>
+        <name>Change_stage_according_to_User</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For Investor Booking, the stage cannot be moved to Oqood Submitted or Oqood Approved. --></errorMessage>
+        <name>Investor_booking_cannot_proceed_to_Oqood</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- POP Amount will always more than 20000 --></errorMessage>
+        <name>POP_amount_should_more_than_20000</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New --></label>
+        <name>New</name>
+    </webLinks>
+</CustomObjectTranslation>

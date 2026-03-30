@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expiry_date_can_not_be_past_date</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+    AND(NOT(ISBLANK(Visa_Expiry_Date__c)), Visa_Expiry_Date__c &lt; TODAY()),
+    AND(NOT(ISBLANK(TRN_Expiry_Date__c)), TRN_Expiry_Date__c &lt; TODAY()),
+    AND(NOT(ISBLANK(Trade_License_Expiry_Date__c)), Trade_License_Expiry_Date__c &lt; TODAY()),
+    AND(NOT(ISBLANK(Passport_Expiry_Date__c)), Passport_Expiry_Date__c &lt; TODAY()),
+    AND(NOT(ISBLANK(National_Id_Expiry_date__c)), National_Id_Expiry_date__c &lt; TODAY()),
+    AND(NOT(ISBLANK(Emirates_ID_Expiry_Date__c)), Emirates_ID_Expiry_Date__c &lt; TODAY()),
+    AND(NOT(ISBLANK(Company_RERA_Registration_Expiry__c)), Company_RERA_Registration_Expiry__c &lt; TODAY()),
+    AND(NOT(ISBLANK(Company_Registration_Expiry_Date__c)), Company_Registration_Expiry_Date__c &lt; TODAY())
+)</errorConditionFormula>
+    <errorMessage>Expiry date cannot be in the past</errorMessage>
+</ValidationRule>

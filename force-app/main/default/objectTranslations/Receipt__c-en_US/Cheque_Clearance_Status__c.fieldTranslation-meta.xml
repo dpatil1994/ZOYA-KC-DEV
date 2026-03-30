@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Cheque Clearance Status --></label>
+    <name>Cheque_Clearance_Status__c</name>
+    <picklistValues>
+        <masterLabel>Bounced</masterLabel>
+        <translation><!-- Bounced --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cancelled</masterLabel>
+        <translation><!-- Cancelled --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cleared</masterLabel>
+        <translation><!-- Cleared --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Deposited</masterLabel>
+        <translation><!-- Deposited --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pending</masterLabel>
+        <translation><!-- Pending --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Received</masterLabel>
+        <translation><!-- Received --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

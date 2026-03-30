@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Commission</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Commissions</value>
+    </caseValues>
+    <layouts>
+        <layout>Commission Layout</layout>
+        <sections>
+            <label><!-- Agency / Broker Information --></label>
+            <section>Agency / Broker Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Customer &amp; Sales Team --></label>
+            <section>Customer &amp; Sales Team</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Information --></label>
+            <section>Financial Information</section>
+        </sections>
+        <sections>
+            <label><!-- Legal &amp; Status --></label>
+            <section>Legal &amp; Status</section>
+        </sections>
+        <sections>
+            <label><!-- Unit / Property Details --></label>
+            <section>Unit / Property Details</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- External Commission --></label>
+        <name>External_Commission</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Internal Commission --></label>
+        <name>Internal_Commission</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

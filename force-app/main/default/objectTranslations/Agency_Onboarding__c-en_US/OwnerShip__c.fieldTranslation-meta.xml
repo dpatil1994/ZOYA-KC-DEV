@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Ownership --></label>
+    <name>OwnerShip__c</name>
+    <picklistValues>
+        <masterLabel>Partnership</masterLabel>
+        <translation><!-- Partnership --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sole Proprietary</masterLabel>
+        <translation><!-- Sole Proprietary --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

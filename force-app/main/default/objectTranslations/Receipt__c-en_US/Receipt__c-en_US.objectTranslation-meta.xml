@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Receipt</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Receipts</value>
+    </caseValues>
+    <layouts>
+        <layout>Receipt Layout</layout>
+        <sections>
+            <label><!-- Bank Transfer Details --></label>
+            <section>Bank Transfer Details</section>
+        </sections>
+        <sections>
+            <label><!-- Card / E-Portal Payment Details --></label>
+            <section>Card / E-Portal Payment Details</section>
+        </sections>
+        <sections>
+            <label><!-- Cheque Details --></label>
+            <section>Cheque Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Financial &amp; Reference Section --></label>
+            <section>Financial &amp; Reference Section</section>
+        </sections>
+        <sections>
+            <label><!-- Identification &amp; Sync Details --></label>
+            <section>Identification &amp; Sync Details</section>
+        </sections>
+        <sections>
+            <label><!-- Receipt Clearance Details --></label>
+            <section>Receipt Clearance Details</section>
+        </sections>
+        <sections>
+            <label><!-- Receipt Details --></label>
+            <section>Receipt Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter a positive number. Negative values are not allowed. --></errorMessage>
+        <name>Amount_Currency_support_positive_number</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Receipt Cancellation Reason is required when the Receipt Status is Cancellation. --></errorMessage>
+        <name>Cancellation_Reason_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Currency cannot be changed after the record is Approved. --></errorMessage>
+        <name>Currency_on_Approved</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Exchange Rate Date cannot be a future date. --></errorMessage>
+        <name>Exchange_Rate_Date_Not_Future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- GL Date cannot be a future date. Please select a valid date. --></errorMessage>
+        <name>GL_Date_Not_Future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Receipt Amount must be a positive value and cannot be blank. --></errorMessage>
+        <name>Receipt_Amount_should_not_be_null</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Receipt Date cannot be a future date. --></errorMessage>
+        <name>Receipt_Date_Not_Future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Status cannot be changed once it is set to Rejected. --></errorMessage>
+        <name>Receipt_If_Approval_Status_is_Rejected</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This record is approved and cannot be modified. --></errorMessage>
+        <name>Receipt_If_Status_is_Open</name>
+    </validationRules>
+</CustomObjectTranslation>

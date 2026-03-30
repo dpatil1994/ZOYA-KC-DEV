@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_RERA_Expiry_Not_Past</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Company_RERA_Registration_Expiry__c)),
+    Company_RERA_Registration_Expiry__c &lt; TODAY()
+)</errorConditionFormula>
+    <errorDisplayField>Company_RERA_Registration_Expiry__c</errorDisplayField>
+    <errorMessage>Company RERA Registration Expiry cannot be in the past</errorMessage>
+</ValidationRule>

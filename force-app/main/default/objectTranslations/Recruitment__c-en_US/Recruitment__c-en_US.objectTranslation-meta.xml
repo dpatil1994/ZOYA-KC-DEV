@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Recruitment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Recruitments</value>
+    </caseValues>
+    <layouts>
+        <layout>Recruitment Layout</layout>
+        <sections>
+            <label><!-- Candidate Information --></label>
+            <section>Candidate Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Interview Information --></label>
+            <section>Interview Information</section>
+        </sections>
+        <sections>
+            <label><!-- Recruiter Feedback --></label>
+            <section>Recruiter Feedback</section>
+        </sections>
+        <sections>
+            <label><!-- Recruitment Details --></label>
+            <section>Recruitment Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Status cannot be changed once it is set to Selected or Rejected --></errorMessage>
+        <name>Status_cannot_be_changed_once_it_is_set</name>
+    </validationRules>
+</CustomObjectTranslation>

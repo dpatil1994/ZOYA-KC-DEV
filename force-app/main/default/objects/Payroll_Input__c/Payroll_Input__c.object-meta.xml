@@ -161,9 +161,10 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Payroll Input</label>
     <nameField>
-        <label>Payroll Input Name</label>
+        <displayFormat>PN-{00000}</displayFormat>
+        <label>Payroll Input Number</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Payroll Inputs</pluralLabel>
     <searchLayouts>

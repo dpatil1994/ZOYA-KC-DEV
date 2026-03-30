@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- VAT Category --></label>
+    <name>VAT_Category__c</name>
+    <picklistValues>
+        <masterLabel>Standard Rated</masterLabel>
+        <translation><!-- Standard Rated --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zero Rated</masterLabel>
+        <translation><!-- Zero Rated --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

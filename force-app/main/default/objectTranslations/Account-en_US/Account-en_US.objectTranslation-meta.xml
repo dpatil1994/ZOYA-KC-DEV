@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <layouts>
+        <layout>Agency Layout</layout>
+        <sections>
+            <label><!-- Bank Details --></label>
+            <section>Bank Details</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Owner Information --></label>
+            <section>Owner Information</section>
+        </sections>
+        <sections>
+            <label><!-- Trade License Details --></label>
+            <section>Trade License Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Buyer Layout</layout>
+        <sections>
+            <label><!-- Arabic Information --></label>
+            <section>Arabic Information</section>
+        </sections>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Freelancer Broker</layout>
+        <layoutType>PersonAccount</layoutType>
+        <sections>
+            <label><!-- Bank Details --></label>
+            <section>Bank Details</section>
+        </sections>
+        <sections>
+            <label><!-- Identification Details --></label>
+            <section>Identification Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Individual Buyer</layout>
+        <layoutType>PersonAccount</layoutType>
+        <sections>
+            <label><!-- Arabic Information --></label>
+            <section>Arabic Information</section>
+        </sections>
+        <sections>
+            <label><!-- Identification Details --></label>
+            <section>Identification Details</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- Child Account --></label>
+        <name>Child_Account</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Business Agent --></label>
+        <name>Business_Agent</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Company Buyer --></label>
+        <name>Company_Buyer</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Corporate Broker --></label>
+        <name>Corporate_Broker</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Birth date cannot be a future date. --></errorMessage>
+        <name>Birthdate_should_not_be_future_date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Name should not contain numeric values for Buyer accounts --></errorMessage>
+        <name>Last_Name_should_not_be_numeric</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Name should not contain numeric values for Buyer accounts. --></errorMessage>
+        <name>Name_should_not_contain_numeric_values</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Passport Issue Date cannot be future date --></errorMessage>
+        <name>Passport_Issue_date_cant_be_future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Passport Expiry Date cannot be backdate --></errorMessage>
+        <name>Passport_expiry_date_can_be_future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Trade License Expiry Date always be a Future Date --></errorMessage>
+        <name>Trade_Expiry_Date_can_be_Future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Trade License Issue Date Can&apos;t be a Future Date. --></errorMessage>
+        <name>Trade_Issue_date_cant_be_future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For UAE Residents, Emirates ID, Passport Issue Date, and Passport Expiry Date are mandatory. --></errorMessage>
+        <name>UAE_Resident_Rule</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+</CustomObjectTranslation>

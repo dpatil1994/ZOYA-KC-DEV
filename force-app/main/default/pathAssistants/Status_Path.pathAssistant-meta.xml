@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Expression_of_Interest__c</entityName>
+    <fieldName>Status__c</fieldName>
+    <masterLabel>Status Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Ensure all mandatory details are filled.&lt;/li&gt;&lt;li&gt;Upload initial Proof of Payment (POP).&lt;/li&gt;&lt;li&gt;Notify Finance team if needed.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>EOI Creation</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Finance checks POP against the banking system.&lt;/li&gt;&lt;li&gt;Verify deposit amount, payment mode, and reference numbers.&lt;/li&gt;&lt;li&gt;Update task status after review.&lt;/li&gt;&lt;li&gt;Move to &lt;strong&gt;Verified&lt;/strong&gt; or mark &lt;strong&gt;NMI&lt;/strong&gt; if clarification is needed.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Finance Review</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Sales Admin must collect the required missing documents.&lt;/li&gt;&lt;li&gt;Coordinate with the Sales Person or the customer if needed.&lt;/li&gt;&lt;li&gt;Upload updated POP or remarks.&lt;/li&gt;&lt;li&gt;Reassign back to Finance after completing updates.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Need More Information</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Add rejection reason in notes.&lt;/li&gt;&lt;li&gt;Notify Sales Admin and Sales Person.&lt;/li&gt;&lt;li&gt;If applicable, request the customer to resubmit the correct information.&lt;/li&gt;&lt;li&gt;EOI process ends unless a new POP is submitted.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Rejected</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;ul&gt;&lt;li&gt;Finance generates the official receipt.&lt;/li&gt;&lt;li&gt;The system automatically emails the receipt to the client.&lt;/li&gt;&lt;li&gt;Mark EOI as complete.&lt;/li&gt;&lt;li&gt;Update any linked Lead/Opportunity if required.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</info>
+        <picklistValueName>Verified</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

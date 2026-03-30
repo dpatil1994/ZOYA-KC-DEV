@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- SPA / Sales Booking # --></label>
+    <name>SPA_Sales_Booking__c</name>
+    <relationshipLabel><!-- Post Dated Cheques --></relationshipLabel>
+</CustomFieldTranslation>

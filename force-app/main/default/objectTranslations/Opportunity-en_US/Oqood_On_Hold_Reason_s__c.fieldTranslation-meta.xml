@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Oqood On-Hold Reason(s) --></label>
+    <name>Oqood_On_Hold_Reason_s__c</name>
+    <picklistValues>
+        <masterLabel>Developer Approval Pending</masterLabel>
+        <translation><!-- Developer Approval Pending --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Documents Pending</masterLabel>
+        <translation><!-- Documents Pending --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Payment Pending</masterLabel>
+        <translation><!-- Payment Pending --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>System Issue</masterLabel>
+        <translation><!-- System Issue --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

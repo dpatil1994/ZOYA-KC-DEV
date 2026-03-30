@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Cheque Category --></label>
+    <name>Cheque_Category__c</name>
+    <picklistValues>
+        <masterLabel>Admin Fees</masterLabel>
+        <translation><!-- Admin Fees --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Down Payment</masterLabel>
+        <translation><!-- Down Payment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Handover Charges</masterLabel>
+        <translation><!-- Handover Charges --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Installment</masterLabel>
+        <translation><!-- Installment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Miscellaneous</masterLabel>
+        <translation><!-- Miscellaneous --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oqood Fees</masterLabel>
+        <translation><!-- Oqood Fees --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pre-Title Deed Fees</masterLabel>
+        <translation><!-- Pre-Title Deed Fees --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service Charges</masterLabel>
+        <translation><!-- Service Charges --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Title Deed Fees</masterLabel>
+        <translation><!-- Title Deed Fees --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Token Money / Booking Fees</masterLabel>
+        <translation><!-- Token Money / Booking Fees --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

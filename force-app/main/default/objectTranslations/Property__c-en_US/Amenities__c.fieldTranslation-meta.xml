@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Amenities --></label>
+    <name>Amenities__c</name>
+    <picklistValues>
+        <masterLabel>☀️ Solar Powered Building</masterLabel>
+        <translation><!-- ☀️ Solar Powered Building --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>⛳ Mini Golf Course</masterLabel>
+        <translation><!-- ⛳ Mini Golf Course --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🌐 Wi-Fi Enabled Common Areas</masterLabel>
+        <translation><!-- 🌐 Wi-Fi Enabled Common Areas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🎠 Kids Play Area</masterLabel>
+        <translation><!-- 🎠 Kids Play Area --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🎬 Outdoor Poolside Cinema</masterLabel>
+        <translation><!-- 🎬 Outdoor Poolside Cinema --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🏊 Adult Swimming Pool</masterLabel>
+        <translation><!-- 🏊 Adult Swimming Pool --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🏊 Private Swimming Pool</masterLabel>
+        <translation><!-- 🏊 Private Swimming Pool --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🏋️ Panoramic View Gym</masterLabel>
+        <translation><!-- 🏋️ Panoramic View Gym --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🏓 Indoor Sports Room</masterLabel>
+        <translation><!-- 🏓 Indoor Sports Room --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🏙️ Low-Density Development</masterLabel>
+        <translation><!-- 🏙️ Low-Density Development --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🏛️ Grand Entrance Lobby</masterLabel>
+        <translation><!-- 🏛️ Grand Entrance Lobby --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🏢 3.3m Ceiling Heights</masterLabel>
+        <translation><!-- 🏢 3.3m Ceiling Heights --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🐾 Pet-Friendly Environment</masterLabel>
+        <translation><!-- 🐾 Pet-Friendly Environment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>📍 Corner Plot Location</masterLabel>
+        <translation><!-- 📍 Corner Plot Location --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🔥 Barbecue Area</masterLabel>
+        <translation><!-- 🔥 Barbecue Area --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🚐 Shuttle Service (to and from the metro station)</masterLabel>
+        <translation><!-- 🚐 Shuttle Service (to and from the metro station) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🛁 All Bedrooms Ensuite + Powder Room</masterLabel>
+        <translation><!-- 🛁 All Bedrooms Ensuite + Powder Room --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🛋️ Residents’ Lounge</masterLabel>
+        <translation><!-- 🛋️ Residents’ Lounge --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🛍️ Retail Outlets</masterLabel>
+        <translation><!-- 🛍️ Retail Outlets --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🛗 3 High-Speed Elevators</masterLabel>
+        <translation><!-- 🛗 3 High-Speed Elevators --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🛡️ 24/7 Security</masterLabel>
+        <translation><!-- 🛡️ 24/7 Security --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🧒 Kids Swimming Pool</masterLabel>
+        <translation><!-- 🧒 Kids Swimming Pool --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🧖 Separate Sauna for Him &amp; Her</masterLabel>
+        <translation><!-- 🧖 Separate Sauna for Him &amp; Her --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🧘 Outdoor Yoga Space</masterLabel>
+        <translation><!-- 🧘 Outdoor Yoga Space --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🧱 Efficient Floor Plans</masterLabel>
+        <translation><!-- 🧱 Efficient Floor Plans --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>🧺 Dedicated Laundry Room</masterLabel>
+        <translation><!-- 🧺 Dedicated Laundry Room --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

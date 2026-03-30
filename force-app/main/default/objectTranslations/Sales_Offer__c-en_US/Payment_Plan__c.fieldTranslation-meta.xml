@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Payment Plan --></label>
+    <name>Payment_Plan__c</name>
+    <picklistValues>
+        <masterLabel>100% Down Payment (No ROI) – 20% Discount</masterLabel>
+        <translation><!-- 100% Down Payment (No ROI) – 20% Discount --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>30% Down Payment – 4% Discount</masterLabel>
+        <translation><!-- 30% Down Payment – 4% Discount --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>50% Down Payment – 8% Discount</masterLabel>
+        <translation><!-- 50% Down Payment – 8% Discount --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Standard Payment Plan – 0% Discount</masterLabel>
+        <translation><!-- Standard Payment Plan – 0% Discount --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

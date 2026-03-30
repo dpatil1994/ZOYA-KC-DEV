@@ -161,9 +161,10 @@
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <label>Performance Goal</label>
     <nameField>
-        <label>Goal Name</label>
+        <displayFormat>PGN-{00000}</displayFormat>
+        <label>Performance Goal Number</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Performance Goals</pluralLabel>
     <searchLayouts>

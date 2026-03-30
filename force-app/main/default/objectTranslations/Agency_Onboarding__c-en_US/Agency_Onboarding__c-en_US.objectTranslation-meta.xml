@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Agency Onboarding</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Agency Onboardings</value>
+    </caseValues>
+    <layouts>
+        <layout>Corporate Layout</layout>
+        <sections>
+            <label><!-- Address Informaiton --></label>
+            <section>Address Informaiton</section>
+        </sections>
+        <sections>
+            <label><!-- Agency Information --></label>
+            <section>Agency Information</section>
+        </sections>
+        <sections>
+            <label><!-- Bank Information --></label>
+            <section>Bank Information</section>
+        </sections>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Registration &amp; Compliance Information --></label>
+            <section>Registration &amp; Compliance Information</section>
+        </sections>
+        <sections>
+            <label><!-- Signatory Details --></label>
+            <section>Signatory Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Individual Layout</layout>
+        <sections>
+            <label><!-- Address Information --></label>
+            <section>Address Information</section>
+        </sections>
+        <sections>
+            <label><!-- Agency Information --></label>
+            <section>Agency Information</section>
+        </sections>
+        <sections>
+            <label><!-- Bank Information --></label>
+            <section>Bank Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Identification Details --></label>
+            <section>Identification Details</section>
+        </sections>
+        <sections>
+            <label><!-- Signatory Details --></label>
+            <section>Signatory Details</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- File Sync --></label>
+        <name>File_Sync</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Corporate --></label>
+        <name>Corporate</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Individual --></label>
+        <name>Individual</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Company RERA Registration Expiry cannot be in the past --></errorMessage>
+        <name>Company_RERA_Expiry_Not_Past</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Company Registration Expiry Date cannot be in the past --></errorMessage>
+        <name>Company_Registration_Expiry_Not_Past</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Emirates ID Expiry Date cannot be in the past --></errorMessage>
+        <name>Emirates_ID_Expiry_Not_Past</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- National ID Expiry Date cannot be in the past --></errorMessage>
+        <name>National_ID_Expiry_Not_Past</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Passport Expiry Date cannot be in the past --></errorMessage>
+        <name>Passport_Expiry_Date_Not_Past</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Pending Document is required when Status is Document Pending. --></errorMessage>
+        <name>Pending_Document_is_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- TRN Expiry Date cannot be in the past --></errorMessage>
+        <name>TRN_Expiry_Date_Not_Past</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Trade License Expiry Date cannot be in the past --></errorMessage>
+        <name>Trade_License_Expiry_Not_Past</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Visa Expiry Date cannot be in the past --></errorMessage>
+        <name>Visa_Expiry_Date_Not_Past</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- New_VFP --></label>
+        <name>New_VFP</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- VFP_New --></label>
+        <name>VFP_New</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Subject --></label>
+    <name>Subject__c</name>
+    <picklistValues>
+        <masterLabel>Accountant Review</masterLabel>
+        <translation><!-- Accountant Review --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Audit Verification</masterLabel>
+        <translation><!-- Audit Verification --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CEO Approval</masterLabel>
+        <translation><!-- CEO Approval --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Finance Manager Approval</masterLabel>
+        <translation><!-- Finance Manager Approval --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Request Closed</masterLabel>
+        <translation><!-- Request Closed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Admin</masterLabel>
+        <translation><!-- Sales Admin --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Admin Manager Review</masterLabel>
+        <translation><!-- Sales Admin Manager Review --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

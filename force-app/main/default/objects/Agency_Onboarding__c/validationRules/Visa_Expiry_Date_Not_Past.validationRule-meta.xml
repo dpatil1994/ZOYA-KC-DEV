@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visa_Expiry_Date_Not_Past</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISBLANK(Visa_Expiry_Date__c)),
+    Visa_Expiry_Date__c &lt; TODAY()
+)</errorConditionFormula>
+    <errorDisplayField>Visa_Expiry_Date__c</errorDisplayField>
+    <errorMessage>Visa Expiry Date cannot be in the past</errorMessage>
+</ValidationRule>

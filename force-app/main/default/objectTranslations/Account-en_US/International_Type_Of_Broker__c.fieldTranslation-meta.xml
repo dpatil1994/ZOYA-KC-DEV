@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type Of Broker --></label>
+    <name>International_Type_Of_Broker__c</name>
+    <picklistValues>
+        <masterLabel>Non-UAE</masterLabel>
+        <translation><!-- Non-UAE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UAE</masterLabel>
+        <translation><!-- UAE --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

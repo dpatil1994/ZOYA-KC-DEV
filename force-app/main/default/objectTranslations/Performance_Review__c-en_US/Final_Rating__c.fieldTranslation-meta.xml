@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Final Rating --></label>
+    <name>Final_Rating__c</name>
+    <picklistValues>
+        <masterLabel>Developing Performer</masterLabel>
+        <translation><!-- Developing Performer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>High Performer</masterLabel>
+        <translation><!-- High Performer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Low Performer</masterLabel>
+        <translation><!-- Low Performer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Outstanding Performer</masterLabel>
+        <translation><!-- Outstanding Performer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Solid Performer</masterLabel>
+        <translation><!-- Solid Performer --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

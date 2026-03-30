@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Invoice</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Invoices</value>
+    </caseValues>
+    <layouts>
+        <layout>Invoice Layout</layout>
+        <sections>
+            <label><!-- Accounting &amp; ERP Integration Details --></label>
+            <section>Accounting &amp; ERP Integration Details</section>
+        </sections>
+        <sections>
+            <label><!-- Approval &amp; Audit Information --></label>
+            <section>Approval &amp; Audit Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Information --></label>
+            <section>Customer Information</section>
+        </sections>
+        <sections>
+            <label><!-- Financial Amount Information --></label>
+            <section>Financial Amount Information</section>
+        </sections>
+        <sections>
+            <label><!-- Identification &amp; Control --></label>
+            <section>Identification &amp; Control</section>
+        </sections>
+        <sections>
+            <label><!-- Invoice Information --></label>
+            <section>Invoice Information</section>
+        </sections>
+        <sections>
+            <label><!-- Lifecycle &amp; Control Details --></label>
+            <section>Lifecycle &amp; Control Details</section>
+        </sections>
+        <sections>
+            <label><!-- Manual Invoice / Override Information --></label>
+            <section>Manual Invoice / Override Information</section>
+        </sections>
+        <sections>
+            <label><!-- Payment Plan &amp; Milestone --></label>
+            <section>Payment Plan &amp; Milestone</section>
+        </sections>
+        <sections>
+            <label><!-- Project &amp; Unit Information --></label>
+            <section>Project &amp; Unit Information</section>
+        </sections>
+        <sections>
+            <label><!-- System &amp; Audit Trail Details --></label>
+            <section>System &amp; Audit Trail Details</section>
+        </sections>
+        <sections>
+            <label><!-- VAT &amp; Tax Control --></label>
+            <section>VAT &amp; Tax Control</section>
+        </sections>
+        <sections>
+            <label><!-- Zoho Details --></label>
+            <section>Zoho Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

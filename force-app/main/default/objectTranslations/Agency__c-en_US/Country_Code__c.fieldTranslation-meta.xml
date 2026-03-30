@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Country Code --></label>
+    <name>Country_Code__c</name>
+    <picklistValues>
+        <masterLabel>Afghanistan :+93</masterLabel>
+        <translation><!-- Afghanistan :+93 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aland Islands :+358</masterLabel>
+        <translation><!-- Aland Islands :+358 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Albania :+355</masterLabel>
+        <translation><!-- Albania :+355 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Algeria :+213</masterLabel>
+        <translation><!-- Algeria :+213 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>American Samoa :+1684</masterLabel>
+        <translation><!-- American Samoa :+1684 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Andorra :+376</masterLabel>
+        <translation><!-- Andorra :+376 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Angola :+244</masterLabel>
+        <translation><!-- Angola :+244 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Anguilla :+1264</masterLabel>
+        <translation><!-- Anguilla :+1264 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antarctica :+672</masterLabel>
+        <translation><!-- Antarctica :+672 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Antigua and Barbuda :+1268</masterLabel>
+        <translation><!-- Antigua and Barbuda :+1268 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Argentina :+54</masterLabel>
+        <translation><!-- Argentina :+54 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Armenia :+374</masterLabel>
+        <translation><!-- Armenia :+374 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Aruba :+297</masterLabel>
+        <translation><!-- Aruba :+297 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Australia :+61</masterLabel>
+        <translation><!-- Australia :+61 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Austria :+43</masterLabel>
+        <translation><!-- Austria :+43 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Azerbaijan :+994</masterLabel>
+        <translation><!-- Azerbaijan :+994 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bahamas :+1242</masterLabel>
+        <translation><!-- Bahamas :+1242 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bahrain :+973</masterLabel>
+        <translation><!-- Bahrain :+973 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bangladesh :+880</masterLabel>
+        <translation><!-- Bangladesh :+880 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Barbados :+1246</masterLabel>
+        <translation><!-- Barbados :+1246 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Belarus :+375</masterLabel>
+        <translation><!-- Belarus :+375 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Belgium :+32</masterLabel>
+        <translation><!-- Belgium :+32 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Belize :+501</masterLabel>
+        <translation><!-- Belize :+501 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Benin :+229</masterLabel>
+        <translation><!-- Benin :+229 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bermuda :+1441</masterLabel>
+        <translation><!-- Bermuda :+1441 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bhutan :+975</masterLabel>
+        <translation><!-- Bhutan :+975 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bolivia :+591</masterLabel>
+        <translation><!-- Bolivia :+591 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bonaire :+599</masterLabel>
+        <translation><!-- Bonaire :+599 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bosnia and Herzegovina :+387</masterLabel>
+        <translation><!-- Bosnia and Herzegovina :+387 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Botswana :+267</masterLabel>
+        <translation><!-- Botswana :+267 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brazil :+55</masterLabel>
+        <translation><!-- Brazil :+55 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>British Indian Ocean Territory :+246</masterLabel>
+        <translation><!-- British Indian Ocean Territory :+246 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>British Virgin Islands :+1284</masterLabel>
+        <translation><!-- British Virgin Islands :+1284 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brunei :+673</masterLabel>
+        <translation><!-- Brunei :+673 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bulgaria :+359</masterLabel>
+        <translation><!-- Bulgaria :+359 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burkina Faso :+226</masterLabel>
+        <translation><!-- Burkina Faso :+226 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Burundi :+257</masterLabel>
+        <translation><!-- Burundi :+257 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cabo Verde :+238</masterLabel>
+        <translation><!-- Cabo Verde :+238 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cambodia :+855</masterLabel>
+        <translation><!-- Cambodia :+855 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cameroon :+237</masterLabel>
+        <translation><!-- Cameroon :+237 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Canada :+1</masterLabel>
+        <translation><!-- Canada :+1 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cayman Islands :+1345</masterLabel>
+        <translation><!-- Cayman Islands :+1345 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Central African Republic :+236</masterLabel>
+        <translation><!-- Central African Republic :+236 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chad :+235</masterLabel>
+        <translation><!-- Chad :+235 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Chile :+56</masterLabel>
+        <translation><!-- Chile :+56 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>China :+86</masterLabel>
+        <translation><!-- China :+86 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Christmas Island :+61</masterLabel>
+        <translation><!-- Christmas Island :+61 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cocos :+61</masterLabel>
+        <translation><!-- Cocos :+61 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Colombia :+57</masterLabel>
+        <translation><!-- Colombia :+57 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Comoros :+269</masterLabel>
+        <translation><!-- Comoros :+269 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Congo :+242</masterLabel>
+        <translation><!-- Congo :+242 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Congo :+243</masterLabel>
+        <translation><!-- Congo :+243 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cook Islands :+682</masterLabel>
+        <translation><!-- Cook Islands :+682 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Costa Rica :+506</masterLabel>
+        <translation><!-- Costa Rica :+506 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cote dIvoire :+225</masterLabel>
+        <translation><!-- Cote dIvoire :+225 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Croatia :+385</masterLabel>
+        <translation><!-- Croatia :+385 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cuba :+53</masterLabel>
+        <translation><!-- Cuba :+53 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Curacao :+599</masterLabel>
+        <translation><!-- Curacao :+599 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cyprus :+357</masterLabel>
+        <translation><!-- Cyprus :+357 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Czech Republic :+420</masterLabel>
+        <translation><!-- Czech Republic :+420 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Denmark :+45</masterLabel>
+        <translation><!-- Denmark :+45 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Djibouti :+253</masterLabel>
+        <translation><!-- Djibouti :+253 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dominica :+1767</masterLabel>
+        <translation><!-- Dominica :+1767 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dominican Republic :+849</masterLabel>
+        <translation><!-- Dominican Republic :+849 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ecuador :+593</masterLabel>
+        <translation><!-- Ecuador :+593 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Egypt :+20</masterLabel>
+        <translation><!-- Egypt :+20 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>El Salvador :+503</masterLabel>
+        <translation><!-- El Salvador :+503 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Equatorial Guinea :+240</masterLabel>
+        <translation><!-- Equatorial Guinea :+240 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eritrea :+291</masterLabel>
+        <translation><!-- Eritrea :+291 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Estonia :+372</masterLabel>
+        <translation><!-- Estonia :+372 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Eswatini :+268</masterLabel>
+        <translation><!-- Eswatini :+268 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ethiopia :+251</masterLabel>
+        <translation><!-- Ethiopia :+251 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Falkland Islands :+500</masterLabel>
+        <translation><!-- Falkland Islands :+500 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Faroe Islands :+298</masterLabel>
+        <translation><!-- Faroe Islands :+298 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fiji :+679</masterLabel>
+        <translation><!-- Fiji :+679 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Finland :+358</masterLabel>
+        <translation><!-- Finland :+358 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>France :+33</masterLabel>
+        <translation><!-- France :+33 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>French Guiana :+594</masterLabel>
+        <translation><!-- French Guiana :+594 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>French Polynesia :+689</masterLabel>
+        <translation><!-- French Polynesia :+689 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gabon :+241</masterLabel>
+        <translation><!-- Gabon :+241 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gambia :+220</masterLabel>
+        <translation><!-- Gambia :+220 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Georgia :+995</masterLabel>
+        <translation><!-- Georgia :+995 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Germany :+49</masterLabel>
+        <translation><!-- Germany :+49 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ghana :+233</masterLabel>
+        <translation><!-- Ghana :+233 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gibraltar :+350</masterLabel>
+        <translation><!-- Gibraltar :+350 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greece :+30</masterLabel>
+        <translation><!-- Greece :+30 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Greenland :+299</masterLabel>
+        <translation><!-- Greenland :+299 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grenada :+1473</masterLabel>
+        <translation><!-- Grenada :+1473 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Guadeloupe :+590</masterLabel>
+        <translation><!-- Guadeloupe :+590 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Guam :+1671</masterLabel>
+        <translation><!-- Guam :+1671 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Guatemala :+502</masterLabel>
+        <translation><!-- Guatemala :+502 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Guernsey :+44</masterLabel>
+        <translation><!-- Guernsey :+44 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Guinea :+224</masterLabel>
+        <translation><!-- Guinea :+224 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Guinea-Bissau :+245</masterLabel>
+        <translation><!-- Guinea-Bissau :+245 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Guyana :+592</masterLabel>
+        <translation><!-- Guyana :+592 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Haiti :+509</masterLabel>
+        <translation><!-- Haiti :+509 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Honduras :+504</masterLabel>
+        <translation><!-- Honduras :+504 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hong Kong :+852</masterLabel>
+        <translation><!-- Hong Kong :+852 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hungary :+36</masterLabel>
+        <translation><!-- Hungary :+36 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Iceland :+354</masterLabel>
+        <translation><!-- Iceland :+354 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>India :+91</masterLabel>
+        <translation><!-- India :+91 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Indonesia :+62</masterLabel>
+        <translation><!-- Indonesia :+62 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Iran :+98</masterLabel>
+        <translation><!-- Iran :+98 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Iraq :+964</masterLabel>
+        <translation><!-- Iraq :+964 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ireland :+353</masterLabel>
+        <translation><!-- Ireland :+353 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Isle of Man :+44</masterLabel>
+        <translation><!-- Isle of Man :+44 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Israel :+972</masterLabel>
+        <translation><!-- Israel :+972 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Italy :+39</masterLabel>
+        <translation><!-- Italy :+39 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jamaica :+1876</masterLabel>
+        <translation><!-- Jamaica :+1876 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Japan :+81</masterLabel>
+        <translation><!-- Japan :+81 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jersey :+44</masterLabel>
+        <translation><!-- Jersey :+44 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Jordan :+962</masterLabel>
+        <translation><!-- Jordan :+962 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kazakhstan :+7</masterLabel>
+        <translation><!-- Kazakhstan :+7 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kenya :+254</masterLabel>
+        <translation><!-- Kenya :+254 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kiribati :+686</masterLabel>
+        <translation><!-- Kiribati :+686 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kosovo :+383</masterLabel>
+        <translation><!-- Kosovo :+383 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kuwait :+965</masterLabel>
+        <translation><!-- Kuwait :+965 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kyrgyzstan :+996</masterLabel>
+        <translation><!-- Kyrgyzstan :+996 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Laos :+856</masterLabel>
+        <translation><!-- Laos :+856 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Latvia :+371</masterLabel>
+        <translation><!-- Latvia :+371 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lebanon :+961</masterLabel>
+        <translation><!-- Lebanon :+961 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lesotho :+266</masterLabel>
+        <translation><!-- Lesotho :+266 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Liberia :+231</masterLabel>
+        <translation><!-- Liberia :+231 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Libya :+218</masterLabel>
+        <translation><!-- Libya :+218 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Liechtenstein :+423</masterLabel>
+        <translation><!-- Liechtenstein :+423 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Lithuania :+370</masterLabel>
+        <translation><!-- Lithuania :+370 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Luxembourg :+352</masterLabel>
+        <translation><!-- Luxembourg :+352 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Macau :+853</masterLabel>
+        <translation><!-- Macau :+853 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Madagascar :+261</masterLabel>
+        <translation><!-- Madagascar :+261 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Malawi :+265</masterLabel>
+        <translation><!-- Malawi :+265 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Malaysia :+60</masterLabel>
+        <translation><!-- Malaysia :+60 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Maldives :+960</masterLabel>
+        <translation><!-- Maldives :+960 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mali :+223</masterLabel>
+        <translation><!-- Mali :+223 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Malta :+356</masterLabel>
+        <translation><!-- Malta :+356 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marshall Islands :+692</masterLabel>
+        <translation><!-- Marshall Islands :+692 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Martinique :+596</masterLabel>
+        <translation><!-- Martinique :+596 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mauritania :+222</masterLabel>
+        <translation><!-- Mauritania :+222 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mauritius :+230</masterLabel>
+        <translation><!-- Mauritius :+230 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mayotte :+262</masterLabel>
+        <translation><!-- Mayotte :+262 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mexico :+52</masterLabel>
+        <translation><!-- Mexico :+52 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Micronesia :+691</masterLabel>
+        <translation><!-- Micronesia :+691 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Moldova :+373</masterLabel>
+        <translation><!-- Moldova :+373 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Monaco :+377</masterLabel>
+        <translation><!-- Monaco :+377 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mongolia :+976</masterLabel>
+        <translation><!-- Mongolia :+976 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Montenegro :+382</masterLabel>
+        <translation><!-- Montenegro :+382 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Montserrat :+1664</masterLabel>
+        <translation><!-- Montserrat :+1664 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Morocco :+212</masterLabel>
+        <translation><!-- Morocco :+212 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mozambique :+258</masterLabel>
+        <translation><!-- Mozambique :+258 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Myanmar :+95</masterLabel>
+        <translation><!-- Myanmar :+95 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Namibia :+264</masterLabel>
+        <translation><!-- Namibia :+264 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nauru :+674</masterLabel>
+        <translation><!-- Nauru :+674 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nepal :+977</masterLabel>
+        <translation><!-- Nepal :+977 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Netherlands :+31</masterLabel>
+        <translation><!-- Netherlands :+31 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Caledonia :+687</masterLabel>
+        <translation><!-- New Caledonia :+687 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Zealand :+64</masterLabel>
+        <translation><!-- New Zealand :+64 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nicaragua :+505</masterLabel>
+        <translation><!-- Nicaragua :+505 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Niger :+227</masterLabel>
+        <translation><!-- Niger :+227 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nigeria :+234</masterLabel>
+        <translation><!-- Nigeria :+234 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Niue :+683</masterLabel>
+        <translation><!-- Niue :+683 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Norfolk Island :+672</masterLabel>
+        <translation><!-- Norfolk Island :+672 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Korea :+850</masterLabel>
+        <translation><!-- North Korea :+850 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>North Macedonia :+389</masterLabel>
+        <translation><!-- North Macedonia :+389 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Northern Mariana Islands :+1670</masterLabel>
+        <translation><!-- Northern Mariana Islands :+1670 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Norway :+47</masterLabel>
+        <translation><!-- Norway :+47 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Oman :+968</masterLabel>
+        <translation><!-- Oman :+968 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pakistan :+92</masterLabel>
+        <translation><!-- Pakistan :+92 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palau :+680</masterLabel>
+        <translation><!-- Palau :+680 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Palestine :+970</masterLabel>
+        <translation><!-- Palestine :+970 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Panama :+507</masterLabel>
+        <translation><!-- Panama :+507 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Papua New Guinea :+675</masterLabel>
+        <translation><!-- Papua New Guinea :+675 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Paraguay :+595</masterLabel>
+        <translation><!-- Paraguay :+595 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Peru :+51</masterLabel>
+        <translation><!-- Peru :+51 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Philippines :+63</masterLabel>
+        <translation><!-- Philippines :+63 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pitcairn :+64</masterLabel>
+        <translation><!-- Pitcairn :+64 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Poland :+48</masterLabel>
+        <translation><!-- Poland :+48 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Portugal :+351</masterLabel>
+        <translation><!-- Portugal :+351 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Puerto Rico :+1</masterLabel>
+        <translation><!-- Puerto Rico :+1 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Qatar :+974</masterLabel>
+        <translation><!-- Qatar :+974 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reunion :+262</masterLabel>
+        <translation><!-- Reunion :+262 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Romania :+40</masterLabel>
+        <translation><!-- Romania :+40 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Russia :+7</masterLabel>
+        <translation><!-- Russia :+7 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rwanda :+250</masterLabel>
+        <translation><!-- Rwanda :+250 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saint Barthelemy :+590</masterLabel>
+        <translation><!-- Saint Barthelemy :+590 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saint Helena :+290</masterLabel>
+        <translation><!-- Saint Helena :+290 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saint Kitts and Nevis :+1869</masterLabel>
+        <translation><!-- Saint Kitts and Nevis :+1869 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saint Lucia :+1758</masterLabel>
+        <translation><!-- Saint Lucia :+1758 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saint Martin :+590</masterLabel>
+        <translation><!-- Saint Martin :+590 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saint Pierre and Miquelon :+508</masterLabel>
+        <translation><!-- Saint Pierre and Miquelon :+508 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saint Vincent and the Grenadines :+1784</masterLabel>
+        <translation><!-- Saint Vincent and the Grenadines :+1784 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Samoa :+685</masterLabel>
+        <translation><!-- Samoa :+685 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>San Marino :+378</masterLabel>
+        <translation><!-- San Marino :+378 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sao Tome and Principe :+239</masterLabel>
+        <translation><!-- Sao Tome and Principe :+239 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Saudi Arabia :+966</masterLabel>
+        <translation><!-- Saudi Arabia :+966 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Scotland :+44</masterLabel>
+        <translation><!-- Scotland :+44 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Senegal :+221</masterLabel>
+        <translation><!-- Senegal :+221 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Serbia :+381</masterLabel>
+        <translation><!-- Serbia :+381 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Seychelles :+248</masterLabel>
+        <translation><!-- Seychelles :+248 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sierra Leone :+232</masterLabel>
+        <translation><!-- Sierra Leone :+232 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Singapore :+65</masterLabel>
+        <translation><!-- Singapore :+65 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sint Maarten :+1721</masterLabel>
+        <translation><!-- Sint Maarten :+1721 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Slovakia :+421</masterLabel>
+        <translation><!-- Slovakia :+421 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Slovenia :+386</masterLabel>
+        <translation><!-- Slovenia :+386 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Solomon Islands :+677</masterLabel>
+        <translation><!-- Solomon Islands :+677 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Somalia :+252</masterLabel>
+        <translation><!-- Somalia :+252 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Africa :+27</masterLabel>
+        <translation><!-- South Africa :+27 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Korea :+82</masterLabel>
+        <translation><!-- South Korea :+82 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>South Sudan :+211</masterLabel>
+        <translation><!-- South Sudan :+211 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Spain :+34</masterLabel>
+        <translation><!-- Spain :+34 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sri Lanka :+94</masterLabel>
+        <translation><!-- Sri Lanka :+94 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>State of Palestine :+970</masterLabel>
+        <translation><!-- State of Palestine :+970 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sudan :+249</masterLabel>
+        <translation><!-- Sudan :+249 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Suriname :+597</masterLabel>
+        <translation><!-- Suriname :+597 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sweden :+46</masterLabel>
+        <translation><!-- Sweden :+46 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Switzerland :+41</masterLabel>
+        <translation><!-- Switzerland :+41 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Syria :+963</masterLabel>
+        <translation><!-- Syria :+963 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Taiwan :+886</masterLabel>
+        <translation><!-- Taiwan :+886 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tajikistan :+992</masterLabel>
+        <translation><!-- Tajikistan :+992 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tanzania :+255</masterLabel>
+        <translation><!-- Tanzania :+255 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Thailand :+66</masterLabel>
+        <translation><!-- Thailand :+66 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Timor-Leste :+670</masterLabel>
+        <translation><!-- Timor-Leste :+670 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Togo :+228</masterLabel>
+        <translation><!-- Togo :+228 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tokelau :+690</masterLabel>
+        <translation><!-- Tokelau :+690 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tonga :+676</masterLabel>
+        <translation><!-- Tonga :+676 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trinidad and Tobago :+1868</masterLabel>
+        <translation><!-- Trinidad and Tobago :+1868 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tunisia :+216</masterLabel>
+        <translation><!-- Tunisia :+216 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Turkey :+90</masterLabel>
+        <translation><!-- Turkey :+90 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Turkmenistan :+993</masterLabel>
+        <translation><!-- Turkmenistan :+993 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Turks and Caicos Islands :+1649</masterLabel>
+        <translation><!-- Turks and Caicos Islands :+1649 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Tuvalu :+688</masterLabel>
+        <translation><!-- Tuvalu :+688 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>U.S. Virgin Islands :+1340</masterLabel>
+        <translation><!-- U.S. Virgin Islands :+1340 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Uganda :+256</masterLabel>
+        <translation><!-- Uganda :+256 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ukraine :+380</masterLabel>
+        <translation><!-- Ukraine :+380 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>United Arab Emirates :+971</masterLabel>
+        <translation><!-- United Arab Emirates :+971 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>United Kingdom :+44</masterLabel>
+        <translation><!-- United Kingdom :+44 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>United States :+1</masterLabel>
+        <translation><!-- United States :+1 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Uruguay :+598</masterLabel>
+        <translation><!-- Uruguay :+598 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Uzbekistan :+998</masterLabel>
+        <translation><!-- Uzbekistan :+998 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vanuatu :+678</masterLabel>
+        <translation><!-- Vanuatu :+678 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vatican City :+379</masterLabel>
+        <translation><!-- Vatican City :+379 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Venezuela :+58</masterLabel>
+        <translation><!-- Venezuela :+58 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vietnam :+84</masterLabel>
+        <translation><!-- Vietnam :+84 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wales :+44</masterLabel>
+        <translation><!-- Wales :+44 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wallis and Futuna :+681</masterLabel>
+        <translation><!-- Wallis and Futuna :+681 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Western Sahara :+212</masterLabel>
+        <translation><!-- Western Sahara :+212 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Yemen :+967</masterLabel>
+        <translation><!-- Yemen :+967 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zambia :+260</masterLabel>
+        <translation><!-- Zambia :+260 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zimbabwe :+263</masterLabel>
+        <translation><!-- Zimbabwe :+263 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

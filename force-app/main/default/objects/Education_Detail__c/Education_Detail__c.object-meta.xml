@@ -161,7 +161,7 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Education Detail</label>
     <nameField>
-        <displayFormat>EDN-{000000}</displayFormat>
+        <displayFormat>EDN-{00000}</displayFormat>
         <label>Education Detail Number</label>
         <trackHistory>false</trackHistory>
         <type>AutoNumber</type>

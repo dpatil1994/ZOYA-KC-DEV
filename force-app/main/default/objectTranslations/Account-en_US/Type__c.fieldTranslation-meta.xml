@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Type --></label>
+    <name>Type__c</name>
+    <picklistValues>
+        <masterLabel>IBAN Number</masterLabel>
+        <translation><!-- IBAN Number --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IFSC Code</masterLabel>
+        <translation><!-- IFSC Code --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SORT Code</masterLabel>
+        <translation><!-- SORT Code --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SWIFT Code</masterLabel>
+        <translation><!-- SWIFT Code --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

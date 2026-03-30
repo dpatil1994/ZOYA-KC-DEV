@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Notice Payable / Recoverable	Picklist --></label>
+    <name>Notice_Payable_Recoverable_Picklist__c</name>
+    <picklistValues>
+        <masterLabel>Not Applicable</masterLabel>
+        <translation><!-- Not Applicable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Payable</masterLabel>
+        <translation><!-- Payable --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Recoverable</masterLabel>
+        <translation><!-- Recoverable --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

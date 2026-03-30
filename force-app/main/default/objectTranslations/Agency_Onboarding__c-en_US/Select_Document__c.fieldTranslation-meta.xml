@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Select Document --></label>
+    <name>Select_Document__c</name>
+    <picklistValues>
+        <masterLabel>Cancelled Cheque Copy</masterLabel>
+        <translation><!-- Cancelled Cheque Copy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SOA</masterLabel>
+        <translation><!-- SOA --></translation>
+    </picklistValues>
+</CustomFieldTranslation>
