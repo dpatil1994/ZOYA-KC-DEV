@@ -1,0 +1,493 @@
+<apex:page standardController="Sales_Offer__c"
+           extensions="SalesOfferPaymentPlanController"
+           renderAs="pdf"
+           showHeader="false"
+           sidebar="false"
+           applyHtmlTag="false"
+           action="{!setPdfFileName}">
+    
+    <html>
+        <head>
+            <style type="text/css">
+                body {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                margin: 0;
+                padding: 0;
+                line-height: 1.2;
+                position: relative;
+                padding-bottom: 60px;
+                }
+                .header {
+                background-color: #400E06;
+                color: white;
+                padding: 5px 20px;
+                margin-top: -5px;
+                
+                }
+                .header-table {
+                width: 100%;
+                border-collapse: collapse;
+                
+                }
+                .header-left {
+                vertical-align: top;
+                }
+                .header-right {
+                text-align: right;
+                vertical-align: top;
+                }
+                .container {
+                padding: 10px 20px;
+                margin-bottom: 70px;
+                }
+                .section-title {
+                font-weight: bold;
+                margin: 3px 0 5px 0;
+                font-size: 14px;
+                }
+                
+                table.data-table {
+                width: 100%;
+                border-collapse: collapse;
+                font-size: 10px;
+                border: 1px solid #000;
+                margin-bottom: 8px;
+                table-layout: fixed; 
+                }
+                table.data-table th {
+                border: 1px solid #000;
+                padding: 6px 4px;
+                text-align: center;
+                font-weight: bold;
+                background-color: #f2f2f2;
+                font-size: 10px;
+                word-wrap: break-word; 
+                }
+                table.data-table td {
+                border: 1px solid #000;
+                padding: 6px 4px;
+                text-align: center;
+                font-size: 10px;
+                word-wrap: break-word; 
+                overflow-wrap: break-word;
+                }
+                .note {
+                margin-top: 8px;
+                font-size: 9px;
+                font-weight: bold;
+                line-height: 1.2;
+                }
+                
+                .payment-title {
+                width: 100%;
+                font-weight: bold;
+                margin-top: 15px;
+                margin-bottom: 8px;
+                font-size: 13px;
+                }
+                
+                .payment-title-left {
+                float: left;
+                margin-right: 20px;
+                }
+                
+                .payment-title-right {
+                float: left;
+                }
+                
+                .clearfix {
+                clear: both;
+                }
+                
+                /* CSS Paged Media */
+                @page {
+                size: A4;
+                margin: 70px 10px 90px 10px; 
+                
+                @bottom-left {
+                content: element(footer);
+                }
+                
+                @bottom-right {
+                //    content: "Page " counter(page) " of " counter(pages);
+                font-size: 8px;
+                color: #666;
+                }
+                }
+                
+                
+                /* Optimized Footer CSS */
+                div.footer {
+                display: block;
+                padding: 5px;
+                position: running(footer);
+                /* Width 90% rakhiye taaki side mein gap dikhe */
+                width: 90%;
+                /* In do lines se footer center ho jayega */
+                margin-left: auto;
+                margin-right: auto;
+                }
+                
+                .footer-line {
+                border-top: 1px solid #000;
+                margin-bottom: 10px;
+                }
+                
+                .disclaimer {
+                font-family: Arial, sans-serif;
+                font-size: 10px;
+                text-align: center;
+                color: #333;
+                line-height: 1.4;
+                margin-bottom: 10px;
+                }
+                
+                .info-table {
+                width: 100%;
+                font-family: Arial, sans-serif;
+                font-size: 11px;
+                border-collapse: collapse;
+                }
+                
+                .left-align { text-align: left; width: 33%; }
+                .center-align { text-align: center; width: 33%; }
+                .right-align { text-align: right; width: 33%; }
+                
+                .payment-plan-summary-table .col-1 { 
+                width: 25% !important; 
+                text-align: left !important; 
+                padding-left: 8px !important;
+                font-size: 10px !important;
+                }
+                .payment-plan-summary-table .col-2 { 
+                width: 15% !important; 
+                font-size: 10px !important;
+                }
+                .payment-plan-summary-table .col-3 { 
+                width: 25% !important;  
+                font-size: 10px !important;
+                word-wrap: break-word !important;
+                white-space: normal !important;
+                line-height: 1.2 !important;
+                }
+                .payment-plan-summary-table .col-4 { 
+                width: 15% !important; 
+                font-size: 10px !important;
+                }
+                .payment-plan-summary-table .col-5 { 
+                width: 20% !important; 
+                text-align: right !important; 
+                padding-right: 8px !important;
+                font-size: 10px !important;
+                }
+                
+                .property-details-table .col-1 { width: 20% !important; }
+                .property-details-table .col-2 { width: 10% !important; }
+                .property-details-table .col-3 { width: 10% !important; }
+                .property-details-table .col-4 { width: 15% !important; }
+                .property-details-table .col-5 { width: 15% !important; }
+                .property-details-table .col-6 { width: 10% !important; }
+                .property-details-table .col-7 { width: 20% !important; }
+                
+                .installment-table .col-1 { width: 30% !important; }
+                .installment-table .col-2 { width: 25% !important; }
+                .installment-table .col-3 { width: 15% !important; }
+                .installment-table .col-4 { width: 30% !important; }
+                
+                .long-text-cell {
+                word-wrap: break-word !important;
+                white-space: normal !important;
+                line-height: 1.2 !important;
+                padding: 4px 3px !important;
+                font-size: 9px !important;
+                }
+                
+                .unit-image-wrapper {
+                width: 80% !important;
+                margin: 8px auto !important;
+                text-align: center;
+                /* page-break-inside: avoid; */
+                
+                }
+                
+                .unit-image {
+                max-width: 100% !important;
+                max-height: 130px !important;
+                height: auto !important;
+                display: inline-block;
+                }
+                
+                .no-image {
+                text-align: center;
+                font-size: 10px;
+                margin-top: 8px;
+                }
+                
+                .text-center {
+                text-align: center;
+                margin-top: 15px;
+                margin-bottom: 8px;
+                font-size: 18px;
+                page-break-before: always;
+                }
+                
+                .page-break {
+                page-break-before: always;
+                height: 10px;
+                }
+                
+                
+                
+                .data-table tr {
+                height: auto !important; 
+                min-height: 25px;
+                }
+                
+                /* Compact mode for payment plan tables */
+                .compact-mode .data-table {
+                font-size: 9px;
+                }
+                
+                .compact-mode .data-table th,
+                .compact-mode .data-table td {
+                padding: 4px 3px;
+                }
+                
+                .compact-mode .data-table tr {
+                height: auto !important;
+                min-height: 22px;
+                }
+                
+                /* Ensure footer doesn't overlap content */
+                .main-content {
+                padding-bottom: 5px;
+                }
+                
+            </style>
+            
+        </head>
+        
+        <body>
+            
+            <!-- HEADER -->
+            <div class="header">
+                <table class="header-table">
+                    <tr>
+                        <td class="header-left">
+                            <h2 style="margin:0 0 5px 0; font-size:16px;">Details</h2>
+                            <div style="margin-bottom:3px;"><b>Project Name:</b> {!projectName}</div>
+                            <div style="margin-bottom:3px;"><b>Property Type:</b> {!propertyUnitType}</div>
+                            <div style="margin-bottom:3px;"><b>Print Date: </b> 
+                                <apex:outputText value="{0,date,dd-MMM-yyyy}"><apex:param value="{!offerDate}" /></apex:outputText></div>
+                            <div style="margin-bottom:3px;"><b>Sales Offer Number: </b>{!salesOffer.Name} 
+                            </div>
+                            
+                            <div><b>Location Link: </b>https://maps.app.goo.gl/5Uf6FGqw1jzFDe7u8?g_st=iw/</div>
+                        </td>
+                        <td class="header-right">
+                            <img src="{!$Resource.ZoyaLogo}" 
+                                 style="height:150px; max-width:300px; margin-top:-40px;"
+                                 alt="Zoya Developers Logo"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <!-- FOOTER CONTENT (hidden, will be used by @page) -->
+            <div class="footer">
+                <div class="disclaimer">
+                    Valid for one day only from the print date. The price and payment plan are subject to change without prior notice. This layout is for indicative purposes and the final layout is subject to DLD, Consultant, and Authority approvals.
+                </div>
+                
+                <div class="footer-line"></div>
+                
+                <table class="info-table">
+                    <tr>
+                        <td class="left-align">
+                            Date: <apex:outputText value=" {0,date,dd-MMM-yyyy}">
+                            <apex:param value="{!TODAY()}" />
+                            </apex:outputText> <br/>
+                            Generated By: {!recordOwnerName}
+                        </td>
+                        <td class="center-align">
+                            <a href="https://www.zoyadevelopments.ae/" style="text-decoration:none; color:black;">
+                                https://www.zoyadevelopments.ae/
+                            </a>
+                        </td>
+                        <td class="right-align" style="vertical-align: top;">
+                            <strong> {!projectName}</strong>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- MAIN CONTENT -->
+            <div class="container main-content">
+                
+                <div class="section-title">PROPERTY DETAILS</div>
+                
+                <table class="data-table property-details-table">
+                    <tr>
+                        <th class="col-1">Project</th>
+                        <th class="col-2">Unit</th>
+                        <th class="col-3">Unit Type</th>
+                        <th class="col-4">Saleable Area (Sq ft)</th>
+                        <th class="col-5">Selling Price (AED)</th>
+                        <th class="col-6">Discount</th>
+                        <th class="col-7">Discounted Price (AED)</th>
+                    </tr>
+                    <tr>
+                        <td class="col-1">{!projectName}</td>
+                        <td class="col-2">{!propertyUnitName}</td>
+                        <td class="col-3">{!propertyUnitType}</td>
+                        <td class="col-4">{!propertyTotalArea}</td>
+                        <td class="col-5">
+                            <apex:outputText value="{0,number,###,###,###.00}">
+                                <apex:param value="{!propertyTotalAmount}" />
+                            </apex:outputText>
+                        </td>
+                        <td class="col-6">{!propertyDiscountPercent}%</td>
+                        <td class="col-7">
+                            <apex:outputText value="{0,number,###,###,###.00}">
+                                <apex:param value="{!propertyDiscountedAmount}" />
+                            </apex:outputText>
+                        </td>
+                        
+                        
+                        
+                    </tr>
+                </table>
+                
+                <div class="note">
+                    * APPLICABLE FEES TO DUBAI LAND DEPARTMENT ARE 4% OF THE PROPERTY NET PRICE + AED 3,500 ADMIN FEE
+                </div>
+                
+                <div class="section-title">Payment plan</div>
+                
+                <div class="payment-plan-container">
+                    <table class="data-table payment-plan-summary-table">
+                        <tr>
+                            <th class="col-1">Payments Type</th>
+                            <th class="col-2">Date</th>
+                            <th class="col-3">Percentage</th>
+                            <th class="col-4">Number of Payments</th>
+                            <th class="col-5">Payment Amount</th>
+                        </tr>
+                        <tr>
+                            <td class="col-1">Down Payment</td>
+                            <td class="col-2">
+                                <apex:outputText value="{0,date,dd-MMM-yyyy}">
+                                    <apex:param value="{!offerDate}" />
+                                </apex:outputText>
+                            </td>
+                            <td class="col-3 long-text-cell">
+                                {!IF(downPaymentPercent == 0, "0%", TEXT(downPaymentPercent) & "%")}
+                            </td>
+                            
+                            
+                            <td class="col-4">
+                                {!downPaymentCount}
+                            </td>
+                            
+                            <td class="col-5">
+                                <apex:outputText value="{0,number,#,##0.00}">
+                                    <apex:param value="{!downPaymentAmount}" />
+                                </apex:outputText>
+                            </td>
+                            
+                        </tr>
+                        <tr>
+                            <td class="col-1">DLD Registration Fees</td>
+                            <td class="col-2">
+                                <apex:outputText value="{0,date,dd-MMM-yyyy}">
+                                    <apex:param value="{!offerDate}" />
+                                </apex:outputText>
+                            </td>
+                            <td class="col-3 long-text-cell">{!dldPercentage}%</td>
+                            <td class="col-4">1</td>
+                            <td class="col-5">
+                                <apex:outputText value="{0,number,###,###,###.00}">
+                                    <apex:param value="{!dldAmount}" />
+                                </apex:outputText>
+                            </td>
+                            
+                        </tr>
+                        
+                        <tr>
+                            <td class="col-1">Administration Fees</td>
+                            <td class="col-2">
+                                <apex:outputText value="{0,date,dd-MMM-yyyy}">
+                                    <apex:param value="{!offerDate}" />
+                                </apex:outputText>
+                            </td>
+                            <td class="col-3 long-text-cell">-</td>
+                            <td class="col-4">1</td>
+                            <td class="col-5">{!adminFee}</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="col-1">Total</td>
+                            <td class="col-2">-
+                                <!-- <apex:outputText value="{0,date,dd-MMM-yyyy}">
+<apex:param value="{!offerDate}" />
+</apex:outputText> -->
+                            </td>
+                            <td class="col-3 long-text-cell">-</td>
+                            <td class="col-4">-</td>
+                            <td class="col-5">
+                                <apex:outputText value="{0,number,#,##0.00}">
+                                    <apex:param value="{!totalPaymentAmount}" />
+                                </apex:outputText>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- PAYMENT PLAN FOR EXPECTED DEAL DATE -->
+                <div class="payment-title">
+                    <div class="payment-title-left">
+                        PAYMENT PLAN FOR EXPECTED DEAL DATE:
+                    </div>
+                    <div class="payment-title-right">
+                        <apex:outputText value="{0,date,dd-MMM-yyyy}">
+                            <apex:param value="{!offerDate}" />
+                        </apex:outputText>
+                    </div>
+                </div>
+                
+                <div class="clearfix"></div> 
+                
+                <!-- Payment Plan Table -->
+                <div class="payment-plan-container compact-mode">
+                    <table class="data-table installment-table">
+                        <tr>
+                            <th class="col-1">Installment</th>
+                            <th class="col-2">Milestone</th>
+                            <th class="col-3">% of Payment</th>
+                            <th class="col-4">Amount</th>
+                        </tr>
+                        
+                        <apex:repeat value="{!paymentPlan}" var="inst" rows="">
+                            <tr class="installment-group">
+                                <td class="col-1">{!inst.installmentName}</td>
+                                <td class="col-2">
+                                    <apex:outputText value="{0,date,dd-MMM-yyyy}">
+                                        <apex:param value="{!inst.milestoneDate}" />
+                                    </apex:outputText>
+                                </td>
+                                <td class="col-3">{!inst.percentage}%</td>
+                                <td class="col-4">
+                                    <apex:outputText value="{0,number,#,##0.00}">
+                                        <apex:param value="{!inst.amount}" />
+                                    </apex:outputText>
+                                </td>
+                            </tr>
+                        </apex:repeat> 
+                    </table>
+                </div> 
+                
+            </div> <!-- End of container -->
+            
+        </body>
+    </html>
+</apex:page>

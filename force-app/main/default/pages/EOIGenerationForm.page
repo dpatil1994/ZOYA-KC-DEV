@@ -1,0 +1,457 @@
+<apex:page controller="EOIGenerationFormController" showHeader="false" sidebar="false" 
+    standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false"
+    docType="html-5.0" renderAs="PDF" contentType="application/pdf#EOI-Form.pdf">
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Expression of Interest</title>
+
+<style>
+
+/* ================================
+   LOAD FONT: QUASIMODA (FROM ZIP STATIC RESOURCE)
+================================ */
+@font-face {
+    font-family: 'Quasimoda';
+    src: url('{!URLFOR($Resource.Quasimoda, "fonts/Quasimoda-Regular.ttf")}') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quasimoda';
+    src: url('{!URLFOR($Resource.Quasimoda, "fonts/Quasimoda-Bold.ttf")}') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* ================================
+   GLOBAL PDF STYLING
+================================ */
+body {
+    font-family: 'Quasimoda', Arial, Helvetica, sans-serif !important;
+    font-size: 9pt;
+    line-height: 1.35;
+    margin: 0;
+    padding: 0.5in;
+    color: #000;
+}
+
+/* ================================
+   TABLE / BORDER STYLING
+================================ */
+.simple-box {
+    width: 100%;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.simple-box td,
+.simple-box th {
+    border: 1px solid #000;
+    padding: 4px 6px;
+    font-size: 10pt;
+}
+
+.simple-box .box-header th {
+    background: #CC8A50;
+    font-weight: bold;
+    padding: 6px 8px;
+    font-size: 10pt;
+}
+
+/* Smaller font for developer rows */
+.simple-box.developer td:first-child {
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+/* ================================
+   HEADER
+================================ */
+.main-header {
+    text-align: left;
+    margin-bottom: 5px;
+    padding-bottom: 0;
+}
+
+.main-header h3 {
+    font-size: 13pt;
+    font-weight: bold;
+    margin: 0;
+}
+
+.main-header p {
+    font-size: 10.5pt;
+    margin-top: 2px;
+}
+
+/* ================================
+   SECTION SPACING
+================================ */
+.section {
+    margin-top: 12px;
+}
+
+/* ================================
+   COLUMN WIDTHS
+================================ */
+td.label-col {
+    width: 28%;
+    font-weight: bold;
+}
+
+td.value-col {
+    width: 73%;
+}
+
+td.value-col-2 {
+    width: 36%;
+}
+
+/* PAYMENT WIDTHS */
+.eoi-payment-details td.label-col {
+    width: 22%;
+    font-weight: bold;
+}
+
+.eoi-payment-details td.value-col {
+    width: 28%;
+}
+
+/* ================================
+   LOGO
+================================ */
+.logo-container {
+    width: 110px;
+    height: auto;
+    position: absolute; /* Position relative to page */
+    top: 5px; /* Distance from top */
+    right: 60px; /* Move slightly left from the right edge */
+    margin-bottom: 20px; /* spacing below logo */
+   
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+    display: block;
+    
+}
+
+
+
+
+/* ================================
+   TERMS CONDITIONS
+================================ */
+.terms-container {
+    margin-top: 15px;
+    font-size: 10pt;
+}
+
+.terms-title {
+    font-size: 11pt;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.term-item {
+    margin-bottom: 10px; /* spacing between terms */
+}
+
+.term-item h4 {
+    margin: 6px 0 3px 0;
+    font-weight: bold;
+    font-size: 10.5pt;
+}
+
+.term-item p,
+.term-item ul li {
+    font-size: 10pt;
+    margin-top: 2px;
+}
+
+/* ================================
+   SIGNATURES
+================================ */
+.signature-section {
+    margin-top: 15px;
+}
+
+.signature-block {
+    margin-bottom: 20px;
+}
+
+.keep-together {
+    page-break-inside: avoid;
+}
+
+/* ================================
+   FOOTER WITH PAGE NUMBERS
+   USING CSS COUNTERS FOR PDF
+================================ */
+@page {
+    @bottom-left {
+        content: "Page " counter(page) " of " counter(pages) "\A Confidential Document";
+        white-space: pre; 
+        font-family: 'Quasimoda', Arial, sans-serif;
+        font-size: 9pt;
+        color: #000;
+    }
+}
+
+.footer-container {
+    position: fixed;
+    display: none;
+    bottom: 0.2in;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Quasimoda', Arial, sans-serif;
+    font-size: 9pt;
+    color: #000;
+}
+
+.footer-container .confidential {
+    display: block;
+    margin-top: 2px;
+    font-weight: bold;
+}
+
+/* ================================
+   WATERMARK
+================================ */
+.watermark {
+    position: fixed;
+    bottom: 0.5in; 
+    left: 0.5in; 
+    font-family: 'Quasimoda', Arial, sans-serif;
+    font-size: 12pt;
+    color: #000;
+    opacity: 0.1; 
+    font-weight: bold;
+    z-index: 0;
+    transform: rotate(-45deg);
+    transform-origin: left bottom;
+    line-height: 1.5;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- LOGO ONLY FOR FIRST PAGE -->
+<div class="logo-container first-page-logo">
+    <img src="{!$Resource.ZoyaLogo}" alt="Zoya Logo" class="logo"/>
+</div>
+
+<!-- ================= HEADER ================= -->
+<div class="main-header">
+    <h3>EXPRESSION OF INTEREST</h3>
+    <p><strong>EOI DATE : {!formattedEOIDate}</strong></p>
+</div><br/>
+
+<!-- ================= SECTION 1 — DEVELOPER ================= -->
+<div class="section">
+<table class="simple-box">
+    <tr class="box-header">
+        <th colspan="2">1   PARTICULARS OF THE DEVELOPER</th>
+    </tr>
+    <tr><td class="label-col"><strong>Developer</strong></td><td>Zoya Developments</td></tr>
+    <tr><td><strong>Developer Registration No.</strong></td><td>55556</td></tr>
+    <tr><td><strong>Address</strong></td><td>57PH+7RQ - Between Al Asayel Street and Al Abraj Street, Business Bay - Dubai - United Arab Emirates</td></tr>
+    <tr><td><strong>Tel. No</strong></td><td>+97145534816</td></tr>
+    <tr><td><strong>Website</strong></td><td>https://www.zoyadevelopments.ae/</td></tr>
+</table>
+    </div>
+
+<!-- ================= SECTION 2 — PURCHASERS ================= -->
+<div class="section">
+<table class="simple-box">
+    <tr class="box-header">
+        <th>2  PARTICULARS </th>
+        <th>PRIMARY PURCHASER</th>
+        <th>SECONDARY PURCHASER</th>
+    </tr>
+    <tr><td><strong>Purchaser Full Name</strong></td><td>{!BuyerName}</td><td></td></tr>
+    <tr><td><strong>Address 1</strong></td><td>{!billingStreet}, {!billingCity}, {!billingCountry}</td><td></td></tr>
+    <tr><td><strong>Address 2</strong></td><td>{!billingStreet}, {!billingCity}, {!billingCountry}</td><td></td></tr>
+    <tr><td><strong>City, Country</strong></td><td>{!billingCity}</td><td></td></tr>
+    <tr><td><strong>Mobile No.</strong></td><td>{!personMobile}</td><td></td></tr>
+    <tr><td class="label-col"><strong>Email</strong></td><td>{!clientEmail}</td><td></td></tr>
+    <tr><td><strong>Nationality</strong></td><td>{!nationality}</td><td></td></tr>
+    <tr><td><strong>Passport Number</strong></td><td>{!passportNo}</td><td></td></tr>
+    <tr><td><strong>Emirates ID</strong></td><td>{!emiratesNo}</td><td></td></tr>
+    <tr><td><strong>Resident of UAE</strong></td><td>{!internationalBrokerType}</td><td></td></tr>
+</table>
+    </div>
+
+<!-- ================= SECTION 3 — UNIT PREFERENCE ================= -->
+<div class="section">
+<table class="simple-box">
+    <tr class="box-header">
+        <th colspan="3">3   PREFERENCE OF THE UNIT</th>
+    </tr>
+    <tr><td><strong>Project</strong></td><td colspan="2">{!projectName}</td></tr>
+    <tr><td><strong>Unit Type</strong></td><td colspan="2"></td></tr>
+    <tr><td><strong>Permitted Use</strong></td><td>Residential</td><td></td></tr>
+    <tr><td><strong>Unit View</strong></td><td></td><td><strong>Unit Floor</strong></td></tr>
+    <tr><td><strong>Price Range</strong></td><td colspan="2"></td></tr>
+</table>
+</div>
+
+<!-- ================= FOR OFFICE USE ================= -->
+<div class="section" style="font-weight:bold;">FOR OFFICE USE ONLY</div>
+
+<!-- ================= SECTION 4 — PAYMENT DETAILS ================= -->
+<div class="section">
+<table class="simple-box eoi-payment-details">
+    <tr class="box-header">
+        <th colspan="4">4   EOI PAYMENT DETAILS</th>
+    </tr>
+    <tr>
+        <td class="label-col"><strong>EOI Amount (AED)</strong></td>
+        <td class="value-col">{!eoiAmount}</td>
+        <td class="label-col"><strong>Mode of Payment</strong></td>
+        <td class="value-col"></td>
+    </tr>
+    <tr>
+        <td class="label-col"><strong>Allocated Unit No.</strong></td>
+        <td class="value-col"></td>
+        <td class="label-col"><strong>Price (AED)</strong></td>
+        <td class="value-col"></td>
+    </tr>
+</table>
+</div>
+
+<!-- ================= TERMS & CONDITIONS ================= -->
+<div class="terms-container keep-together">
+    <div class="terms-title">Expression of Interest ("EOI") Terms and Conditions:</div>
+
+    <!-- 1 -->
+    <div class="term-item">
+        <h4>1. Application</h4>
+        <p>These Terms and Conditions apply to the offer made by the <strong>Purchaser</strong> to the <strong>Developer</strong> for the purchase of the property or unit identified in this Expression of Interest ("EOI").</p>
+    </div>
+
+    <!-- 2 -->
+    <div class="term-item">
+        <h4>2. Purpose of EOI</h4>
+        <p>This EOI represents the Purchaser's intention to express interest in purchasing a property within the Developer's project and to secure consideration for available units, subject to the Developer's final approval and execution of a formal sale agreement. The submission of this EOI and the corresponding deposit does not constitute a reservation or guarantee of any specific unit until the Developer's written confirmation and execution of a Sale or Reservation Agreement.</p>
+    </div>
+
+    <!-- 3 -->
+    <div class="term-item">
+        <h4>3. Deposit</h4>
+        <p>3.1 The Deposit amount, as specified in this EOI, shall be payable by the Purchaser on the date of signing this document.</p>
+        <p>3.2 The Deposit will be held by the Developer and, if the Purchaser's offer is accepted, applied towards the first installment of the Purchase Price, typically amounting to ten percent (10%) of the total Purchase Price ("First Installment"), pursuant to the terms of the formal Sale Agreement to be executed between the parties.</p>
+        <p>3.3 The receipt of the Deposit by the Developer does not bind the Developer to sell the property to the Purchaser. The Developer retains absolute discretion to accept or reject any EOI.</p>
+    </div>
+
+    <!-- 4 -->
+    <div class="term-item">
+        <h4>4. Acceptance of Offer</h4>
+        <p>4.1 If the Developer accepts the Purchaser's offer, the Purchaser will be formally invited to execute the Sale and Purchase Agreement ("SPA") or Reservation Agreement in accordance with the Developer's standard terms and conditions.</p>
+        <p>4.2 The Developer may revise or modify the unit allocation, payment plan, or related commercial terms at its discretion prior to SPA execution.</p>
+    </div>
+
+    <!-- 5 -->
+    <div class="term-item">
+        <h4>5. Non-Acceptance and Refund</h4>
+        <p>5.1 In the event the Developer does not accept the Purchaser's offer, this EOI shall automatically terminate without further notice or legal action.</p>
+        <p>5.2 The Deposit shall then be refunded to the Purchaser <strong>without interest</strong>, and the Purchaser shall not be entitled to any compensation or damages of any kind.</p>
+        <p>5.3 The timeframe for refund, if applicable, shall be as determined by the Developer's internal policy and applicable laws.</p>
+    </div>
+
+    <!-- 6 -->
+    <div class="term-item">
+        <h4>6. Developer's Right to Reject</h4>
+        <p>The Developer reserves the right, at any time and at its sole discretion, to reject the Purchaser's offer or cancel this EOI without assigning any reason and without any liability. In such an event, Clause 5 shall apply.</p>
+    </div>
+
+    <!-- 7 -->
+    <div class="term-item">
+        <h4>7. Binding Nature and Forfeiture of Deposit</h4>
+        <p>7.1 This EOI is binding upon the Purchaser.</p>
+        <p>7.2 If the Purchaser's offer is accepted but the Purchaser fails to:</p>
+        <ul>
+            <li>execute the SPA or Reservation Agreement within ten (10) days of being invited to do so; or</li>
+            <li>pay the balance of the First Installment within the stipulated timeframe,</li>
+        </ul>
+        <p>the Developer may terminate this EOI immediately, and the Deposit shall be forfeited in full as liquidated damages in favour of the Developer.</p>
+        <p>7.3 The Purchaser expressly waives any claim or right of refund in such circumstances.</p>
+    </div>
+
+    <!-- 8 -->
+    <div class="term-item">
+        <h4>8. Termination upon Execution of Sale Agreement</h4>
+        <p>This EOI shall automatically terminate upon execution of the SPA or Reservation Agreement between the Developer and Purchaser, at which point the parties' relationship shall be governed by that agreement.</p>
+    </div>
+
+    <!-- 9 -->
+    <div class="term-item">
+        <h4>9. Non-Transferability</h4>
+        <p>This EOI is non-transferable and non-assignable by the Purchaser, and any resulting sale agreement shall be issued solely in the Purchaser's name.</p>
+        <p>The Developer, however, may assign or transfer this EOI or any of its rights or obligations hereunder to its affiliates, subsidiaries, or joint-venture partners without the Purchaser's consent.</p>
+    </div>
+
+    <!-- 10 -->
+    <div class="term-item">
+        <h4>10. Confidentiality</h4>
+        <p>The Purchaser shall maintain the confidentiality of this EOI and all related discussions, documents, and correspondence. Disclosure shall be limited to the Purchaser's legal or financial advisors, or as otherwise required by law.</p>
+    </div>
+
+    <!-- 11 -->
+    <div class="term-item">
+        <h4>11. Compliance and Representations</h4>
+        <p>11.1 The Purchaser represents that all information provided in this EOI is true and accurate and that the funds used for payment of the Deposit are from legitimate sources in accordance with UAE laws.</p>
+        <p>11.2 The Purchaser agrees to provide any additional documentation required for identity verification, anti-money-laundering (AML) compliance, or regulatory approvals.</p>
+    </div>
+
+    <!-- 12 -->
+    <div class="term-item">
+        <h4>12. Governing Law and Jurisdiction</h4>
+        <p>This EOI and the rights and obligations of the parties shall be governed by and construed in accordance with the laws of the Emirate of Dubai and the federal laws of the United Arab Emirates, to the extent applicable.</p>
+        <p>The parties agree that any dispute arising in connection with this EOI shall be subject to the exclusive jurisdiction of the Courts of Dubai with the express exclusion of DIFC Courts and DIFC laws.</p>
+    </div>
+</div>
+
+<!-- ================= SIGNATURES ================= -->
+<div class="signature-section keep-together">
+
+    <div class="term-item">
+        <h4>13. Acknowledgment</h4>
+        <p>The Purchaser hereby confirms that he/she/they have fully understood and accepted the above &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Terms and Conditions and that all details provided in this EOI are true, complete, and accurate.</p>
+    </div><br/>
+
+    <!-- Purchaser Sign -->
+    <div class="signature-block">
+        <p><strong>Purchaser's Name: ________________________________________</strong></p>
+        <div class="signature-line"></div>
+        <p><strong>Signature: ________________________________________________</strong></p>
+        <p><strong>Name: ____________________________________________________</strong></p>
+        <p><strong>Date: ____________________________________________________</strong></p>
+    </div><br/>
+
+    <!-- Developer Sign -->
+    <div class="signature-block">
+        <p><strong>For and on behalf of the Developer: _________________________</strong></p>
+        <div class="signature-line"></div>
+        <p><strong>Name &amp; Designation: _______________________________________</strong></p>
+        <p><strong>Date: ____________________________________________________</strong></p>
+    </div>
+</div>
+
+<!-- ================= FOOTER / WATERMARK ================= -->
+<div class="footer-container watermark">
+    <span class="confidential">Confidential Document</span>
+</div>
+
+</body>
+</html>
+</apex:page>

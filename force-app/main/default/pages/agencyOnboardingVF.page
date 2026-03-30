@@ -1,0 +1,13 @@
+<apex:page showHeader="false" sidebar="false" applyHtmlTag="false">
+    <apex:includeLightning />
+    <div id="auraContainer"></div>
+    <script>
+        $Lightning.use("c:agencyOnboardingApp", function() {
+            $Lightning.createComponent("c:agencyOnboardingAuraWrapper", {},"auraContainer",
+                function(cmp) {
+                    console.log("Aura component loaded");
+                }
+            );
+        });
+    </script>
+</apex:page>

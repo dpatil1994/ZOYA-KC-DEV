@@ -1,0 +1,11 @@
+<aura:component
+        implements="force:hasRecordId,flexipage:availableForRecordHome,force:lightningQuickAction"
+        access="global">
+
+    <aura:attribute name="recordId" type="Id"/>
+
+    <lightning:button
+        label="Download Sales Offer PDF"
+        variant="brand"
+        onclick="{!c.openPDF}"/>
+</aura:component>

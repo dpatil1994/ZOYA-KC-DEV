@@ -1,0 +1,393 @@
+/* ===============================
+   CAROUSEL
+   =============================== */
+.carousel {
+    width: 100%;
+    margin-bottom: 1.25rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+.carousel-image {
+    position: relative;
+}
+.carousel-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+/* LEFT: Zoya Development */
+.carousel-left-text {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 26px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0px 2px 6px rgba(0,0,0,0.5);
+}
+
+/* RIGHT BOTTOM: Agency Onboarding Form */
+.carousel-right-text {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0px 2px 6px rgba(0,0,0,0.5);
+}
+
+
+/* ===============================
+   STEP PROGRESS BAR
+   =============================== */
+.step-progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.step {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 0 5px;
+    font-weight: bold;
+    background: #dcdcdc;
+    color: #555;
+    border: 1px solid #ccc;
+}
+
+/* Active step (Blue) */
+.step-active {
+    background: #0b74de;
+    color: white;
+    border-color: #095bb0;
+}
+
+/* Completed step (Green) */
+.step-completed {
+    background: #2ecc71;
+    color: white;
+    border-color: #27ae60;
+}
+
+
+/* ===============================
+   SECTION HEADER
+   =============================== */
+.section-header {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0b74de;
+    padding: 0.5rem 0.6rem;
+    margin: 0.6rem 0 1rem 0;
+    background: rgba(11,116,222,0.04);
+    border-left: 4px solid #0b74de;
+    border-radius: 6px;
+}
+
+
+/* ===============================
+   FORM INPUTS
+   =============================== */
+.lightning-input,
+.lightning-combobox,
+.lightning-radio-group {
+    --lwc-input-border-radius: 8px;
+    --lwc-input-border-color: #d8dbe0;
+    --lwc-input-focus-border-color: #0b74de;
+}
+
+.lightning-input input,
+.lightning-combobox select {
+    padding: 0.5rem 0.7rem;
+}
+
+/* phone row */
+.phone-row {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.phone-prefix {
+    width: 40%;
+}
+
+.phone-input {
+    width: 60%;
+}
+
+.phone-prefix .slds-input {
+    background: #f3f6fb;
+    border-radius: 8px;
+    padding: 0.45rem;
+}
+
+
+/* ===============================
+   BUTTONS
+   =============================== */
+.lightning-button {
+    border-radius: 8px;
+    font-weight: 700;
+    padding: 0.6rem 1rem;
+}
+
+.lightning-button:hover {
+    transform: translateY(-2px);
+    transition: all 0.18s ease-in-out;
+}
+
+
+/* ===============================
+   CARD
+   =============================== */
+.slds-card {
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media screen and (max-width: 768px) {
+    .carousel-image img {
+        height: 160px !important;
+    }
+
+    .carousel-left-text {
+        font-size: 18px;
+        top: 10px;
+        left: 15px;
+    }
+
+    .carousel-right-text {
+        font-size: 16px;
+        bottom: 10px;
+        right: 15px;
+    }
+
+    .phone-row {
+        flex-direction: column;
+    }
+
+    .phone-prefix,
+    .phone-input {
+        width: 100%;
+    }
+}
+/* Ensure the container stacks the options vertically */
+.toggle-container {
+    display: flex;
+    flex-direction: column; /* Stacks items one after the other */
+    gap: 10px; /* Adds spacing between the options */
+    margin-bottom: 15px;
+}
+
+/* Style the entire option label */
+.toggle-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    /* Optional: Add some padding for click area */
+    padding: 5px 0; 
+}
+
+/* Hide the default checkbox */
+.toggle-option input[type="checkbox"] {
+    /* Hide the default checkbox input */
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* The custom checkmark (the circle itself) */
+.toggle-option span::before {
+    content: '';
+    display: inline-block;
+    width: 18px; /* Size of the circle */
+    height: 18px;
+    margin-right: 10px;
+    border: 2px solid #ccc; /* Border color (Unchecked) */
+    border-radius: 50%; /* Makes it a circle */
+    background-color: #fff;
+    transition: background-color 0.2s, border-color 0.2s;
+    vertical-align: middle;
+}
+
+/* Change style when the checkbox is checked */
+.toggle-option input[type="checkbox"]:checked + span::before {
+    border-color: #0070d2; /* Checked border color (Salesforce Blue) */
+    background-color: #0070d2; /* Checked background color */
+    /* Optional: Add the dot inside the circle */
+    box-shadow: inset 0 0 0 4px white; 
+}
+
+/* Style the text label */
+.toggle-option span {
+    font-size: 1rem;
+    color: #16325c; /* Salesforce text color */
+}
+
+/* Success Modal Styles */
+.success-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.success-modal {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: modalAppear 0.5s ease-out;
+}
+
+@keyframes modalAppear {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0;
+    animation: confettiFall 3s linear infinite;
+}
+
+@keyframes confettiFall {
+    0% {
+        top: -10px;
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+        transform: rotate(720deg);
+    }
+}
+
+.success-content {
+    position: relative;
+    z-index: 2;
+}
+
+.success-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+
+.success-title {
+    color: #2E844A;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.success-message {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.success-note {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.success-button {
+    background: linear-gradient(135deg, #2E844A 0%, #4CAF50 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.success-button:hover {
+    background: linear-gradient(135deg, #4CAF50 0%, #2E844A 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(46, 132, 74, 0.3);
+}
+
+.success-box {
+    background: #e6ffe6;
+    border: 1px solid #2ecc71;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #2e7d32;
+    font-weight: 600;
+    text-align: center;
+}
+
+.confetti-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.confetti {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    animation: fall 3s linear infinite;
+    opacity: 0.8;
+    border-radius: 50%;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-100vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}

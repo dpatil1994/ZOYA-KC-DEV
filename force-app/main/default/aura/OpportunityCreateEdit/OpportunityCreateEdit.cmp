@@ -1,0 +1,1018 @@
+<aura:component
+        controller="OpportunityAuraController"
+        implements="lightning:isUrlAddressable,flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride"
+        access="global">
+
+    <!-- ================= STYLE ================= -->
+    <aura:html tag="style">
+ <aura:html tag="style">
+/* =========================================================
+   BASE MODAL STYLES (Desktop / Tablet)
+   ========================================================= */
+.slds-modal__container {
+    width: 90%;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+/* =========================================================
+   MOBILE TABLET (up to 768px)
+   ========================================================= */
+@media only screen and (max-width: 768px) {
+
+    /* ---------- Modal full screen ---------- */
+    .slds-modal {
+        position: fixed !important;
+        inset: 0 !important;
+    }
+
+    .slds-modal__container {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100vh !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .slds-modal__header,
+    .slds-modal__footer {
+        flex-shrink: 0;
+    }
+
+    /* ---------- Scrollable content ---------- */
+    .slds-modal__content {
+        flex: 1 1 auto !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        padding: 0.75rem !important;
+        padding-bottom: 4rem !important; /* footer space */
+    }
+
+    /* ---------- 🔥 ROOT FIX: stop input overflow ---------- */
+    .slds-modal__content *,
+    .slds-modal__content *::before,
+    .slds-modal__content *::after {
+        box-sizing: border-box !important;
+    }
+
+    /* ---------- Inputs must stay inside screen ---------- */
+    .slds-modal__content .slds-input,
+    .slds-modal__content .slds-combobox__input,
+    .slds-modal__content .slds-textarea,
+    .slds-modal__content .slds-lookup__search-input {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* ---------- Labels touch targets ---------- */
+    .slds-form-element__label {
+        font-size: 0.875rem !important;
+    }
+
+    .slds-button {
+        min-height: 2.75rem !important;
+    }
+
+    /* ---------- Section headers ---------- */
+    .slds-section__title {
+        font-size: 1.125rem !important;
+    }
+}
+
+/* =========================================================
+   SMALL PHONES (up to 480px)
+   ========================================================= */
+@media only screen and (max-width: 480px) {
+
+    .slds-text-heading_medium {
+        font-size: 1.25rem !important;
+    }
+
+    .slds-modal__content {
+        padding: 0.5rem !important;
+        padding-bottom: 4rem !important;
+    }
+}
+
+/* =========================================================
+   LOCKED / READONLY FIELD STYLING
+   ========================================================= */
+.locked-field .slds-input {
+    background-color: #e0e0e0 !important;
+    color: #3e3e3c !important;
+    border: 1px solid #c9c9c9 !important;
+    padding-left: 0.75rem !important;
+}
+
+.locked-field .slds-input:disabled,
+.locked-field .slds-input[readonly] {
+    opacity: 1 !important;
+    cursor: not-allowed;
+}
+</aura:html>
+
+    </aura:html>
+
+    <!-- ================= ATTRIBUTES ================= -->
+    <aura:attribute name="recordId" type="String"/>
+
+<!-- ATTRIBUTES section ke end mein -->
+<aura:attribute name="passportFileName" type="String" default=""/>
+<aura:attribute name="salesOfferFileName" type="String" default=""/>
+<aura:attribute name="popFileName" type="String" default=""/>
+<aura:attribute name="uploadedDocumentIds" type="String[]" default="[]"/>
+<!-- Component top mein add kariye -->
+<aura:attribute name="selectedPropertyId" type="String"/>
+<aura:attribute name="selectedUnitId" type="String"/>
+
+<!-- 🔥 Dependent Property Dropdown -->
+
+<aura:attribute name="propertyOptions" type="List"/>
+<aura:attribute name="unitOptions" type="List"/>
+
+<aura:attribute name="passportDocId" type="String"/>
+<aura:attribute name="salesOfferDocId" type="String"/>
+<aura:attribute name="popDocId" type="String"/>
+
+<aura:attribute name="isSalesAdminManager" type="Boolean" default="false"/>
+
+
+    <aura:attribute name="loadSpinner" type="Boolean" default="false"/>
+    <aura:attribute name="todayDate" type="String"/>
+    <!-- Pricing Preview -->
+<aura:attribute name="unitPrice" type="Decimal" default="0"/>
+<aura:attribute name="discountAmount" type="Decimal" default="0"/>
+<aura:attribute name="sellingPrice" type="Decimal" default="0"/>
+<aura:attribute name="x4Dld" type="Decimal" default="0"/>
+<aura:attribute name="adminFee" type="Decimal" default="3500"/>
+<aura:attribute name="totalAmount" type="Decimal" default="0"/>
+    
+
+    <!-- Conditional visibility flags -->
+    
+<aura:attribute name="showAgencyFields" type="Boolean" default="false"/>
+    <aura:attribute name="showMOPReference" type="Boolean" default="false"/>
+    
+    <!-- Attributes section mein -->
+<aura:attribute name="jointBuyerCount" type="Integer" default="0"/>
+<aura:attribute name="showJointBuyers" type="Boolean" default="false"/>
+
+
+<aura:attribute name="userProfileName" type="String"/>
+
+<aura:attribute name="hidePaymentAndLegal" type="Boolean" default="false"/>
+<aura:attribute name="showCloseDate" type="Boolean" default="false"/>
+<aura:attribute name="passportError" type="String"/>
+<aura:attribute name="salesOfferError" type="String"/>
+<aura:attribute name="popError" type="String"/>
+<aura:attribute name="popAmountError" type="String"/>
+
+<aura:attribute name="newAccountId" type="String"/>
+<aura:attribute name="showAccountTypeModal" type="Boolean" default="false"/>
+<aura:attribute name="selectedBuyerType" type="String"/>
+
+
+<aura:attribute name="formErrorMessage" type="String" default=""/>
+<aura:attribute name="hasFormErrors" type="Boolean" default="false"/>
+
+<aura:attribute name="propertyError" type="String"/>
+<aura:attribute name="unitError" type="String"/>
+
+    <aura:handler
+    name="change"
+    value="{!v.pageReference}"
+    action="{!c.onPageRefChange}" />
+    
+    <aura:attribute name="showEmiratesUploader" type="Boolean" default="false"/>
+<aura:attribute name="emiratesIdFileName" type="String"/>
+<aura:attribute name="emiratesIdDocId" type="String"/>
+
+<aura:attribute name="returnTo" type="String"/>
+    <!-- ================= INIT ================= -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:navigation aura:id="navLink"/>
+
+    <!-- ================= MODAL ================= -->
+    <div class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+
+            <!-- HEADER -->
+            <div class="slds-modal__header slds-theme_shade">
+                <aura:if isTrue="{!v.recordId}">
+                    <h2 class="slds-text-heading_medium">Edit Sales Booking</h2>
+                    <aura:set attribute="else">
+                        <h2 class="slds-text-heading_medium">Create Sales Booking</h2>
+                    </aura:set>
+                </aura:if>
+            </div>
+
+            <!-- SPINNER -->
+            <aura:if isTrue="{!v.loadSpinner}">
+                <lightning:spinner size="large"/>
+            </aura:if>
+
+            <!-- ================= FORM ================= -->
+            <lightning:recordEditForm
+        aura:id="recordForm"
+        recordId="{!v.recordId}"
+        objectApiName="Opportunity"
+        onsubmit="{!c.handleSubmit}"
+        onsuccess="{!c.handleSuccess}"
+        onerror="{!c.handleError}">
+
+
+                <div class="slds-modal__content slds-p-around_medium">
+
+                    <!-- ===== SECTION 1 ===== -->
+                    <div class="slds-section slds-is-open">
+                        <h3 class="slds-section__title slds-theme_shade">
+                            <span class="slds-p-horizontal_small">
+                                Sales &amp; Booking Details
+                            </span>
+                        </h3>
+
+                       <div class="slds-grid slds-wrap">
+
+    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+
+        <aura:if isTrue="{!empty(v.recordId)}">
+            <!-- CREATE MODE -->
+            <lightning:input
+                label="Sales Booking Number"
+                placeholder="Will be auto-generated"
+                readonly="true"
+                class="locked-field"/>
+
+            <aura:set attribute="else">
+                <!-- EDIT MODE -->
+                <lightning:inputField
+                    fieldName="Name"
+                    readonly="true"
+                    class="locked-field"/>
+            </aura:set>
+        </aura:if>
+
+        <lightning:inputField
+            aura:id="stageField"
+            fieldName="StageName"/>
+
+        <lightning:inputField
+            fieldName="Expression_of_Interest__c"/>
+
+        <lightning:inputField
+            fieldName="Sales_Type__c"
+            onchange="{!c.handleSalesTypeChange}"/>
+
+        <lightning:inputField
+            fieldName="Booking_Type__c"/>
+
+    </div>
+
+   <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+
+        <lightning:inputField
+            fieldName="OwnerId"/>
+
+        <lightning:input
+            label="Reservation Date"
+            value="{!v.todayDate}"
+            readonly="true"
+            class="locked-field"/>
+
+        <lightning:inputField
+            fieldName="Finish_Type__c"/>
+
+        <aura:if isTrue="{!v.showCloseDate}">
+            <lightning:inputField
+                fieldName="Close_Date__c"/>
+        </aura:if>
+
+    </div>
+
+                        </div>
+</div>
+
+
+                    <!-- ===== SECTION 2 ===== -->
+              <!-- ===== SECTION 2 : Customer & Agency ===== -->
+<!-- ===== SECTION 2 : Customer & Agency ===== -->
+<div class="slds-section slds-is-open">
+    <h3 class="slds-section__title slds-theme_shade">
+        <span class="slds-p-horizontal_small">
+            Customer &amp; Agency
+        </span>
+    </h3>
+
+    <!-- MAIN 2 COLUMN GRID -->
+    <div class="slds-grid slds-wrap slds-gutters slds-p-around_medium">
+
+        <!-- ================= LEFT COLUMN ================= -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+
+            <!-- Client Name + Add Account -->
+            <div class="slds-form-element slds-m-bottom_medium">
+             <div class="slds-form-element slds-m-bottom_medium">
+
+    <!-- LABEL (TOP) -->
+    <label class="slds-form-element__label">
+        <abbr class="slds-required" title="required">*</abbr>
+        Client Name
+    </label>
+
+    <!-- CONTROL -->
+    <div class="slds-form-element">
+        <div class="slds-grid slds-nowrap slds-align-middle slds-gutters_xx-small">
+
+            <!-- Lookup -->
+            <div class="slds-col slds-grow">
+                <lightning:inputField
+                    fieldName="AccountId"
+                    aura:id="accountField"
+                    variant="label-hidden"
+                    required="true"/>
+            </div>
+
+            <!-- + Icon -->
+            <div class="slds-col slds-shrink-none slds-p-top_xx-small">
+                <lightning:buttonIcon
+                    iconName="utility:add"
+                    variant="border-filled"
+                    onclick="{!c.handleCreateNewAccount}"
+                    alternativeText="Add Account"/>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+            </div>
+
+            <!-- Joint Buyer -->
+            <div class="slds-form-element">
+
+                <lightning:inputField fieldName="Joint_Buyer__c"/>
+
+                <aura:if isTrue="{!v.showJointBuyers}">
+                    <div class="slds-m-top_small">
+                        <lightning:inputField fieldName="Joint_Buyer_2__c"/>
+
+                        <aura:if isTrue="{!v.jointBuyerCount >= 2}">
+                            <lightning:inputField fieldName="Joint_Buyer_3__c"/>
+                        </aura:if>
+
+                        <aura:if isTrue="{!v.jointBuyerCount >= 3}">
+                            <lightning:inputField fieldName="Joint_Buyer_4__c"/>
+                        </aura:if>
+                    </div>
+                </aura:if>
+
+                <!-- Add Joint Buyer Button -->
+                <div class="slds-m-top_x-small">
+                    <lightning:buttonIcon
+                        iconName="utility:add"
+                        variant="bare"
+                        onclick="{!c.addJointBuyer}"
+                        aura:id="addJointBuyerBtn"
+                        alternativeText="Add Joint Buyer"
+                        disabled="{!v.jointBuyerCount >= 3}"/>
+                    <span class="slds-assistive-text">
+                        Add Joint Buyer
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= RIGHT COLUMN ================= -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+
+            <aura:if isTrue="{!v.showAgencyFields}">
+                <div class="slds-form-element slds-m-bottom_medium">
+                    <lightning:inputField
+                        fieldName="Agency_Name__c"
+                        required="true"/>
+                </div>
+
+                <div class="slds-form-element">
+                    <lightning:inputField
+                        fieldName="Commission__c"
+                        disabled="{!v.isSalesAdminManager}"/>
+                </div>
+            </aura:if>
+
+        </div>
+
+    </div>
+</div>
+
+
+                  
+                      <!-- ===== Property Details ===== -->
+<div class="slds-section slds-is-open">
+    <h3 class="slds-section__title slds-theme_shade">
+        <span class="slds-p-horizontal_small">Property Details</span>
+    </h3>
+
+    <!-- Single Grid Row -->
+    <div class="slds-grid slds-wrap slds-gutters slds-p-around_medium">
+
+        <!-- Property Dropdown -->
+           <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+    <div class="{!'slds-form-element ' + (v.propertyError ? 'slds-has-error' : '')}">
+        
+        <label class="slds-form-element__label">
+            <abbr class="slds-required" title="required">*</abbr>
+            Select Project
+        </label>
+
+        <div class="slds-form-element__control">
+            <lightning:combobox
+    aura:id="property"
+    value="{!v.selectedPropertyId}"
+    options="{!v.propertyOptions}"
+    
+    onchange="{!c.handlePropertyChange}" />
+        </div>
+
+        <aura:if isTrue="{!v.propertyError}">
+            <div class="slds-form-element__help">
+                {!v.propertyError}
+            </div>
+        </aura:if>
+    </div>
+</div>
+
+
+            
+                    <!-- Property Unit Dropdown -->
+                   <div class="slds-col slds-size_1-of-2">
+    <div class="{!'slds-form-element ' + (v.unitError ? 'slds-has-error' : '')}">
+        
+        <label class="slds-form-element__label">
+            <abbr class="slds-required">*</abbr>
+            Select Property Unit
+        </label>
+
+        <div class="slds-form-element__control">
+            <lightning:combobox
+    aura:id="propertyUnit"
+    value="{!v.selectedUnitId}"
+    options="{!v.unitOptions}"
+    
+    onchange="{!c.handleUnitChange}" />
+        </div>
+
+        <aura:if isTrue="{!v.unitError}">
+            <div class="slds-form-element__help">
+                {!v.unitError}
+            </div>
+        </aura:if>
+    </div>
+</div>
+
+
+
+    </div>
+    
+    
+    
+</div>
+                    
+            <aura:if isTrue="{!v.showAccountTypeModal}">
+    <section role="dialog" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container slds-modal_small">
+
+            <!-- HEADER -->
+            <header class="slds-modal__header slds-theme_shade">
+
+                <!-- CLOSE ICON -->
+                <button class="slds-button slds-button_icon slds-modal__close"
+                        onclick="{!c.closeAccountTypeModal}"
+                        title="Close">
+                    <lightning:icon
+                        iconName="utility:close"
+                        size="small"
+                        alternativeText="Close"/>
+                </button>
+
+                <h2 class="slds-text-heading_medium">
+                    Select Buyer Type
+                </h2>
+            </header>
+
+            <!-- BODY -->
+            <div class="slds-modal__content slds-p-around_medium">
+
+                <fieldset class="slds-form-element">
+                    <div class="slds-form-element__control">
+
+                        <!-- Individual Buyer -->
+                        <span class="slds-radio slds-m-bottom_medium">
+                            <input type="radio"
+                                   name="buyerType"
+                                   id="individualBuyer"
+                                   onclick="{!c.createIndividualBuyer}"/>
+                            <label class="slds-radio__label" for="individualBuyer">
+                                <span class="slds-radio_faux"></span>
+                                <span class="slds-form-element__label">
+                                    Individual Buyer
+                                </span>
+                            </label>
+                        </span>
+
+                        <!-- Company Buyer -->
+                        <span class="slds-radio">
+                            <input type="radio"
+                                   name="buyerType"
+                                   id="companyBuyer"
+                                   onclick="{!c.createCompanyBuyer}"/>
+                            <label class="slds-radio__label" for="companyBuyer">
+                                <span class="slds-radio_faux"></span>
+                                <span class="slds-form-element__label">
+                                    Company Buyer
+                                </span>
+                            </label>
+                        </span>
+
+                    </div>
+                </fieldset>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</aura:if>
+
+
+
+
+                    <!-- ===== SECTION 4 ===== -->
+                    <div class="slds-section slds-is-open">
+                        <h3 class="slds-section__title slds-theme_shade">
+                            <span class="slds-p-horizontal_small">Sales Team</span>
+                        </h3>
+
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField
+    aura:id="salesExec"
+    fieldName="Sales_Executive_1__c"
+    onchange="{!c.handleSalesExecutiveChange}"/>
+                                <lightning:inputField fieldName="Sales_Executive_2__c"/>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2">
+                                <lightning:inputField
+    aura:id="salesDirector"
+    fieldName="Team_Lead_Sales_Director__c"/>
+                                <lightning:inputField fieldName="Chief_of_Sales__c"/>
+                            </div>
+                        </div>
+                    </div>
+<!-- ===== SECTION 6 : Pricing & Discount Details ===== -->
+<div class="slds-section slds-is-open">
+    <h3 class="slds-section__title slds-theme_shade">
+        <span class="slds-p-horizontal_small">
+            Pricing &amp; Discount Details
+        </span>
+    </h3>
+
+    <div class="slds-grid slds-wrap">
+
+        <!-- LEFT COLUMN -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+          
+            <!-- Preview / Live Calculation Fields -->
+<!-- Unit Price -->
+<div class="slds-form-element">
+    <label class="slds-form-element__label">
+        Unit Price
+        <lightning:helptext 
+            content="Displays the Original Price from the related Customer Unit record linked to this record."/>
+    </label>
+    <lightning:inputField aura:id="unitPrice1"
+                          fieldName="Unit_Price1__c"
+                          variant="label-hidden"
+                          disabled="true"/>
+</div>
+
+<!-- Discount Amount -->
+<div class="slds-form-element">
+    <label class="slds-form-element__label">
+        Discount Amount
+        <lightning:helptext 
+            content="Calculates the discount amount by multiplying the Unit Price with the Discount value."/>
+    </label>
+    <lightning:inputField aura:id="discountAmount1"
+                          fieldName="Discount_Amount1__c"
+                          variant="label-hidden"
+                          disabled="true"/>
+</div>
+
+<!-- Admin Fee -->
+<div class="slds-form-element">
+    <label class="slds-form-element__label">
+        Admin Fee
+        <lightning:helptext 
+            content="Displays the Admin Fee."/>
+    </label>
+    <lightning:inputField aura:id="adminFee1"
+                          fieldName="Admin_Fee1__c"
+                          variant="label-hidden"
+                          disabled="true"/>
+</div>
+
+<!-- 4% DLD -->
+<div class="slds-form-element">
+    <label class="slds-form-element__label">
+        4% DLD
+        <lightning:helptext 
+            content="Calculates 4% of the Selling Price."/>
+    </label>
+    <lightning:inputField aura:id="x4Dld1"
+                          fieldName="X4_DLD1__c"
+                          variant="label-hidden"
+                          disabled="true"/>
+</div>
+
+<!-- Total Amount -->
+<div class="slds-form-element">
+    <label class="slds-form-element__label">
+        Total Amount
+        <lightning:helptext 
+            content="Sum of 4% DLD, Admin Fee, and Selling Price."/>
+    </label>
+    <lightning:inputField aura:id="totalAmount1"
+                          fieldName="Total_Amount1__c"
+                          variant="label-hidden"
+                          disabled="true"/>
+</div>
+
+
+        </div>
+            
+                    <!-- RIGHT COLUMN -->
+                    <div class="slds-col slds-size_1-of-2">
+            
+                        <!-- Editable fields -->
+                       <lightning:inputField aura:id="discount"  fieldName="Discount__c"  onchange="{!c.recalculatePreview}"/>
+            
+                       <lightning:inputField aura:id="sellingPrice1" fieldName="Selling_Price1__c" disabled="true"/>
+            
+                        <lightning:inputField fieldName="Payment_Plan__c" />
+                        <lightning:inputField fieldName="FGR__c"/>
+            
+                    </div>
+            
+                </div>
+            </div>
+
+
+                                  <!-- ===== SECTION : Payment & Collection Details ===== -->
+                <!-- ===== SECTION : Payment & Collection Details ===== -->
+                                    <aura:if isTrue="{!NOT(v.hidePaymentAndLegal)}">
+                <div class="slds-section slds-is-open">
+                    <h3 class="slds-section__title slds-theme_shade">
+                        <span class="slds-p-horizontal_small">Payment &amp; Collection Details</span>
+                    </h3>
+                
+                    <div class="slds-grid slds-wrap">
+                      <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                            <!-- 🔥 Mode of Payment + Conditional Reference -->
+                            <!-- Mode of Payment -->
+                              
+
+                            <lightning:inputField
+                                aura:id="downPayment"
+                                fieldName="Down_Payment_Amount__c"
+                                onchange="{!c.recalculatePaymentPreview}"/>
+                
+                            <lightning:inputField fieldName="DP_Paid_Date__c"/>
+                
+                            <lightning:inputField
+                                aura:id="realizedCollection"
+                                fieldName="Realized_Collection__c"
+                                onchange="{!c.recalculatePaymentPreview}"/>
+                
+                            <lightning:inputField fieldName="Investor_Bulk_Price__c"/>
+                        </div>
+                        <!-- RIGHT COLUMN -->
+                        <div class="slds-col slds-size_1-of-2">
+                
+                            <lightning:inputField fieldName="DP__c"/>
+                
+                            <!-- LIVE PREVIEW (disabled) -->
+                            <!-- DP Balance to Pay -->
+<div class="slds-form-element">
+    <label class="slds-form-element__label">
+        DP Balance to Pay
+        <lightning:helptext 
+            content="Subtracting the Realized Collection amount from the Down Payment Amount."/>
+    </label>
+
+    <lightning:inputField
+        aura:id="dpBalancePreview"
+        fieldName="DP_Balance_to_Pay1__c"
+        variant="label-hidden"
+        disabled="true"/>
+</div>
+
+<!-- Paid Percentage -->
+<div class="slds-form-element">
+    <label class="slds-form-element__label">
+        Paid Percentage
+        <lightning:helptext 
+            content="Calculates the paid percentage based on Realized Collection and Selling Price."/>
+    </label>
+
+    <lightning:inputField
+        aura:id="paidPercentagePreview"
+        fieldName="Paid_Percentage1__c"
+        variant="label-hidden"
+        disabled="true"/>
+</div>
+
+                
+                            <lightning:inputField fieldName="PDC__c"/>
+                         
+                
+                        </div>
+                
+                    </div>
+                </div>
+                 </aura:if>
+
+                
+                                    <!-- ===== SECTION : Legal & Registration Status ===== -->
+                                    <aura:if isTrue="{!NOT(v.hidePaymentAndLegal)}">
+                <div class="slds-section slds-is-open">
+                    <h3 class="slds-section__title slds-theme_shade">
+                        <span class="slds-p-horizontal_small">
+                            Legal &amp; Registration Status
+                        </span>
+                    </h3>
+                
+                    <div class="slds-grid slds-wrap">
+                
+                        <!-- LEFT COLUMN -->
+                        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                
+                            <lightning:inputField fieldName="Oqood_Status__c"/>
+                
+                            <lightning:inputField fieldName="Oqood_Submission_Date__c"/>
+                
+                            <lightning:inputField fieldName="Oqood_Remarks__c"/>
+                
+                        </div>
+                
+                        <!-- RIGHT COLUMN -->
+                        <div class="slds-col slds-size_1-of-2">
+                
+                            <lightning:inputField fieldName="SPA_Status__c"/>
+                
+                            <lightning:inputField fieldName="Oqood_On_Hold_Reason_s__c"/>
+                
+                        </div>
+                
+                    </div>
+                </div>
+                                                           </aura:if>
+                          <!-- ===== SECTION : Document Upload ===== -->
+                        <aura:if isTrue="{!v.docError}">
+                           <div class="slds-text-color_error slds-p-around_small">
+                               {!v.docError}
+                            </div>
+                       </aura:if>
+
+                  <!-- ===== SECTION : Document Upload ===== -->
+<div class="slds-section slds-is-open">
+    <h3 class="slds-section__title slds-theme_shade">
+        <span class="slds-p-horizontal_small">Document Upload</span>
+    </h3>
+
+    <!-- MAIN GRID -->
+    <div class="slds-grid slds-wrap slds-gutters slds-p-around_medium">
+
+        <!-- ================= ROW 1 ================= -->
+        <!-- Passport -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <div class="slds-form-element slds-m-bottom_medium">
+                <label class="slds-form-element__label">
+                    <abbr class="slds-required">*</abbr> Passport
+                </label>
+
+                <lightning:fileUpload
+                    name="passport"
+                    recordId="{!v.recordId}"
+                    multiple="false"
+                    onuploadfinished="{!c.handlePassportUpload}"/>
+
+                <aura:if isTrue="{!v.passportFileName}">
+                    <div class="slds-p-top_x-small slds-text-color_success">
+                        ✔ {!v.passportFileName}
+                        <a class="slds-m-left_small"
+                           href="{!'/' + v.passportDocId}"
+                           target="_blank">Preview</a>
+                    </div>
+                </aura:if>
+
+                <aura:if isTrue="{!v.passportError}">
+                    <div class="slds-form-element__help slds-text-color_error">
+                        {!v.passportError}
+                    </div>
+                </aura:if>
+            </div>
+        </div>
+
+        <!-- Approved Sales Offer -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <div class="slds-form-element slds-m-bottom_medium">
+                <label class="slds-form-element__label">
+                    <abbr class="slds-required">*</abbr> Approved Sales Offer
+                </label>
+
+                <lightning:fileUpload
+                    name="salesOffer"
+                    recordId="{!v.recordId}"
+                    multiple="false"
+                    onuploadfinished="{!c.handleSalesOfferUpload}"/>
+
+                <aura:if isTrue="{!v.salesOfferFileName}">
+                    <div class="slds-p-top_x-small slds-text-color_success">
+                        ✔ {!v.salesOfferFileName}
+                        <a class="slds-m-left_small"
+                           href="{!'/' + v.salesOfferDocId}"
+                           target="_blank">Preview</a>
+                    </div>
+                </aura:if>
+
+                <aura:if isTrue="{!v.salesOfferError}">
+                    <div class="slds-form-element__help slds-text-color_error">
+                        {!v.salesOfferError}
+                    </div>
+                </aura:if>
+            </div>
+        </div>
+
+        <!-- ================= ROW 2 ================= -->
+        <!-- POP -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <div class="slds-form-element slds-m-bottom_medium">
+                <label class="slds-form-element__label">
+                    <abbr class="slds-required">*</abbr> POP
+                </label>
+
+                <lightning:fileUpload
+                    name="pop"
+                    recordId="{!v.recordId}"
+                    multiple="false"
+                    onuploadfinished="{!c.handlePopUpload}"/>
+
+                <aura:if isTrue="{!v.popFileName}">
+                    <div class="slds-p-top_x-small slds-text-color_success">
+                        ✔ {!v.popFileName}
+                        <a class="slds-m-left_small"
+                           href="{!'/' + v.popDocId}"
+                           target="_blank">Preview</a>
+                    </div>
+                </aura:if>
+
+                <aura:if isTrue="{!v.popError}">
+                    <div class="slds-form-element__help slds-text-color_error">
+                        {!v.popError}
+                    </div>
+                </aura:if>
+            </div>
+        </div>
+
+        <!-- POP Amount -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <div class="slds-form-element slds-m-bottom_medium">
+                <lightning:inputField
+                    aura:id="popAmountField"
+                    fieldName="POP_Amount__c"
+                    required="true"
+                    variant="label-stacked"/>
+
+                <aura:if isTrue="{!v.popAmountError}">
+                    <div class="slds-form-element__help slds-text-color_error">
+                        {!v.popAmountError}
+                    </div>
+                </aura:if>
+            </div>
+        </div>
+
+        <!-- ================= ROW 3 ================= -->
+        <!-- UAE Residence -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <div class="slds-form-element slds-m-bottom_medium">
+                <lightning:inputField
+                    aura:id="uaeResidence"
+                    fieldName="UAE_Residence__c"
+                    onchange="{!c.handleUaeResidenceChange}"/>
+            </div>
+        </div>
+
+        <!-- Emirates ID (Conditional) -->
+        <aura:if isTrue="{!v.showEmiratesUploader}">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                <div class="slds-form-element slds-m-bottom_medium">
+                    <label class="slds-form-element__label">
+                        <abbr class="slds-required">*</abbr> Emirates ID
+                    </label>
+
+                    <lightning:fileUpload
+                        name="emiratesId"
+                        recordId="{!v.recordId}"
+                        multiple="false"
+                        onuploadfinished="{!c.handleEmiratesIdUpload}"/>
+
+                    <aura:if isTrue="{!v.emiratesIdFileName}">
+                        <div class="slds-p-top_x-small slds-text-color_success">
+                            ✔ {!v.emiratesIdFileName}
+                            <a class="slds-m-left_small"
+                               href="{!'/' + v.emiratesIdDocId}"
+                               target="_blank">Preview</a>
+                        </div>
+                    </aura:if>
+                </div>
+            </div>
+        </aura:if>
+
+        <!-- ================= ROW 4 ================= -->
+        <!-- Mode of Payment -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+            <div class="slds-form-element slds-m-bottom_medium">
+                <lightning:inputField
+                    fieldName="Mode_of_Payment__c"
+                    aura:id="modeOfPayment"
+                    onchange="{!c.handleModeOfPaymentChange}"
+                    variant="label-stacked"/>
+            </div>
+        </div>
+
+        <!-- MOP Reference -->
+        <aura:if isTrue="{!v.showMOPReference}">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                <div class="slds-form-element slds-m-bottom_medium">
+                    <lightning:inputField
+                        fieldName="MOP_Reference__c"
+                        variant="label-stacked"/>
+                </div>
+            </div>
+        </aura:if>
+
+    </div>
+</div>
+
+
+
+                    <!-- ===== SECTION 8 ===== 
+                    <div class="slds-section slds-is-open">
+                        <h3 class="slds-section__title slds-theme_shade">
+                            <span class="slds-p-horizontal_small">Description</span>
+                        </h3>
+
+                        <lightning:inputField fieldName="Description"/>
+                    </div>-->
+                    
+             
+                    
+
+                </div>
+               
+
+
+               <div class="slds-modal__footer slds-grid slds-wrap">
+
+    <!-- 🔴 ERROR MESSAGE (FULL WIDTH) -->
+    <aura:if isTrue="{!v.hasFormErrors}">
+        <div class="slds-col slds-size_1-of-1 slds-m-bottom_small">
+            <div class="slds-notify slds-notify_alert slds-theme_error">
+                <span class="slds-assistive-text">Error</span>
+                <h2>{!v.formErrorMessage}</h2>
+            </div>
+        </div>
+    </aura:if>
+
+    <!-- 🟢 BUTTON ROW -->
+    <div class="slds-col slds-size_1-of-1 slds-text-align_right">
+        <lightning:button label="Cancel" onclick="{!c.handleClose}"/>
+        <lightning:button label="Submit"
+                          variant="brand"
+                          type="submit"
+                          class="slds-m-left_small"/>
+    </div>
+
+</div>
+
+
+            </lightning:recordEditForm>
+        </div>
+    </div>
+
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</aura:component>

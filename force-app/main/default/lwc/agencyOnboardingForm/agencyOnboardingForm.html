@@ -1,0 +1,1658 @@
+<!--
+* @File Name  :  agencyOnboardingForm
+*@Description : Component for Broker Registration site 
+*
+* @Author            : KC0126
+* @Last Modified By  : Harshita Singh
+* @Last Modified On  : December 23, 2025
+* @Modification Log  :
+*
+
+-->
+
+
+<template>
+    <!-- Carousel -->
+    <section class="carousel">
+        <div class="carousel-image">
+            <img src={carouselImage} alt="Agency Onboarding" />
+
+        </div>
+    </section>
+
+    <lightning-card>
+       
+            <!-- Agency Type Toggle -->
+         <div class="slds-p-around_medium">
+            <!-- Agency Onboarding Form Title at Top -->
+            <div class="form-title-container slds-m-bottom_medium">
+                <h2 class="slds-text-heading_large slds-text-align_center slds-text-color_brand">
+                    Channel Partner Onboarding Form
+                </h2>
+            </div>
+
+            <!-- Step Progress Bar -->
+            <div class="step-progress-bar">
+                <template for:each={steps} for:item="step">
+                    <div key={step.number} class={step.class}>
+                        {step.label}
+                    </div>
+                </template>
+            </div>
+
+
+
+            <!-- Agency Type Toggle -->
+            <h3 class="slds-text-heading_small slds-m-bottom_small">AGENCY TYPE</h3>
+            <div class="toggle-container">
+                <label class="toggle-option">
+                    <input type="checkbox" checked={isCorporate} onchange={handleCorporateSelect} />
+                    <span>Corporate</span>
+                </label>
+                <label class="toggle-option">
+                    <input type="checkbox" checked={isIndividual} onchange={handleIndividualSelect} />
+                    <span>Individual</span>
+                </label>
+            </div>
+<template if:true={stepErrors.length}>
+    <div class="slds-notify slds-notify_alert slds-alert_error slds-m-bottom_medium">
+        <span class="slds-assistive-text">Error</span>
+        <h2 class="slds-text-heading_small">
+            Please fill required fields: {stepErrorsText}
+        </h2>
+        <!-- Remove the entire <ul> list code -->
+    </div>
+</template>
+
+             <!-- Dynamic Form Sections -->
+            <div class="dynamic-form slds-p-around_medium">
+
+                <!-- CORPORATE FORM -->
+                <template if:true={showCorporateFields}>
+
+                    <!-- ░░ STEP 1 → Company Information -->
+             <template if:true={isStep1}>
+    <div class="section-header">Corporate / Company Information</div>
+
+    <div class="slds-grid slds-wrap slds-m-bottom_medium">
+
+        <!-- Sub Type -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-combobox
+                name="Sub_Type__c"
+                label="Sub Type"
+                options={agencySubTypeOptionscorporate}
+                value={agency.Sub_Type__c}
+                onchange={handleChange}
+                required>
+            </lightning-combobox>
+        </div>
+
+        <!-- Ownership -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-combobox
+                name="ownership__c"
+                label="Ownership"
+                options={picklistOptions.ownership__c}
+                value={agency.ownership__c}
+                onchange={handleChange}>
+            </lightning-combobox>
+        </div>
+
+        <!-- Number of Partners -->
+        <template if:true={showPartnerField}>
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    type="number"
+                    name="No_Of_Partners__c"
+                    label="Number of Partners"
+                    value={agency.No_Of_Partners__c}
+                    onchange={handleChange}>
+                </lightning-input>
+            </div>
+        </template>
+
+        <!-- Company Name -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-input
+                name="Agency_Name__c"
+                label="Company Name"
+                value={agency.Agency_Name__c}
+                onchange={handleChange}
+                required>
+            </lightning-input>
+        </div>
+
+        <!-- Trade License -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-input
+                name="Trade_License_Number__c"
+                label="Trade License / Company Registration Number"
+                value={agency.Trade_License_Number__c}
+                onchange={handleChange}
+                required>
+            </lightning-input>
+        </div>
+
+        <!-- Account Manager -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-input
+                name="Agency_Account_Manager__c"
+                label="Agency Account Manager"
+                value={agency.Agency_Account_Manager__c}
+                onchange={handleChange}>
+            </lightning-input>
+        </div>
+
+        <!-- License Type -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-combobox
+                name="Company_Trade_License_Registration_Type__c"
+                label="Company/Trade License Registration Type"
+                options={picklistOptions.company_trade_license_registration_type__c}
+                value={agency.company_trade_license_registration_type__c}
+                onchange={handleChange}
+                required>
+            </lightning-combobox>
+        </div>
+
+        <!-- Trade License Expiry -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-input
+                type="date"
+                name="Trade_License_Expiry_Date__c"
+                label="Trade License Expiry Date"
+                value={agency.Trade_License_Expiry_Date__c}
+                onchange={handleChange}
+                required>
+            </lightning-input>
+        </div>
+
+        <!-- Emails -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-input
+                type="email"
+                name="Company_Email__c"
+                label="Primary Email"
+                value={agency.Company_Email__c}
+                onchange={handleChange}
+                required>
+            </lightning-input>
+        </div>
+
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-input
+                name="Company_Alternate_Email_1__c"
+                label="Company Alternate Email 1"
+                value={agency.Company_Alternate_Email_1__c}
+                onchange={handleChange}>
+            </lightning-input>
+        </div>
+
+        <!-- Phone -->
+<div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+    <div class="phone-row">
+        <lightning-combobox
+            name="Country_Code__c"
+            label="Country Code"
+            options={picklistOptions.country_code__c}
+            value={agency.country_code__c}
+            onchange={handleChange}
+            required>
+        </lightning-combobox>
+
+        <lightning-input
+            type="tel"
+            name="Company_Official_Phone_No__c"
+            label="Company Phone"
+            value={agency.Company_Official_Phone_No__c}
+            onchange={handleChange}
+            required>
+        </lightning-input>
+    </div>
+</div>
+
+        <!-- Sales Rep -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+           <lightning-input
+    type="text"
+    name="Sales_Representative__c"
+    label="Zoya Development Sales Representative (Relationship Manager)"
+    value={agency.Sales_Representative__c}
+    onchange={handleChange}
+    required>
+</lightning-input>
+
+        </div>
+
+        <!-- PO Box -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-input
+                name="PO_Box__c"
+                label="PO Box"
+                value={agency.PO_Box__c}
+                onchange={handleChange}
+                 required>
+            </lightning-input>
+        </div>
+
+        <!-- RERA Expiry (Dubai only visible) -->
+        <template if:true={isDubaiRera}>
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    type="date"
+                    name="Company_RERA_Registration_Expiry__c"
+                    label="Company RERA Registration Expiry"
+                    value={agency.Company_RERA_Registration_Expiry__c}
+                    onchange={handleChange}>
+                </lightning-input>
+            </div>
+        </template>
+
+        <!-- Have TRN -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-combobox
+                name="have_trn__c"
+                label="Have TRN?"
+                options={picklistOptions.have_trn__c}
+                value={agency.Have_TRN__c}
+                onchange={handleChange} required>
+            </lightning-combobox>
+        </div>
+
+        <template if:true={showTRNField}>
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    name="TRN_NUMBER_VAT__c"
+                    label="TRN Number"
+                    value={agency.TRN_NUMBER_VAT__c}
+                    onchange={handleChange}>
+                </lightning-input>
+            </div>
+        </template>
+
+        <!-- ORN -->
+        <template if:true={isDubaiRera}>
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    name="Compnay_ORN_RERA_Number__c"
+                    label="Company ORN / RERA Number"
+                    value={agency.Compnay_ORN_RERA_Number__c}
+                    onchange={handleChange} required>
+                </lightning-input>
+            </div>
+        </template>
+
+        <!-- Address -->
+        <div class="slds-col slds-size_2-of-3 slds-p-horizontal_small">
+            <lightning-textarea
+                name="Company_Address__c"
+                label="Company Address"
+                value={agency.Company_Address__c}
+                onchange={handleChange}
+                 required>
+            </lightning-textarea>
+        </div>
+
+    </div>
+</template>
+
+
+                    <!--STEP 2 → Signatory -->
+<template if:true={isStep2}>
+    <div class="section-header">Step 2: Signatory Details</div>
+
+    <div class="slds-grid slds-wrap slds-m-bottom_medium">
+
+        <!-- First Name -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-input name="First_Name__c" label="First Name"
+                value={agency.First_Name__c} onchange={handleChange} required>
+            </lightning-input>
+        </div>
+
+        <!-- Last Name -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-input name="Last_Name__c" label="Last Name"
+                value={agency.Last_Name__c} onchange={handleChange} required>
+            </lightning-input>
+        </div>
+
+        <!-- UAE ID + VISA (HIDE FOR INTERNATIONAL) -->
+        <template if:true={showUaeIdVisaCorporate}>
+
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input type="date"
+                    name="Emirates_ID_Expiry_Date__c"
+                    label="Emirates ID Expiry Date"
+                    value={agency.Emirates_ID_Expiry_Date__c}
+                    onchange={handleChange}>
+                </lightning-input>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input name="Emirates_No__c"
+                    label="Emirates ID number"
+                    value={agency.Emirates_No__c}
+                    onchange={handleChange}>
+                </lightning-input>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input name="UAE_Visa_File_Number__c"
+                    label="UAE Visa (File Number)"
+                    value={agency.UAE_Visa_File_Number__c}
+                    onchange={handleChange}>
+                </lightning-input>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input type="date"
+                    name="Visa_Expiry_Date__c"
+                    label="Visa Expiry Date"
+                    value={agency.Visa_Expiry_Date__c}
+                    onchange={handleChange}>
+                </lightning-input>
+            </div>
+
+        </template>
+
+        <!-- Passport -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-input name="Passport_No__c" label="Passport No."
+                value={agency.Passport_No__c} onchange={handleChange} required>
+            </lightning-input>
+        </div>
+
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-input type="date"
+                name="Passport_Expiry_Date__c"
+                label="Passport Expiry Date"
+                value={agency.Passport_Expiry_Date__c}
+                onchange={handleChange} required>
+            </lightning-input>
+        </div>
+
+        <!-- Email -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-input type="email"
+                name="Authorized_Signatory_Email__c"
+                label="Authorized Signatory Email"
+                value={agency.Authorized_Signatory_Email__c}
+                onchange={handleChange} required>
+            </lightning-input>
+        </div>
+
+        <!-- Designation -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-combobox
+                name="Designation__c"
+                label="Designation"
+                options={picklistOptions.designation__c}
+                value={agency.designation__c}
+                onchange={handleChange} required>
+            </lightning-combobox>
+        </div>
+
+        <!-- Country Code + Authorized Signatory Mobile -->
+<div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+    <div class="phone-row">
+        <lightning-combobox
+            name="Country_code__c"
+            label="Country Code"
+            options={picklistOptions.country_code__c}
+            value={agency.country_code__c}
+            onchange={handleChange}
+            required={isCountryCodeRequiredCorporate}>
+        </lightning-combobox>
+
+        <lightning-input
+            type="tel"
+            name="Authorized_Signatory_Mobile__c"
+            label="Authorized Signatory Mobile"
+            value={agency.Authorized_Signatory_Mobile__c}
+            onchange={handleChange}
+            required>
+        </lightning-input>
+    </div>
+</div>
+
+<!-- Nationality -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-combobox
+                    name="Nationality__c"
+                    label="Nationality"
+                    options={picklistOptions.nationality__c}
+                    value={agency.Nationality__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-combobox>
+            </div>
+
+        <!-- National ID (HIDE FOR RERA + INTERNATIONAL) -->
+        <template if:true={showNationalIdCorporate}>
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input name="National_Id_Number__c"
+                    label="National Id Number"
+                    value={agency.National_Id_Number__c}
+                    onchange={handleChange}>
+                </lightning-input>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input type="date"
+                    name="National_Id_Expiry_date__c"
+                    label="National Id Expiry date"
+                    value={agency.National_Id_Expiry_date__c}
+                    onchange={handleChange}>
+                </lightning-input>
+            </div>
+        </template>
+
+    </div>
+</template>
+
+
+                    <!-- ░░ STEP 3 → Bank Info -->
+                    <template if:true={isStep3}>
+                        <div class="section-header">Step 3: Bank Info</div>
+
+                        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <h3 class="slds-text-heading_small slds-m-bottom_small">Are Bank Document Available?
+                                </h3>
+                                <lightning-combobox name="Bank_Document_Available__c" label="Bank Document Status"
+                                    value={agency.Bank_Document_Available__c} options={bankDocumentOptions}
+                                    onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>
+
+                            <!-- BANK DETAILS -->
+    <template if:true={isBankDetailsVisible}>
+        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+
+            <!-- Beneficiary Name -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    name="Beneficiary_name_Account_Holder_Name__c"
+                    label="Beneficiary Name"
+                    type="text"
+                    value={agency.Beneficiary_name_Account_Holder_Name__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <!-- Account Type -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-combobox
+                    name="Type__c"
+                    label="Account Type"
+                    options={customPicklistOptions.accountType}
+                    value={agency.Type__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-combobox>
+            </div>
+
+            <!-- Currency -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-combobox
+                    name="Currency__c"
+                    label="Currency"
+                    options={customPicklistOptions.currency}
+                    value={agency.Currency__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-combobox>
+            </div>
+
+            <!-- Bank Name -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+    type="text"
+    name="Bank_Name__c"
+    label="Bank Name"
+    value={agency.Bank_Name__c}
+    onchange={handleChange}
+    required>
+</lightning-input>
+
+            </div>
+
+            <!-- Bank Branch Name -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    name="Bank_Branch_Name__c"
+                    label="Bank Branch Name"
+                    type="text"
+                    value={agency.Bank_Branch_Name__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <!-- Bank Account Number -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    name="Bank_Account_Number__c"
+                    label="Bank Account Number"
+                    type="text"
+                    value={agency.Bank_Account_Number__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <!-- IBAN -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    name="IBAN_NUMBER__c"
+                    label="IBAN Number"
+                    type="text"
+                    value={agency.IBAN_NUMBER__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <!-- City -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    name="City__c"
+                    label="City"
+                    type="text"
+                    value={agency.City__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <!-- Country -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-combobox
+    name="Country__c"
+    label="Country"
+    options={picklistOptions.country__c}
+    value={agency.Country__c}
+    onchange={handleChange}
+    required>
+</lightning-combobox>
+
+            </div>
+
+            <!-- Bank Address ( RESTORED) -->
+            <div class="slds-col slds-size_2-of-3 slds-p-horizontal_small">
+                <lightning-textarea
+                    name="Bank_Address__c"
+                    label="Bank Address"
+                    value={agency.Bank_Address__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-textarea>
+            </div>
+
+        </div>
+    </template>
+                        </div>
+                    </template>
+
+                   
+                    <!-- ░░ STEP 4 → Documents -->
+                   <template if:true={isStep4}>
+    <div class="section-header">Step 4: Documents</div>
+
+    <h3 class="slds-text-heading_medium slds-m-bottom_medium">
+        Required documents to upload:
+    </h3>
+
+
+    <div class="slds-grid slds-wrap slds-gutters">
+
+        <!-- 1) Trade license -->
+        <template if:true={showTradeLicense}>
+    <div class="slds-col slds-size_1-of-3">
+        <div class="doc-box">
+            <h3 class="doc-title">Trade License
+                  <span class="doc-required-star"></span>
+            </h3>
+<template if:true={canUploadFiles}>
+            <lightning-file-upload
+                multiple
+                file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+                data-doc-type="Trade license"
+                accept=".pdf,.jpg,.jpeg,.png"
+                disabled={disableUploader}
+                onuploadfinished={handleUploadFinished}>
+            </lightning-file-upload>
+            
+            <!--  record-id={createdRecordId}  -->
+</template>
+            <template if:true={tradeLicenseFileName}>
+                <p class="uploaded-file">{tradeLicenseFileName}</p>
+            </template>
+        </div>
+    </div>
+</template>
+
+
+        <template if:true={showRera}>
+    <div class="slds-col slds-size_1-of-3">
+        <div class="doc-box">
+            <h3 class="doc-title">RERA Certificate
+                  <span class="doc-required-star"></span>
+            </h3>
+<template if:true={canUploadFiles}>
+            <lightning-file-upload
+                
+                 file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+                data-doc-type="RERA Certificate"
+                accept=".pdf,.jpg,.jpeg,.png"
+                disabled={disableUploader}
+                onuploadfinished={handleUploadFinished}>
+            </lightning-file-upload>
+            <!-- record-id={createdRecordId} -->
+</template>
+            <template if:true={reraCertificateFileName}>
+                <p class="uploaded-file">{reraCertificateFileName}</p>
+            </template>
+        </div>
+    </div>
+</template>
+
+
+
+        <template if:true={showReraOptional}>
+             <div class="slds-col slds-size_1-of-3">
+            <div class="doc-box">
+                <h3 class="doc-title">RERA Certificate (if available)</h3>
+                <template if:true={canUploadFiles}>
+                <lightning-file-upload
+                 file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+                data-doc-type="RERA Certificate (if available)"
+                accept=".pdf,.jpg,.jpeg,.png"
+                disabled={disableUploader}
+                onuploadfinished={handleUploadFinished}>
+            </lightning-file-upload>
+                </template>
+                <template if:true={reraCertificateOptionalFileName}>
+                    <p class="uploaded-file">{reraCertificateOptionalFileName}</p>
+                </template>
+            </div>
+             </div>
+        </template>
+
+        <!-- 3) Broker Card -->
+        <template if:true={showBrokerCard}>
+    <div class="slds-col slds-size_1-of-3">
+        <div class="doc-box">
+            <h3 class="doc-title">Broker Card
+                  <span class="doc-required-star"></span>
+            </h3>
+<template if:true={canUploadFiles}>
+            <lightning-file-upload
+                 file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+                data-doc-type="Broker Card"
+                accept=".pdf,.jpg,.jpeg,.png"
+                disabled={disableUploader}
+                onuploadfinished={handleUploadFinished}>
+            </lightning-file-upload>
+</template>
+            <template if:true={brokerCardFileName}>
+                <p class="uploaded-file">{brokerCardFileName}</p>
+            </template>
+        </div>
+    </div>
+</template>
+
+        <template if:true={showBrokerCardOptional}>
+             <div class="slds-col slds-size_1-of-3">
+            <div class="doc-box">
+                <h3 class="doc-title">Broker Card (if available)</h3>
+                <template if:true={canUploadFiles}>
+                <lightning-file-upload
+                 file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+                data-doc-type="Broker Card (if available)"
+                accept=".pdf,.jpg,.jpeg,.png"
+                disabled={disableUploader}
+                onuploadfinished={handleUploadFinished}>
+            </lightning-file-upload>
+                </template>
+                <template if:true={brokerCardOptionalFileName}>
+                    <p class="uploaded-file">{brokerCardOptionalFileName}</p>
+                </template>
+            </div>
+             </div>
+        </template>
+
+     <template if:true={showtrnVatDeclaration}>
+    <div class="slds-col slds-size_1-of-3">
+        <div class="doc-box">
+            <h3 class="doc-title">TRN / VAT Declaration
+                  <span class="doc-required-star"></span>
+            </h3>
+<template if:true={canUploadFiles}>
+            <lightning-file-upload
+                 file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+                data-doc-type="TRN / VAT Declaration"
+                accept=".pdf,.jpg,.jpeg,.png"
+                disabled={disableUploader}
+                onuploadfinished={handleUploadFinished}>
+            </lightning-file-upload>
+</template>
+            <template if:true={trnVatDeclarationFileName}>
+                <p class="uploaded-file">{trnVatDeclarationFileName}</p>
+            </template>
+        </div>
+    </div>
+</template>
+
+<template if:true={showVatCertificate}>
+    <div class="slds-col slds-size_1-of-3">
+        <div class="doc-box">
+            <h3 class="doc-title">VAT Certificate
+                  <span class="doc-required-star"></span>
+            </h3>
+<template if:true={canUploadFiles}>
+            <lightning-file-upload
+                 file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+                data-doc-type="VAT Certificate"
+                accept=".pdf,.jpg,.jpeg,.png"
+                disabled={disableUploader}
+                onuploadfinished={handleUploadFinished}>
+            </lightning-file-upload>
+</template>
+            <template if:true={vatCertificateFileName}>
+                <p class="uploaded-file">{vatCertificateFileName}</p>
+            </template>
+        </div>
+    </div>
+</template>
+
+
+
+      <template if:true={showAuthPassport}>
+    <div class="slds-col slds-size_1-of-3">
+        <h3 class="doc-title">Authorized Signatory Passport
+              <span class="doc-required-star"></span>
+        </h3>
+<template if:true={canUploadFiles}>
+        <lightning-file-upload
+             file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+            data-doc-type="Authorized Signatory Passport"
+            accept=".pdf,.jpg,.jpeg,.png"
+            disabled={disableUploader}
+            onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+</template>
+        <template if:true={authPassportFileName}>
+            <p class="uploaded-file">{authPassportFileName}</p>
+        </template>
+    </div>
+</template>
+
+<template if:true={showAuthVisa}>
+    <div class="slds-col slds-size_1-of-3">
+        <h3 class="doc-title">Authorized Signatory Visa
+              <span class="doc-required-star"></span> </span></h3>
+<template if:true={canUploadFiles}>
+        <lightning-file-upload
+             file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+            data-doc-type="Authorized Signatory Visa"
+            accept=".pdf,.jpg,.jpeg,.png"
+            disabled={disableUploader}
+            onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+</template>
+        <template if:true={authVisaFileName}>
+            <p class="uploaded-file">{authVisaFileName}</p>
+        </template>
+
+    </div>
+</template>
+<template if:true={showAuthEid}>
+    <div class="slds-col slds-size_1-of-3">
+        <h3 class="doc-title">Authorized Signatory Emirates ID
+              <span class="doc-required-star"></span> </h3>
+<template if:true={canUploadFiles}>
+        <lightning-file-upload
+             file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+            data-doc-type="Authorized Signatory Emirates ID"
+            accept=".pdf,.jpg,.jpeg,.png"
+            disabled={disableUploader}
+            onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+</template>
+        <template if:true={authEidFileName}>
+            <p class="uploaded-file">{authEidFileName}</p>
+        </template>
+    </div>
+</template>
+
+
+        <!-- 6) Share Owner Passport -->
+        <template if:true={showShareOwner}>
+             <div class="slds-col slds-size_1-of-3">
+            <div class="doc-box">
+                <h3 class="doc-title">Share Owner's Passport Copy
+                      <span class="doc-required-star"></span>
+                </h3>
+                <template if:true={canUploadFiles}>
+                <lightning-file-upload
+                 file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+                data-doc-type="Share Owner's Passport Copy"
+                accept=".pdf,.jpg,.jpeg,.png"
+                disabled={disableUploader}
+                onuploadfinished={handleUploadFinished}>
+            </lightning-file-upload>
+                </template>
+                <template if:true={shareOwnerPassportFileName}>
+                    <p class="uploaded-file">{shareOwnerPassportFileName}</p>
+                </template>
+            </div>
+             </div>
+        </template>
+
+        <!-- 7) MOA -->
+        <template if:true={showMoa}>
+  <div class="slds-col slds-size_1-of-3">
+    <div class="doc-box">
+      <h3 class="doc-title">Memorandum of Association 
+          <span class="doc-required-star"></span>
+      </h3>
+<template if:true={canUploadFiles}>
+      <lightning-file-upload
+                 file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+                data-doc-type="Memorandum of Association"
+                accept=".pdf,.jpg,.jpeg,.png"
+                disabled={disableUploader}
+                onuploadfinished={handleUploadFinished}>
+            </lightning-file-upload>
+</template>
+      <template if:true={moaFileName}>
+        <p class="uploaded-file">{moaFileName}</p>
+      </template>
+    </div>
+  </div>
+</template>
+
+       <template if:true={showPoa}>
+  <div class="slds-col slds-size_1-of-3">
+    <div class="doc-box">
+      <h3 class="doc-title">Power of Attorney (if available)
+          <span class="doc-required-star"></span>
+      </h3>
+<template if:true={canUploadFiles}>
+      <lightning-file-upload
+                 file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+                data-doc-type="Power of Attorney (if available)"
+                accept=".pdf,.jpg,.jpeg,.png"
+                disabled={disableUploader}
+                onuploadfinished={handleUploadFinished}>
+            </lightning-file-upload>
+</template>
+      <template if:true={poaFileName}>
+        <p class="uploaded-file">{poaFileName}</p>
+      </template>
+    </div>
+  </div>
+</template>
+
+        <!-- 9) Bank / IBAN -->
+       <template if:true={showBankIban}>
+    <div class="slds-col slds-size_1-of-3">
+        <div class="doc-box">
+            <h3 class="doc-title">Bank / IBAN Letter
+                  <span class="doc-required-star"></span>
+            </h3>
+<template if:true={canUploadFiles}>
+            <lightning-file-upload
+                 file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+                data-doc-type="Bank / IBAN Letter"
+                accept=".pdf,.jpg,.jpeg,.png"
+                disabled={disableUploader}
+                onuploadfinished={handleUploadFinished}>
+            </lightning-file-upload>
+</template>
+            <template if:true={bankIbanFileName}>
+                <p class="uploaded-file">{bankIbanFileName}</p>
+            </template>
+        </div>
+    </div>
+</template>
+
+        <template if:true={showIntlTradeLicense}>
+    <div class="slds-col slds-size_1-of-3">
+        <div class="doc-box">
+            <h3 class="doc-title">Trade / Company License
+                  <span class="doc-required-star"></span>
+            </h3>
+<template if:true={canUploadFiles}>
+           <lightning-file-upload
+                 file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+                data-doc-type="Trade / Company License"
+                accept=".pdf,.jpg,.jpeg,.png"
+                disabled={disableUploader}
+                onuploadfinished={handleUploadFinished}>
+            </lightning-file-upload>
+</template>
+            <template if:true={intlTradeLicenseFileName}>
+                <p class="uploaded-file">{intlTradeLicenseFileName}</p>
+            </template>
+        </div>
+    </div>
+</template>
+
+<template if:true={shouldShowBankNoc}>
+    <div class="slds-col slds-size_1-of-3">
+        <div class="doc-box">
+            <h3 class="doc-title">Bank NOC
+                  <span class="doc-required-star"></span>
+            </h3>
+<template if:true={canUploadFiles}>
+            <lightning-file-upload
+                 file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+                data-doc-type="Bank NOC"
+                accept=".pdf,.jpg,.jpeg,.png"
+                disabled={disableUploader}
+                onuploadfinished={handleUploadFinished}>
+            </lightning-file-upload>
+</template>
+            <template if:true={bankNocFileName}>
+                <p class="uploaded-file">{bankNocFileName}</p>
+            </template>
+        </div>
+    </div>
+</template>
+
+<!--<template if:true={showIntlAuthPassport}>
+    <div class="slds-col slds-size_1-of-3">
+        <div class="doc-box">
+            <h3 class="doc-title">Authorized Signatory Passport</h3>
+
+            <lightning-input
+                type="file"
+                required
+                data-doc-type="Authorized Signatory Passport"
+                onchange={handleFileUpload}>
+            </lightning-input>
+
+            <template if:true={intlAuthPassportFileName}>
+                <p class="uploaded-file">{intlAuthPassportFileName}</p>
+            </template>
+        </div>
+    </div>
+</template>-->
+
+
+    </div>
+</template>
+ 
+
+
+                </template>
+
+                <!-- INDIVIDUAL FORM -->
+<template if:true={showIndividualFields}>
+    <template if:true={isStep1}>
+        <div class="section-header">Step 1: Agent Details</div>
+
+        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+
+            <!-- Sub Type -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-combobox
+                    name="Sub_Type__c"
+                    label="Sub Type"
+                    options={agencySubTypeOptions}
+                    value={agency.Sub_Type__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-combobox>
+            </div>
+
+            <!-- Agency Account Manager -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    name="Agency_Account_Manager__c"
+                    label="Agency Account Manager"
+                    value={agency.Agency_Account_Manager__c}
+                    onchange={handleChange}>
+                </lightning-input>
+            </div>
+
+            <!-- Sales Representative -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+               <lightning-input
+    type="text"
+    name="Sales_Representative__c"
+    label="Zoya Development Sales Representative (Relationship Manager)"
+    value={agency.Sales_Representative__c}
+    onchange={handleChange}
+    required>
+</lightning-input>
+
+            </div>
+
+            <!-- First / Last Name -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input name="First_Name__c" label="First Name"
+                    value={agency.First_Name__c} onchange={handleChange} required>
+                </lightning-input>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input name="Last_Name__c" label="Last Name"
+                    value={agency.Last_Name__c} onchange={handleChange} required>
+                </lightning-input>
+            </div>
+
+            <!-- Email -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input type="email" name="Email__c" label="Email"
+                    value={agency.Email__c} onchange={handleChange} required>
+                </lightning-input>
+            </div>
+
+            <!-- Phone -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <div class="phone-row">
+                    <lightning-combobox
+                        name="Country_Code__c"
+                        label="Country Code"
+                        options={picklistOptions.country_code__c}
+                        value={agency.Country_Code__c}
+                        onchange={handleChange}
+                        required>
+                    </lightning-combobox>
+
+                    <lightning-input
+                        type="tel"
+                        name="Phone_No__c"
+                        label="Phone"
+                        value={agency.Phone_No__c}
+                        onchange={handleChange}
+                        required>
+                    </lightning-input>
+                </div>
+            </div>
+
+            <!-- Passport -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input name="Passport_No__c" label="Passport No."
+                    value={agency.Passport_No__c} onchange={handleChange} required>
+                </lightning-input>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input type="date" name="Passport_Expiry_Date__c"
+                    label="Passport Expiry Date"
+                    value={agency.Passport_Expiry_Date__c}
+                    onchange={handleChange} required>
+                </lightning-input>
+            </div>
+
+            <!-- Nationality -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-combobox
+                    name="Nationality__c"
+                    label="Nationality"
+                    options={picklistOptions.nationality__c}
+                    value={agency.Nationality__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-combobox>
+            </div>
+
+            <!-- ================= UAE RESIDENTS ONLY ================= -->
+            <template if:true={isUaeResidentIndividual}>
+
+                <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                    <lightning-input name="Emirates_No__c"
+                        label="Emirates ID Number"
+                        value={agency.Emirates_No__c}
+                        onchange={handleChange}
+                        required>
+                    </lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                    <lightning-input type="date"
+                        name="Emirates_ID_Expiry_Date__c"
+                        label="Emirates ID Expiry Date"
+                        value={agency.Emirates_ID_Expiry_Date__c}
+                        onchange={handleChange}
+                        required>
+                    </lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                    <lightning-input
+                        name="UAE_Visa_File_Number__c"
+                        label="UAE Visa (File Number)"
+                        value={agency.UAE_Visa_File_Number__c}
+                        onchange={handleChange}
+                        required>
+                    </lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                    <lightning-input type="date"
+                        name="Visa_Expiry_Date__c"
+                        label="Visa Expiry Date"
+                        value={agency.Visa_Expiry_Date__c}
+                        onchange={handleChange}
+                        required>
+                    </lightning-input>
+                </div>
+
+            </template>
+
+            <!-- ================= INTERNATIONAL ONLY ================= -->
+            <template if:true={isInternationalIndividual}>
+
+                <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                    <lightning-input
+                        name="National_Id_Number__c"
+                        label="National ID Number"
+                        value={agency.National_Id_Number__c}
+                        onchange={handleChange}
+                        required>
+                    </lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                    <lightning-input type="date"
+                        name="National_Id_Expiry_date__c"
+                        label="National ID Expiry Date"
+                        value={agency.National_Id_Expiry_date__c}
+                        onchange={handleChange}
+                        required>
+                    </lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                    <lightning-combobox
+                        name="Country__c"
+                        label="Country"
+                        options={picklistOptions.country__c}
+                        value={agency.Country__c}
+                        onchange={handleChange}
+                        required>
+                    </lightning-combobox>
+                </div>
+
+            </template>
+
+            <!-- Designation -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-combobox
+                    name="Designation__c"
+                    label="Designation"
+                    options={picklistOptions.designation__c}
+                    value={agency.Designation__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-combobox>
+            </div>
+
+            <!-- Address -->
+            <div class="slds-col slds-size_2-of-3 slds-p-horizontal_small">
+                <lightning-textarea
+                    name="Company_Address__c"
+                    label="Residential Address"
+                    value={agency.Company_Address__c}
+                    onchange={handleChange}>
+                </lightning-textarea>
+            </div>
+
+        </div>
+    </template>
+
+
+                    
+                    <!-- ================= BANK INFO SECTION ================= -->
+<template if:true={isStep2}>
+    <div class="section-header">Step 2: Bank Information</div>
+
+    <!-- Bank Document Available -->
+    <div class="slds-grid slds-wrap slds-m-bottom_medium">
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+            <lightning-combobox
+                name="Bank_Document_Available__c"
+                label="Bank Document Available"
+                options={bankDocumentOptions}
+                value={agency.Bank_Document_Available__c}
+                onchange={handleChange}
+                required>
+            </lightning-combobox>
+        </div>
+    </div>
+
+    <!-- BANK DETAILS -->
+    <template if:true={isBankDetailsVisible}>
+        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+
+            <!-- Beneficiary Name -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    name="Beneficiary_name_Account_Holder_Name__c"
+                    label="Beneficiary Name"
+                    type="text"
+                    value={agency.Beneficiary_name_Account_Holder_Name__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <!-- Account Type -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-combobox
+                    name="Type__c"
+                    label="Account Type"
+                    options={customPicklistOptions.accountType}
+                    value={agency.Type__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-combobox>
+            </div>
+
+            <!-- Currency -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-combobox
+                    name="Currency__c"
+                    label="Currency"
+                    options={customPicklistOptions.currency}
+                    value={agency.Currency__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-combobox>
+            </div>
+
+            <!-- Bank Name -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+    type="text"
+    name="Bank_Name__c"
+    label="Bank Name"
+    value={agency.Bank_Name__c}
+    onchange={handleChange}
+    required>
+</lightning-input>
+
+            </div>
+
+            <!-- Bank Branch Name -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    name="Bank_Branch_Name__c"
+                    label="Bank Branch Name"
+                    type="text"
+                    value={agency.Bank_Branch_Name__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <!-- Bank Account Number -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    name="Bank_Account_Number__c"
+                    label="Bank Account Number"
+                    type="text"
+                    value={agency.Bank_Account_Number__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <!-- IBAN -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    name="IBAN_NUMBER__c"
+                    label="IBAN Number"
+                    type="text"
+                    value={agency.IBAN_NUMBER__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <!-- City -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                <lightning-input
+                    name="City__c"
+                    label="City"
+                    type="text"
+                    value={agency.City__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-input>
+            </div>
+
+            <!-- Country -->
+            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+               <lightning-combobox
+    name="Country__c"
+    label="Country"
+    options={picklistOptions.country__c}
+    value={agency.Country__c}
+    onchange={handleChange}
+    required>
+</lightning-combobox>
+
+
+            </div>
+
+            <!-- Bank Address (RESTORED) -->
+            <div class="slds-col slds-size_2-of-3 slds-p-horizontal_small">
+                <lightning-textarea
+                    name="Bank_Address__c"
+                    label="Bank Address"
+                    value={agency.Bank_Address__c}
+                    onchange={handleChange}
+                    required>
+                </lightning-textarea>
+            </div>
+
+        </div>
+    </template>
+</template>
+
+                   
+                    <!-- Step 3: Documents -->
+                  <!-- Step 3: Documents -->
+  <template if:true={isStep3}>
+    <div class="section-header">Step 3: Documents</div>
+
+    <h3 class="slds-text-heading_medium slds-m-bottom_medium">
+        Required documents to upload:
+    </h3>
+    <div class="slds-grid slds-wrap slds-gutters">
+
+        <!-- PASSPORT -->
+        <template if:true={showPassportIndividual}>
+    <div class="slds-col slds-size_1-of-2">
+        <h3 class="doc-title">Passport Copy 
+              <span class="doc-required-star"></span>
+        </h3>
+<template if:true={canUploadFiles}>
+        <lightning-file-upload
+             file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+            data-doc-type="Passport Copy (Individual)"
+            accept=".pdf,.jpg,.jpeg,.png"
+            disabled={disableUploader}
+            onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+</template>
+        <template if:true={passportIndividualFileName}>
+            <p class="uploaded-file">{passportIndividualFileName}</p>
+        </template>
+          <p class="field-error" data-error="Passport Copy (Individual)"></p>
+    </div>
+</template>
+
+
+        <!-- VISA -->
+       <template if:true={showVisaIndividual}>
+    <div class="slds-col slds-size_1-of-2">
+        <h3 class="doc-title">Visa
+              <span class="doc-required-star"></span> </h3>
+<template if:true={canUploadFiles}>
+        <lightning-file-upload
+             file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+            data-doc-type="Visa (Individual)"
+            accept=".pdf,.jpg,.jpeg,.png"
+            disabled={disableUploader}
+            onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+</template>
+        <template if:true={visaIndividualFileName}>
+            <p class="uploaded-file">{visaIndividualFileName}</p>
+        </template>
+          <p class="field-error" data-error="Visa (Individual)"></p>
+    </div>
+</template>
+
+        <!-- EMIRATES ID -->
+        <template if:true={showEidIndividual}>
+    <div class="slds-col slds-size_1-of-2">
+        <h3 class="doc-title">Emirates ID
+              <span class="doc-required-star"></span> </h3>
+<template if:true={canUploadFiles}>
+        <lightning-file-upload
+             file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+            data-doc-type="EID (Individual)"
+            accept=".pdf,.jpg,.jpeg,.png"
+            disabled={disableUploader}
+            onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+</template>
+        <template if:true={eidIndividualFileName}>
+            <p class="uploaded-file">{eidIndividualFileName}</p>
+        </template>
+          <p class="field-error" data-error="EID (Individual)"></p>
+    </div>
+</template>
+
+
+        <!-- NATIONAL ID -->
+        <template if:true={showNationalId}>
+            <div class="slds-col slds-size_1-of-2">
+                <h3 class="doc-title">National ID 
+                      <span class="doc-required-star"></span>
+                </h3>
+<template if:true={canUploadFiles}>
+                <lightning-file-upload
+             file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+            data-doc-type="National ID"
+            accept=".pdf,.jpg,.jpeg,.png"
+            disabled={disableUploader}
+            onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+</template>
+                <template if:true={nationalIdFileName}>
+                    <p class="uploaded-file">{nationalIdFileName}</p>
+                </template>
+
+                <p class="field-error" data-error="National_ID"></p>
+            </div>
+        </template>
+
+        <!-- BANK LETTER -->
+       <template if:true={showBankLetterIndividual}>
+    <div class="slds-col slds-size_1-of-2">
+        <h3 class="doc-title"> Bank Letter 
+              <span class="doc-required-star"></span>
+        </h3>
+<template if:true={canUploadFiles}>
+        <lightning-file-upload
+             file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+            data-doc-type="Bank Letter"
+            accept=".pdf"
+            disabled={disableUploader}
+            onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+</template>
+        <template if:true={bankLetterIndividualFileName}>
+            <p class="uploaded-file">{bankLetterIndividualFileName}</p>
+        </template>
+          <p class="field-error" data-error="Bank Letter"></p>
+    </div>
+</template>
+
+
+        <template if:true={shouldShowBankNoc}>
+    <div class="slds-col slds-size_1-of-2">
+        <div class="doc-box">
+            <h3 class="doc-title">Bank NOC
+                  <span class="doc-required-star"></span>
+            </h3>
+<template if:true={canUploadFiles}>
+            <lightning-file-upload
+             file-field-name="Guest_Record_fileupload__c"
+                file-field-value= {fileValue}
+            data-doc-type="Bank NOC"
+            accept=".pdf,.jpg,.jpeg,.png"
+            disabled={disableUploader}
+            onuploadfinished={handleUploadFinished}>
+        </lightning-file-upload>
+</template>
+            <template if:true={bankNocFileName}>
+            <p class="uploaded-file">{bankNocFileName}</p>
+        </template>
+          <p class="field-error" data-error="Bank NOC"></p>
+        </div>
+    </div>
+</template>
+
+
+    </div>
+    </template>
+
+ </template> <!-- close showIndividualFields -->
+
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="slds-m-top_large slds-text-align_right">
+                <lightning-button label="Previous" onclick={handlePrevious} class="slds-m-right_small"
+                    disabled={isFirstStep}>
+                </lightning-button>
+
+                <template if:false={isLastStep}>
+                    <lightning-button label="Next" variant="brand" onclick={handleNext}>
+                    </lightning-button>
+                </template>
+
+                <template if:true={isLastStep}>
+                    <lightning-button label="Save" variant="brand" onclick={handleSubmit}>
+                    </lightning-button>
+                </template>
+                
+            </div>
+
+        </div>
+
+
+
+<!-- Add this at the end of your existing HTML template 
+<template if:true={showSuccessModal}>
+    <div class="success-modal-overlay">
+        <div class="success-modal">
+            <div class="confetti-container"></div>
+            <div class="success-content">
+                <div class="success-icon">🎉</div>
+                <h2 class="success-title">Success!</h2>
+                <p class="success-message">{successMessage}</p>
+                <p class="success-note">You will be redirected to the record page automatically...</p>
+                <button class="success-button" onclick={closeSuccessModal}>
+                    View Record
+                </button>
+            </div>
+        </div>
+    </div>
+</template>-->
+<template if:true={showSuccessModal}>
+    <section role="dialog" tabindex="-1" class="success-modal-wrapper">
+        <div class="success-modal-card">
+
+            <!-- Close icon (optional) -->
+            <button class="close-icon" onclick={closeSuccessModal} title="Close">
+                ×
+            </button>
+
+            <!-- Green circle with tick -->
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <!-- Text area -->
+            <h2 class="success-title">Agency Onboarding Successful</h2>
+            <p class="success-subtitle">
+                Thank you for completing the Agency Onboarding Registration.
+            </p>
+            <p class="success-text">
+                Your details have been submitted successfully and are currently under review by our team.
+                If any additional information or documents are required, we will reach out to you.
+            </p>
+
+        </div>
+    </section>
+
+    <div class="success-backdrop"></div>
+</template>
+
+<!-- ===============================
+     DUPLICATE RECORD MODAL
+     =============================== -->
+<template if:true={showDuplicateModal}>
+    <section
+        role="dialog"
+        tabindex="-1"
+        aria-modal="true"
+        class="slds-modal slds-fade-in-open">
+
+        <div class="slds-modal__container">
+
+            <!-- Header -->
+            <header class="slds-modal__header">
+                <h2 class="slds-text-heading_medium">
+                    Duplicate Record Found
+                </h2>
+            </header>
+
+            <!-- Body -->
+            <div class="slds-modal__content slds-p-around_medium">
+                <p class="slds-text-color_error slds-text-heading_small">
+                    {duplicateMessage}
+                </p>
+
+                <p class="slds-m-top_small">
+                    Broker Registration Number &nbsp;:&nbsp;
+                    <strong>{duplicateRecordName}</strong>
+                </p>
+            </div>
+
+            <!-- Footer -->
+            <footer class="slds-modal__footer">
+                <lightning-button
+                    label="Close"
+                    variant="neutral"
+                    onclick={closeDuplicateModal}>
+                </lightning-button>
+            </footer>
+
+        </div>
+    </section>
+
+    <!-- Backdrop -->
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+s
+
+        
+    </lightning-card>
+</template>

@@ -1,0 +1,607 @@
+.file-size-note {
+    margin-bottom: 1rem;
+    color: #b85c00;          /* orange/brown warning tone */
+    font-size: 0.95rem;
+}
+
+.doc-required-star {
+    color: red;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+/* ===============================
+   CAROUSEL
+   =============================== */
+.uploaded-file-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.25rem;
+    border-radius: 1rem;
+    border: 1px solid #dddbda;
+    font-size: 0.75rem;
+    background: #f3f2f2;
+}
+
+
+.carousel {
+    width: 100%;
+    margin-bottom: 1.25rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+.carousel-image {
+    position: relative;
+}
+.carousel-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+/*error msg for required field */
+.field-error {
+    color: #c23934;           /* Salesforce RED */
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    font-weight: 600;
+}
+
+/* ===============================
+   STEP PROGRESS BAR
+   =============================== */
+.step-progress-bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.doc-box {
+    padding: 12px;
+    margin-bottom: 18px;
+}
+
+.uploaded-file {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: #0070d2;
+}
+
+.step {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 0 5px;
+    font-weight: bold;
+    background: #665555;
+    color: white;
+    border: 1px solid #665555;
+}
+
+/* Active step (Blue) */
+.step-active {
+    background: #665555;
+    color: white;
+    border-color: #665555;
+}
+
+/* Completed step (Green) */
+.step-completed {
+    background: #ad9752;
+    color: rgb(6, 6, 6);
+    border-color: #ad9752;
+}
+
+
+/* ===============================
+   SECTION HEADER
+   =============================== */
+.section-header {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0b74de;
+    padding: 0.5rem 0.6rem;
+    margin: 0.6rem 0 1rem 0;
+    background: rgba(11,116,222,0.04);
+    border-left: 4px solid #0b74de;
+    border-radius: 6px;
+}
+
+
+/* ===============================
+   FORM INPUTS
+   =============================== */
+.lightning-input,
+.lightning-combobox,
+.lightning-radio-group {
+    --lwc-input-border-radius: 8px;
+    --lwc-input-border-color: #d8dbe0;
+    --lwc-input-focus-border-color: #0b74de;
+}
+
+.lightning-input input,
+.lightning-combobox select {
+    padding: 0.5rem 0.7rem;
+}
+
+/* phone row */
+.phone-row {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.phone-prefix {
+    width: 40%;
+}
+
+.phone-input {
+    width: 60%;
+}
+
+.phone-prefix .slds-input {
+    background: #f3f6fb;
+    border-radius: 8px;
+    padding: 0.45rem;
+}
+
+
+/* ===============================
+   BUTTONS
+   =============================== */
+.lightning-button {
+    border-radius: 8px;
+    font-weight: 700;
+    padding: 0.6rem 1rem;
+}
+
+.lightning-button:hover {
+    transform: translateY(-2px);
+    transition: all 0.18s ease-in-out;
+}
+
+
+/* ===============================
+   CARD
+   =============================== */
+.slds-card {
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media screen and (max-width: 768px) {
+    .carousel-image img {
+        height: 160px !important;
+    }
+
+    .carousel-left-text {
+        font-size: 18px;
+        top: 10px;
+        left: 15px;
+    }
+
+    .carousel-right-text {
+        font-size: 16px;
+        bottom: 10px;
+        right: 15px;
+    }
+
+    .phone-row {
+        flex-direction: column;
+    }
+
+    .phone-prefix,
+    .phone-input {
+        width: 100%;
+    }
+}
+/* Ensure the container stacks the options vertically */
+.toggle-container {
+    display: flex;
+    flex-direction: column; /* Stacks items one after the other */
+    gap: 10px; /* Adds spacing between the options */
+    margin-bottom: 15px;
+}
+
+/* Style the entire option label */
+.toggle-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    /* Optional: Add some padding for click area */
+    padding: 5px 0; 
+}
+
+/* Hide the default checkbox */
+.toggle-option input[type="checkbox"] {
+    /* Hide the default checkbox input */
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* The custom checkmark (the circle itself) */
+.toggle-option span::before {
+    content: '';
+    display: inline-block;
+    width: 18px; /* Size of the circle */
+    height: 18px;
+    margin-right: 10px;
+    border: 2px solid #ccc; /* Border color (Unchecked) */
+    border-radius: 50%; /* Makes it a circle */
+    background-color: #fff;
+    transition: background-color 0.2s, border-color 0.2s;
+    vertical-align: middle;
+}
+
+/* Change style when the checkbox is checked */
+.toggle-option input[type="checkbox"]:checked + span::before {
+    border-color: #0070d2; /* Checked border color (Salesforce Blue) */
+    background-color: #0070d2; /* Checked background color */
+    /* Optional: Add the dot inside the circle */
+    box-shadow: inset 0 0 0 4px white; 
+}
+
+/* Style the text label */
+.toggle-option span {
+    font-size: 1rem;
+    color: #16325c; /* Salesforce text color */
+}
+/* Ensure phone row displays properly in 3-column layout */
+.phone-row {
+    display: flex;
+    width: 100%;
+}
+
+.phone-prefix {
+    flex: 0 0 auto;
+    margin-right: 8px;
+}
+
+.phone-prefix input {
+    width: 200px; /* Adjust as needed */
+    background-color: #f3f3f3;
+    border: 1px solid #dddbda;
+    color: #706e6b;
+}
+
+.phone-input {
+    flex: 1;
+}
+
+/* Custom CSS to override the standard Salesforce brand color */
+
+
+.slds-m-top_large .slds-text-align_right lightning-button[variant="brand"] {
+    
+    
+    --sds-c-button-brand-color-background: #665555;
+    
+    
+    --sds-c-button-brand-color-background-hover: #554848; 
+    
+   
+    --sds-c-button-brand-color-border: #665555;
+    
+   
+    --sds-c-button-brand-color-text: #ffffff;
+}
+
+
+.slds-m-top_large .slds-text-align_right lightning-button:not([variant="brand"]) {
+    --sds-c-button-color-border: #665555;
+    --sds-c-button-color-text: #665555;
+    --sds-c-button-color-text-hover: #554848;
+}
+
+.custom-btn .slds-button_brand {
+    background-color: #665555 !important;
+    border-color: #665555 !important;
+}
+
+.custom-btn .slds-button_brand:hover {
+    background-color: #4e4444 !important;
+    border-color: #4e4444 !important;
+}
+
+/* Success Modal Styles */
+.success-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.success-modal {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: modalAppear 0.5s ease-out;
+}
+
+@keyframes modalAppear {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0;
+    animation: confettiFall 3s linear infinite;
+}
+
+@keyframes confettiFall {
+    0% {
+        top: -10px;
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+        transform: rotate(720deg);
+    }
+}
+
+.success-content {
+    position: relative;
+    z-index: 2;
+}
+
+.success-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+
+.success-title {
+    color: #2E844A;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.success-message {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.success-note {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.success-button {
+    background: linear-gradient(135deg, #2E844A 0%, #4CAF50 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.success-button:hover {
+    background: linear-gradient(135deg, #4CAF50 0%, #2E844A 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(46, 132, 74, 0.3);
+}
+
+.section-header {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border-left: 4px solid #1b75bb;
+    padding-left: 10px;
+}
+
+.file-upload-section {
+    padding: 10px;
+    border: 1px dashed #d8dde6;
+    border-radius: 5px;
+    background: #fafafa;
+}
+
+.file-upload-section:hover {
+    border-color: #1b75bb;
+    background: #f4f6f9;
+}
+
+.file-name {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0070d2;
+}
+
+
+.document-section {
+    margin-bottom: 1.5rem;
+    border: 1px solid #dddbda;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    background-color: #fafaf9;
+}
+
+.document-section h3 {
+    color: #080707;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.file-upload-section {
+    margin-top: 0.5rem;
+}
+
+.uploaded-file-info {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background-color: #eef4ff;
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+}
+
+.file-name {
+    color: #005fb2;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+}
+
+.file-name:before {
+    content: '✓';
+    margin-right: 0.5rem;
+    color: #4bca81;
+}
+
+
+.phone-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;   /* labels align hone ke liye */
+}
+
+.phone-row lightning-combobox,
+.phone-row lightning-input {
+    flex: 1;   /* dono equal width lenge */
+}
+
+.doc-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.uploaded-file {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1B5297;
+    margin-top: 8px;
+}
+
+.section-header {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.slds-p-around_small {
+    padding: 10px !important;
+}
+.success-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 9000;
+}
+
+.success-modal-wrapper {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9001;
+}
+
+.success-modal-card {
+    width: 320px;
+    max-width: 90vw;
+    background: linear-gradient(180deg, #ffffff 0%, #ffe4f1 50%, #665555 100%);
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    padding: 28px 24px 32px;
+    text-align: center;
+    position: relative;
+    font-family: "Salesforce Sans", Arial, sans-serif;
+}
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+}
+
+.close-icon:hover {
+    color: #555;
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin: 6px auto 16px;
+    background-color: #2ecc71;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.success-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #222222;
+}
+
+.success-subtitle {
+    font-size: 13px;
+    margin-bottom: 4px;
+    color: #444444;
+}
+
+.success-text {
+    font-size: 12px;
+    color: #555555;
+}

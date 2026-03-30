@@ -1,0 +1,165 @@
+<apex:page renderAs="pdf" showHeader="false" applyBodyTag="false">
+<html>
+<head>
+    <style>
+    @page {
+                @bottom-left { content: element(footer); }
+                @top-center { content: element(header); }
+            }
+            div.footer { position: running(footer); /* Defines the footer content */ }
+            .pagenumber:before { content: counter(page); }
+            .pagecount:before { content: counter(pages); }
+
+
+        body {
+            font-family: Arial;
+            font-size: 12px;
+            margin: 0px;
+        padding-left:30px;
+        padding-right:30px;
+        }
+        .header-table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .header-table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+        .line {
+            border-bottom: 1px solid black;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+
+<!-- Top Section -->
+    
+    <table width="100%" style="margin-bottom:20px;">
+    <tr>
+        <td align="center">
+            <apex:image url="{!URLFOR($Resource.CompanyLogo)}"
+                        width="700"
+                        height="60"/>
+        </td>
+    </tr>
+</table>
+
+<table class="header-table">
+    <tr>
+        <td><b>Offer Date :</b></td>
+        <td>01/01/2026</td>
+    </tr>
+    <tr>
+        <td><b>Name :</b></td>
+        <td>Mohammed Ali</td>
+    </tr>
+    <tr>
+        <td><b>Nationality :</b></td>
+        <td>Indian</td>
+    </tr>
+    <tr>
+        <td><b>Passport No :</b></td>
+        <td>A12345678</td>
+    </tr>
+</table>
+
+<div class="line"></div>
+
+<!-- Body -->
+<p>
+    Dear <b>Mohammed Ali</b>,
+</p>
+
+<p>
+    Following our recent discussion, we are pleased to offer you the position of <b>Sales Executive</b> at <b>ZOYA ONE REAL ESTATE DEVELOPMENT LLC </b> in the United Arab Emirates under the following terms and conditions:
+</p>
+
+<ul>
+    <li><b>Position:</b> Sales Executive</li>
+    <li><b>Total Salary:</b> AED 5,000/-</li>
+    <ul>
+        <li>Basic Salary: AED 2,500/-</li>
+        <li>Accommodation Allowance: AED 1,500/-</li>
+        <li>Transportation Allowance: AED 1,000/-</li>
+    </ul>
+    <li><b>Working Hours:</b> Monday - Saturday 9:30 AM to 6:30 PM</li>
+    <li><b>Day Off:</b> Sunday</li>
+    <li><b>Overtime:</b> As requested by the company</li>
+    <li><b>Start Date:</b> 15/01/2026</li>
+    <li><b>Probationary Period:</b> 6 months from the date of joining</li>
+    <li><b>Visa &amp; Insurance:</b> Provided by the company for the duration of the contract</li>
+    <li><b>Notice Period:</b> 30 days</li>
+    <li><b>Contract Duration:</b> 2 years</li>
+    <li><b>Leave:</b> As per UAE law (one month paid leave per year)</li>
+    <li><b>Incentive &amp; Bonus:</b> As per company policy</li>
+</ul>
+
+<p class="section-title">Please Note:</p>
+
+<ul>
+    <li>
+        <b>Monitoring Period &amp; Final Contract:</b> The first One (1) months of employment shall serve as a monitoring period during which your performance, conduct, and suitability for the role will be evaluated. Upon successful completion of this period, a formal employment contract will be issued, and your UAE employment visa will be processed accordingly. During this period, employment will be governed by this offer letter, and either party may terminate the arrangement with a notice of 7 days.
+    </li>
+    <br/>
+    <li>
+        <b>Validity:</b> This offer is valid for acceptance for 7 days from the date of issuance. Additionally, please be advised that you are expected to complete a minimum term of two years. Early termination of the contract will result in deductions from your end-of-service benefits.
+    </li>
+</ul>
+
+<br/><br/>
+
+<table width="100%" style="margin-top:60px;">
+    <tr>
+        <td width="50%" align="left">
+            ________________________<br/>
+            <b>Shoaib Farooq Khan</b><br/>
+            Chief Executive Officer<br/>
+            ZOYA ONE REAL ESTATE DEVELOPMENT LLC 
+        </td>
+
+        <td width="50%" align="right">
+            ________________________<br/>
+            <b>Mohammed Ali</b><br/>
+            (Employee)
+        </td>
+    </tr>
+</table>
+    
+<div class="footer">
+    <hr style="border:none; border-top:1px solid #cccccc;"/>
+
+    <table width="100%">
+        <tr>
+            <td width="50%" align="left" style="color:#999999;">
+                +971501392048<br/>
+                info@zoyadevelopments.ae<br/>
+                800 ZOYA (9692) | www.zoyadevelopments.ae
+            </td>
+
+            <td width="50%" align="right" style="color:#999999;">
+                P02, P03, P04, Building 3, Bay Square,<br/>
+                Business Bay, Dubai, UAE, P.O Box: 117993
+            </td>
+        </tr>
+    </table>
+</div>
+
+    
+    
+
+</body>
+</html>
+</apex:page>

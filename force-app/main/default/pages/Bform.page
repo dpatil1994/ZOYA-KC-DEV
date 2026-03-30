@@ -1,0 +1,133 @@
+<apex:page controller="BFormController" showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="true" applyBodyTag="true">
+
+    <!-- SLDS -->
+    <apex:slds />
+    <apex:includeLightning />
+
+    <!-- Custom CSS Static Resource -->
+    <apex:stylesheet value="{!URLFOR($Resource.agencyOnboarding)}"/>
+
+    <body class="slds-scope">
+
+        <apex:form id="agencyForm">
+
+            <!-- ===== HEADER / CAROUSEL ===== -->
+            <div class="form-title-container">
+                <section class="carousel">
+                    <div class="carousel-image img">
+                        <img src="{!$Resource.zoyaCarousel}" alt="Agency Onboarding"/>
+                    </div>
+                </section>
+            </div>
+
+            <div class="wizard-box" style="margin:15px;">
+
+                <div class="toggle-container">
+                    <apex:selectRadio value="{!selectedCategory}" layout="pageDirection">
+                        <apex:selectOption itemValue="Corporate" itemLabel="Corporate"/>
+                        <apex:selectOption itemValue="Individual" itemLabel="Individual"/>
+
+                        <apex:actionSupport event="onchange" action="{!onCategoryChange}" rerender="stepBar,wizardSection,navButtons"/>
+                    </apex:selectRadio>
+                </div>
+
+                <div id="stepBar" class="step-progress-bar">
+                    <span class="step {!IF(currentStep == 1,'active','')}">Step 1</span>
+                    <span class="step {!IF(currentStep == 2,'active','')}">Step 2</span>
+                    <span class="step {!IF(currentStep == 3,'active','')}">Step 3</span>
+
+                    <apex:outputPanel rendered="{selectedCategory == 'Corporate'}">
+                        <span class="step {!IF(currentStep == 4,'active','')}">Step 4</span>
+                    </apex:outputPanel>
+                </div>
+
+                <!-- ===== WIZARD CONTENT ===== -->
+                <apex:outputPanel id="wizardSection">
+                    <apex:outputPanel rendered="{!currentStep == 1}">
+                        <div class="slds-form-element  {!IF(NOT(ISBLANK(emailError)),'slds-has-error','')}">
+                            <label class="slds-form-element__label">Email</label>
+                            <div class="slds-form-element__control">
+                                <apex:inputText value="{!email}" styleClass="slds-input">
+                                    <apex:actionSupport event="onblur" action="{!validateEmail}" rerender="emailErrorBlock,navButtons"/>
+                                </apex:inputText>
+                            </div>
+                            <apex:outputPanel id="emailErrorBlock">
+                                <apex:outputText value="{!emailError}" rendered="{!NOT(ISBLANK(emailError))}" styleClass="slds-form-element__help"/>
+                            </apex:outputPanel>
+                         </div>
+                        <!-- Ownership -->
+                        <!--div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                            <label class="slds-form-element__label required-label">Ownership</label>
+                            <apex:selectList value="{!agency.OwnerShip__c}" size="1" styleClass="slds-select" onchange="togglePartners(this.value)" required="true">
+                                <apex:selectOptions value="{!ownershipOptions}" />
+                            </apex:selectList>
+                        </div-->
+                    </apex:outputPanel>
+
+
+                    <!-- STEP 2 -->
+                    <apex:outputPanel rendered="{!currentStep == 2}">
+                        <!-- CORPORATE -->
+                        <apex:outputPanel rendered="{!isCorporate}">
+                            <div class="slds-form-element">
+                                <label class="slds-form-element__label">Company Name</label>
+                                <apex:inputText value="{!companyName}" styleClass="slds-input"/>
+                            </div>
+                        </apex:outputPanel>
+
+                        <!-- INDIVIDUAL -->
+                        <apex:outputPanel rendered="{!isIndividual}">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <label class="slds-form-element__label">First Name</label>
+                                    <apex:inputText value="{!firstName}" styleClass="slds-input"/>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <label class="slds-form-element__label">Last Name</label>
+                                    <apex:inputText value="{!lastName}" styleClass="slds-input"/>
+                                </div>
+                            </div>
+                        </apex:outputPanel>
+
+                    </apex:outputPanel>
+
+                    <!-- STEP 3 -->
+                    <apex:outputPanel rendered="{!currentStep == 3}">
+                        <p>
+                            <apex:outputText rendered="{!isCorporate}"
+                                             value="Corporate – Business Details"/>
+                            <apex:outputText rendered="{!isIndividual}"
+                                             value="Individual – Review & Confirm"/>
+                        </p>
+                    </apex:outputPanel>
+
+                    <!-- STEP 4 (CORPORATE ONLY) -->
+                    <apex:outputPanel rendered="{!currentStep == 4 && isCorporate}">
+                        <p>Corporate – Final Review</p>
+                    </apex:outputPanel>
+
+                </apex:outputPanel>
+
+                <!-- ===== NAVIGATION ===== -->
+                <apex:outputPanel id="navButtons">
+
+                    <apex:commandButton value="Previous"
+                                        action="{!previous}"
+                                        rendered="{!isCategorySelected && currentStep > 1}"
+                                        rerender="wizardSection,stepBar,navButtons"
+                                        styleClass="slds-button slds-button_neutral"/>
+
+                    <apex:commandButton value="Next"
+                                        action="{!next}"
+                                        rendered="{!isCategorySelected && currentStep < maxSteps}"
+                                        rerender="wizardSection,stepBar,navButtons"
+                                        styleClass="slds-button slds-button_brand"/>
+
+                </apex:outputPanel>
+
+            </div>
+
+        </apex:form>
+
+    </body>
+</apex:page>

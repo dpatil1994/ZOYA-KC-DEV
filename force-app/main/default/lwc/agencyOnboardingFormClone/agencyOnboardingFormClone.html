@@ -1,0 +1,935 @@
+<template>
+    <!-- Carousel -->
+    <section class="carousel">
+        <div class="carousel-image">
+            <img src={carouselImage} alt="Agency Onboarding" />
+
+            <!-- LEFT: Zoya Development -->
+            <div class="carousel-left-text">Zoya Development</div>
+
+            <!-- RIGHT BOTTOM: Agency Onboarding Form -->
+            <div class="carousel-right-text">Agency Onboarding Form</div>
+        </div>
+    </section>
+
+    <lightning-card>
+        <div class="slds-p-around_medium">
+            <!-- Agency Type Toggle -->
+            <div class="step-progress-bar">
+                <template for:each={steps} for:item="step">
+                    <div key={step.number} class={step.class}>
+                        {step.label}
+                    </div>
+                </template>
+            </div>
+
+            <!-- Agency Type Toggle -->
+            <h3 class="slds-text-heading_small slds-m-bottom_small">AGENCY TYPE</h3>
+            <div class="toggle-container">
+                <label class="toggle-option">
+                    <input type="checkbox" checked={isCorporate} onchange={handleCorporateSelect} />
+                    <span>Corporate</span>
+                </label>
+                <label class="toggle-option">
+                    <input type="checkbox" checked={isIndividual} onchange={handleIndividualSelect} />
+                    <span>Individual</span>
+                </label>
+            </div>
+
+            <!-- Dynamic Form Sections -->
+            <div class="dynamic-form slds-p-around_medium">
+
+                <!-- CORPORATE FORM -->
+                <template if:true={showCorporateFields}>
+
+                    <!-- ░░ STEP 1 → Company Information -->
+                    <template if:true={isStep1}>
+                        <div class="section-header">Corporate/Company Information</div>
+
+                        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+
+                            <!-- Row1 -->
+                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                <lightning-combobox name="Agency_Sub_Type__c" label="Agency Sub Type"
+                                    options={picklistOptions.agency_sub_type__c} value={agency.agency_sub_type__c}
+                                    onchange={handleChange} required>
+                                </lightning-combobox>
+                            </div>
+
+                           <div class="slds-grid slds-gutters slds-wrap">
+
+    <!-- Ownership Field (Left Side) -->
+    <div class="slds-col slds-size_1-of-2">
+        <lightning-combobox 
+            label="Ownership"
+            name="ownership__c"
+            value={agency.ownership__c}
+            options={picklistOptions.ownership__c}
+            onchange={handleChange}>
+        </lightning-combobox>
+    </div>
+
+    <!-- Number of Partners Field (Right Side) -->
+    <template if:true={showPartnerField}>
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-input 
+                type="number"
+                label="Number of Partners"
+                name="Number_of_Partners__c"
+                value={agency.Number_of_Partners__c}
+                onchange={handleChange}>
+            </lightning-input>
+        </div>
+    </template>
+
+</div>
+
+
+                            <!-- Agency Name full width -->
+                            <div class="slds-col slds-size_1-of-1 slds-p-horizontal_small">
+                                <lightning-input name="Agency_Name__c" label="Agency Name" value={agency.Agency_Name__c}
+                                    onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+
+                            <!-- Trade License Number -->
+                            <div class="slds-col slds-size_1-of-1 slds-p-horizontal_small">
+                                <lightning-input name="Trade_License_Number__c"
+                                    label="Trade License / Company Registration Number"
+                                    value={agency.Trade_License_Number__c} onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+
+                            <!-- Row2 -->
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-combobox name="Agency_Account_Manager__c"
+                                    label="ZOYA DEVELOPMENT AGENCY ACCOUNT MANAGER (SDM)"
+                                    options={picklistOptions.agency_account_manager__c}
+                                    value={agency.agency_account_manager__c} onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-combobox name="Company_Trade_License_Registration_Type__c"
+                                    label="Company/Trade License Registration Type"
+                                    options={picklistOptions.company_trade_license_registration_type__c}
+                                    value={agency.company_trade_license_registration_type__c} onchange={handleChange}
+                                    required>
+                                </lightning-combobox>
+                            </div>
+
+                            <!-- Row3 -->
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input type="date" name="Trade_License_Expiry_Date__c"
+                                    label="Trade License Expiry Date" value={agency.Trade_License_Expiry_Date__c}
+                                    onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input type="email" name="Company_Email__c" label="Company Email"
+                                    value={agency.Company_Email__c} onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+
+                            <!-- Row4 -->
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="Company_Alternate_Email_2__c" label="Company Alternate Email 2"
+                                    value={agency.Company_Alternate_Email_2__c} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="Company_Alternate_Email_1__c" label="Company Alternate Email 1"
+                                    value={agency.Company_Alternate_Email_1__c} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+
+                            <!-- Row5 -->
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <div class="phone-row">
+                                    <div class="phone-prefix">
+                                        <input type="text" class="slds-input" disabled value="United Arab Emirates: 971" />
+                                    </div>
+                                    <div class="phone-input">
+                                        <lightning-input type="tel" name="Company_Official_Phone_No__c"
+                                            label="Company (Official) Phone No"
+                                            value={agency.Company_Official_Phone_No__c} onchange={handleChange}
+                                            required>
+                                        </lightning-input>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="Sales_Representative__c"
+                                    label="Zoya Development Sales Representative (Relationship Manager)"
+                                    value={agency.Sales_Representative__c} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+
+                            <!-- Row6 address -->
+                        <!--    <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="Address__c" label="Address Line 1" value={agency.Address__c}
+                                    onchange={handleChange} required>
+                                </lightning-input>
+                            </div> -->
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="Address_Line_2__c" label="Address Line 2"
+                                    value={agency.Address_Line_2__c} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+
+                            <!-- Row7 -->
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-combobox name="City__c" label="City" options={picklistOptions.City__c}
+                                    value={agency.City__c} onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="PO_Box__c" label="PO Box" value={agency.PO_Box__c}
+                                    onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+
+                            <!-- Row8 -->
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input type="date" name="Company_RERA_Registration_Expiry__c"
+                                    label="Company RERA Registration Expiry"
+                                    value={agency.Company_RERA_Registration_Expiry__c} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-grid slds-gutters slds-wrap">
+
+    <!-- Have TRN? (Left Side) -->
+    <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+        <lightning-combobox 
+            name="have_trn__c"
+            label="Have TRN?"
+            options={picklistOptions.have_trn__c}
+            value={agency.Have_TRN__c}
+            onchange={handleChange}>
+        </lightning-combobox>
+    </div>
+
+    <!-- TRN Number (Right Side) -->
+    <template if:true={showTRNField}>
+        <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+            <lightning-input 
+                type="text"
+                label="TRN Number (VAT)"
+                name="TRN_Number__c"
+                value={agency.TRN_Number__c}
+                onchange={handleChange}>
+            </lightning-input>
+        </div>
+    </template>
+
+</div>
+
+
+                            <!-- Country -->
+                            <div class="slds-col slds-size_1-of-1 slds-p-horizontal_small">
+                                <lightning-combobox name="country_code__c" label="Country"
+                                    options={picklistOptions.country_code__c} value={agency.CountryOptions}
+                                    onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>
+
+                            <!-- ORN -->
+                            <div class="slds-col slds-size_1-of-1 slds-p-horizontal_small">
+                                <lightning-input name="Compnay_ORN_RERA_Number__c" label="Company ORN/RERA Number"
+                                    value={agency.Compnay_ORN_RERA_Number__c} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+
+                        </div>
+                    </template>
+
+                    <!-- ░░ STEP 2 → Signatory -->
+                    <template if:true={isStep2}>
+                        <div class="section-header">Step 2: Signatory Details</div>
+
+                        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="First_Name__c" label="First Name" value={agency.First_Name__c}
+                                    onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="Last_Name__c" label="Last Name" value={agency.Last_Name__c}
+                                    onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="Emirates_ID_Expiry_Date__c" label="Emirates ID Expiry Date"
+                                    type="date" value={agency.Emirates_ID_Expiry_Date__c} onchange={handleChange}
+                                    required>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="UAE_Visa_File_Number__c" label="UAE Visa (File Number)"
+                                    value={agency.UAE_Visa_File_Number__c} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="Passport_No__c" label="Passport No."
+                                    value={agency.Passport_No__c} onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="Passport_Expiry_Date__c" label="Passport Expiry Date" type="date"
+                                    value={agency.Passport_Expiry_Date__c} onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="Email__c" label="Authorized Signatory Email" type="email"
+                                    value={agency.Email__c} onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-combobox name="Designation__c" label="Designation"
+                                    options={picklistOptions.designation__c} value={agency.designation__c}
+                                    onchange={handleChange} required>
+                                </lightning-combobox>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="Emirates_Id_number__c" label="Emirates ID number"
+                                    value={agency.Emirates_Id_number__c} onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="Visa_Expiry_Date__c" label="Visa Expiry Date" type="date"
+                                    value={agency.Visa_Expiry_Date__c} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_6-of-12 slds-p-right_small">
+                                        <lightning-combobox name="Country_code__c" label="Country code"
+                                            options={picklistOptions.country_code__c} value={agency.country_code__c}
+                                            onchange={handleChange}>
+                                        </lightning-combobox>
+                                    </div>
+                                    <div class="slds-col slds-size_6-of-12">
+                                        <lightning-input name="Phone__c" label="Authorized Signatory Mobile" type="tel"
+                                            value={agency.Phone__c} onchange={handleChange} required>
+                                        </lightning-input>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Nationality -->
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-combobox name="Nationality__c" label="Nationality"
+                                    options={picklistOptions.nationality__c} value={agency.nationality__c}
+                                    onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>
+
+                            <!-- National ID Fields -->
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="National_Id_Number__c" label="National Id Number"
+                                    value={agency.National_Id_Number__c} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="National_Id_Expiry_date__c" label="National Id Expiry date"
+                                    type="date" value={agency.National_Id_Expiry_date__c} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+
+                        </div>
+                    </template>
+
+                    <!-- ░░ STEP 3 → Bank Info -->
+                    <template if:true={isStep3}>
+                        <div class="section-header">Step 3: Bank Info</div>
+
+                        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <h3 class="slds-text-heading_small slds-m-bottom_small">Are Bank Document Available?
+                                </h3>
+                                <lightning-combobox name="Bank_Document_Available__c" label="Bank Document Status"
+                                    value={agency.Bank_Document_Available__c} options={bankDocumentOptions}
+                                    onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>
+
+                            <template if:true={isBankDetailsVisible}>
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-input name="Beneficiary_Name__c"
+                                        label="Beneficiary name/Account Holder Name" value={agency.Beneficiary_Name__c}
+                                        onchange={handleChange}>
+                                    </lightning-input>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-combobox name="Type__c" label="Account Type"
+                                        options={picklistOptions.AccountTypeOptions} value={agency.Type__c}
+                                        onchange={handleChange}>
+                                    </lightning-combobox>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-combobox name="Currency__c" label="Currency"
+                                        options={picklistOptions.CurrencyOptions} value={agency.Currency__c}
+                                        onchange={handleChange}>
+                                    </lightning-combobox>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-combobox name="Bank_Branch_Name__c" label="Bank Branch Name"
+                                        options={picklistOptions.BankBranchOptions} value={agency.Bank_Branch_Name__c}
+                                        onchange={handleChange}>
+                                    </lightning-combobox>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-combobox name="Bank_Country__c" label="Bank Country"
+                                        options={picklistOptions.CountryOptions} value={agency.Bank_Country__c}
+                                        onchange={handleChange}>
+                                    </lightning-combobox>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-input name="Bank_City__c" label="Bank City" value={agency.Bank_City__c}
+                                        onchange={handleChange}>
+                                    </lightning-input>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-combobox name="Bank_Name__c" label="Bank Name"
+                                        options={picklistOptions.BankNameOptions} value={agency.Bank_Name__c}
+                                        onchange={handleChange}>
+                                    </lightning-combobox>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-input name="Bank_Account_Number__c" label="Bank Account Number"
+                                        value={agency.Bank_Account_Number__c} onchange={handleChange}>
+                                    </lightning-input>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-input name="IBAN_SWIFT_IFSC__c" label="IBAN/SWIFT/SORT/IFSC"
+                                        value={agency.IBAN_SWIFT_IFSC__c} onchange={handleChange}>
+                                    </lightning-input>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-input name="Bank_Address__c" label="Bank Address"
+                                        value={agency.Bank_Address__c} onchange={handleChange}>
+                                    </lightning-input>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <h3 class="slds-text-heading_small slds-m-bottom_small">Select Document</h3>
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control">
+                                            <span class="slds-radio">
+                                                <input type="radio" id="cancelledCheque" name="documentType" value="Cancelled Cheque Copy" checked />
+                                                <label class="slds-radio__label" for="cancelledCheque">
+                                                    <span class="slds-form-element__label">Cancelled Cheque Copy</span>
+                                            </label>
+                                            </span>
+                                            <span class="slds-radio slds-m-left_large">
+                                                <input type="radio" id="soa" name="documentType" value="SOA" />
+                                                <label class="slds-radio__label" for="soa">
+                                                    <span class="slds-form-element__label">SOA</span>
+                                            </label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small slds-m-top_large">
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control">
+                                            <lightning-input type="checkbox" label="IBAN Letter (Bank Letter)"
+                                                name="ibanLetter" checked></lightning-input>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <template if:true={isStep4}>
+    <div class="section-header">Step 4: Documents</div>
+
+    <div class="slds-grid slds-wrap slds-m-bottom_medium">
+
+        <h3 class="slds-text-heading_medium slds-m-bottom_medium slds-col slds-size_1-of-3">
+            Required documents to upload:
+        </h3>
+
+        <!-- PASSPORT COPY -->
+        <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+            <h3 class="slds-text-heading_small slds-m-bottom_small">Passport Copy (Authorized Signatory)</h3>
+
+            <lightning-input
+                type="file"
+                multiple
+                label="Upload Files"
+                onchange={handleFileUpload}
+                data-doc-type="passportCopy">
+            </lightning-input>
+
+            <template if:true={uploadedFiles.passportCopy}>
+                <template for:each={uploadedFiles.passportCopy} for:item="file">
+                    <p key={file.id} class="slds-text-body_small slds-m-top_x-small">📄 {file.name}</p>
+                </template>
+            </template>
+        </div>
+
+        <!-- EID COPY -->
+        <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+            <h3 class="slds-text-heading_small slds-m-bottom_small">EID (Authorized Signatory)</h3>
+
+            <lightning-input
+                type="file"
+                multiple
+                label="Upload Files"
+                onchange={handleFileUpload}
+                data-doc-type="eidCopy">
+            </lightning-input>
+
+            <template if:true={uploadedFiles.eidCopy}>
+                <template for:each={uploadedFiles.eidCopy} for:item="file">
+                    <p key={file.id} class="slds-text-body_small slds-m-top_x-small">📄 {file.name}</p>
+                </template>
+            </template>
+        </div>
+
+        <!-- VISA COPY -->
+        <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+            <h3 class="slds-text-heading_small slds-m-bottom_small">Visa (Authorized Signatory)</h3>
+
+            <lightning-input
+                type="file"
+                multiple
+                label="Upload Files"
+                onchange={handleFileUpload}
+                data-doc-type="visaCopy">
+            </lightning-input>
+
+            <template if:true={uploadedFiles.visaCopy}>
+                <template for:each={uploadedFiles.visaCopy} for:item="file">
+                    <p key={file.id} class="slds-text-body_small slds-m-top_x-small">📄 {file.name}</p>
+                </template>
+            </template>
+        </div>
+
+        <!-- BANK LETTER -->
+        <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+            <h3 class="slds-text-heading_small slds-m-bottom_small">Bank Letter Copy</h3>
+
+            <lightning-input
+                type="file"
+                multiple
+                label="Upload Files"
+                onchange={handleFileUpload}
+                data-doc-type="bankLetter">
+            </lightning-input>
+
+            <template if:true={uploadedFiles.bankLetter}>
+                <template for:each={uploadedFiles.bankLetter} for:item="file">
+                    <p key={file.id} class="slds-text-body_small slds-m-top_x-small">📄 {file.name}</p>
+                </template>
+            </template>
+        </div>
+
+        <!-- TRADE LICENSE -->
+        <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+            <h3 class="slds-text-heading_small slds-m-bottom_small">Trade License Copy</h3>
+
+            <lightning-input
+                type="file"
+                multiple
+                label="Upload Files"
+                onchange={handleFileUpload}
+                data-doc-type="tradeLicense">
+            </lightning-input>
+
+            <template if:true={uploadedFiles.tradeLicense}>
+                <template for:each={uploadedFiles.tradeLicense} for:item="file">
+                    <p key={file.id} class="slds-text-body_small slds-m-top_x-small">📄 {file.name}</p>
+                </template>
+            </template>
+        </div>
+
+        <!-- CANCELLED CHEQUE -->
+        <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+            <h3 class="slds-text-heading_small slds-m-bottom_small">Cancelled Cheque Copy</h3>
+
+            <lightning-input
+                type="file"
+                multiple
+                label="Upload Files"
+                onchange={handleFileUpload}
+                data-doc-type="chequeCopy">
+            </lightning-input>
+
+            <template if:true={uploadedFiles.chequeCopy}>
+                <template for:each={uploadedFiles.chequeCopy} for:item="file">
+                    <p key={file.id} class="slds-text-body_small slds-m-top_x-small">📄 {file.name}</p>
+                </template>
+            </template>
+        </div>
+
+    </div>
+</template>
+
+                   
+                </template>
+
+                <!-- INDIVIDUAL FORM -->
+                <template if:true={showIndividualFields}>
+                    <!-- Step 1: Agent Details -->
+                    <template if:true={isStep1}>
+                        <div class="section-header">Step 1: Agent Details</div>
+                        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                <lightning-input name="First_Name__c" label="First Name" value={agency.First_Name__c}
+                                    onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                <lightning-input name="Last_Name__c" label="Last Name" value={agency.Last_Name__c}
+                                    onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                <lightning-combobox name="Agency_Sub_Type__c" label="Agency Sub Type"
+                                    options={picklistOptions.agency_sub_type__c} value={agency.agency_sub_type__c}
+                                    onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                <lightning-input type="email" name="Email__c" label="Email" value={agency.Email__c}
+                                    onchange={handleChange} required>
+                                </lightning-input>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                <div class="phone-row">
+                                    <div class="phone-prefix">
+                                        <input type="text" class="slds-input" disabled value="United Arab Emirates: 971" />
+                                    </div>
+                                    <div class="phone-input">
+                                        <lightning-input type="tel" name="Phone__c" label="Phone"
+                                            value={agency.Phone__c} onchange={handleChange} required>
+                                        </lightning-input>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Country -->
+                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                <lightning-combobox name="Country__c" label="Country"
+                                    options={picklistOptions.country__c} value={agency.country__c}
+                                    onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>
+
+                            <!-- Address -->
+                         <!--   <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="Address__c" label="Address Line 1" value={agency.Address__c}
+                                    onchange={handleChange} required>
+                                </lightning-input>
+                            </div> -->
+
+                            <!-- Nationality -->
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-combobox name="Nationality__c" label="Nationality"
+                                    options={picklistOptions.nationality__c} value={agency.nationality__c}
+                                    onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>
+
+                            <!-- National ID Fields -->
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="National_Id_Number__c" label="National Id Number"
+                                    value={agency.National_Id_Number__c} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-input name="National_Id_Expiry_date__c" label="National Id Expiry date"
+                                    type="date" value={agency.National_Id_Expiry_date__c} onchange={handleChange}>
+                                </lightning-input>
+                            </div>
+
+                            <!-- Designation -->
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <lightning-combobox name="Designation__c" label="Designation"
+                                    options={picklistOptions.designation__c} value={agency.designation__c}
+                                    onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Step 2: Bank Info -->
+                    <template if:true={isStep2}>
+                        <div class="section-header">Step 2: Bank Info</div>
+                        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <h3 class="slds-text-heading_small slds-m-bottom_small">Are Bank Document Available?
+                                </h3>
+                                <lightning-combobox name="Bank_Document_Available__c" label="Bank Document Status"
+                                    value={agency.Bank_Document_Available__c} options={} onchange={handleChange}>
+                                </lightning-combobox>
+                            </div>
+
+                            <template if:true={isBankDetailsVisible}>
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-input name="Beneficiary_Name__c"
+                                        label="Beneficiary name/Account Holder Name" value={agency.Beneficiary_Name__c}
+                                        onchange={handleChange}>
+                                    </lightning-input>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-combobox name="Type__c" label="Account Type"
+                                        options={picklistOptions.AccountTypeOptions} value={agency.Type__c}
+                                        onchange={handleChange}>
+                                    </lightning-combobox>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-combobox name="Currency__c" label="Currency"
+                                        options={picklistOptions.CurrencyOptions} value={agency.Currency__c}
+                                        onchange={handleChange}>
+                                    </lightning-combobox>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-combobox name="Bank_Branch_Name__c" label="Bank Branch Name"
+                                        options={picklistOptions.BankBranchOptions} value={agency.Bank_Branch_Name__c}
+                                        onchange={handleChange}>
+                                    </lightning-combobox>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-combobox name="Bank_Country__c" label="Bank Country"
+                                        options={picklistOptions.CountryOptions} value={agency.Bank_Country__c}
+                                        onchange={handleChange}>
+                                    </lightning-combobox>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-input name="Bank_City__c" label="Bank City" value={agency.Bank_City__c}
+                                        onchange={handleChange}>
+                                    </lightning-input>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-combobox name="Bank_Name__c" label="Bank Name"
+                                        options={picklistOptions.BankNameOptions} value={agency.Bank_Name__c}
+                                        onchange={handleChange}>
+                                    </lightning-combobox>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-input name="Bank_Account_Number__c" label="Bank Account Number"
+                                        value={agency.Bank_Account_Number__c} onchange={handleChange}>
+                                    </lightning-input>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-input name="IBAN_SWIFT_IFSC__c" label="IBAN/SWIFT/SORT/IFSC"
+                                        value={agency.IBAN_SWIFT_IFSC__c} onchange={handleChange}>
+                                    </lightning-input>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <lightning-input name="Bank_Address__c" label="Bank Address"
+                                        value={agency.Bank_Address__c} onchange={handleChange}>
+                                    </lightning-input>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                    <h3 class="slds-text-heading_small slds-m-bottom_small">Select Document</h3>
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control">
+                                            <span class="slds-radio">
+                                                <input type="radio" id="cancelledChequeInd" name="documentType" value="Cancelled Cheque Copy" checked />
+                                                <label class="slds-radio__label" for="cancelledChequeInd">
+                                                    <span class="slds-form-element__label">Cancelled Cheque Copy</span>
+                                            </label>
+                                            </span>
+                                            <span class="slds-radio slds-m-left_large">
+                                                <input type="radio" id="soaInd" name="documentType" value="SOA" />
+                                                <label class="slds-radio__label" for="soaInd">
+                                                    <span class="slds-form-element__label">SOA</span>
+                                            </label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small slds-m-top_large">
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control">
+                                            <lightning-input type="checkbox" label="IBAN Letter (Bank Letter)"
+                                                name="ibanLetter" checked></lightning-input>
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Step 3: Documents -->
+                    <template if:true={isStep3}>
+                        <div class="section-header">Step 3: Documents</div>
+
+                        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+                            <h3 class="slds-text-heading_medium slds-m-bottom_medium slds-col slds-size_1-of-1">
+                                Required documents to upload:
+                            </h3>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <h3 class="slds-text-heading_small slds-m-bottom_small">Passport Copy (Individual)</h3>
+                                <div class="file-upload-section">
+                                    <lightning-input type="file" label="Upload files" onchange={handleFileUpload}
+                                        data-doc-type="Passport Copy (Individual)" required></lightning-input>
+                                    <p class="slds-text-body_small file-format-info">Allowed Formats: pdf, docx, pptx.
+                                        5MB</p>
+                                </div>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <h3 class="slds-text-heading_small slds-m-bottom_small">EID (Individual)</h3>
+                                <div class="file-upload-section">
+                                    <lightning-input type="file" label="Upload files" onchange={handleFileUpload}
+                                        data-doc-type="EID (Individual)" required></lightning-input>
+                                    <p class="slds-text-body_small file-format-info">Allowed Formats: pdf, docx, pptx.
+                                        5MB</p>
+                                </div>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <h3 class="slds-text-heading_small slds-m-bottom_small">Visa (Individual)</h3>
+                                <div class="file-upload-section">
+                                    <lightning-input type="file" label="Upload files" onchange={handleFileUpload}
+                                        data-doc-type="Visa (Individual)" required></lightning-input>
+                                    <p class="slds-text-body_small file-format-info">Allowed Formats: pdf, docx, pptx.
+                                        5MB</p>
+                                </div>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <h3 class="slds-text-heading_small slds-m-bottom_small">Bank Letter</h3>
+                                <p class="slds-text-body_small slds-m-bottom_x-small">
+                                    <a href="javascript:void(0);" onclick={handleDownloadBankDocument}>Download Bank
+                                        Document</a>
+                                </p>
+                                <p class="slds-text-body_small slds-text-color_error slds-m-bottom_small">
+                                    Print the Form with signature.
+                                </p>
+                                <div class="file-upload-section">
+                                    <lightning-input type="file" label="Upload files" onchange={handleFileUpload}
+                                        data-doc-type="Bank Letter" required></lightning-input>
+                                    <p class="slds-text-body_small file-format-info">Allowed Formats: pdf, docx, pptx.
+                                        5MB</p>
+                                </div>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <h3 class="slds-text-heading_small slds-m-bottom_small">Cancelled Cheque Copy</h3>
+                                <div class="file-upload-section">
+                                    <lightning-input type="file" label="Upload files" onchange={handleFileUpload}
+                                        data-doc-type="Cancelled Cheque Copy" required></lightning-input>
+                                    <p class="slds-text-body_small file-format-info">Allowed Formats: pdf, docx, pptx.
+                                        5MB</p>
+                                </div>
+                            </div>
+
+                            <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+                                <div class="slds-grid slds-wrap slds-m-top_medium">
+                                    <div class="slds-col slds-size_1-of-3 slds-p-right_small">
+                                        <lightning-input name="captchaImage" value="5rk1uf" disabled></lightning-input>
+                                    </div>
+                                    <div
+                                        class="slds-col slds-size_1-of-3 slds-p-right_small slds-text-align_center slds-m-top_small">
+                                        <lightning-icon icon-name="utility:refresh" size="small"
+                                            onclick={handleRefreshCaptcha}></lightning-icon>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-3 slds-p-left_small">
+                                        <lightning-input name="captchaInput" label="Enter captcha code"
+                                            onchange={handleCaptchaChange} required></lightning-input>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </template>
+
+                </template> <!-- close showIndividualFields -->
+
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="slds-m-top_large slds-text-align_right">
+                <lightning-button label="Previous" onclick={handlePrevious} class="slds-m-right_small"
+                    disabled={isFirstStep}>
+                </lightning-button>
+
+                <template if:false={isLastStep}>
+                    <lightning-button label="Next" variant="brand" onclick={handleNext}>
+                    </lightning-button>
+                </template>
+
+                <template if:true={isLastStep}>
+                    <lightning-button label="Save" variant="brand" onclick={handleSubmit}>
+                    </lightning-button>
+                </template>
+                
+            </div>
+
+        </div>
+
+
+
+<!-- Add this at the end of your existing HTML template -->
+<!-- Success Message -->
+<template if:true={showSuccessMessage}>
+    <div class="success-box">
+        🎉 Your agency has been submitted successfully!
+    </div>
+</template>
+
+<!-- Confetti Container -->
+<div class="confetti-container"></div>
+
+
+
+        <!-- ============================
+   DEBUG SECTION: ALL PICKLIST VALUES
+   ============================ -->
+        
+    </lightning-card>
+</template>

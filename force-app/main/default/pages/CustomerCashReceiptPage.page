@@ -1,0 +1,297 @@
+<apex:page controller="CustomerCashReceiptController" showHeader="false" sidebar="false" 
+    standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false"
+    docType="html-5.0" renderAs="PDF" contentType="application/pdf#EOI-Form.pdf">
+
+<html>
+<head>
+<style>
+
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        margin: 20px 30px;
+    }
+
+    .logo-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .company-name {
+        text-align: right;
+        font-size: 13px;
+        color: #444;
+        padding-right: 5px;
+    }
+
+    .contact-section {
+        margin-top: 40px;
+        font-size: 12px;
+    }
+
+    .divider {
+        width: 33%;
+        border-top: 1px solid #999;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+
+    .qr-table {
+        width: 100%;
+        margin-top: -60px;
+    }
+
+    .qr-text {
+        color: #900;
+        font-weight: bold;
+        text-align: right;
+        padding-right: 10px;
+    }
+
+    .receipt-title {
+        margin-top: 40px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        text-decoration: underline;
+    }
+
+    .barcode {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .client-info {
+        margin-top: 40px;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .footer-info {
+        margin-top: 40px;
+        font-size: 11px;
+        line-height: 1.6;
+    }
+    
+    
+    .qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: -80px; 
+}
+
+.qr-text {
+    color: #900;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+    margin-bottom: 5px;
+}
+    
+    
+  .barcode {
+    text-align: right;      
+    margin-top: 10px;       
+    margin-right: 50px;    
+}
+
+.client-info {
+    margin-top: -50px;
+    font-size: 12px;
+    line-height: 1;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<table style="width: 100%; border-collapse: collapse; vertical-align: middle;">
+  <tr>
+    <td style="width: 180px; vertical-align: middle;">
+      <img src="{!URLFOR($Resource.ZoyaLogo)}" width="180" style="display: block;" />
+    </td>
+    <td style="vertical-align: middle; padding-right: -20px;">
+
+      <!-- Text above the line -->
+      <div style="text-align: center; font-family: Arial, sans-serif; font-size: 13px; color: #444; margin-bottom: 2px; padding-left: 20px">
+        Zoya One Real Estate Developments L.L.C
+      </div>
+
+      <!-- The horizontal line -->
+      <div style="border-top: 1px solid #999; width: 100%;"></div>
+
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+<!-- CONTACT INFO -->
+<div class="contact-section">
+    <p><b>Phone:</b>{!customerPhone}</p>
+    <p><b>Email:</b> {!customerEmail}</p>
+    </div>
+
+<div class="divider"></div>
+
+<!-- QR CODE RIGHT ALIGNMENT USING TABLE -->
+<table class="qr-table">
+ <tr>
+    <td style="width:70%"></td>
+    <td style="text-align:right;">
+        <div class="qr-container">
+            <div class="qr-text">Scan &nbsp; Verify</div>
+            <img src="{!URLFOR($Resource.QR_Image)}" width="90" height="90"/>
+        </div>
+    </td>
+</tr>
+</table>
+
+
+
+<!-- Title -->
+<div class="receipt-title">
+    Receipt Voucher
+</div>
+
+<!-- BARCODE CENTER -->
+<div class="barcode">
+    <img src="{!URLFOR($Resource.BarCodeReceipt)}" width="200"/> 
+</div>
+
+<!-- CLIENT DATA -->
+<div class="client-info">
+    <p><b>Client Name:</b> {!customerName}</p>
+    <p><b>Joint Owner:</b> {!officerUser}</p>
+</div>
+
+
+<div class="footer-info">
+    Mobile: Access to limited Person <br/>
+    Phone: Access to limited Person <br/>
+    Email: Access to limited Person
+</div>
+
+    <!-- ADDITIONAL FORM SECTION -->
+
+<table style="width:100%; border-collapse: collapse; font-size: 11px; margin-top: 30px;">
+  <tr>
+    <th style="border: 1px solid black; padding: 5px;">VoucherNumber</th>
+    <th style="border: 1px solid black; padding: 5px;">Date</th>
+    <th style="border: 1px solid black; padding: 5px;">Officer/User</th>
+    <th style="border: 1px solid black; padding: 5px;">PaymentTerms</th>
+    <th style="border: 1px solid black; padding: 5px;">Remarks</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; height: 25px;">{!receiptName}</td>
+   <td style="border: 1px solid black;">
+    <apex:outputText value="{0,date,dd/MM/yyyy}"><apex:param value="{!recDate}" /></apex:outputText></td>
+    <td style="border: 1px solid black;">{!officerUser}</td>
+    <td style="border: 1px solid black;">{!modeOfPayment}</td>
+    <td style="border: 1px solid black;">{!remarks}</td>
+  </tr>
+</table>
+
+<table style="width:100%; margin-top: 10px; font-size: 11px;">
+  <tr>
+    <td style="width: 15%;"><b>Payment Method:</b></td>
+    <td style="border-bottom: 1px solid black; width: 35%;">{!modeOfPayment}</td>
+    <td style="width: 10%;"><b>Amount:</b></td>
+    <td style="border-bottom: 1px solid black; width: 40%;">AED {!receiptAmount}</td>
+  </tr>
+</table>
+
+
+<table style="width:100%; margin-top: 10px; font-size: 11px;">
+  <tr>
+       <td style="width: 10%;"><b> ReceivedWiththanksthesumof: </b></td>
+    <td style="width: 100%; border-bottom: 1px solid black; height: 25px;"></td>
+  </tr>
+    </table>
+
+<table style="width:100%; margin-top: 5px; font-size: 11px;">
+  <tr>
+    <td style="width: 15%;"><b>Project Name:</b></td>
+    <td style="border-bottom: 1px solid black; width: 35%;">{!projectName}</td>
+    <td style="width: 15%;"><b>Unit No:</b></td>
+    <td style="border-bottom: 1px solid black; width: 35%;">{!unitName}</td>
+  </tr>
+</table>
+<br/><br/><br/>
+    
+    <!-- Other Details Section -->
+   <p style="margin-bottom: 5px;"><strong>Other Details</strong></p>
+  <table style="width:100%; border-collapse: collapse; font-size: 11px;">
+  <tr>
+    <th style="border: 1px solid black; padding: 5px;">Ref</th>
+    <th style="border: 1px solid black; padding: 5px;">CheckNo</th>
+    <th style="border: 1px solid black; padding: 5px;">A/cHolderName</th>
+    <th style="border: 1px solid black; padding: 5px;">Bank</th>
+    <th style="border: 1px solid black; padding: 5px;">Maturity</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; height: 25px;">Installment</td>
+    <td style="border: 1px solid black;"></td>
+    <td style="border: 1px solid black;"></td>
+    <td style="border: 1px solid black;"></td>
+    <td style="border: 1px solid black;"></td>
+  </tr>
+</table>
+    
+    
+    
+    <!-- Receipt and Signature Section -->
+<div style="width: 100%; font-family: Arial, sans-serif; font-size: 11px; margin-top: 40px;">
+
+  <!-- Top row: ClientSignature on right -->
+<!-- Client Signature right aligned -->
+<div style="width: 200px; margin-left: auto; text-align: center; margin-bottom: 10px;">
+    ClientSignature<br/><br/><br/>
+  <span style="display: inline-block; border-bottom: 1px dotted black; width: 150px; height: 1.5em;"></span>
+    </div><br/><br/><br/><br/>
+
+
+
+  <!-- Center label -->
+  <div style="text-align: center; font-weight: bold; margin-bottom: 10px; font-size: 12px;">
+    For Office Use Only
+  </div>
+
+  <!-- Receipt table -->
+ <table style="width: 80%; border-collapse: collapse; margin: 0 auto 20px auto;">
+  <tr>
+    <th style="border: 1px solid black; padding: 5px; text-align: left;">Receipt#:</th>
+    <th style="border: 1px solid black; padding: 5px; text-align: left;">SalesInvoice#:</th>
+    <th style="border: 1px solid black; padding: 5px; text-align: left;">Date:</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; height: 25px;"></td>
+    <td style="border: 1px solid black;"></td>
+    <td style="border: 1px solid black;"></td>
+  </tr>
+</table>
+
+
+  <!-- Receipt Disclaimer -->
+  <div style="font-size: 12px; line-height: 1.2; color: #000;">
+    <strong>Receipt Disclaimer:</strong><br/>
+    Receipthardcopydetailsmustcrossverifywithdigitalcopysentyourregisteredmobileandemail. Also cross verify with QR Web codescan. Any discrepancy must be notified in 15 days from the date of receipt date. In any dispute the electronic copy of the receipt and the confirmation via mails sent to the registered email of the client will be considered valid and authentic.<br/><br/>
+    
+    1. Credit will be provided subject to realization of cheques/funds in our account.<br/>
+    2. Any excess credits will be adjusted against future invoices.<br/>
+    3. Amount received will not be refunded.
+  </div>
+
+</div>
+
+
+</body>
+</html>
+
+</apex:page>

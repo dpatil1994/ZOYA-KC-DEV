@@ -1,0 +1,170 @@
+<template>
+    <lightning-card title="Sales Booking">
+
+        <!-- 🔥 REQUIRED FOR STANDARD FIELD RENDERING -->
+        <lightning-record-edit-form
+            object-api-name="Opportunity"
+            record-id={recordId}
+            onsuccess={handleSuccess}>
+
+            <lightning-accordion allow-multiple-sections-open>
+
+<!-- ================= SECTION 1 ================= -->
+<lightning-accordion-section label="Booking Information">
+    <lightning-layout multiple-rows>
+
+        <lightning-layout-item size="6" padding="around-small">
+            <!-- Developer Name (Auto, Read Only) -->
+            <lightning-input
+                label="Developer Name"
+                value="Auto Generated"
+                disabled>
+            </lightning-input>
+
+            <lightning-input-field field-name="StageName"></lightning-input-field>
+            <lightning-input-field field-name="Sales_Type__c"></lightning-input-field>
+            <lightning-input-field field-name="Booking_Type__c"></lightning-input-field>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-input-field field-name="OwnerId"></lightning-input-field>
+
+            <!-- Reservation Date -->
+            <lightning-input
+                type="date"
+                label="Reservation Date"
+                value={todayDate}
+                disabled>
+            </lightning-input>
+
+            <lightning-input-field field-name="Finish_Type__c"></lightning-input-field>
+        </lightning-layout-item>
+
+    </lightning-layout>
+</lightning-accordion-section>
+
+<!-- ================= SECTION 2 ================= -->
+<lightning-accordion-section label="Customer & Agency">
+    <lightning-layout multiple-rows>
+
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-input-field field-name="AccountId"></lightning-input-field>
+            <lightning-input-field field-name="Joint_Buyer__c"></lightning-input-field>
+            <lightning-input-field field-name="Secondary_Buyer__c"></lightning-input-field>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-input-field field-name="Agency_Name__c"></lightning-input-field>
+            <lightning-input-field field-name="More_Than_2_Buyers__c"></lightning-input-field>
+        </lightning-layout-item>
+
+    </lightning-layout>
+</lightning-accordion-section>
+
+<!-- ================= SECTION 3 ================= -->
+<lightning-accordion-section label="Property Details">
+    <lightning-layout multiple-rows>
+
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-input-field
+                field-name="Project_Name__c"
+                onchange={handlePropertyChange}>
+            </lightning-input-field>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-combobox
+                label="Property Unit"
+                options={propertyUnitOptions}
+                value={selectedUnit}
+                onchange={handleUnitChange}
+                disabled={disableUnit}>
+            </lightning-combobox>
+        </lightning-layout-item>
+
+    </lightning-layout>
+</lightning-accordion-section>
+
+<!-- ================= SECTION 4 ================= -->
+<lightning-accordion-section label="Sales Team">
+    <lightning-layout multiple-rows>
+
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-input-field field-name="Sales_Executive_1__c"></lightning-input-field>
+            <lightning-input-field field-name="Sales_Executive_2__c"></lightning-input-field>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-input-field field-name="Team_Lead_Sales_Director__c"></lightning-input-field>
+            <lightning-input-field field-name="Head_of_Sales_VP__c"></lightning-input-field>
+        </lightning-layout-item>
+
+    </lightning-layout>
+</lightning-accordion-section>
+
+<!-- ================= SECTION 5 ================= -->
+<lightning-accordion-section label="Pricing & Discount">
+    <lightning-layout multiple-rows>
+
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-input-field field-name="Unit_Price__c"></lightning-input-field>
+            <lightning-input-field field-name="Discount__c"></lightning-input-field>
+            <lightning-input-field field-name="Discount_Amount__c"></lightning-input-field>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-input-field field-name="Admin_Fee__c"></lightning-input-field>
+            <lightning-input-field field-name="Total_Amount__c"></lightning-input-field>
+        </lightning-layout-item>
+
+    </lightning-layout>
+</lightning-accordion-section>
+
+<!-- ================= SECTION 6 ================= -->
+<lightning-accordion-section label="Payment Details">
+    <lightning-layout multiple-rows>
+
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-input-field field-name="Down_Payment_Amount__c"></lightning-input-field>
+            <lightning-input-field field-name="DP__c"></lightning-input-field>
+        </lightning-layout-item>
+
+        <lightning-layout-item size="6" padding="around-small">
+            <lightning-input-field field-name="Paid_Percentage__c"></lightning-input-field>
+            <lightning-input-field field-name="PDC__c"></lightning-input-field>
+        </lightning-layout-item>
+
+    </lightning-layout>
+</lightning-accordion-section>
+
+<!-- ================= SECTION 7 ================= -->
+<lightning-accordion-section label="Legal & Registration">
+    <lightning-input-field field-name="Oqood_Status__c"></lightning-input-field>
+    <lightning-input-field field-name="SPA_Status__c"></lightning-input-field>
+</lightning-accordion-section>
+
+<!-- ================= SECTION 8 ================= -->
+<lightning-accordion-section label="Description">
+    <lightning-input-field field-name="Description"></lightning-input-field>
+</lightning-accordion-section>
+
+            </lightning-accordion>
+
+            <!-- STANDARD SALESFORCE BUTTON BAR -->
+            <div class="slds-m-top_medium slds-align_absolute-center">
+                <lightning-button
+                    variant="brand"
+                    type="submit"
+                    label="Save">
+                </lightning-button>
+
+                <lightning-button
+                    variant="neutral"
+                    label="Cancel"
+                    onclick={handleCancel}>
+                </lightning-button>
+            </div>
+
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

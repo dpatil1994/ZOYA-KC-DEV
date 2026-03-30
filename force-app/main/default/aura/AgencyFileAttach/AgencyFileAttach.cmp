@@ -1,0 +1,14 @@
+<aura:component 
+    controller="AgencyFileAttachController"
+    implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction"
+    access="global">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+
+        <aura:if isTrue="{!v.isLoading}">
+            <lightning:spinner alternativeText="Processing..." size="medium"/>
+        </aura:if>
+
+</aura:component>

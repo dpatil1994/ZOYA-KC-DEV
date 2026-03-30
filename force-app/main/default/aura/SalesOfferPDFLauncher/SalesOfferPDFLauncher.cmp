@@ -1,0 +1,10 @@
+<aura:component implements="force:hasRecordId,lightning:actionOverride,force:lightningQuickActionWithoutHeader"
+                access="global">
+
+    <aura:attribute name="recordId" type="Id"/>
+
+    <!-- On load automatically open PDF -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:spinner size="medium" />
+</aura:component>

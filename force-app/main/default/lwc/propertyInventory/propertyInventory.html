@@ -1,0 +1,193 @@
+<template>
+
+    <lightning-card title="Inventory">
+<!-- ================= CUSTOM HEADER ================= -->
+<div class="availability-header">
+    <div class="header-left">
+        <lightning-icon
+            icon-name="utility:home"
+            size="small"
+            class="header-icon">
+        </lightning-icon>
+
+        <span class="header-title">My Availability</span>
+    </div>
+</div>
+        <!-- ================= FILTERS ================= -->
+        <div class="filter-box">
+            <lightning-combobox
+                label="Project Name"
+                options={projectOptions}
+                value={projectId}
+                onchange={handleProjectChange}>
+            </lightning-combobox>
+
+            <lightning-input
+                label="Floor"
+                placeholder="Enter floor number"
+                value={floor}
+                onchange={handleFloorChange}>
+            </lightning-input>
+
+            <lightning-combobox
+                label="Unit Type"
+                options={unitTypeOptions}
+                value={unitType}
+                onchange={handleUnitTypeChange}>
+            </lightning-combobox>
+
+            <lightning-combobox
+                label="Unit View"
+                options={viewTypeOptions}
+                value={viewType}
+                onchange={handleViewTypeChange}>
+            </lightning-combobox>
+        </div>
+
+        <!-- ================= FILTER BUTTONS ================= -->
+       <!-- ================= ALL ACTION BUTTONS (ONE LINE) ================= -->
+<!-- ================= BUTTON ROW ================= -->
+<div class="button-row">
+
+    <!-- LEFT GROUP -->
+    <div class="button-left">
+        <lightning-button
+            variant="brand"
+            label="Show Inventories"
+            onclick={loadInventory}>
+        </lightning-button>
+
+        <lightning-button
+            label="Reset Filter"
+            onclick={resetFilter}
+            class="reset-btn">
+        </lightning-button>
+    </div>
+
+    <!-- RIGHT GROUP -->
+    <div class="button-right">
+        <lightning-button
+            variant="brand"
+            label="Generate Sales Offer"
+            onclick={generateOffer}
+            disabled={isNoSelection}>
+        </lightning-button>
+
+        <lightning-button
+            variant="brand"
+            label="Book Unit"
+            onclick={bookUnit}
+            disabled={isNoSelection}>
+        </lightning-button>
+    </div>
+
+</div>
+<!-- ================= LOADER ================= -->
+<template if:true={isLoading}>
+    <div class="slds-p-around_medium slds-align_absolute-center">
+        <lightning-spinner
+            alternative-text="Loading inventories"
+            size="medium">
+        </lightning-spinner>
+    </div>
+</template>
+        <!-- ================= INVENTORY TABLE ================= -->
+        <template if:true={showTable}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={inventory}
+                    columns={columns}
+                    max-row-selection="1"
+                    onrowselection={handleRowSelection}>
+                </lightning-datatable>
+        </template>
+
+    </lightning-card>
+
+    <!-- ================= MODAL ================= -->
+    <template if:true={showOfferModal}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+
+                <header class="slds-modal__header">
+                    <h2 class="slds-text-heading_medium">
+                        Generate Sales Offer
+                    </h2>
+                </header>
+
+                <div class="slds-modal__content slds-p-around_medium">
+
+                    <!-- Spinner -->
+                    <template if:true={isSaving}>
+                        <lightning-spinner size="medium"></lightning-spinner>
+                    </template>
+
+                    <!-- FORM (blur when disabled) -->
+                    <div class={formContainerClass}>
+
+                        <lightning-input
+                            label="Project"
+                            value={selectedUnit.projectName}
+                            disabled>
+                        </lightning-input>
+
+                        <lightning-input
+                            label="Property Unit"
+                            value={selectedUnit.Name}
+                            disabled
+                            class="slds-m-top_small">
+                        </lightning-input>
+
+                        <lightning-combobox
+                            label="Payment Plan"
+                            options={paymentPlanOptions}
+                            value={paymentPlan}
+                            onchange={handlePaymentPlanChange}
+                            disabled={isFormDisabled}
+                            required
+                            class="slds-m-top_small">
+                        </lightning-combobox>
+
+                        <lightning-button
+                            variant="brand"
+                            label="Save"
+                            onclick={saveSalesOffer}
+                            disabled={isSaveDisabled}
+                            class="slds-m-top_medium">
+                        </lightning-button>
+
+                        <template if:true={successMessage}>
+                            <div class="slds-notify slds-notify_alert slds-alert_success slds-m-top_small">
+                                {successMessage}
+                            </div>
+                        </template>
+
+                    </div>
+                </div>
+
+                <!-- MODAL FOOTER -->
+                <footer class="slds-modal__footer slds-grid slds-grid_align-spread">
+
+                    <!-- LEFT -->
+                    <lightning-button
+                        variant="brand"
+                        label="Generate Sales Offer"
+                        onclick={generatePdf}
+                        disabled={isGenerateDisabled}>
+                    </lightning-button>
+
+                    <!-- RIGHT -->
+                    <lightning-button
+                        label="Close"
+                        onclick={closeModal}>
+                    </lightning-button>
+
+                </footer>
+
+            </div>
+        </section>
+
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+
+</template>

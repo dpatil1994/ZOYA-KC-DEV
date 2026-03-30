@@ -1,0 +1,2425 @@
+<apex:page docType="html-5.0" showHeader="false" sidebar="false" standardStylesheets="false" controller="BrokerRegistrationFormController" applyHtmlTag="false" applyBodyTag="false">
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <head>
+            <title>Agency Onboarding</title>
+            <apex:slds />
+            <apex:includeLightning />
+            
+            <style>
+                /* ============================
+                COLOR THEME
+                ============================ */
+                :root {
+                --primary-color: #665555;
+                --accent-color: #ad9752;
+                --light-bg: #f9f7f6;
+                --border-color: #e5e1df;
+                --text-dark: #2e2e2e;
+                }
+                .carousel-image img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                }
+                
+                
+                
+                /* ============================
+                PAGE BASE
+                ============================ */
+                body.slds-scope {
+                background: linear-gradient(135deg, #f9f7f6, #f1ece9);
+                font-family: "Salesforce Sans", Arial, sans-serif;
+                }
+                
+                /* ============================
+                MAIN CARD
+                ============================ */
+                .slds-card {
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                border: none !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                background: #fff;
+                }
+                
+                /* ============================
+                HEADER
+                ============================ */
+                .form-title-container h2 {
+                color: var(--primary-color);
+                font-weight: 700;
+                letter-spacing: 0.5px;
+                }
+                
+                .form-title-container h2::after {
+                content: "";
+                display: block;
+                width: 80px;
+                height: 4px;
+                background: var(--accent-color);
+                margin: 10px auto 0;
+                border-radius: 20px;
+                }
+                
+                /* ============================
+                STEP PROGRESS BAR
+                ============================ */
+                .step-progress-bar {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+                margin: 30px 0;
+                }
+                
+                .step {
+                padding: 10px 26px;
+                border-radius: 30px;
+                font-weight: 600;
+                background: #ece7e4;
+                color: var(--primary-color);
+                transition: all 0.3s ease;
+                }
+                
+                .step.active {
+                background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+                color: #fff;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+                }
+                
+                /* ============================
+                SECTION HEADERS
+                ============================ */
+                .section-header {
+                font-size: 1.4rem;
+                font-weight: 700;
+                color: var(--primary-color);
+                margin: 30px 0 20px;
+                padding-left: 12px;
+                border-left: none;
+                }
+                
+                /* ============================
+                INPUTS  SELECTS
+                ============================ */
+                .slds-input,
+                .slds-textarea,
+                .slds-select {
+                border-radius: 8px;
+                border: 1px solid var(--border-color);
+                padding: 10px;
+                transition: all 0.25s ease;
+                }
+                
+                .slds-input:focus,
+                .slds-textarea:focus,
+                .slds-select:focus {
+                border-color: var(--accent-color);
+                box-shadow: 0 0 0 2px rgba(173,151,82,0.25);
+                }
+                
+                /* ============================
+                BUTTONS
+                ============================ */
+                /* ===== Buttons ===== */
+                .slds-button_brand,
+                .slds-button_neutral {
+                background: linear-gradient(135deg, #665555, #ad9752) !important;
+                color: #fff !important;
+                border: none !important;
+                border-radius: 30px !important;
+                padding: 10px 30px !important;
+                font-weight: 600;
+                transition: all 0.25s ease;
+                }
+                
+                .slds-button_brand:hover,
+                .slds-button_neutral:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+                }
+                
+                /* Remove Salesforce default blue outline */
+                .slds-button:focus {
+                box-shadow: none !important;
+                }
+                html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                background: #f9f7f6 !important;
+                }
+                
+                .slds-theme_default {
+                background: #f9f7f6;
+                min-height: 100vh;
+                padding: 0 !important;
+                margin: 0 !important;
+                }
+                
+                
+                /* Card center alignment */
+                .slds-card {
+                max-width: 1200px;
+                margin: auto;
+                }
+                .button-container {
+                position: sticky;
+                bottom: 20px;
+                display: flex;
+                justify-content: flex-end;
+                gap: 15px;
+                background: #fff;
+                padding: 15px 0;
+                z-index: 10;
+                }
+                
+                
+                
+                /* ============================
+                DOCUMENT BOXES
+                ============================ */
+                /* ============================
+                DOCUMENT GRID
+                ============================ */
+                /* ================= DOCUMENT GRID ================= */
+
+.doc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+
+    /* 🔑 THIS FIXES EMPTY GAPS WHEN ITEMS HIDE */
+    grid-auto-flow: dense;
+}
+
+/* Each uploader wrapper */
+.doc-item {
+    width: 100%;
+}
+
+/* ================= CARD STYLE ================= */
+
+.doc-box {
+    height: 120px; /* 🔽 reduced height */
+    border: 1px solid #d8dde6;
+    border-radius: 8px;
+    padding: 12px;
+    background: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    /* Smooth hover animation */
+    transition: all 0.2s ease-in-out;
+}
+
+/* ================= HOVER EFFECT ================= */
+
+.doc-box:hover {
+    border-color: #1b96ff;
+    box-shadow: 0 4px 10px rgba(27, 150, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* ================= TITLE ================= */
+
+.doc-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* ================= FILE INPUT ================= */
+
+.doc-box input[type="file"] {
+    width: 100%;
+}
+
+/* ================= ERROR ================= */
+
+.doc-box .error-message {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #c23934;
+}
+
+                
+                /* ============================
+                SUCCESS MODAL
+                ============================ */
+                .success-modal-overlay {
+                position: fixed;
+                inset: 0;
+                background: rgba(0,0,0,0.6);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 9999;
+                }
+                
+                .success-modal {
+                background: #ffffff;
+                border-radius: 16px;
+                padding: 40px 30px;
+                width: 450px;
+                text-align: center;
+                box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+                animation: scaleIn 0.3s ease;
+                position: relative;
+                }
+                
+                @keyframes scaleIn {
+                from { transform: scale(0.9); opacity: 0; }
+                to { transform: scale(1); opacity: 1; }
+                }
+                
+                .success-icon {
+                background: linear-gradient(135deg, #2E844A, #4CAF50);
+                color: #fff;
+                font-size: 48px;
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+                border-radius: 50%;
+                margin: 0 auto 20px;
+                }
+                
+                .success-title {
+                font-size: 24px;
+                font-weight: 700;
+                color: #2E844A;
+                }
+                
+                .success-message {
+                font-size: 17px;
+                margin-top: 10px;
+                }
+                .success-reference {
+    margin-top: 12px;
+    font-size: 17px;
+    color: #000;
+}
+
+.success-reference .highlight {
+    font-weight: 700;
+}
+
+                
+                .success-note {
+                font-size: 14px;
+                color: #666;
+                margin: 15px 0;
+                }
+                
+                .success-button {
+                background: linear-gradient(135deg, #665555, #ad9752);
+                color: #fff;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                margin-top: 20px;
+                }
+                
+                .success-button:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+                }
+                
+                .close-icon {
+                position: absolute;
+                right: 14px;
+                top: 10px;
+                border: none;
+                background: none;
+                font-size: 22px;
+                cursor: pointer;
+                }
+                
+                
+                
+                /* ============================
+                ANIMATION
+                ============================ */
+                @keyframes fadeSlide {
+                from {
+                opacity: 0;
+                transform: translateY(12px);
+                }
+                to {
+                opacity: 1;
+                transform: translateY(0);
+                }
+                }
+                
+                [rendered] {
+                animation: fadeSlide 0.35s ease;
+                }
+                
+                /* Required star */
+                .required-label::after {
+                content: " *";
+                color: #c23934;
+                font-weight: bold;
+                }
+                
+                /* Bank section spacing fix */
+                .bank-section {
+                margin-top: 15px;
+                }
+                
+                .bank-section .slds-col {
+                margin-bottom: 12px;
+                }
+                
+                .slds-form-element__label {
+                font-weight: 600;
+                }
+                
+                .apexMessages {
+                background: #fff3f3;
+                border-left: 5px solid #c23934;
+                padding: 10px;
+                border-radius: 6px;
+                }
+                
+                
+                .error-border {
+                border: 2px solid #ea001e !important;
+                }
+                
+                .error-message {
+                color: #ea001e;
+                font-size: 12px;
+                margin-top: 4px;
+                display: none;
+                }
+                
+                .error-border {
+                border: 2px solid #ea001e !important;
+                }
+                
+                .error-message {
+                color: #ea001e;
+                font-size: 12px;
+                margin-top: 4px;
+                display: none;
+                }
+                
+                    
+                /* =========================
+   LOADING OVERLAY
+========================= */
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 10000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Loader box */
+.loader-box {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+}
+
+/* Spinner */
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #e5e1df;
+    border-top: 5px solid #ad9752;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 12px;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+                
+                
+            </style>
+            
+        </head>
+        <body class="slds-scope">
+            <apex:form id="agencyForm" enctype="multipart/form-data">
+                <div class="slds-theme_default">
+                    <section class="carousel">
+                        <div class="carousel-image">
+                            <img src="{!$Resource.zoyaCarousel}" alt="Agency Onboarding" />
+                        </div>
+                    </section>
+                    
+                    <div class="slds-card">
+                        <div class="slds-card__body slds-p-around_medium">
+                            <div class="form-title-container slds-m-bottom_medium">
+                                <h2 class="slds-text-heading_large slds-text-align_center slds-text-color_brand">
+                                    Channel Partner Onboarding Form
+                                </h2>
+                            </div>
+                            <apex:outputPanel id="stepProgressBar">
+                                <div class="step-progress-bar">
+                                    
+                                    <apex:variable var="i" value="{!1}" />
+                                    
+                                    <apex:repeat value="{!stepLabels}" var="step">
+                                        
+                                        <div class="step {!IF(currentStep == i, 'active', '')}">
+                                            <span class="step-title">{!step}</span>
+                                        </div>
+                                        
+                                        <apex:variable var="i" value="{!i + 1}" />
+                                        
+                                    </apex:repeat>
+                                    
+                                </div>
+                            </apex:outputPanel>
+                            
+                            
+                            
+                         <apex:outputPanel rendered="{!currentStep == 1}">
+    <h3 class="slds-text-heading_small slds-m-bottom_small">AGENCY TYPE</h3>
+
+    <div class="toggle-container">
+        <apex:selectRadio value="{!selectedAgencyType}" layout="pageDirection">
+            <apex:selectOption itemValue="Corporate" itemLabel="Corporate"/>
+            <apex:selectOption itemValue="Individual" itemLabel="Individual"/>
+
+            <apex:actionSupport event="onchange"
+                                action="{!onAgencyTypeChange}"
+                                reRender="formContent,stepProgressBar"/>
+        </apex:selectRadio>
+    </div>
+</apex:outputPanel>
+                            <apex:pageMessages id="errorMessages" />
+                            
+                            <apex:outputPanel id="formContent">
+                                <apex:outputPanel id="corporateSection"
+                                                  rendered="{!selectedAgencyType == 'Corporate'}">
+                                    
+                                    
+                                    
+                                    <apex:outputPanel rendered="{!currentStep == 1}">
+                                        
+                                        <div class="section-header">Step 1: Corporate / Company Information</div>
+                                        
+                                        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+                                            
+                                            <!-- Sub Type -->
+
+<!-- Sub Type (unchanged + JS) -->
+<div class="slds-col slds-size_1-of-1 slds-p-horizontal_small">
+    <label class="slds-form-element__label required-label">Sub Type</label>
+    <apex:selectList value="{!agency.Sub_Type__c}" size="1" styleClass="slds-input agent-required" id="subTypePicklist">
+        <apex:actionSupport event="onchange" action="{!filterTradeLicenseOnSubTypeChange}" reRender="tradeLicensePicklist" status="none"/>
+        <apex:selectOptions value="{!corporateSubTypeOptions}"/>
+    </apex:selectList>
+</div>
+
+                                            
+                                            <!-- Ownership -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Ownership</label>
+                                                <apex:selectList value="{!agency.OwnerShip__c}"
+                                                                 size="1"
+                                                                   styleClass="slds-select agent-required"
+                                                                 onchange="togglePartners(this.value)"
+                                                                 >
+                                                    <span class="error-message"></span>
+                                                    <apex:selectOptions value="{!ownershipOptions}" />
+                                                </apex:selectList>
+                                            </div>
+                                            
+                                            <!-- Number of Partners -->
+                                            <div id="partnerSection"
+                                                     class="slds-col slds-size_1-of-3 slds-p-horizontal_small"
+                                                     style="{!IF(showPartnerCount,'','display:none;')}">
+                                                    
+                                                    <label class="slds-form-element__label required-label">
+                                                        Number of Partners
+                                                    </label>
+                                                
+                                                    <apex:inputText value="{!agency.No_Of_Partners__c}"
+                                                                    styleClass="slds-input partner-required"/>
+                                                </div>
+
+                                            <!-- Company Name -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Company Name</label>
+                                                <apex:inputText value="{!agency.Agency_Name__c}"
+                                                                  styleClass="slds-input agent-required"
+                                                                />
+                                                <span class="error-message"></span>
+                                            </div>
+                                            
+                                            
+                                            
+                                            <!-- Account Manager (NOT required) -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+    <label class="slds-form-element__label">Agency Account Manager</label>
+
+    <apex:selectList value="{!agency.Agency_Account_Manager__c}"
+                     size="1"
+                     styleClass="slds-select">
+
+        <apex:selectOptions value="{!userPicklistOptions}" />
+    </apex:selectList>
+</div>
+                                            
+                             <!-- Trade License -->
+<div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+    <label class="slds-form-element__label required-label">Company/Trade License Registration Type</label>
+    <apex:selectList id="tradeLicensePicklist" value="{!agency.Company_Trade_License_Registration_Type__c}" size="1" styleClass="slds-input agent-required">
+        <apex:selectOptions value="{!filteredTradeLicenseOptions}"/>
+    </apex:selectList>
+</div>
+
+                                            <!-- Trade License -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Trade License / Company Registration Number</label>
+                                                <apex:inputText value="{!agency.Trade_License_Number__c}"
+                                                                  styleClass="slds-input agent-required"
+                                                                />
+                                                <span class="error-message"></span>
+                                            </div>
+                                            
+                                            <!-- Expiry -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+    
+                                                    <div class="slds-form-element">
+                                                
+                                                        <label class="slds-form-element__label required-label">
+                                                            Trade License Expiry Date
+                                                        </label>
+                                                
+                                                        <apex:inputField value="{!agency.Trade_License_Expiry_Date__c}"
+                                                                         styleClass="slds-input expiry-date"
+                                                                         onchange="validateExpiryDate(this)"/>
+                                                
+                                                        <span class="error-message"></span>
+                                                
+                                                        <div class="slds-form-element__help">
+                                                            Format: DD/MM/YYYY
+                                                        </div>
+                                                
+                                                    </div>
+                                                
+                                                </div>
+                                            
+                                            <!-- Email -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Primary Email</label>
+                                                <apex:inputField value="{!agency.Company_Email__c}"
+                                                                   styleClass="slds-input agent-required" onblur="validateEmail(this);" />
+                                                <span class="error-message"></span>
+                                                <div id="emailError"
+                                                     class="slds-form-element__help slds-text-color_error"
+                                                     style="display:none;">
+                                                    Please enter a valid email address
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label ">Company Alternate Email</label>
+                                                <apex:inputField value="{!agency.Company_Alternate_Email_1__c}"
+                                                                   styleClass="slds-input" onblur="validateEmail(this);"/>
+                                                
+                                                <div id="emailError"
+                                                     class="slds-form-element__help slds-text-color_error"
+                                                     style="display:none;">
+                                                    Please enter a valid email address
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <div class="slds-form-element">
+                                                    <label class="slds-form-element__label required-label">
+                                                        Company Phone
+                                                    </label>
+                                                    
+                                                    <div class="slds-grid slds-gutters_small">
+                                                        
+                                                        <!-- Country Code -->
+                                                        <div class="slds-col slds-size_1-of-3">
+                                                            <apex:selectList value="{!agency.Country_Code__c}"
+                                                                             styleClass="slds-select agent-required"
+                                                                             size="1"
+                                                                           >
+                                                                <span class="error-message"></span>
+                                                                <apex:selectOptions value="{!countryCodeOptions}" />
+                                                            </apex:selectList>
+                                                        </div>
+                                                        
+                                                        <!-- Phone Number -->
+                                                      <div class="slds-col slds-size_2-of-3">
+                                                        <apex:inputText value="{!agency.Company_Official_Phone_No__c}"
+                                                                        styleClass="slds-input agent-required"
+                                                                         onblur="validatePhone(this);"
+                                                                          maxlength="12"/>
+                                                    
+                                                        <span class="error-message"></span>
+                                                    
+                                                        <div id="phoneError"
+                                                             class="slds-form-element__help slds-text-color_error"
+                                                             style="display:none;">
+                                                            Please enter numbers only
+                                                        </div>
+                                                    </div>
+
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+    <div class="slds-form-element">
+
+        <label class="slds-form-element__label required-label">
+            Zoya Development Sales Representative
+        </label>
+
+        <div class="slds-form-element__control">
+
+            <apex:selectList value="{!agency.Sales_Representative__c}"
+                             size="1"
+                             styleClass="slds-select agent-required">
+
+                <apex:selectOptions value="{!userPicklistOptions}" />
+            </apex:selectList>
+
+            <span class="error-message"></span>
+        </div>
+    </div>
+</div>
+                                            <!-- PO Box -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">PO Box</label>
+                                                <apex:inputText value="{!agency.PO_Box__c}"
+                                                                 styleClass="slds-input agent-required"/>
+                                                <span class="error-message"></span>
+                                            </div>
+                                            
+                                            <!-- Have TRN -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Have TRN?</label>
+                                                <apex:selectList value="{!agency.Have_TRN__c}"
+                                                                 styleClass="slds-select agent-required"
+                                                                 size="1"
+                                                                 onchange="toggleTRN(this.value)"
+                                                                >
+                                                    <span class="error-message"></span>
+                                                    <apex:selectOptions value="{!yesNoOptions}" />
+                                                </apex:selectList>
+                                            </div>
+                                            
+                                            <!-- TRN Number -->
+                                           <div id="trnSection"
+                                             class="slds-col slds-size_1-of-3 slds-p-horizontal_small"
+                                             style="{!IF(showTrnSection,'','display:none;')}">
+                                        
+                                            <!-- TRN Number -->
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label required-label">
+                                                    TRN Number
+                                                </label>
+                                        
+                                                <apex:inputText value="{!agency.TRN_NUMBER_VAT__c}"
+                                                                styleClass="slds-input trn-required"/>
+                                        
+                                                <span class="error-message"></span>
+                                            </div>
+                                        
+                                            <!-- TRN Expiry Date -->
+                                            <div class="slds-form-element">
+                                                <label class="slds-form-element__label required-label">
+                                                    TRN Expiry Date
+                                                </label>
+                                        
+                                                <apex:inputField value="{!agency.TRN_Expiry_Date__c}"
+                                                                 styleClass="slds-input expiry-date"
+                                                                 onchange="validateExpiryDate(this)"/>
+                                        
+                                                <span class="error-message"></span>
+                                            </div>
+                                        
+                                        </div>
+                                            
+                                            
+                                            <!-- RERA SECTION -->
+                                           <div class="rera-section slds-col slds-size_1-of-3 slds-p-horizontal_small"
+                                                     style="{!IF(showReraSection,'','display:none;')}">
+                                                
+                                                    <div class="slds-form-element">
+                                                        <label class="slds-form-element__label required-label">
+                                                            Company RERA Registration Expiry Date
+                                                        </label>
+                                                
+                                                      <apex:inputField value="{!agency.Company_RERA_Registration_Expiry__c}"
+                                                             styleClass="slds-input agent-required expiry-date"
+                                                             onchange="validateExpiryDate(this)"/>
+                                        
+                                            <span class="error-message"></span>
+                                                
+                                                        <span class="error-message"></span>
+                                                        <div class="slds-form-element__help">
+                                                            Format: DD/MM/YYYY
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            <div class="rera-section slds-col slds-size_1-of-3 slds-p-horizontal_small"
+                                                 style="{!IF(showReraSection,'','display:none;')}">
+                                            
+                                                <div class="slds-form-element">
+                                                    <label class="slds-form-element__label required-label">
+                                                        Company ORN / RERA Number
+                                                    </label>
+                                            
+                                                    <apex:inputText value="{!agency.Compnay_ORN_RERA_Number__c}"
+                                                                      styleClass="slds-input agent-required"/>
+                                                    <span class="error-message"></span>
+                                                </div>
+                                            </div>
+
+                                            
+                                            
+                                            
+                                            <!-- Address -->
+                                            <div class="slds-col slds-size_2-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Company Address</label>
+                                                <apex:inputTextarea value="{!agency.Company_Address__c}"
+                                                                    rows="3"
+                                                                      styleClass="slds-input agent-required"/>
+                                                <span class="error-message"></span>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </apex:outputPanel>
+                                    
+                                    
+                                    
+                               <apex:outputPanel rendered="{!currentStep == 2}">
+    <div class="section-header">Step 2: Signatory Details</div>
+
+    <!-- ONE GRID ONLY -->
+    <div class="slds-grid slds-wrap slds-gutters_small">
+
+        <!-- First Name -->
+        <div class="slds-col slds-size_1-of-3">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label required-label">First Name</label>
+                <div class="slds-form-element__control">
+                    <apex:inputText value="{!agency.First_Name__c}" styleClass="slds-input"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Last Name -->
+        <div class="slds-col slds-size_1-of-3">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label required-label">Last Name</label>
+                <div class="slds-form-element__control">
+                    <apex:inputText value="{!agency.Last_Name__c}" styleClass="slds-input"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passport No -->
+        <div class="slds-col slds-size_1-of-3">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label required-label">Passport No</label>
+                <div class="slds-form-element__control">
+                    <apex:inputText value="{!agency.Passport_No__c}" styleClass="slds-input"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Passport Expiry -->
+       <div class="slds-col slds-size_1-of-3">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label required-label">Passport Expiry</label>
+                <div class="slds-form-element__control">
+                    <apex:inputField value="{!agency.Passport_Expiry_Date__c}"
+                 styleClass="slds-input expiry-date"
+                 onchange="validateExpiryDate(this)"/>
+
+<span class="error-message"></span>
+                </div>
+                <div class="slds-form-element__help">Format: DD/MM/YYYY</div>
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="slds-col slds-size_1-of-3">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label required-label">Email</label>
+                <div class="slds-form-element__control">
+                    <apex:inputText value="{!agency.Authorized_Signatory_Email__c}"
+                                    styleClass="slds-input"
+                                    onblur="validateEmail(this);"/>
+                </div>
+                <div id="emailError"
+                     class="slds-form-element__help slds-text-color_error"
+                     style="display:none;">
+                    Please enter a valid email address
+                </div>
+            </div>
+        </div>
+
+        <!-- Designation -->
+        <div class="slds-col slds-size_1-of-3">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label required-label">Designation</label>
+                <div class="slds-form-element__control">
+                    <apex:selectList value="{!agency.Designation__c}" size="1" styleClass="slds-select">
+                        <apex:selectOptions value="{!designationOptions}" />
+                    </apex:selectList>
+                </div>
+            </div>
+        </div>
+
+        <!-- Country Code -->
+        <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+    <div class="slds-form-element">
+        <label class="slds-form-element__label required-label">
+            Authorized Signatory Mobile
+        </label>
+
+        <div class="slds-form-element__control">
+            <div class="slds-grid slds-gutters_small">
+
+                <!-- Country Code -->
+                <div class="slds-col slds-size_1-of-3">
+                    <apex:selectList value="{!agency.Country_Code__c}"
+                                     size="1"
+                                     styleClass="slds-select agent-required">
+                        <apex:selectOptions value="{!countryCodeOptions}" />
+                    </apex:selectList>
+                </div>
+
+                <!-- Mobile Number -->
+                <div class="slds-col slds-size_2-of-3">
+                    <apex:inputText value="{!agency.Authorized_Signatory_Mobile__c}"
+                           styleClass="slds-input agent-required"
+                            onblur="validatePhone(this);"
+                            maxlength="12"/>
+                                                    
+                       <span class="error-message"></span>
+                                                    
+                    <div id="phoneError"
+                  class="slds-form-element__help slds-text-color_error"
+              style="display:none;">
+           Please enter numbers only
+                   </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Nationality -->
+        <div class="slds-col slds-size_1-of-3">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label required-label">Nationality</label>
+                <div class="slds-form-element__control">
+                    <apex:selectList value="{!agency.Nationality__c}" size="1" styleClass="slds-select">
+                        <apex:selectOptions value="{!nationalityOptions}" />
+                    </apex:selectList>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emirates fields -->
+        <apex:outputPanel rendered="{!showEmiratesVisa}" layout="none">
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label required-label">Emirates ID</label>
+                   <apex:inputText value="{!agency.Emirates_No__c}"
+                styleClass="slds-input"
+                onkeyup="formatEmiratesId(this)"
+                maxlength="18"/> 
+                </div>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label required-label">Emirates ID Expiry</label>
+                   <apex:inputField value="{!agency.Emirates_ID_Expiry_Date__c}"
+                 styleClass="slds-input expiry-date"
+                 onchange="validateExpiryDate(this)"/>
+
+<span class="error-message"></span>
+                    <div class="slds-form-element__help">Format: DD/MM/YYYY</div>
+                </div>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label required-label">Visa File No</label>
+                    <apex:inputText value="{!agency.UAE_Visa_File_Number__c}" styleClass="slds-input"/>
+                </div>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label required-label">Visa Expiry</label>
+                    <apex:inputField value="{!agency.Visa_Expiry_Date__c}"
+                 styleClass="slds-input expiry-date"
+                 onchange="validateExpiryDate(this)"/>
+
+<span class="error-message"></span>
+                    <div class="slds-form-element__help">Format: DD/MM/YYYY</div>
+                </div>
+            </div>
+        </apex:outputPanel>
+
+        <!-- National ID -->
+        <apex:outputPanel rendered="{!showNationalId}" layout="none">
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label">National ID</label>
+                    <apex:inputText value="{!agency.National_Id_Number__c}" styleClass="slds-input"/>
+                </div>
+            </div>
+
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label">National ID Expiry</label>
+                   <apex:inputField value="{!agency.National_Id_Expiry_date__c}"
+                 styleClass="slds-input expiry-date"
+                 onchange="validateExpiryDate(this)"/>
+
+<span class="error-message"></span>
+                    <div class="slds-form-element__help">Format: DD/MM/YYYY</div>
+                </div>
+            </div>
+        </apex:outputPanel>
+
+    </div>
+</apex:outputPanel>
+
+                                    
+                                    
+                                    
+                                    
+               <apex:outputPanel rendered="{!currentStep == 3}">
+    
+    <div class="section-header">Step 3: Bank Information</div>
+    
+    <div class="slds-grid slds-wrap slds-m-bottom_medium">
+        
+        <!-- Bank Document Available -->
+        <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+            <label class="slds-form-element__label">
+                Are Bank Documents Available?
+            </label>
+            <apex:selectList value="{!agency.Bank_Document_Available__c}"
+                             styleClass="slds-select"
+                             size="1"
+                             onchange="toggleBankSection(this.value)">
+                <apex:selectOptions value="{!bankDocumentOptions}" />
+            </apex:selectList>
+        </div>
+
+        <apex:outputPanel layout="block" styleClass="bank-section" style="{!IF(showBankSection,'','display:none;')}">
+            
+            <div class="slds-grid slds-wrap slds-gutters">
+                
+                <!-- Beneficiary Name -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label required-label">Beneficiary Name</label>
+                    <apex:inputText value="{!agency.Beneficiary_name_Account_Holder_Name__c}"
+                                    styleClass="slds-input bank-required"/>
+                </div>
+                
+                <!-- Account Type -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label required-label">Account Type</label>
+                    <apex:selectList value="{!agency.Type__c}"
+                                     styleClass="slds-select bank-required"
+                                     size="1"
+                                     onchange="toggleAccountFields(this.value)">
+                        <apex:selectOptions value="{!accountTypeOptions}" />
+                    </apex:selectList>
+                </div>
+                
+                <!-- Bank Name -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label required-label">Bank Name</label>
+                    <apex:inputText value="{!agency.Bank_Name__c}"
+                                    styleClass="slds-input bank-required"/>
+                </div>
+                
+                <!-- Branch -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label">Branch</label>
+                    <apex:inputText value="{!agency.Bank_Branch_Name__c}"
+                                    styleClass="slds-input"/>
+                </div>
+                
+                <!-- Account Number -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label required-label">Account Number</label>
+                    <apex:inputText value="{!agency.Bank_Account_Number__c}"
+                                    styleClass="slds-input bank-required"/>
+                </div>
+                
+                <!-- IBAN -->
+                <div id="ibanField" class="slds-col slds-size_1-of-3">
+    <label class="slds-form-element__label required-label">IBAN</label>
+    <apex:inputText value="{!agency.IBAN_Number__c}"
+                    styleClass="slds-input"/>
+</div>
+                
+                <!-- SWIFT -->
+                <div id="swiftField" class="slds-col slds-size_1-of-3" style="display:none;">
+                    <label class="slds-form-element__label required-label">SWIFT Code</label>
+                    <apex:inputText value="{!agency.SWIFT_Code__c}"
+                                    styleClass="slds-input"/>
+                </div>
+                
+                <!-- SORT -->
+                <div id="sortField" class="slds-col slds-size_1-of-3" style="display:none;">
+                    <label class="slds-form-element__label required-label">SORT Code</label>
+                    <apex:inputText value="{!agency.SORT_Code__c}"
+                                    styleClass="slds-input"/>
+                </div>
+                
+                <!-- IFSC -->
+                <div id="ifscField" class="slds-col slds-size_1-of-3" style="display:none;">
+                    <label class="slds-form-element__label required-label">IFSC Code</label>
+                    <apex:inputText value="{!agency.IFSC_Code__c}"
+                                    styleClass="slds-input"/>
+                </div>
+                
+                <!-- City -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label required-label">City</label>
+                    <apex:inputText value="{!agency.Cities__c}"
+                                    styleClass="slds-input bank-required"/>
+                </div>
+                
+                <!-- Country -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label required-label">Country</label>
+                    <apex:selectList value="{!agency.Country__c}"
+                                     styleClass="slds-select bank-required"
+                                     size="1">
+                        <apex:selectOptions value="{!countryOptions}" />
+                    </apex:selectList>
+                </div>
+                
+                <!-- Bank Address -->
+                <div class="slds-col slds-size_2-of-3">
+                    <label class="slds-form-element__label required-label">Bank Address</label>
+                    <apex:inputTextarea value="{!agency.Bank_Address__c}"
+                                        rows="3"
+                                        styleClass="slds-textarea bank-required"/>
+                </div>
+                
+            </div>
+        </apex:outputPanel>
+        
+    </div>
+</apex:outputPanel>
+                                    
+                                    
+                                   
+<apex:outputPanel rendered="{!currentStep == 4}">
+
+    <div class="section-header">Step 4: Documents</div>
+
+    <div class="doc-grid">
+
+        <!-- ================= COMMON DOCUMENTS ================= -->
+
+        <div class="doc-item">
+            <div class="doc-box">
+                <h3 class="doc-title required-label">Trade License</h3>
+                <apex:inputFile value="{!tradeLicenseFile}"
+                                filename="{!tradeLicenseFileName}"
+                                styleClass="agent-doc-required"
+                                onchange="validateFileSize(this, 5)"/>
+                <span class="error-message"></span>
+            </div>
+        </div>
+
+              <div class="doc-item">
+            <div class="doc-box">
+                <h3 class="doc-title required-label">Authorized Passport</h3>
+                <apex:inputFile value="{!authPassportFile}"
+                                filename="{!authPassportFileName}"
+                                styleClass="agent-doc-required"
+                                onchange="validateFileSize(this, 5)"/>
+                <span class="error-message"></span>
+            </div>
+        </div>
+
+
+       <!-- ================= RERA CERTIFICATE ================= -->
+<apex:outputPanel rendered="{!isDubaiReraCompany || isOtherEmirateCompany}"
+                  layout="block">
+    <div class="doc-item">
+        <div class="doc-box">
+            <h3 class="doc-title {!IF(isOtherEmirateCompanyDoc,'','required-label')}">
+                RERA Certificate
+            </h3>
+            <apex:inputFile value="{!reraFile}"
+                            filename="{!reraCertificateFileName}"
+                            styleClass="{!IF(isOtherEmirateCompanyDoc,'','agent-doc-required')}"
+                            onchange="validateFileSize(this, 5)"/>
+            <span class="error-message"></span>
+        </div>
+    </div>
+</apex:outputPanel>
+
+<!-- ================= BROKER CARD ================= -->
+<apex:outputPanel rendered="{!isDubaiReraCompany || isOtherEmirateCompany}"
+                  layout="block">
+    <div class="doc-item">
+        <div class="doc-box">
+            <h3 class="doc-title {!IF(isOtherEmirateCompanyDoc,'','required-label')}">
+                Broker Card
+            </h3>
+            <apex:inputFile value="{!brokerCardFile}"
+                            filename="{!brokerCardFileName}"
+                            styleClass="{!IF(isOtherEmirateCompanyDoc,'','agent-doc-required')}"
+                            onchange="validateFileSize(this, 5)"/>
+            <span class="error-message"></span>
+        </div>
+    </div>
+</apex:outputPanel>
+
+
+        <!-- ================= VAT / TRN ================= -->
+
+        <apex:outputPanel rendered="{!showVatSection && hasTRN}">
+            <div class="doc-item">
+                <div class="doc-box">
+                    <h3 class="doc-title required-label">VAT Certificate</h3>
+                    <apex:inputFile value="{!vatCertificateFile}"
+                                    filename="{!vatCertificateFileName}"
+                                    styleClass="agent-doc-required"
+                                    onchange="validateFileSize(this, 5)"/>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+        </apex:outputPanel>
+
+        <apex:outputPanel rendered="{!showVatSection && NOT(hasTRN)}">
+            <div class="doc-item">
+                <div class="doc-box">
+                    <h3 class="doc-title required-label">VAT Declaration</h3>
+                    <apex:inputFile value="{!trnVatFile}"
+                                    filename="{!trnVatDeclarationFileName}"
+                                    styleClass="agent-doc-required"
+                                    onchange="validateFileSize(this, 5)"/>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+        </apex:outputPanel>
+
+       
+
+
+        <!-- ================= AUTHORIZED VISA ================= -->
+<apex:outputPanel rendered="{!NOT(isInternationalCompany)}"
+                  layout="block">
+    <div class="doc-item">
+        <div class="doc-box">
+            <h3 class="doc-title required-label">Authorized Visa</h3>
+            <apex:inputFile value="{!authVisaFile}"
+                            filename="{!authVisaFileName}"
+                            styleClass="agent-doc-required"
+                            onchange="validateFileSize(this, 5)"/>
+            <span class="error-message"></span>
+        </div>
+    </div>
+</apex:outputPanel>
+
+<!-- ================= AUTHORIZED EMIRATES ID ================= -->
+<apex:outputPanel rendered="{!NOT(isInternationalCompany)}"
+                  layout="block">
+    <div class="doc-item">
+        <div class="doc-box">
+            <h3 class="doc-title required-label">Authorized Emirates ID</h3>
+            <apex:inputFile value="{!authEidFile}"
+                            filename="{!authEidFileName}"
+                            styleClass="agent-doc-required"
+                            onchange="validateFileSize(this, 5)"/>
+            <span class="error-message"></span>
+        </div>
+    </div>
+</apex:outputPanel>
+
+        <!-- ================= PARTNERSHIP ================= -->
+
+       <!-- ================= SHARE OWNER PASSPORT ================= -->
+<apex:outputPanel rendered="{!isPartnership}"
+                  layout="block">
+    <div class="doc-item">
+        <div class="doc-box">
+            <h3 class="doc-title required-label">Share Owner Passport</h3>
+            <apex:inputFile value="{!shareOwnerPassportFile}"
+                            filename="{!shareOwnerPassportFileName}"
+                            styleClass="agent-doc-required"
+                            onchange="validateFileSize(this, 5)"/>
+            <span class="error-message"></span>
+        </div>
+    </div>
+</apex:outputPanel>
+
+<!-- ================= MEMORANDUM OF ASSOCIATION ================= -->
+<apex:outputPanel rendered="{!isPartnership}"
+                  layout="block">
+    <div class="doc-item">
+        <div class="doc-box">
+            <h3 class="doc-title required-label">Memorandum of Association</h3>
+            <apex:inputFile value="{!moaFile}"
+                            filename="{!moaFileName}"
+                            styleClass="agent-doc-required"
+                            onchange="validateFileSize(this, 5)"/>
+            <span class="error-message"></span>
+        </div>
+    </div>
+</apex:outputPanel>
+
+
+        <!-- ================= OPTIONAL ================= -->
+
+        <div class="doc-item">
+            <div class="doc-box">
+                <h3 class="doc-title">Power of Attorney</h3>
+                <apex:inputFile value="{!poaFile}"
+                                filename="{!poaFileName}"
+                                onchange="validateFileSize(this, 5)"/>
+                <span class="error-message"></span>
+            </div>
+        </div>
+
+        <!-- ================= BANK DOCUMENTS ================= -->
+
+        <apex:outputPanel rendered="{!hasBankDocs}">
+            <div class="doc-item">
+                <div class="doc-box">
+                    <h3 class="doc-title required-label">Bank IBAN Letter</h3>
+                    <apex:inputFile value="{!bankIbanFile}"
+                                    filename="{!bankIbanFileName}"
+                                    styleClass="agent-doc-required"
+                                    onchange="validateFileSize(this, 5)"/>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+        </apex:outputPanel>
+
+        <apex:outputPanel rendered="{!NOT(hasBankDocs)}">
+            <div class="doc-item">
+                <div class="doc-box">
+                    <h3 class="doc-title required-label">Bank NOC</h3>
+                    <apex:inputFile value="{!bankNocFile}"
+                                    filename="{!bankNocFileName}"
+                                    styleClass="agent-doc-required"
+                                    onchange="validateFileSize(this, 5)"/>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+        </apex:outputPanel>
+
+    </div>
+</apex:outputPanel>
+                                    
+                                    
+                                </apex:outputPanel>
+                                <apex:outputPanel id="individualSection"
+                                                  rendered="{!selectedAgencyType == 'Individual'}">
+                                    
+                                    
+                                    <apex:outputPanel rendered="{!currentStep == 1}">
+                                        
+                                        <div class="section-header">Step 1: Agent Details</div>
+                                        
+                                        <div class="slds-grid slds-wrap slds-m-bottom_medium">
+                                            
+                                            <!-- Sub Type -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Sub Type</label>
+                                                <apex:selectList value="{!agency.Sub_Type__c}"
+                                                                 size="1"
+                                                                 styleClass="slds-select agent-required" 
+                                                                 onchange="handleIndividualType(this.value)">
+                                                    <apex:selectOptions value="{!individualSubTypeOptions}" />
+                                                </apex:selectList>
+                                                 <span class="error-message"></span>
+                                            </div>
+                                            
+                                            <!-- Agency Account Manager -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+    <label class="slds-form-element__label">Agency Account Manager</label>
+
+    <apex:selectList value="{!agency.Agency_Account_Manager__c}"
+                     size="1"
+                     styleClass="slds-select">
+
+        <apex:selectOptions value="{!userPicklistOptions}" />
+    </apex:selectList>
+</div>
+                                            
+                                            <!-- Sales Representative -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+    <div class="slds-form-element">
+
+        <label class="slds-form-element__label required-label">
+            Zoya Development Sales Representative
+        </label>
+
+        <div class="slds-form-element__control">
+
+            <apex:selectList value="{!agency.Sales_Representative__c}"
+                             size="1"
+                             styleClass="slds-select agent-required">
+
+                <apex:selectOptions value="{!userPicklistOptions}" />
+            </apex:selectList>
+
+            <span class="error-message"></span>
+        </div>
+    </div>
+</div>
+                                            
+                                            <!-- First Name -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">First Name</label>
+                                                <apex:inputText value="{!agency.First_Name__c}"
+                                                                styleClass="slds-input agent-required"/>
+                                                <span class="error-message"></span>
+                                                
+                                            </div>
+                                            
+                                            <!-- Last Name -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Last Name</label>
+                                                <apex:inputText value="{!agency.Last_Name__c}"
+                                                                styleClass="slds-input agent-required"/>
+                                                <span class="error-message"></span>
+                                                
+                                            </div>
+                                            
+                                            <!-- Email -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Email</label>
+                                                
+                                                <apex:inputText id="emailInput"
+                                                                value="{!agency.Email__c}"
+                                                                styleClass="slds-input agent-required"
+                                                                onblur="validateEmail(this);" />
+                                                
+                                                <div id="emailError"
+                                                     class="slds-form-element__help slds-text-color_error"
+                                                     style="display:none;">
+                                                    Please enter a valid email address
+                                                </div>
+                                            </div>
+
+                                            
+                                            <!-- Phone with Country Code -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Phone</label>
+                                                <div class="slds-grid slds-gutters_small">
+                                                    <div class="slds-col slds-size_1-of-3">
+                                                        <apex:selectList value="{!agency.Country_Code__c}"
+                                                                         size="1"
+                                                                         styleClass="slds-select agent-required">
+                                                            <span class="error-message"></span>
+                                                            
+                                                            <apex:selectOptions value="{!countryCodeOptions}" />
+                                                        </apex:selectList>
+                                                    </div>
+                                          
+                                                      <div class="slds-col slds-size_2-of-3">
+                                                    <apex:inputText value="{!agency.Phone_No__c}"
+                                                                        styleClass="slds-input agent-required"
+                                                                         onblur="validatePhone(this);"
+                                                                          maxlength="12"/>
+                                                    
+                                                        <span class="error-message"></span>
+                                                    
+                                                        <div id="phoneError"
+                                                             class="slds-form-element__help slds-text-color_error"
+                                                             style="display:none;">
+                                                            Please enter numbers only
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Designation -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Designation</label>
+                                                <apex:selectList value="{!agency.Designation__c}"
+                                                                 size="1"
+                                                                 styleClass="slds-select agent-required">
+                                                    
+                                                    
+                                                    <apex:selectOptions value="{!designationOptions}" />
+                                                </apex:selectList>
+                                                <span class="error-message"></span>
+                                            </div>
+                                            
+                                            <!-- Passport -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Passport No</label>
+                                                <apex:inputText value="{!agency.Passport_No__c}"
+                                                                styleClass="slds-input agent-required"/>
+                                                <span class="error-message"></span>
+                                                
+                                            </div>
+                                            
+                                            <!-- Passport Expiry -->
+                                            <div class="slds-col slds-size_1-of-3">
+            <div class="slds-form-element">
+                <label class="slds-form-element__label required-label">Passport Expiry</label>
+                <div class="slds-form-element__control">
+                    <apex:inputField value="{!agency.Passport_Expiry_Date__c}"
+                 styleClass="slds-input expiry-date agent-required"
+                 onchange="validateExpiryDate(this)"/>
+
+<span class="error-message"></span>
+                </div>
+                <div class="slds-form-element__help">Format: DD/MM/YYYY</div>
+            </div>
+        </div>
+
+                                            <!-- Nationality -->
+                                            <div class="slds-col slds-size_1-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Nationality</label>
+                                                <apex:selectList value="{!agency.Nationality__c}"
+                                                                 size="1"
+                                                                 styleClass="slds-select agent-required">
+                                                    <apex:selectOptions value="{!nationalityOptions}" />
+                                                    
+                                                    
+                                                </apex:selectList>
+                                                <span class="error-message"></span>
+                                            </div>
+                                            
+                                              <!-- UAE Fields -->
+                                                <div id="uaeFields"
+                                                     class="slds-grid slds-wrap slds-gutters_small slds-col slds-size_1-of-1 slds-p-horizontal_small"
+                                                     style="{!IF(showUaeAgentFields,'','display:none;')}">
+                                                
+                                                    <!-- Emirates ID -->
+                                                    <div class="slds-col slds-size_1-of-3">
+                                                        <label class="slds-form-element__label required-label">
+                                                            Emirates ID
+                                                        </label>
+                                                       
+                                                         <apex:inputText value="{!agency.Emirates_No__c}"
+                styleClass="slds-input agent-requirut"
+                onkeyup="formatEmiratesId(this)"
+                maxlength="18"/> 
+                                                        <span class="error-message"></span>
+                                                    </div>
+                                                
+                                                    <!-- Emirates ID Expiry -->
+                                                               <div class="slds-col slds-size_1-of-3">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label required-label">Emirates ID Expiry</label>
+                  <apex:inputField value="{!agency.Emirates_ID_Expiry_Date__c}"
+    styleClass="slds-input expiry-date agent-required"
+    onchange="validateExpiryDate(this)"/>
+
+<span class="error-message"></span>
+                    <div class="slds-form-element__help">Format: DD/MM/YYYY</div>
+                </div>
+            </div>
+
+                                                
+                                                    <!-- UAE Visa File Number -->
+                                                    <div class="slds-col slds-size_1-of-3">
+                                                        <label class="slds-form-element__label required-label">
+                                                            UAE Visa (File Number)
+                                                        </label>
+                                                        <apex:inputText value="{!agency.UAE_Visa_File_Number__c}"
+                                                                        styleClass="slds-input agent-required"/>
+                                                        <span class="error-message"></span>
+                                                    </div>
+                                                
+                                                    <!-- Visa Expiry Date -->
+                                                    <div class="slds-col slds-size_1-of-3">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label required-label">Visa Expiry</label>
+                    <apex:inputField value="{!agency.Visa_Expiry_Date__c}"
+                 styleClass="slds-input expiry-date agent-required"
+                 onchange="validateExpiryDate(this)"/>
+
+<span class="error-message"></span>
+                    <div class="slds-form-element__help">Format: DD/MM/YYYY</div>
+                </div>
+            </div>
+                                                
+                                                </div>
+                                                
+                                                <!-- International -->
+                                                <div id="internationalFields"
+                                                     class="slds-grid slds-wrap slds-gutters_small slds-col slds-size_1-of-1 slds-p-horizontal_small"
+                                                     style="{!IF(showInternationalAgentFields,'','display:none;')}">
+                                                
+                                                    <div class="slds-col slds-size_1-of-3">
+                                                        <label class="slds-form-element__label required-label">
+                                                            National ID
+                                                        </label>
+                                                        <apex:inputText value="{!agency.National_Id_Number__c}"
+                                                                        styleClass="slds-input agent-required"/>
+                                                        <span class="error-message"></span>
+                                                    </div>
+                                                
+                                                    <div class="slds-col slds-size_1-of-3">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label">National ID Expiry</label>
+                   <apex:inputField value="{!agency.National_Id_Expiry_date__c}"
+                 styleClass="slds-input expiry-date agent-required"
+                 onchange="validateExpiryDate(this)"/>
+
+<span class="error-message"></span>
+                    <div class="slds-form-element__help">Format: DD/MM/YYYY</div>
+                </div>
+            </div>
+                                                
+                                                </div>
+
+
+                                            <!-- Address -->
+                                            <div class="slds-col slds-size_2-of-3 slds-p-horizontal_small">
+                                                <label class="slds-form-element__label required-label">Residential Address</label>
+                                                <apex:inputTextarea value="{!agency.Company_Address__c}"
+                                                                    rows="3"
+                                                                    styleClass="slds-textarea agent-required"/>
+                                                <span class="error-message"></span>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </apex:outputPanel>
+                                    
+                                    
+                                    
+                                    
+                                    
+                               <apex:outputPanel rendered="{!currentStep == 2}">
+    
+    <div class="section-header">Step 2: Bank Information</div>
+    
+    <div class="slds-grid slds-wrap slds-m-bottom_medium">
+        
+        <!-- Bank Document Available -->
+        <div class="slds-col slds-size_1-of-2 slds-p-horizontal_small">
+            <label class="slds-form-element__label">
+                Are Bank Documents Available?
+            </label>
+            <apex:selectList value="{!agency.Bank_Document_Available__c}"
+                             styleClass="slds-select"
+                             size="1"
+                             onchange="toggleBankSection(this.value)">
+                <apex:selectOptions value="{!bankDocumentOptions}" />
+            </apex:selectList>
+        </div>
+
+        <apex:outputPanel layout="block" styleClass="bank-section" style="{!IF(showBankSection,'','display:none;')}">
+            
+            <div class="slds-grid slds-wrap slds-gutters">
+                
+                <!-- Beneficiary Name -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label required-label">Beneficiary Name</label>
+                    <apex:inputText value="{!agency.Beneficiary_name_Account_Holder_Name__c}"
+                                    styleClass="slds-input bank-required"/>
+                </div>
+                
+                <!-- Account Type -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label required-label">Account Type</label>
+                    <apex:selectList value="{!agency.Type__c}"
+                                     styleClass="slds-select bank-required"
+                                     size="1"
+                                     onchange="toggleAccountFields(this.value)">
+                        <apex:selectOptions value="{!accountTypeOptions}" />
+                    </apex:selectList>
+                </div>
+                
+                <!-- Bank Name -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label required-label">Bank Name</label>
+                    <apex:inputText value="{!agency.Bank_Name__c}"
+                                    styleClass="slds-input bank-required"/>
+                </div>
+                
+                <!-- Branch -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label">Branch</label>
+                    <apex:inputText value="{!agency.Bank_Branch_Name__c}"
+                                    styleClass="slds-input"/>
+                </div>
+                
+                <!-- Account Number -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label required-label">Account Number</label>
+                    <apex:inputText value="{!agency.Bank_Account_Number__c}"
+                                    styleClass="slds-input bank-required"/>
+                </div>
+                
+                <!-- IBAN -->
+                <div id="ibanField" class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label required-label">IBAN</label>
+                    <apex:inputText value="{!agency.IBAN_Number__c}"
+                                    styleClass="slds-input iban-required"/>
+                </div>
+                
+                <!-- SWIFT -->
+                <div id="swiftField" class="slds-col slds-size_1-of-3" style="display:none;">
+                    <label class="slds-form-element__label required-label">SWIFT Code</label>
+                    <apex:inputText value="{!agency.SWIFT_Code__c}"
+                                    styleClass="slds-input swift-required"/>
+                </div>
+                
+                <!-- SORT -->
+                <div id="sortField" class="slds-col slds-size_1-of-3" style="display:none;">
+                    <label class="slds-form-element__label required-label">SORT Code</label>
+                    <apex:inputText value="{!agency.SORT_Code__c}"
+                                    styleClass="slds-input sort-required"/>
+                </div>
+                
+                <!-- IFSC -->
+                <div id="ifscField" class="slds-col slds-size_1-of-3" style="display:none;">
+                    <label class="slds-form-element__label required-label">IFSC Code</label>
+                    <apex:inputText value="{!agency.IFSC_Code__c}"
+                                    styleClass="slds-input ifsc-required"/>
+                </div>
+                
+                <!-- City -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label required-label">City</label>
+                    <apex:inputText value="{!agency.Cities__c}"
+                                    styleClass="slds-input bank-required"/>
+                </div>
+                
+                <!-- Country -->
+                <div class="slds-col slds-size_1-of-3">
+                    <label class="slds-form-element__label required-label">Country</label>
+                    <apex:selectList value="{!agency.Country__c}"
+                                     styleClass="slds-select bank-required"
+                                     size="1">
+                        <apex:selectOptions value="{!countryOptions}" />
+                    </apex:selectList>
+                </div>
+                
+                <!-- Bank Address -->
+                <div class="slds-col slds-size_2-of-3">
+                    <label class="slds-form-element__label required-label">Bank Address</label>
+                    <apex:inputTextarea value="{!agency.Bank_Address__c}"
+                                        rows="3"
+                                        styleClass="slds-textarea bank-required"/>
+                </div>
+                
+            </div>
+        </apex:outputPanel>
+        
+    </div>
+</apex:outputPanel>
+                                    
+                             <apex:outputPanel rendered="{!currentStep == 3}">
+
+    <div class="section-header">Step 3: Documents</div>
+
+    <div class="doc-grid">
+
+        <!-- ================= PASSPORT (COMMON) ================= -->
+
+        <div class="doc-item">
+            <div class="doc-box">
+                <h3 class="doc-title required-label">Passport</h3>
+                <apex:inputFile value="{!passportFile}"
+                                filename="{!passportFileName}"
+                                styleClass="agent-doc-required"
+                                onchange="validateFileSize(this, 5)"/>
+                <span class="error-message"></span>
+            </div>
+        </div>
+
+        <!-- ================= VISA (UAE ONLY) ================= -->
+
+        <apex:outputPanel rendered="{!isUaeIndividualDoc}" layout="block">
+    <div class="doc-item">
+        <div class="doc-box">
+            <h3 class="doc-title required-label">Visa</h3>
+            <apex:inputFile value="{!visaFile}"
+                            filename="{!visaFileName}"
+                            styleClass="agent-doc-required"
+                            onchange="validateFileSize(this, 5)"/>
+        </div>
+    </div>
+</apex:outputPanel>
+
+<apex:outputPanel rendered="{!isUaeIndividualDoc}" layout="block">
+    <div class="doc-item">
+        <div class="doc-box">
+            <h3 class="doc-title required-label">Emirates ID</h3>
+            <apex:inputFile value="{!eidFile}"
+                            filename="{!eidFileName}"
+                            styleClass="agent-doc-required"
+                            onchange="validateFileSize(this, 5)"/>
+        </div>
+    </div>
+</apex:outputPanel>
+
+
+        <!-- ================= INTERNATIONAL ================= -->
+
+        <apex:outputPanel rendered="{!isInternationalIndividualDoc}" layout="block">
+            <div class="doc-item">
+                <div class="doc-box">
+                    <h3 class="doc-title required-label">National ID</h3>
+                    <apex:inputFile value="{!nationalIdFile}"
+                                    filename="{!nationalIdFileName}"
+                                    styleClass="agent-doc-required"
+                                    onchange="validateFileSize(this, 5)"/>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+        </apex:outputPanel>
+
+        <!-- ================= BANK DOCUMENTS ================= -->
+
+        <apex:outputPanel rendered="{!hasBankDocs}" layout="block">
+            <div class="doc-item">
+                <div class="doc-box">
+                    <h3 class="doc-title required-label">Official Bank Letter</h3>
+                    <apex:inputFile value="{!bankLetterFile}"
+                                    filename="{!bankLetterFileName}"
+                                    styleClass="agent-doc-required"
+                                    onchange="validateFileSize(this, 5)"/>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+        </apex:outputPanel>
+
+        <apex:outputPanel rendered="{!NOT(hasBankDocs)}" layout="block">
+            <div class="doc-item">
+                <div class="doc-box">
+                    <h3 class="doc-title required-label">Bank NOC</h3>
+                    <apex:inputFile value="{!bankNocFile}"
+                                    filename="{!bankNocFileName}"
+                                    styleClass="agent-doc-required"
+                                    onchange="validateFileSize(this, 5)"/>
+                    <span class="error-message"></span>
+                </div>
+            </div>
+        </apex:outputPanel>
+
+    </div>
+</apex:outputPanel>
+
+                                    
+                                </apex:outputPanel>             
+                                
+                                
+                                
+                            </apex:outputPanel>
+                            
+                            <div class="button-container">
+                                
+                                <apex:commandButton value="Previous"
+                                                    action="{!previousStep}"
+                                                    rendered="{!currentStep > 1}"
+                                                    styleClass="slds-button slds-button_neutral"/>
+                                
+                                <apex:commandButton value="Next"
+                                                    action="{!nextStep}"
+                                                    rendered="{!NOT(isLastStep)}"
+                                                    onclick="return validateStep1() && validateAllExpiryDates();"
+                                                    styleClass="slds-button slds-button_brand"/>
+                                
+                                   
+                             <span id="saveWrapper">
+    <apex:commandButton value="Save & Submit"
+                        action="{!saveAgency}"
+                        rendered="{!isLastStep}"
+                        onclick="return showLoaderOnSave();"
+                        styleClass="slds-button slds-button_brand"/>
+</span>
+
+                                
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <apex:outputPanel id="duplicateModal" layout="block" rendered="{!showDuplicateModal}">
+                    
+                    <section class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            
+                            <header class="slds-modal__header">
+                                <h2 class="slds-text-heading_medium">Duplicate Record Found</h2>
+                            </header>
+                            
+                            <div class="slds-modal__content slds-p-around_medium">
+                                <p>{!duplicateMessage}</p>
+                                <p><strong>Existing Record:</strong> {!duplicateRecordName}</p>
+                            </div>
+                            
+                            <footer class="slds-modal__footer">
+                                <apex:commandButton value="OK"
+                                                    action="{!closeDuplicateModal}"
+                                                    styleClass="slds-button slds-button_brand"/>
+                            </footer>
+                            
+                        </div>
+                    </section>
+                    
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                    
+                </apex:outputPanel>
+                
+                <apex:outputPanel rendered="{!showSuccessModal}">
+                    <div class="success-modal-overlay">
+                        <div class="success-modal">
+                            
+                            <!-- Close Button -->
+                            <button class="close-icon" onclick="closeSuccessModal()">×</button>
+                            
+                            <!-- Icon -->
+                            <div class="success-icon">✓</div>
+                            
+                            <!-- Text -->
+                            <h2 class="success-title">Agency Onboarding Successful</h2>
+                            
+                            <p class="success-message">
+                                Your details have been submitted successfully.
+                            </p>
+                            
+                            <p class="success-note">
+                               Our team will review your submission and reach out if any additional details are required.
+                            </p>
+                            <p class="success-reference">
+                <b>Reference No:</b>
+                <span class="highlight">{!createdAgencyName}</span>
+            </p>
+                            
+                            <!-- Button -->
+                            <apex:commandButton value="Go to Step 1"
+                                                action="{!resetAfterSuccess}"
+                                                styleClass="success-button"/>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </apex:outputPanel>
+                
+                
+                <apex:outputPanel rendered="{!showDuplicateModal}">
+                </apex:outputPanel>
+                
+                   <div id="loadingOverlay" class="loading-overlay" style="display:none;">
+    <div class="loader-box">
+        <div class="spinner"></div>
+        <p>Submitting, please wait...</p>
+    </div>
+</div>
+
+
+            </apex:form>
+        </body>
+        
+        <script>
+
+//////////////////// EMAIL ////////////////////
+function validateEmail(input) {
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var errorDiv = document.getElementById('emailError');
+
+    if (input.value && !emailRegex.test(input.value)) {
+        errorDiv.style.display = 'block';
+        input.classList.add('slds-has-error');
+    } else {
+        errorDiv.style.display = 'none';
+        input.classList.remove('slds-has-error');
+    }
+}
+
+//////////////////// BANK ////////////////////
+function toggleBankSection(value) {
+    const section = document.querySelector('.bank-section');
+    const fields = document.querySelectorAll('.bank-required');
+
+    if (!section) return;
+
+    if (value === 'Available') {
+        section.style.display = 'block';
+        fields.forEach(f => f.setAttribute('required', 'true'));
+    } else {
+        section.style.display = 'none';
+        fields.forEach(f => f.removeAttribute('required'));
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const select = document.querySelector("[name$='Bank_Document_Available__c']");
+    if (select) toggleBankSection(select.value);
+
+    // 🔥 important delay for VF binding
+    setTimeout(function () {
+        const accType = document.querySelector("[name$='Type__c']");
+        if (accType && accType.value) {
+            toggleAccountFields(accType.value);
+        }
+    }, 300);
+
+});
+
+//////////////////// PARTNERS ////////////////////
+function togglePartners(value) {
+    const section = document.getElementById('partnerSection');
+    const fields = document.querySelectorAll('.partner-required');
+
+    if (value === 'Partnership') {
+        section.style.display = 'block';
+        fields.forEach(f => f.setAttribute('required', 'true'));
+    } else {
+        section.style.display = 'none';
+        fields.forEach(f => f.removeAttribute('required'));
+    }
+}
+
+//////////////////// TRN ////////////////////
+function toggleTRN(value) {
+    const section = document.getElementById('trnSection');
+    const fields = document.querySelectorAll('.trn-required');
+
+    if (value === 'Yes') {
+        section.style.display = 'block';
+        fields.forEach(f => f.setAttribute('required', 'true'));
+    } else {
+        section.style.display = 'none';
+        fields.forEach(f => f.removeAttribute('required'));
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const ownership = document.querySelector("[name$='OwnerShip__c']");
+    const trn = document.querySelector("[name$='Have_TRN__c']");
+
+    if (ownership) togglePartners(ownership.value);
+    if (trn) toggleTRN(trn.value);
+});
+
+//////////////////// RERA ////////////////////
+document.addEventListener("DOMContentLoaded", function () {
+    const subtype = document.querySelector("[name$='Sub_Type__c']");
+    if (subtype) toggleReraFields(subtype.value);
+});
+
+function toggleReraFields(value) {
+    const sections = document.querySelectorAll(".rera-section");
+    if (!sections) return;
+
+    const show = value === "Dubai Real Estate Company (RERA Registered)";
+    sections.forEach(sec => {
+        sec.style.display = show ? "block" : "none";
+    });
+}
+
+//////////////////// INDIVIDUAL TYPE ////////////////////
+function handleIndividualType(value) {
+    const uae = document.getElementById('uaeFields');
+    const intl = document.getElementById('internationalFields');
+
+    if (uae) uae.style.display = 'none';
+    if (intl) intl.style.display = 'none';
+
+    if (value === 'UAE Resident' && uae) {
+        uae.style.display = 'flex';
+    }
+
+    if (value === 'International' && intl) {
+        intl.style.display = 'flex';
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const subtype = document.querySelector("[name$='Sub_Type__c']");
+    if (subtype && subtype.value) {
+        handleIndividualType(subtype.value);
+    }
+});
+
+//////////////////// FILE SIZE ////////////////////
+function validateFileSize(input, maxMB) {
+    if (!input.files || !input.files[0]) return true;
+
+    const fileSize = input.files[0].size / (1024 * 1024);
+
+    if (fileSize > maxMB) {
+        alert('File size must be less than ' + maxMB + ' MB');
+        input.value = '';
+        return false;
+    }
+    return true;
+}
+
+//////////////////// STEP 1 VALIDATION ////////////////////
+function validateStep1() {
+    let isValid = true;
+    let fields = document.querySelectorAll('.agent-required');
+
+    fields.forEach(function (field) {
+
+        if (field.offsetParent === null) return;
+
+        let errorSpan = field.nextElementSibling;
+
+        if (!field.value || field.value.trim() === '') {
+            field.classList.add('error-border');
+
+            if (errorSpan) {
+                errorSpan.innerText = 'This field is required';
+                errorSpan.style.display = 'block';
+            }
+
+            isValid = false;
+        } else {
+            field.classList.remove('error-border');
+
+            if (errorSpan) {
+                errorSpan.innerText = '';
+                errorSpan.style.display = 'none';
+            }
+        }
+    });
+
+    return isValid;
+}
+
+//////////////////// DOCUMENT VALIDATION ////////////////////
+function validateDocuments() {
+    let isValid = true;
+    let fields = document.querySelectorAll('.agent-doc-required');
+
+    fields.forEach(function (field) {
+
+        if (field.offsetParent === null) return;
+
+        let errorSpan = field.nextElementSibling;
+
+        if (!field.value) {
+            field.classList.add('error-border');
+
+            if (errorSpan) {
+                errorSpan.innerText = 'This document is required';
+                errorSpan.style.display = 'block';
+            }
+
+            isValid = false;
+        } else {
+            field.classList.remove('error-border');
+
+            if (errorSpan) {
+                errorSpan.innerText = '';
+                errorSpan.style.display = 'none';
+            }
+        }
+    });
+
+    return isValid;
+}
+
+//////////////////// PHONE ////////////////////
+function validatePhone(input) {
+    var errorDiv = document.getElementById('phoneError');
+
+    if (/[^0-9]/.test(input.value)) {
+        errorDiv.style.display = 'block';
+        input.value = input.value.replace(/[^0-9]/g, '');
+    } else {
+        errorDiv.style.display = 'none';
+    }
+}
+
+//////////////////// LOADER ////////////////////
+function showLoaderOnSave() {
+
+    if (!validateDocuments()) {
+        return false;
+    }
+
+    if (!validateAllExpiryDates()) {
+        return false;
+    }
+
+    var wrap = document.getElementById('saveWrapper');
+    wrap.style.pointerEvents = 'none';
+    wrap.style.opacity = '0.6';
+
+    document.getElementById('loadingOverlay').style.display = 'flex';
+
+    return true;
+}
+
+//////////////////// ✅ EMIRATES ID FORMAT (UPDATED) ////////////////////
+function formatEmiratesId(el) {
+
+    // remove all non-digits
+    let val = el.value.replace(/\D/g, '');
+
+    // 🔥 always force 784 at start
+    if (!val.startsWith('784')) {
+        val = '784' + val.replace(/^784/, '');
+    }
+
+    // max digits = 3 + 4 + 7 + 1 = 15
+    val = val.substring(0, 15);
+
+    let formatted = '';
+
+    if (val.length > 0) {
+        formatted = val.substring(0, 3);
+    }
+    if (val.length > 3) {
+        formatted += '-' + val.substring(3, 7);
+    }
+    if (val.length > 7) {
+        formatted += '-' + val.substring(7, 14);
+    }
+    if (val.length > 14) {
+        formatted += '-' + val.substring(14);
+    }
+
+    el.value = formatted;
+}
+//////////////////// ✅ EXPIRY DATE VALIDATION (UPDATED) ////////////////////
+function validateExpiryDate(el) {
+
+    let value = el.value;
+    if (!value) return true;
+
+    let inputDate;
+
+    // ✅ Handle DD/MM/YYYY (Salesforce format)
+    if (value.includes('/')) {
+        let parts = value.split('/'); // DD/MM/YYYY
+
+        inputDate = new Date(parts[2], parts[1] - 1, parts[0]);
+    } 
+    // ✅ Handle YYYY-MM-DD (backup)
+    else if (value.includes('-')) {
+        let parts = value.split('-');
+
+        inputDate = new Date(parts[0], parts[1] - 1, parts[2]);
+    }
+
+    let today = new Date();
+    today.setHours(0,0,0,0);
+
+    let container = el.closest('.slds-form-element');
+    let errorEl = container ? container.querySelector('.error-message') : null;
+
+    if (inputDate < today) {
+        el.classList.add('error-border');
+
+        if (errorEl) {
+            errorEl.style.display = 'block';
+            errorEl.innerText = 'Past date is not allowed';
+        }
+
+        return false;
+    } else {
+        el.classList.remove('error-border');
+
+        if (errorEl) {
+            errorEl.style.display = 'none';
+        }
+
+        return true;
+    }
+}
+//////////////////// ✅ VALIDATE ALL EXPIRY ////////////////////
+function validateAllExpiryDates() {
+    let isValid = true;
+
+    document.querySelectorAll('.expiry-date').forEach(function(el) {
+
+        let result = validateExpiryDate(el);
+
+        if (!result) {
+            isValid = false;
+        }
+    });
+
+    return isValid;
+}
+        function toggleAccountFields(value) {
+
+    const iban = document.getElementById('ibanField');
+    const swift = document.getElementById('swiftField');
+    const sort = document.getElementById('sortField');
+    const ifsc = document.getElementById('ifscField');
+
+    // hide all
+    iban.style.display = 'none';
+    swift.style.display = 'none';
+    sort.style.display = 'none';
+    ifsc.style.display = 'none';
+
+    // remove required from all
+    [iban, swift, sort, ifsc].forEach(div => {
+        let input = div.querySelector('input');
+        if (input) input.classList.remove('bank-required');
+    });
+
+    // show + required
+    if (value === 'IBAN Number') {
+        iban.style.display = 'block';
+        iban.querySelector('input').classList.add('bank-required');
+    }
+    else if (value === 'SWIFT Code') {
+        swift.style.display = 'block';
+        swift.querySelector('input').classList.add('bank-required');
+    }
+    else if (value === 'SORT Code') {
+        sort.style.display = 'block';
+        sort.querySelector('input').classList.add('bank-required');
+    }
+    else if (value === 'IFSC Code') {
+        ifsc.style.display = 'block';
+        ifsc.querySelector('input').classList.add('bank-required');
+    }
+}
+    function filterTradeLicenseOptions(value) {
+
+    const select = document.querySelector("[id$='tradeLicenseType']");
+    if (!select) return;
+
+    // original options save once
+    if (!select.dataset.original) {
+        let arr = [];
+        for (let i = 0; i < select.options.length; i++) {
+            arr.push({
+                value: select.options[i].value,
+                text: select.options[i].text
+            });
+        }
+        select.dataset.original = JSON.stringify(arr);
+    }
+
+    let originalOptions = JSON.parse(select.dataset.original);
+
+    // clear all
+    select.innerHTML = '';
+
+    originalOptions.forEach(opt => {
+
+        if (value && value.includes('International')) {
+
+            if (opt.text.includes('Free') || opt.text === 'Mainland') {
+                return; // ❌ skip
+            }
+        }
+
+        let option = document.createElement("option");
+        option.value = opt.value;
+        option.text = opt.text;
+        select.add(option);
+
+    });
+
+    // auto select first
+    if (select.options.length > 0) {
+        select.selectedIndex = 0;
+    }
+}     
+        document.addEventListener("DOMContentLoaded", function () {
+
+    setTimeout(function () {
+
+        const subtype = document.querySelector("[name$='Sub_Type__c']");
+        const select = document.querySelector("[id$='tradeLicenseType']");
+
+        if (!subtype || !select) return;
+
+        filterTradeLicenseOptions(subtype.value);
+
+    }, 300);
+
+});
+        
+        
+document.addEventListener('DOMContentLoaded', function() {
+    const subTypeSelect = document.getElementById('subTypePicklist');
+    const tradeLicenseSelect = document.getElementById('tradeLicensePicklist');
+    
+    if (subTypeSelect && tradeLicenseSelect) {
+        subTypeSelect.addEventListener('change', function() {
+            filterInstantly(this.value, tradeLicenseSelect);
+        });
+        
+        // Initial filter
+        filterInstantly(subTypeSelect.value, tradeLicenseSelect);
+    }
+});
+
+function filterInstantly(subTypeValue, selectElement) {
+    const options = selectElement.querySelectorAll('option');
+    let hasDubaiOption = false;
+    
+    options.forEach(option => {
+        if (subTypeValue && subTypeValue.toLowerCase().includes('international')) {
+            // International Company → Only Dubai
+            if (option.text.includes('Dubai Economic Department - Mainland')) {
+                option.style.display = 'block';
+                hasDubaiOption = true;
+                selectElement.value = option.value;  // Auto-select
+            } else {
+                option.style.display = 'none';
+            }
+        } else {
+            // Others → Show all
+            option.style.display = 'block';
+        }
+    });
+    
+    // If no Dubai option found, show first available
+    if (!hasDubaiOption && options.length > 0) {
+        options[0].selected = true;
+    }
+}
+
+
+</script>
+        
+    </html>
+</apex:page>
